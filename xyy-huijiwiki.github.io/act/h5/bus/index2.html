@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="apple-touch-fullscreen" content="YES" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="viewport" content="width=640,user-scalable=no" />
+    <title>《嫁人就嫁灰太狼》动漫双层巴士与你“有爱成双”</title>
+    <meta name="description" content="爱要大声说出来，“灰太狼”帮帮你告白，点赞赢取“有爱”大礼包！" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script src="../../../js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript" src="../../../js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.barrager.js"></script>
+    <script type="text/javascript" src="js/index2.js"></script>
+</head>
+<body>
+    <div id='wx_fx' style='display:none;'>
+        <img src="images/icon.jpg" width="300" height="300">
+    </div>
+    <div id="pagetip">
+        <img src="images/suoding.png" width="452" height="173" />
+    </div>
+    <div id="all_bg">
+        <div id="award">
+            <img src="images/tx_bj.jpg" width="640" height="1008" />
+            <input id="award_name" type="text" placeholder="姓名" />
+            <input id="award_tel" type="text" placeholder="手机号码" />
+            <input id="award_address" type="text" placeholder="地址" />
+            <span id="award_tips"></span>
+            <a id="award_post" onclick="award.check()"></a>
+            <a id="award_close" onclick="award.close()"><img src="images/nav_1.png" width="123" height="79" /></a>
+        </div>
+        <div id="all">
+			<div id="dialogs_wrap"></div>
+            <section id="s_index">
+                <img src="images/1.jpg" width="1008" height="640" />
+                <a id="btn_index"></a>
+                <a id="btn_join" onclick="control.join()"></a>
+            </section>
+            <section id="s_introduce">
+                <img src="images/2.jpg" width="1008" height="640" />
+                <a id="btn_go"></a>
+                <a id="btn_wall" onclick="control.wall.open()"></a>
+                <a class="btn_back" onclick="control.back('s_introduce')"><img src="images/nav_1.png" width="123" height="79" /></a>
+            </section>
+            <section id="s_game">
+                <img id="game_bg" src="images/c_gz.jpg" width="1008" height="640" />
+                <a id="game_title" onclick="control.dialogsOpen(2)">请在此处输入你的告白语</a>
+                <div id="control_container">
+                    <a id="control_switch"></a>
+                    <div id="control_btn">
+                        <a id="btn_city" onclick="control.dialogsOpen(1)"><img src="images/nav_3.png" width="247" height="99" /></a>
+                        <a id="btn_say" onclick="control.dialogsOpen(2)"><img src="images/nav_4.png" width="245" height="100" /></a>
+                        <a id="btn_see" onclick="control.wall.open()"><img src="images/nav_5.png" width="246" height="98" /></a>
+                        <a id="btn_creat" onclick="control.creatWall()"><img src="images/nav_6.png" width="247" height="98" /></a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div id="game_dialogs">
+                    <div id="city_container">
+                        <ul id="city_list">
+                            <li><a city="c_gz"><img src="images/xz_gz.png" width="167" height="193" /></a></li>
+                            <li><a city="c_bj"><img src="images/xz_bj.png" width="167" height="193" /></a></li>
+                            <li><a city="c_sh"><img src="images/xz_sh.png" width="167" height="193" /></a></li>
+                            <li><a city="c_sz"><img src="images/xz_sz.png" width="167" height="193" /></a></li>
+                            <li><a city="c_hz"><img src="images/xz_hz.png" width="167" height="193" /></a></li>
+                            <li><a city="c_cd"><img src="images/xz_cd.png" width="167" height="193" /></a></li>
+                            <li><a city="c_xa"><img src="images/xz_xa.png" width="167" height="193" /></a></li>
+                            <li><a city="c_wh"><img src="images/xz_wh.png" width="167" height="193" /></a></li>
+                            <div class="clear"></div>
+                        </ul>
+                        <a id="city_container_close" onclick="control.dialogsClose()"></a>
+                    </div>
+                    <div id="bus_container">
+                        <a id="bus_container_close" onclick="control.dialogsClose()"></a>
+                        <input id="bus_title" type="text" placeholder="请输入少于24个字符的告白语" />
+                        <a id="btn_save_title" onclick="control.saveTitle()"></a>
+                        <span class="bus_title_tips"></span>
+                    </div>
+                    <div id="book_container">
+                        <div id="book_inner">
+                            <img id="book_img" src="" width="850" height="451" />
+                        </div>
+                        <img id="book_p" src="images/p_1.png" width="262" height="250" />
+                        <a id="btn_share" onclick="control.share.open()"><img src="images/nav_7.png" height="99" width="247" /></a>
+                        <a id="btn_look" onclick="control.wall.open()"><img src="images/nav_8.png" height="99" width="247" /></a>
+                        <a id="btn_post" onclick="control.wall.post()"><img src="images/nav_9.png" height="99" width="248" /></a>
+                        <div class="share_container" onclick="control.share.close()">
+                        </div>
+                        <a class="btn_back" onclick="control.dialogsClose()"><img src="images/nav_1.png" width="123" height="79" /></a>
+                    </div>
+                </div>
+                <a class="btn_back" onclick="control.back('s_game')"><img src="images/nav_1.png" width="123" height="79" /></a>
+            </section>
+            <section id="s_wall">
+                <img src="images/wall.jpg" width="1008" height="640" />
+                <div id="barrage_container">
+
+                </div>
+                <ul id="wall_ranking"></ul>
+                <a class="btn_back" onclick="control.wall.close()"><img src="images/nav_1.png" width="123" height="79" /></a>
+                <a class="btn_prize" onclick="control.wall.prize()"><img src="images/prize.png" width="171" height="67" /></a>
+            </section>
+        </div>
+        <img id="canvas_gz" src="images/c_xa.jpg" width="1008" height="640" style="display:none" />
+        <img id="canvas_advert" src="images/qs_zz.png" width="310" height="640" style="display:none" />
+        <canvas id="canvas_creat" width="1208" height="640"></canvas>
+    </div>
+<!-- <script>
+var _hmt = _hmt || [];
+(function () {
+	var hm = document.createElement("script");
+	hm.src = "//hm.baidu.com/hm.js?b5f74d00a4e9152b939aae19dc2f3c0f";
+	var s = document.getElementsByTagName("script")[0];
+	s.parentNode.insertBefore(hm, s);
+})();
+</script> -->
+</body>
+</html>
