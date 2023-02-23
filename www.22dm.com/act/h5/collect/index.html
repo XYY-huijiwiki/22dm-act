@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="嘻哈闯世界3，“募”名而来'" />
+	<meta name="description" content="一起嘻嘻哈哈闯世界！《嘻哈闯世界3》的名字由你说了算！现在参与赢羊村大奖！" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, width=640">
+	<title>嘻哈闯世界3，“募”名而来'</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
+</head>
+<body>
+<div id="all">
+	<section id="main">
+		<div id="index" class="main_layer">
+			<a id="btn_ranking" class="layer_open btn" tar="ranking"></a>
+			<a id="btn_rule" class="layer_open btn" tar="rule"></a>
+		</div>
+		<div id="collect" class="main_layer">
+			<a class="layer_close btn"></a>
+			<a id="collect_rule" class="layer_open btn" tar="rule"></a>
+			<a id="collect_submit" class="btn" onclick="doSubmit()"></a>
+			<input id="collect_title" type="text" maxlength="20" placeholder="输入你要取的名字"/>
+			<textarea id="collect_content" type="text" maxlength="200" placeholder="取名的理由 (200字以内)"></textarea>
+		</div>
+		<div id="rule" class="main_layer">
+			<a class="layer_close btn"></a>
+		</div>
+		<div id="ranking" class="main_layer">
+			<div id="ranking_main">
+				<img src="images/ranking.jpg" width="640" height="2894" />
+				<a id="award_check" class="btn"></a>
+			</div>
+			<a class="layer_close btn"></a>
+			<a id="award_check_top" class="btn"></a>
+		</div>
+		<div id="award" class="main_layer">
+			<a class="layer_close btn"></a>
+			<input id="award_name" type="text" placeholder="姓名"/>
+			<input id="award_tel" type="text" placeholder="手机号码"/>
+			<input id="award_address" type="text" placeholder="地址"/>
+			<a id="award_post"  class="btn" onclick="award.check()"></a>
+		</div>
+	</section>
+	<section id="dialogs">
+		<div id="dialogs_wrap">
+			<a id="dialogs_close" class="btn"></a>
+			<span id="dialogs_tips">
+				信息提交成功！
+			</span>
+		</div>
+	</section>
+</div>
+<script type="text/javascript" src="js/index.js"></script>
+<script src="/js/jweixin-1.0.0.js"></script>
+<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?b5f74d00a4e9152b939aae19dc2f3c0f";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+</script>
+</body>
+</html>
