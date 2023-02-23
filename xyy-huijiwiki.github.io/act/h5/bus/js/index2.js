@@ -168,7 +168,7 @@ var award = {
 		// 		}
 		// 	}
 		// });
-		alert('信息提交成功!奖品于7个工作日内发出。')
+		alert('信息提交成功!奖品于7个工作日内发出。');
 	},
 	open: function () {
 		$("#award").show();
@@ -294,48 +294,67 @@ var control = {
 	barrager: {
 		post: function () {
 			var json = '{"name":"' + nickname + '","img":"' + headimgurl + '","sex":"' + sex + '","country":"' + country + '","province":"' + province + '","city":"' + control.city + '","info":"' + escape(control.title) + '"}';
-			$.ajax({
-				cache: false,
-				async: false,
-				type: "POST",
-				url: '/act/h5/bus/doBarrage.ashx',
-				data: {
-					"user": bus.user,
-					"act_id": act_id,
-					"init": "0",
-					"type": "send",
-					"json": json
-				},
-				success: function (response) {
-					console.info(response);
-					response = JSON.parse(response);
-					if (response.success) {
-						bus.openDialogs("提示", "告白成功~", "本窗口5秒后关闭", 5000);
-						$("#btn_post").addClass("posted");
-						control.postCount++;
-						var tmp = {};
-						tmp.id = response.id;
-						tmp.good = 0;
-						tmp.name = nickname;
-						tmp.img = headimgurl;
-						tmp.city = control.city;
-						tmp.info = control.title;
-						if (bus.barrageList.length == 0) {
-							barrageItem = [];//生成弹幕json	
-							barrageItem.push(tmp);
-							$('#barrage_container').empty();
-							barrageInit();
-						}
-						else {
-							barrageItem.push(tmp);
-						}
-						console.info(response.id);
-					}
-					else {
-						bus.openDialogs("提示", "每人每天只可以上传" + control.postLimit + "条告白哦~", "本窗口5秒后关闭", 5000);
-					}
-				}
-			});
+			// $.ajax({
+			// 	cache: false,
+			// 	async: false,
+			// 	type: "POST",
+			// 	url: '/act/h5/bus/doBarrage.ashx',
+			// 	data: {
+			// 		"user": bus.user,
+			// 		"act_id": act_id,
+			// 		"init": "0",
+			// 		"type": "send",
+			// 		"json": json
+			// 	},
+			// 	success: function (response) {
+			// 		console.info(response);
+			// 		response = JSON.parse(response);
+			// 		if (response.success) {
+			// 			bus.openDialogs("提示", "告白成功~", "本窗口5秒后关闭", 5000);
+			// 			$("#btn_post").addClass("posted");
+			// 			control.postCount++;
+			// 			var tmp = {};
+			// 			tmp.id = response.id;
+			// 			tmp.good = 0;
+			// 			tmp.name = nickname;
+			// 			tmp.img = headimgurl;
+			// 			tmp.city = control.city;
+			// 			tmp.info = control.title;
+			// 			if (bus.barrageList.length == 0) {
+			// 				barrageItem = [];//生成弹幕json	
+			// 				barrageItem.push(tmp);
+			// 				$('#barrage_container').empty();
+			// 				barrageInit();
+			// 			}
+			// 			else {
+			// 				barrageItem.push(tmp);
+			// 			}
+			// 			console.info(response.id);
+			// 		}
+			// 		else {
+			// 			bus.openDialogs("提示", "每人每天只可以上传" + control.postLimit + "条告白哦~", "本窗口5秒后关闭", 5000);
+			// 		}
+			// 	}
+			// });
+			bus.openDialogs("提示", "告白成功~", "本窗口5秒后关闭", 5000);
+			$("#btn_post").addClass("posted");
+			control.postCount++;
+			var tmp = {};
+			tmp.id = 186471063097214907617189123;
+			tmp.good = 0;
+			tmp.name = nickname;
+			tmp.img = headimgurl;
+			tmp.city = control.city;
+			tmp.info = control.title;
+			if (bus.barrageList.length == 0) {
+				barrageItem = [];//生成弹幕json	
+				barrageItem.push(tmp);
+				$('#barrage_container').empty();
+				barrageInit();
+			}
+			else {
+				barrageItem.push(tmp);
+			}
 		},
 		good: function (id) {
 			var obj = $("#barrage_" + id + " .b_good");
