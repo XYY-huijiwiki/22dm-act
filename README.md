@@ -16,7 +16,7 @@
 13. [“募”名而来](docs/collect.md)
 14. [羊羊游世界](docs/world.md)
 15. [嘻哈闯世界3](docs/xiha.md)
-16. 疯狂嘻哈夜
+16. [疯狂嘻哈夜](docs/halloween.md)
 17. 谁动了我的红莉
 18. 遗失的铃铛
 19. 奇趣大冲关

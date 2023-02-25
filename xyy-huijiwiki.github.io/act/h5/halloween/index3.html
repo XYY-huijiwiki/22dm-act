@@ -1,0 +1,54 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8" />
+    <title>嘻哈疯狂夜</title>
+    <meta name="viewport" content="width=640,user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="../../../js/jquery-2.1.1.min.js"></script>
+    <script src="../../../js/jweixin-1.0.0.js"></script>
+    <script src="js/main3.js"></script>
+</head>
+<body>
+    <div id="viewporter">
+        <div id="canvasHolder">
+            <div id="more_layer">
+                <div id="more_rule">
+                    <img id="more_rule_img" src="game_assets/zhinantu.png" width="475" height="567" />
+                </div>
+                <div id="more_ranking">
+                    <div id="paihan_top">
+                        <a class="paihan_close"></a>
+                    </div>
+                    <ul id="paihan_main">
+                        
+                    </ul>
+                    <div id="paihan_bottom">
+                        <a class="paihan_prize" onclick="halloween.getPrize()"></a>
+                        <span class="paihan_tips"></span>
+                    </div>
+                </div>
+               <div id="award">
+                    <img src="game_assets/tx_bj.jpg" width="640" height="1008"/>
+                    <input id="award_name" type="text" placeholder="姓名"/>
+                    <input id="award_tel" type="text" placeholder="手机号码"/>
+                    <input id="award_address" type="text" placeholder="地址"/>
+                    <span id="award_tips"></span>
+                    <a id="award_post" onclick="award.check()"></a>
+                    <a id="award_close" onclick="award.close()"><img src="../bus/images/nav_1.png" width="123" height="79"/></a>
+                </div>
+            </div>      
+        </div>
+    </div>
+<script data-main="js/Main" src="js/game.min.js?v=2"></script>
+<!-- <script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?b5f74d00a4e9152b939aae19dc2f3c0f";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+</script> -->
+</body>
+</html>
