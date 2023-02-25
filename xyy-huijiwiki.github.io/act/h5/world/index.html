@@ -1,0 +1,61 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=640,user-scalable=no">
+	<title>羊羊游世界</title>
+	<link rel="stylesheet" href="css/index.css" type="text/css">
+	<script src="../../../js/jquery-2.1.1.min.js"></script>
+	<script>
+	    window.gameLangs = ['en'];
+	    window.gameJS = ['js/game.js'];
+	    window.gameOnLoadScript = "mainInit();";
+	</script>
+	<script src="js/a.js"></script>
+	<script src="js/main.js"></script>
+</head>
+<body>
+	<div id="all">
+	<section id="main">
+	    <div id="viewporter">
+	        <canvas id="canvas" width="640" height="823"></canvas>
+	    </div>
+	</section>
+	<section id="more">
+		 <div id="more_wrap">
+		    <div id="more_btn">
+		        <a id="btn_rule" class="btn selected"></a>
+		        <a id="btn_ranking" class="btn"></a>
+		    </div>
+		    <div id="more_layer">
+		        <div id="more_rule">
+		        
+		    	</div>
+		    	<ul id="more_ranking">
+			        <li>
+			        	<img class="p_image" src="res/icon.png" width="80" height="80" />
+			        	<a class="p_name">islzc</a>
+			        	<a class="p_time">2017-09-14 20:20:20</a>
+			        	<a class="p_score">厉害了小伙！你在《羊羊游世界》中获得了1080高分！</a>
+			        	<a class="p_index">1</a>
+			        </li>
+		    	</ul>
+		    </div>
+			<a id="more_close" class="btn"></a>   
+	    </div>
+	</section>
+</div>
+<script src="../../../js/jweixin-1.0.0.js"></script>
+<!-- <script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?b5f74d00a4e9152b939aae19dc2f3c0f";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+</script> -->
+</body>
+</html>

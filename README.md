@@ -14,7 +14,7 @@
 11. [地球嘉年华](docs/gift.md)
 12. [嫁人就嫁灰太狼](docs/love.md)
 13. [“募”名而来](docs/collect.md)
-14. 羊羊游世界
+14. [羊羊游世界](docs/world.md)
 15. [嘻哈闯世界3](docs/xiha.md)
 16. 疯狂嘻哈夜
 17. 谁动了我的红莉
