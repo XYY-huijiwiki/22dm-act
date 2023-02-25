@@ -1,0 +1,586 @@
+html {
+  background: #000;
+}
+
+html body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+html body, html div, html ul {
+  padding: 0;
+  margin: 0;
+  font-family: "Microsoft YaHei";
+}
+
+html ul {
+  list-style-type: none;
+}
+
+@media all and (orientation: landscape) {
+  html #landscape {
+    display: block !important;
+  }
+}
+
+@media all and (orientation: portrait) {
+  html #landscape {
+    display: none !important;
+  }
+  html #all {
+    display: block !important;
+  }
+}
+
+#all {
+  width: 1137px;
+  height: 640px;
+  position: relative;
+  overflow: hidden;
+  display: none;
+}
+
+#all #video_layer.rotate, #all #dialogs.rotate {
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  top: 248.5px;
+  left: -248.5px;
+}
+
+#video_layer {
+  width: 1137px;
+  height: 640px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#dialogs {
+  width: 1137px;
+  height: 640px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+#dialogs.active {
+  display: block;
+}
+
+#dialogs .dialogs_layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+#dialogs .interaction .interaction_filter {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+#dialogs .interaction .select, #dialogs .interaction a {
+  position: absolute;
+}
+
+#dialogs #part_1 .title {
+  margin-left: -300px;
+  width: 600px;
+  height: 120px;
+  text-align: center;
+  font-size: 42px;
+  font-weight: bold;
+  line-height: 60px;
+  color: #fff;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+}
+
+#dialogs #part_2 a {
+  position: absolute;
+}
+
+#dialogs #part_2 #train {
+  width: 457px;
+  height: 400px;
+  background: url(../res/part_2/train.png) no-repeat no-repeat;
+  display: none;
+}
+
+#dialogs #part_2 #train.active {
+  display: block;
+}
+
+#dialogs #part_2 #train.run {
+  background: url(../res/part_2/train_2.png) no-repeat no-repeat;
+}
+
+#dialogs #part_2 #xi {
+  width: 193px;
+  height: 220px;
+  position: relative;
+}
+
+#dialogs #part_2 #xi.active {
+  background: url(../res/part_2/xi.png) no-repeat no-repeat center center;
+}
+
+#dialogs #part_2 #xi #xi_run {
+  width: 100%;
+  height: 100%;
+}
+
+#dialogs #part_2 #xi #xi_run a {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+#dialogs #part_2 #xi #xi_run a.active {
+  display: block;
+}
+
+#dialogs #part_2 #xi #xi_run a#xi_1 {
+  background: url(../res/part_2/xi_1.png) no-repeat no-repeat center center;
+}
+
+#dialogs #part_2 #xi #xi_run a#xi_2 {
+  background: url(../res/part_2/xi_2.png) no-repeat no-repeat center center;
+}
+
+#dialogs #part_2 #xi #xi_run a#xi_3 {
+  background: url(../res/part_2/xi_3.png) no-repeat no-repeat center center;
+}
+
+#dialogs #part_2 .title {
+  margin-left: -350px;
+  width: 700px;
+  height: 120px;
+  text-align: center;
+  font-size: 42px;
+  font-weight: bold;
+  line-height: 60px;
+  color: #fff;
+  top: 60px;
+  left: 50%;
+}
+
+#dialogs #part_3 a {
+  width: 99px;
+  height: 92px;
+  background: url(../res/public/hand.png) no-repeat no-repeat;
+  top: 52%;
+  left: 43%;
+  animation: sca 0.6s 0s infinite alternate ease-in-out;
+}
+
+#dialogs #part_4 img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#dialogs #part_4 a#btn_restart {
+  width: 164px;
+  height: 115px;
+  top: 316px;
+  left: 272px;
+}
+
+#dialogs #part_4 a#btn_share {
+  width: 141px;
+  height: 112px;
+  top: 440px;
+  left: 411px;
+}
+
+#dialogs #carrot {
+  margin-top: -100px;
+  width: 136px;
+  height: 200px;
+  top: 60%;
+  left: 150px;
+  background: url(../res/part_1/carrot.png) no-repeat no-repeat;
+}
+
+#dialogs #option_carrot {
+  margin-top: -48px;
+  margin-left: -60px;
+  width: 120px;
+  height: 96px;
+  background: url(../res/part_1/option_fail.png) no-repeat no-repeat center center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+#dialogs #file {
+  margin-top: -100px;
+  width: 352px;
+  height: 200px;
+  top: 60%;
+  left: 380px;
+  background: url(../res/part_1/file.png) no-repeat no-repeat;
+}
+
+#dialogs #option_file {
+  margin-top: -48px;
+  margin-left: -60px;
+  width: 120px;
+  height: 96px;
+  background: url(../res/part_1/option_true.png) no-repeat no-repeat center center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+#dialogs #pan {
+  margin-top: -100px;
+  width: 221px;
+  height: 200px;
+  top: 60%;
+  left: 790px;
+  background: url(../res/part_1/pan.png) no-repeat no-repeat;
+}
+
+#dialogs #option_pan {
+  margin-top: -48px;
+  margin-left: -60px;
+  width: 120px;
+  height: 96px;
+  background: url(../res/part_1/option_fail.png) no-repeat no-repeat center center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+#dialogs #dialogs_share {
+  background: url(../res/public/share.png) no-repeat no-repeat top left;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+#landscape {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../res/Public/landscape.png) center center no-repeat no-repeat;
+  background-color: #000;
+  display: none;
+}
+
+/*preload*/
+.preload_precent {
+  margin-left: -118px;
+  width: 300px;
+  height: 37px;
+  background: url(../res/public/precent_bg.png) no-repeat no-repeat;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+}
+
+.preload_precent a {
+  float: left;
+  display: block;
+}
+
+.preload_precent .precent_left {
+  width: 18px;
+  height: 37px;
+  background: url(../res/public/precent_left.png);
+}
+
+.preload_precent .precent_main {
+  width: 2px;
+  height: 37px;
+  background: url(../res/public/precent_main.png) repeat-x;
+}
+
+.preload_precent .precent_right {
+  margin-top: -2px;
+  margin-left: -30px;
+  width: 48px;
+  height: 41px;
+  background: url(../res/public/precent_right.png);
+}
+
+.preload_precent .precent_word {
+  width: 240px;
+  height: 37px;
+  line-height: 37px;
+  font-size: 24px;
+  color: #fff;
+  text-align: center;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+.part_1-enter-active, .part_2-enter-active {
+  animation: part1Entry 0.5s;
+}
+
+.part_1-leave-active, .part_2-leave-active {
+  animation: part1Leave 0.5s;
+}
+
+.option_fail-enter-active {
+  animation: optionFail 0.4s;
+}
+
+.option_true-enter-active {
+  animation: optionTrue 0.4s;
+}
+
+.train-enter-active {
+  animation: trainEntry 1s forwards 0.5s;
+}
+
+.train-leave-active {
+  animation: trainLeave 1s forwards 0.5s;
+}
+
+@-webkit-keyframes part1Entry {
+  0% {
+    top: -640px;
+  }
+  25% {
+    top: -320px;
+  }
+  50% {
+    top: -160px;
+  }
+  80% {
+    top: 50px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes part1Entry {
+  0% {
+    top: -640px;
+  }
+  25% {
+    top: -320px;
+  }
+  50% {
+    top: -160px;
+  }
+  80% {
+    top: 50px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@-webkit-keyframes part1Leave {
+  0% {
+    top: 0;
+  }
+  10% {
+    top: -50px;
+  }
+  25% {
+    top: 160px;
+  }
+  50% {
+    top: 320px;
+  }
+  100% {
+    top: 640px;
+  }
+}
+
+@keyframes part1Leave {
+  0% {
+    top: 0;
+  }
+  10% {
+    top: -50px;
+  }
+  25% {
+    top: 160px;
+  }
+  50% {
+    top: 320px;
+  }
+  100% {
+    top: 640px;
+  }
+}
+
+@-webkit-keyframes trainEntry {
+  0% {
+    top: 180;
+    left: 1136px;
+  }
+  100% {
+    top: 100px;
+    left: 400px;
+  }
+}
+
+@keyframes trainEntry {
+  0% {
+    top: 180;
+    left: 1136px;
+  }
+  100% {
+    top: 100px;
+    left: 400px;
+  }
+}
+
+@-webkit-keyframes trainLeave {
+  0% {
+    top: 100px;
+    left: 400px;
+  }
+  100% {
+    top: 200px;
+    left: -1136px;
+  }
+}
+
+@keyframes trainLeave {
+  0% {
+    top: 100px;
+    left: 400px;
+  }
+  100% {
+    top: 200px;
+    left: -1136px;
+  }
+}
+
+@-webkit-keyframes optionFail {
+  0% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+  25% {
+    transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes optionFail {
+  0% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+  25% {
+    transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+}
+
+@-webkit-keyframes optionTrue {
+  0% {
+    margin-top: -200px;
+    opacity: 0;
+  }
+  25% {
+    margin-top: -100px;
+    opacity: 0.5;
+  }
+  50% {
+    margin-top: -25px;
+    opacity: 0.8;
+  }
+  100% {
+    margin-top: -50px;
+    opacity: 1;
+  }
+}
+
+@keyframes optionTrue {
+  0% {
+    margin-top: -200px;
+    opacity: 0;
+  }
+  25% {
+    margin-top: -100px;
+    opacity: 0.5;
+  }
+  50% {
+    margin-top: -25px;
+    opacity: 0.8;
+  }
+  100% {
+    margin-top: -50px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes sca {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
+@keyframes sca {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
+.btn, #dialogs #part_3 a, #dialogs #part_4 a {
+  display: block;
+  position: absolute;
+  cursor: pointer;
+}

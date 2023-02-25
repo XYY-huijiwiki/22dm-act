@@ -1,0 +1,102 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="2018原创动力巡礼" />
+	<meta name="description" content="2018原创动力巡礼" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, width=640">
+	<meta name="format-detection" content="telephone=no, email=no"/>  
+	<title>2018原创动力巡礼</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<script src="../../../js/jweixin-1.0.0.js"></script>
+	<script src="../../../js/jquery-2.1.1.min.js"></script>
+	<script src="../../../js/vue.min.js"></script>
+</head>
+<body>
+<div id="all">
+	<div id="video_layer">
+		<canvas id="gameCanvas" width="500" height="640" style="display:none"></canvas>
+		<video id="videostart" preload="auto" poster="res/public/preload_bg.jpg" webkit-playsinline="true" playsinline="true" x5-video-player-type="h5" x-webkit-airplay="true" x5-video-player-fullscreen="true" x5-video-orientation="portraint" width="1137">
+			<source src="res/1.mp4" type="video/mp4" />
+			Your browser does not support the video tag.
+		</video>
+	</div>
+	<div id="dialogs"  v-bind:class="{'active':active!=''}">
+		<transition name="part_1"  @before-enter="part1Entry">
+			<div id="part_1" class="dialogs_layer interaction" v-show="active=='part_1'">
+				<a class="interaction_filter"></a>
+				<a class="title">请选出哪一物品才是指正灰太狼是卧底的证据呢?</a>
+				<div id="carrot" class="select" index="0">
+					<transition name="option_fail">
+						<a id="option_carrot" v-show="option_carrot"></a>
+					</transition>
+				</div>
+				<div id="file" class="select" index="1">
+					<transition name="option_true"  @after-enter="part1Complete">
+						<a id="option_file" v-show="option_file"></a>
+					</transition>
+				</div>
+				<div id="pan" class="select" index="2">
+					<transition name="option_fail">
+						<a id="option_pan" v-show="option_pan"></a>
+					</transition>
+				</div>
+			</div>
+		</transition>
+		<transition name="fade"  @before-enter="part2Entry" @after-leave="part2Complete">
+			<div id="part_2" class="dialogs_layer interaction" v-show="active=='part_2'">
+				<a class="interaction_filter"></a>
+				<a class="title">请帮助喜羊羊回到嘻哈号寻找回忆</a>
+				<a id="train"></a>
+				<div id="xi">
+					<div id="xi_run">
+						<a id="xi_1"></a>
+						<a id="xi_2"></a>
+						<a id="xi_3"></a>
+					</div>
+				</div>
+			</div>
+		</transition>
+		<transition name="fade" @after-leave="part3Complete">
+			<div id="part_3" class="dialogs_layer" v-show="active=='part_3'">
+				<a></a>
+			</div>
+		</transition>
+		<transition name="fade"  @before-enter="part4Entry" @after-leave="part4Complete">
+			<div id="part_4" class="dialogs_layer" v-show="active=='part_4'">
+				<img src="res/Public/end.jpg" width="1137" height="640"/>
+				<a id="btn_share" @click="onShare"></a>
+				<a id="btn_restart" @click="onRestart"></a>
+			</div>
+		</transition>
+		<transition name="fade">
+			<div id="dialogs_preload" class="dialogs_layer" v-show="active=='preload'">
+				<img src="res/Public/preload_bg.jpg" width="1137" height="640"/>
+				<div class="preload_precent">
+					<a class="precent_left"></a>
+					<a class="precent_main"></a>
+					<a class="precent_right"></a>
+					<span class="precent_word">0%</span>
+				</div>
+			</div>
+		</transition>
+		<transition name="fade">
+			<div id="dialogs_share" class="dialogs_layer" v-show="share" @click="onShare"></div>
+		</transition>
+	</div>
+</div>
+<div id="landscape"></div>
+<script src="../../../js/cocos2d-js-v3.13.js"></script>
+<script src="main.js"></script>
+<!-- <script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?b5f74d00a4e9152b939aae19dc2f3c0f";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+</script> -->
+</body>
+</html>
