@@ -1,0 +1,105 @@
+﻿body{
+	margin:0;
+	padding:0;
+	font-family:"Microsoft YaHei" ! important;
+}
+div,ul{
+	margin:0;
+	padding:0;
+}
+ul{
+	list-style:none;
+}
+#cs_all{
+	width:100%;
+	position:relative;
+}
+#cs_main{
+	margin:0 auto;
+	width:100%;
+	height:100%;
+	position:relative;
+}
+#cs_begin,#cs_go,#cs_question,#cs_last,#cs_share{
+	width:980px;
+	height:1543px;
+	position:absolute;
+	top:0;
+	left:0;
+	display:none;
+}
+#q_img,#l_img{
+	width:100%;
+	height:100%;
+	position:absolute;
+	z-index:5;
+	top:0;
+	left:0;
+}
+#b_a,#g_a,#q_a,#q_b,#q_p,#l_a,#l_b{
+	display:block;
+	position:absolute;
+	z-index:10;
+	cursor:pointer;
+}
+#q_a,#q_b{
+	width:774px;
+	height:110px;
+	border:0px solid red;
+	left:130px;
+}
+#q_a{
+	bottom:512px;
+}
+#q_b{
+	bottom:363px;
+}
+#q_p{
+	width:122px;
+	height:122px;
+	border:0px solid red;
+	left:145px;
+	bottom:76px;
+	display:none;
+	background:url(../images/p.jpg) no-repeat;
+}
+#l_a,#l_b{
+	width:260px;
+	height:141px;
+	border:0px solid red;
+	bottom:72px;
+}
+#l_a{
+	left:191.5px;
+}
+#l_b{
+	left:497px;
+}
+
+#cs_begin{
+	background:url(../images/1.jpg) no-repeat;
+	z-index:100;
+}
+#cs_go{
+	background:url(../images/2.jpg) no-repeat;
+	z-index:80;
+}
+#cs_question{
+	z-index:60;
+}
+#cs_last{
+	z-index:40;
+}
+#cs_share{
+	z-index:70;
+	background:url(../images/share.png) no-repeat;
+}
+
+#b_a,#g_a{
+	width:100%;
+	height:35%;
+	border:0px solid red;
+	position:absolute;
+	bottom:0;
+
+}

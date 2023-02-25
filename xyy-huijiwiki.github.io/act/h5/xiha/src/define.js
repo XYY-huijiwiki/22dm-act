@@ -1,0 +1,32 @@
+var jf = {};        // 定义自己的命名空间
+jf.EventName = {};  // 事件名字对象
+jf.EventName.MM_SELECT ="MM_SELECT";
+jf.EventName.MM_CLICK ="MM_CLICK";
+jf.EventName.MM_CREATE_RULE_LAYER ="MM_CREATE_RULE_LAYER";
+jf.EventName.MM_REMOVE_RULE_LAYER ="MM_REMOVE_RULE_LAYER";
+
+jf.EventName.GP_CREATE_DIALOGS_LAYER   = "GP_CREATE_DIALOGS_LAYER";
+jf.EventName.GP_REMOVE_DIALOGS_LAYER ="GP_REMOVE_DIALOGS_LAYER";
+jf.EventName.GP_CREATE_MENU_LAYER   = "GP_CREATE_MENU_LAYER";
+jf.EventName.GP_REMOVE_MENU_LAYER   = "GP_REMOVE_MENU_LAYER";
+jf.EventName.GP_CREATE_ICE_LAYER   = "GP_CREATE_ICE_LAYER";
+jf.EventName.GP_REMOVE_ICE_LAYER   = "GP_REMOVE_ICE_LAYER";
+jf.EventName.GP_UPDATE_SCORE ="GP_UPDATE_SCORE";
+jf.EventName.GP_UPDATE_LEVEL ="GP_UPDATE_LEVEL";
+jf.EventName.GP_UPDATE_HP ="GP_UPDATE_HP";
+jf.EventName.GP_GAME_OVER ="GP_GAME_OVER";
+jf.EventName.GP_SELECT ="GP_SELECT";
+jf.EventName.GP_CLICK ="GP_CLICK";
+jf.EventName.GP_COLLIDE ="GP_COLLIDE";
+jf.EventName.GP_REMOVE_BULLET ="GP_REMOVE_BULLET";
+jf.EventName.GP_UPDATE_SHIP_BLOOD ="GP_UPDATE_SHIP_BLOOD";
+
+
+
+
+jf.EventName.GS_SELECT ="GS_SELECT";
+jf.EventName.GS_CLICK ="GS_CLICK";
+// 配置对象
+var Config = {};
+Config.IS_UP_UNLOCK_KEY = "is_up_unlock_key";
+

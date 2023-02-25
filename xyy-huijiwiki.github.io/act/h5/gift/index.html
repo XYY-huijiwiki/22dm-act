@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="地球嘉年华" />
+	<meta name="description" content="抓住暑假的尾巴来点新鲜好玩的！羊羊邀你探寻地球的秘密！还能获得羊村大奖" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, width=640">
+	<title>地球嘉年华</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<script type="text/javascript" src="../../../js/jquery-2.1.1.min.js"></script>
+</head>
+
+<body>
+	<div id="all">
+		<section id="main">
+			<div id="main_top">
+
+			</div>
+			<div id="main_earth">
+				<img id="earth_bg" src="images/diqiu.png" width="425" height="434" />
+				<div id="earth_list">
+					<a id="earth_1"></a>
+					<a id="earth_2"></a>
+					<a id="earth_3"></a>
+					<a id="earth_4"></a>
+					<a id="earth_5"></a>
+					<a id="earth_6"></a>
+				</div>
+			</div>
+			<a id="btn_sign" class="btn" onclick="sign()"></a>
+			<a id="btn_record" class="btn" onclick="record()"></a>
+			<a id="btn_rule" class="btn" onclick="dialogs('rule')"></a>
+		</section>
+		<section id="dialogs">
+			<div id="dialogs_introduce" class="dialogs_layer">
+				<a class="dialogs_close" class="btn"></a>
+				<div id="introduce_wrap">
+					<div id="introduce_video"></div>
+					<img id="introduce_top" src="images/tb.png" width="563" height="275">
+					<img id="introduce_img" src="" width="640" height="618">
+					<ul id="introduce_wall_wrap">
+						<li>
+							<img id="introduce_wall_1" class="introduce_wall_small" src="" width="236" height="133">
+							<a class="introduce_wall_png"></a>
+						</li>
+						<li>
+							<img id="introduce_wall_2" class="introduce_wall_small" src="" width="236" height="133">
+							<a class="introduce_wall_png"></a>
+						</li>
+						<li>
+							<img id="introduce_wall_3" class="introduce_wall_small" src="" width="236" height="133">
+							<a class="introduce_wall_png"></a>
+						</li>
+						<li>
+							<img id="introduce_wall_4" class="introduce_wall_small" src="" width="236" height="133">
+							<a class="introduce_wall_png"></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div id="dialogs_record" class="dialogs_layer">
+				<div id="record_progress">
+					<a class="record_progress_1"></a>
+					<a class="record_progress_2"></a>
+					<a class="record_progress_3"></a>
+					<a class="record_progress_4">0/6</a>
+				</div>
+				<ul id="record_list">
+					<li class="record_list_1">
+						<img class="record_face" src="images/face.jpg" width="80" height="80" />
+						<a class="record_time"></a>
+						<a class="record_title"></a>
+					</li>
+				</ul>
+				<a class="dialogs_close"></a>
+			</div>
+			<div id="dialogs_prize" class="dialogs_layer">
+				<span id="prize_tips"></span>
+				<div id="prize_wrap">
+
+				</div>
+				<ul id="prize_list">
+					<li class="prize_1">
+						<img src="images/p/5.png" width="175" height="175" />
+					</li>
+					<li class="prize_2">
+						<img src="images/p/1.png" width="175" height="175" />
+					</li>
+					<li class="prize_3">
+						<img src="images/p/6.png" width="175" height="175" />
+					</li>
+					<li class="prize_4">
+						<img src="images/p/4.png" width="175" height="175" />
+					</li>
+					<li class="prize_5">
+						<img src="images/p/0.png" width="175" height="175" />
+					</li>
+					<li class="prize_6">
+						<img src="images/p/2.png" width="175" height="175" />
+					</li>
+					<li class="prize_7">
+						<img src="images/p/8.png" width="175" height="175" />
+					</li>
+					<li class="prize_8">
+						<img src="images/p/3.png" width="175" height="175" />
+					</li>
+					<li class="prize_9">
+						<img src="images/p/7.png" width="175" height="175" />
+					</li>
+				</ul>
+				<a id="prize_begin" onclick="prize.check()"></a>
+				<a class="dialogs_close"></a>
+			</div>
+			<div id="dialogs_award" class="dialogs_layer">
+				<input id="award_name" type="text" />
+				<input id="award_tel" type="text" />
+				<textarea id="award_address">
+			</textarea>
+				<span id="award_tips"></span>
+				<a id="award_post" onclick="award.check()"></a>
+				<a class="dialogs_close"></a>
+			</div>
+			<div id="dialogs_tip" class="dialogs_layer">
+				<div id="tip_wrap">
+					<img id="tip_image" src="" width="250" height="250" />
+				</div>
+			</div>
+			<div id="dialogs_rule" class="dialogs_layer">
+				<a class="dialogs_close"></a>
+			</div>
+			<div id="dialogs_download" class="dialogs_layer">
+				<div id="download_wrap">
+					<img id="download_src" src="" width="550" height="310" />
+					<a id="download_close"></a>
+				</div>
+			</div>
+			<div id="dialogs_share" class="dialogs_layer">
+
+			</div>
+			<div id="dialogs_ercode" class="dialogs_layer">
+				<img class="ercode_image" src="images/ercode.png" / width="458" height="534" />
+			</div>
+		</section>
+	</div>
+	<script src="../../../js/jweixin-1.0.0.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	<!-- <script>
+		var _hmt = _hmt || [];
+		(function () {
+			var hm = document.createElement("script");
+			hm.src = "//hm.baidu.com/hm.js?b5f74d00a4e9152b939aae19dc2f3c0f";
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(hm, s);
+		})();
+	</script> -->
+</body>
+
+</html>

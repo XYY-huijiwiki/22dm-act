@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>职场如战场，你是什么狼？</title>
+<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/cs.css" />
+</head>
+<body>
+<div id='wx_fx' style='margin:0 auto;display:none;'>
+<img src="images/fx.jpg">
+</div>
+<div id="cs_all">
+	<div id="cs_main">
+		<div id="cs_begin">
+			<a id="b_a" onClick="csBegin()"></a>
+		</div>
+		<div id="cs_go">
+			<a id="g_a" onClick="csGo()"></a>
+		</div>
+		<div id="cs_question">
+			<img id="q_img" src="images/3_1.jpg" />
+			<a id="q_a" onClick="addQ(1,1)"></a>
+			<a id="q_b" onClick="addQ(1,2)"></a>
+			<a id="q_p" onClick="addQ(1,1)"></a>
+		</div>
+		<div id="cs_last">
+			<img id="l_img" src="images/3_1.jpg" />
+			<a id="l_a" onClick="csAgain()"></a>
+			<a id="l_b" onClick="csShare()"></a>
+		</div>
+		<div id="cs_share">
+			
+		</div>
+	</div>
+</div> 
+<script type="text/javascript">
+var lock = false;
+var nowT = 0;
+var t = [{"src":"images/3_1.jpg","a":"addQ(1,1)","b":"addQ(1,2)"},
+{"src":"images/3_2.jpg","a":"addQ(1,3)","b":"addQ(1,4)"},
+{"src":"images/3_3.jpg","a":"addQ(1,3)","b":"addQ(1,4)"},
+{"src":"images/3_4.jpg","a":"addQ(0,0)","b":"addQ(0,1)"},
+{"src":"images/3_5.jpg","a":"addQ(0,2)","b":"addQ(0,3)"}];
+
+var l = ["images/4_1.jpg",
+"images/4_3.jpg",
+"images/4_2.jpg",
+"images/4_4.jpg"];
+
+var p = [0,0,0,1,1];
+
+$(function(){
+	$("#cs_begin").show();
+	$("#cs_share").click(function(){
+		$(this).hide();
+	});
+});
+function csBegin()
+{
+	$("#cs_begin").hide();
+	$("#cs_go").show();
+
+}
+function csGo()
+{
+	$("#cs_go").hide();
+	$("#cs_question").show();
+
+}
+function csShare()
+{
+	$("#cs_share").show();
+}
+function csAgain()
+{
+	location.reload()
+}
+function addQ(isAdd,i)
+{
+	//if(!lock)
+	{
+		//lock = false;
+		if(isAdd==1)  //继续跳到下一题,获取题数
+		{		
+			/*var img =new Image();   
+			img.src = t[i].src;
+			if (img.complete)  //本地有缓存
+			{
+				lock = true;
+			}
+			 img.onload = function () {     //图片加载完执行的事件      
+				lock = true;
+			}; 
+			*/
+			$("#q_img").attr("src",t[i].src);//换图
+			if(i!=0) //显示前一页
+			{
+
+				$("#q_p").attr("onclick","addQ(1,"+nowT+")").show();
+			}			
+			else
+			{
+				$("#q_p").hide();
+			}	
+			$("#q_a").attr("onclick",t[i].a); //跟换按钮
+			$("#q_b").attr("onclick",t[i].b);
+			nowT = i;
+			if(nowT>=3)
+				nowT = 0;
+		}
+		else//获取答案
+		{
+			$("#l_img").attr("src",l[i]).parent().fadeOut();
+			$("#cs_question").hide();
+			$("#cs_last").fadeIn();
+		}
+	
+	}
+	
+}
+</script>
+</body>
+</html>

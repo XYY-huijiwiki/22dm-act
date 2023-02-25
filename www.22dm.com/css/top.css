@@ -1,0 +1,216 @@
+*{
+    font-family:"Microsoft YaHei" ! important;
+}
+body, div, form, img, ul, li, span, tr, td, table, p {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	list-style: none;	
+	font-family:"Microsoft YaHei" ! important;
+}
+a{
+	text-decoration: none;
+}
+#all {
+	margin: 0 auto;
+	width: 100%;
+	height: auto;
+}
+.clear {
+	clear: both;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+/* ---------------------- 菜单栏样式 ------------------------- */		
+#topnav {
+	background: #2e3e4e;
+	width: 100%;
+	height: 131px;
+	margin: 0 auto 0 auto;
+	position: relative;
+	z-index: 400
+}
+#menu-wrap {
+	width: 960px;
+	height: 131px;
+	background: url(/images/nbj.jpg) no-repeat 50% 50%;
+	margin: 0 auto;
+	font-size: 14px;
+	font-weight: bold;
+	position: relative;
+}
+#ful {
+	width: 755px;
+	height: 30px;
+	border: 0px solid red;
+	position: relative;
+	top: 100px;
+	left: 205px;
+	color: #fff;
+}
+#ful li {
+	width: 70px;
+	height: 24px;
+	border: 0px solid red;
+	line-height: 25px;
+	float: left;
+	display: block;
+}
+#ful li a {
+	width: 100%;
+	height:100%;
+	color: #fff;
+    font-size:15px;
+	line-height: 22px;
+	display: block;
+}
+#ful span {
+	padding-left: 8px;
+	line-height: 24px;
+	display: block;
+}
+#ful span:hover a {
+	color: #000;
+}
+#zul-1 {
+	width: 87px;
+	height: auto;
+	position: relative;
+	z-index: 100;
+}
+#zul-1 span {
+	background: rgb(177,108,214);
+	width: 79px;
+}
+#zul-1 img {
+	width: 87px;
+	height: 79px;
+}
+#zul-2 {
+	width: 88px;
+	height: auto;
+	position: relative;
+	z-index: 100;
+}
+#zul-2 span {
+	background: rgb(241,177,67);
+	width: 80px;
+}
+#zul-2 img {
+	width: 88px;
+	height: 92px;
+}
+#zul-3 {
+	width: 83px;
+	height: auto;
+	position: relative;
+	z-index: 100;
+}
+#zul-3 span {
+	background: rgb(47,185,195);
+	width: 80px;
+}
+#zul-3 img {
+	width: 88px;
+	height: 92px;
+}
+#zul-4 {
+	width: 78px;
+	height: auto;
+	position: relative;
+	z-index: 100;
+}
+#zul-4 span {
+	background: rgb(113,177,57);
+	width: 71px;
+}
+#zul-4 img {
+	width: 97px;
+	height: 95px;
+	padding-left: 0;
+	position: relative;
+	right: 10px;
+}
+#zul-5 {
+	width: 97px;
+	height: auto;
+	position: relative;
+	z-index: 100;
+}
+#zul-5 span {
+	background: rgb(177,108,214);
+	width: 89px;
+}
+#zul-5 img {
+	width: 97px;
+	height: 92px;
+}
+#zul-6 {
+	width: 88px;
+	height: auto;
+	position: relative;
+	z-index: 100;
+}
+#zul-6 span {
+	background: rgb(227,114,168);
+	width: 80px;
+}
+#zul-6 img {
+	width: 88px;
+	height: 87px;
+}
+#zul-7 {
+	width: 91px;
+	height: auto;
+	position: relative;
+	z-index: 100;
+}
+#zul-7 span {
+	background: rgb(125,198,91);
+	width: 91px;
+}
+#zul-7 img {
+	width: 99px;
+	height: 97px;
+}
+#ful li div{
+	display: none;
+}
+#ful-1:hover div,#ful-2:hover div,#ful-3:hover div,#ful-4:hover div,#ful-5:hover div,#ful-6:hover div,#ful-7:hover div{
+	display: block;
+}
+#ful li:hover {
+	border-radius: 5px 5px 0 0;
+}
+#ful-1:hover {
+	background: rgb(177,108,214);
+}
+#ful-2:hover {
+	background: rgb(241,177,67);
+}
+#ful-3:hover {
+	background: rgb(47,185,195);
+}
+#ful-4:hover {
+	background: rgb(113,177,57);
+}
+#ful-5:hover {
+	background: rgb(177,108,214);
+}
+#ful-6:hover {
+	background: rgb(227,114,168);
+}
+#ful-7:hover {
+	background: rgb(125,198,91)
+}
+
+/*登录样式*/
+#login {
+	width: 200px;
+	height: 35px;
+	position: absolute;
+	right: 0px;
+}

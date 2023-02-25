@@ -1,0 +1,290 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="apple-touch-fullscreen" content="YES" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="viewport" content="width=640,user-scalable=no" />
+    <meta name="description" content="脑洞大开，挥发创意，DIY属于自己的小羊和小狼！" />
+    <title>智趣涂涂乐，画出角色好快乐</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/top.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/bottom.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script type="text/javascript" src="../../../js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="../../../js/lufylegend-1.10.1.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</head>
+
+<body>
+    <div id='wx_share' style='margin:0 auto;display:none;'>
+        <img src="images/share.jpg">
+    </div>
+    <!-- 菜单栏 开始-->
+    <div id="topnav">
+        <div id="menu-wrap">
+            <div id="login">
+                <iframe frameborder="0" scrolling="no" src="/status.aspx?return=/act/index.html"
+                    style="width:200px; height:35px;"></iframe>
+            </div>
+            <ul id="ful">
+                <li style="width: 40px; margin-right: 28px;"><span><a href="/index.html">首页</a></span></li>
+                <li id="ful-1" style="margin-right: 8px; width: 87px;">
+                    <span><a href="">最新资讯</a></span>
+                    <div id="zul-1"><span><a href="/news/list.html">最新资讯</a></span> <span><a
+                                href="/event.html">历年大事件</a></span> <img src="../../../images/menu-1.png" /> </div>
+                </li>
+                <li id="ful-2" style="margin-right: 10px; width: 88px;">
+                    <span><a href="">关于我们</a></span>
+                    <div id="zul-2"><span><a href="/about1.html">公司简介</a></span> <span><a
+                                href="/about2.html">公司荣誉</a></span><span><a href="/about3.html">主创团队</a></span> <span><a
+                                href="/about4.html">找到我们</a></span><img src="../../../images/menu-7.png" /> </div>
+                </li>
+                <li id="ful-3" style="margin-right: 10px; width: 88px;">
+                    <span><a href="">动漫情报</a></span>
+                    <div id="zul-3"><span><a href="/time.html">播放时间表</a></span> <span><a href="/tv.html">动画系列</a></span>
+                        <span><a href="/movie.html">大电影系列</a></span> <span><a href="/building.html">新研发系列</a></span>
+                        <img src="../../../images/menu-2.png" /> </div>
+                </li>
+                <li id="ful-4" style="margin-right: 5px; width: 79px;">
+                    <span><a href="">版刊物</a></span>
+                    <div id="zul-4"><span><a href="/book/bookShelf2.html">羊羊杂志</a></span> <span><a
+                                href="/book/bookShelf.html">羊羊图书</a></span> <img src="../../../images/menu-3.png" /> </div>
+                </li>
+                <li id="ful-5" style="margin-right: 14px; width: 97px;">
+                    <span><a href="">音乐舞台剧</a></span>
+                    <div id="zul-5"><span><a href="/carnival.html">羊羊人偶剧</a></span> <span><a
+                                href="/building.html">购票指南</a></span> <img src="../../../images/menu-4.png" /> </div>
+                </li>
+                <li id="ful-6" style="margin-right: 10px; width: 88px;">
+                    <span><a href="">卡通乐园</a></span>
+                    <div id="zul-6"><span><a href="/act.html">活动专区</a></span><span><a
+                                href="/painting/index.html">下载专区</a></span> <img src="../../../images/menu-5.png" /> </div>
+                </li>
+                <li id="ful-7" style="width: 99px;">
+                    <span><a href="">社会责任</a></span>
+                    <div id="zul-7"><span><a href="/CSR.html">公益短片</a></span> <span><a
+                                href="/public.html">羊光公益行动</a></span> <span><a href="/IPR.html">知识产权</a></span> <img
+                            src="../../../images/menu-6.png" /> </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 菜单栏 结束-->
+    <div class="clear"></div>
+    <div id="all_bg">
+        <div id="all">
+            <div id="dialogs_wrap"></div>
+            <div id="share-wrap"></div>
+            <div id="tips-wrap"></div>
+            <section id="s_draw">
+                <div id="canvas-wrap">
+                    loading...
+                </div>
+                <div id="enlager_ctrl">
+                    <a id="enlager_big" onclick="draw.enlarge(1)"></a>
+                    <a id="enlager_small" class="not" onclick="draw.enlarge(0)" class="not"></a>
+                    <a id="enlager_move" class="not"></a>
+                </div>
+                <div id="canvas-finish">
+                    <img id="canvas-finish-data" src="" width="1008" height="640" />
+                    <img id="save-tips" src="images/can.png" width="44" height="269" />
+                </div>
+                <div id="left-wrap">
+                    <div id="left-selector">
+                        <div id="left-selector-main">
+                            <a id="select_bg"></a>
+                            <a id="select_action" class="selected"></a>
+                            <a id="select_creat"></a>
+                            <a id="select_vote_1"></a>
+                        </div>
+                        <div id="left-selector-save">
+                            <a id="select_share" onclick="draw.share()"></a>
+                            <a id="select_upload" onclick="draw.upload.ask()"></a>
+                            <a id="select_vote_2"></a>
+                            <a id="select_back" onclick="draw.creat.back()"></a>
+                        </div>
+                    </div>
+                    <div id="selector_wrap">
+                        <!--底图选择面板-->
+                        <div id="bg_selector">
+                            <a id="bg_pre"></a>
+                            <a id="bg_next"></a>
+                            <ul id="bg_list">
+                                <li class="now" bg_src="bg/1.png"><a><img src="images/bg/1_1.jpg" /></a></li>
+                                <li bg_src="bg/2.png"><a><img src="images/bg/2_1.jpg" /></a></li>
+                                <li bg_src="bg/3.png"><a><img src="images/bg/3_1.jpg" /></a></li>
+                                <li bg_src="bg/4.png"><a><img src="images/bg/4_1.jpg" /></a></li>
+                                <li bg_src="bg/5.png"><a><img src="images/bg/5_1.jpg" /></a></li>
+                                <li bg_src="bg/6.png"><a><img src="images/bg/6_1.jpg" /></a></li>
+                                <li bg_src="bg/7.png"><a><img src="images/bg/7_1.jpg" /></a></li>
+                                <li bg_src="bg/8.png"><a><img src="images/bg/8_1.jpg" /></a></li>
+                                <li bg_src="bg/9.png"><a><img src="images/bg/9_1.jpg" /></a></li>
+                            </ul>
+                        </div>
+                        <!--工具面板-->
+                        <div id="action_selector" class="action_selector_0">
+                            <a id="action_1"></a>
+                            <a id="action_2"></a>
+                            <a id="action_3"></a>
+                            <a id="action_4"></a>
+                            <a id="action_5"></a>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div id="selector_dialogs">
+                    <!--颜色-->
+                    <div class="dialogs_section">
+                        <div id="color_plate">
+                            <a class="color_option_1" color="#AA6321"></a>
+                            <a class="color_option_2" color="#FCE1C4"></a>
+                            <a class="color_option_3" color="#FDED7B"></a>
+                            <a class="color_option_4" color="#F85C4B"></a>
+                            <a class="color_option_5" color="#46CBEC"></a>
+                            <a class="color_option_6" color="#97D318"></a>
+                            <a class="color_option_7" color="#EA6AAA"></a>
+                            <a class="color_option_8" color="#AEAEAE"></a>
+                            <a class="color_option_9" color="#F1A34B"></a>
+                            <a class="color_option_10" color="#8A97CC"></a>
+                        </div>
+                        <a id="color_pen" class="pen_1"></a>
+                        <a id="color_plate_close" onclick="draw.dialogs.close()"></a>
+                    </div>
+                    <!--粗细-->
+                    <div class="dialogs_section">
+                        <div class="d_s_top"></div>
+                        <div class="d_s_main">
+                            <img src="images/bxz.png" />
+                            <div id="thickness_selector">
+                                <a id="pen_small" class="selected" thickness="5"></a>
+                                <a id="pen_middle" thickness="10"></a>
+                                <a id="pen_big" thickness="15"></a>
+                            </div>
+                        </div>
+                        <div class="d_s_bottom"></div>
+                        <a class="d_s_close" onclick="draw.dialogs.close()"></a>
+                    </div>
+                    <!--画笔-->
+                    <div class="dialogs_section">
+                        <div class="d_s_top"></div>
+                        <div class="d_s_main">
+                            <img src="images/bix_1.png" />
+                            <img src="images/bix_2.png" />
+                            <div id="penType_selector">
+                                <a id="pen_normal" class="selected" brushType="normal"></a>
+                                <a id="pen_crayon" brushType="crayon"></a>
+                            </div>
+                        </div>
+                        <div class="d_s_bottom"></div>
+                        <a class="d_s_close" onclick="draw.dialogs.close()"></a>
+                    </div>
+                    <!--橡皮擦-->
+                    <div class="dialogs_section">
+
+                    </div>
+                    <!--清空-->
+                    <div class="dialogs_section">
+                        <div class="d_s_top"></div>
+                        <div class="d_s_main">
+                            你确定要清空画板吗?<br />
+                            <a class="btn_sure" onclick="draw.empty()"></a>
+                        </div>
+                        <div class="d_s_bottom"></div>
+                        <a class="d_s_close" onclick="draw.dialogs.close()"></a>
+                    </div>
+                    <!--生成面板-->
+                    <div class="dialogs_section">
+                        <div id="creat_selector">
+                            <img id="creat_selector_source" src="" width="695" height="441" />
+                            <img id="creat_selector_bg" src="images/wanc.png" width="742" height="474" />
+                            <a class="d_s_close" onclick="draw.creat.cancel()"></a>
+                            <a id="creat_sure" onclick="draw.creat.sure()"></a>
+                        </div>
+                    </div>
+                    <!--上传-->
+                    <div class="dialogs_section">
+                        <div class="d_s_top"></div>
+                        <div class="d_s_main">
+                            你确定要上传作品吗?<br />
+                            上传的作品将会显示在投票榜中。<br />
+                            注意:上传不文明作品可能会被封号处理。<br />
+                            <a class="btn_sure" onclick="draw.upload.sure()"></a>
+                        </div>
+                        <div class="d_s_bottom"></div>
+                        <a class="d_s_close" onclick="draw.upload.cancel()"></a>
+                    </div>
+                    <!--7切换底图-->
+                    <div class="dialogs_section">
+                        <div class="d_s_top"></div>
+                        <div class="d_s_main">
+                            你确定要切换底图?<br />
+                            切换地图后画板将会清空<br />
+                            <a class="btn_sure" onclick="draw.select()"></a>
+                        </div>
+                        <div class="d_s_bottom"></div>
+                        <a class="d_s_close" onclick="draw.dialogs.close()"></a>
+                    </div>
+                    <!--8正在上传-->
+                    <div class="dialogs_section">
+                        <div class="d_s_top"></div>
+                        <div class="d_s_main">
+                            正在上传中,请稍后!<br />
+                            注意:上传不文明作品可能会被封号处理。<br />
+                        </div>
+                        <div class="d_s_bottom"></div>
+                        <a class="d_s_close" onclick="draw.upload.cancel()"></a>
+                    </div>
+                    <!--9上传完成-->
+                    <div class="dialogs_section">
+                        <div class="d_s_top"></div>
+                        <div class="d_s_main">
+                            上传成功!<br />
+                            <a class="btn_sure" onclick="draw.upload.cancel()"></a>
+                        </div>
+                        <div class="d_s_bottom"></div>
+                        <a class="d_s_close" onclick="draw.upload.cancel()"></a>
+                    </div>
+                </div>
+            </section>
+            <section id="s_ranking">
+                <div id="ranking_btn">
+                    <a id="ranking_good" class="selected"></a>
+                    <a id="ranking_time"></a>
+                    <a id="ranking_back"></a>
+                </div>
+                <ul id="ranking_list"></ul>
+                <div id="ranking_dialogs">
+                    <!--浏览大图-->
+                    <div id="ranking_img_wrap">
+                        <img class="loading" src="../../../act/images/loading.gif" width="320" height="320" />
+                        <img id="ranking_img" src="" width="770" height="489" />
+                        <a id="ranking_dialogs_close"></a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <!-- 底部 开始-->
+    <div id="fnav">
+        <div id="fmain">
+            <ul>
+                <li><a href="http://e.t.qq.com/xiyangyang" target="_blank"><img src="../../../images/w_1.png" width="44"
+                            height="43"></a></li>
+                <li><a href="http://e.weibo.com/goatnwolf" target="_blank"><img src="../../../images/w_2.png" width="44"
+                            height="43"></a></li>
+                <li><a href="http://weibo.com/happyfamilycpe" target="_blank"><img src="../../../images/w_3.png" width="44"
+                            height="43"></a></li>
+                <li><a href="http://user.qzone.qq.com/622000246" target="_blank"><img src="../../../images/w_4.png" width="44"
+                            height="43"></a></li>
+            </ul>
+            <p>广东原创动力文化传播有限公司 2005-2016 保留所有权利粤 ICP备11078732号</p>
+        </div>
+    </div>
+    <!-- 底部 结束-->
+    <div class="clear"></div>
+</body>
+
+</html>

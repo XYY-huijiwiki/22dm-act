@@ -1,0 +1,278 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>《地球嘉年华》之智趣抢零食</title>
+		<meta name="description" content="智趣抢零食开始啦！都让开，第一名是懒羊羊的！" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="user-scalable=no, width=640">
+		<meta name="format-detection" content="telephone=no">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<script src="/js/zepto.min.js"></script>
+</head>
+<body style="padding:0; margin: 0; background: #000;">
+<div id="all">
+    <div id='wx_fx' style='display:none;'>
+	    <img src="images/share.jpg" width="400" height="400" >
+    </div>
+    <div id="share"></div>
+    <div id="paihanPanel">
+	    <div id="paihan_top">
+		    <a class="paihan_close" onclick="eat.rank.close()"></a>
+	    </div>
+	    <ul id="paihan_main">
+		
+	    </ul>
+	    <div id="paihan_bottom">
+		    <a class="paihan_prize" onclick="eat.getPrize()"></a>
+		    <span class="paihan_tips"></span>
+	    </div>
+    </div>
+    <div id="award">
+        <img src="images/xx.jpg" width="640" height="1008" />
+        <input id="award_name" type="text" placeholder="姓名" />
+        <input id="award_tel" type="text" placeholder="手机号码" />
+        <input id="award_address" type="text" placeholder="地址" />
+        <span id="award_tips"></span>
+        <a id="award_post" onclick="award.check()"></a>
+        <a id="award_close" onclick="award.close()"><img src="/act/h5/bus/images/nav_1.png" width="123" height="79" /></a>
+    </div>
+    <div id="main">
+        <canvas id="gameCanvas" width="640" height="960"></canvas>
+    </div>
+</div>
+<script src="js/cocos2d-x.js"></script>
+<script src="js/game.min.js"></script>
+<script>
+var token, openid, nickname, headimgurl, sex, country, province,act_id=21,debug;
+$(function(){
+	debug = false;
+	if(!debug)
+	{
+		$.ajax({
+			cache: false,
+			async: false,
+			type: "POST",
+			url: '/act/center/openIdCrossDomain.ashx',
+			data:{
+				"type": "GET",
+				"url": 'https://api.weixin.qq.com/sns/oauth2/access_token?appid=wxb61fdb0e387cbcc4&secret=2de4747ccccb04312e71e86708bfec66&code=' + getQueryString("code") + '&grant_type=authorization_code'
+			},
+			success: function (response) {
+				var result = JSON.parse(response);
+				token = result.access_token;
+				openid = result.openid;
+				if(typeof(openid)=="undefined")
+				{
+					location.href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb61fdb0e387cbcc4&redirect_uri=http%3a%2f%2fwww.22dm.com%2fact%2fh5%2feat%2findex.html&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect";
+				}
+				else
+				{
+					$.ajax({
+						cache: false,
+						async: false,
+						type: "POST",
+						url: '/act/center/openIdCrossDomain.ashx',
+						data: {
+							"type": "GET",
+							"url": 'https://api.weixin.qq.com/sns/userinfo?access_token='+token+'&openid='+openid+'&lang=zh_CN',
+						},
+						success: function (response) {
+							var r = JSON.parse(response);
+							eat.user = openid;
+							nickname = r.nickname;
+							headimgurl = r.headimgurl != "" ? r.headimgurl : 'http://www.22dm.com/act/h5/deep/static/img/icon.jpg';
+							sex = r.sex;
+							country = r.country;
+							province = r.province;		
+							eat.init();
+							cc.game.run();
+						}
+					});				
+				}
+			}
+		});		
+	}
+	else
+	{
+		eat.user = 'oTaiPuEUqBR9FQRGw5hvR0oyOAWo';
+		eat.init();
+		cc.game.run();
+	}
+	$("#share").click(function(){
+		$(this).hide();
+	});
+	$("body").css("height",$(window).height());
+	$("#award").css("top", ($(window).height() - 960) / 2);
+	$("#paihanPanel").css("top", ($(window).height() - 960) / 2);
+})
+var eat={
+	user:null,
+	score:0,
+	scoreList:null,
+	init:function(){
+		$.ajax({
+			cache: false,
+			async: false,
+			type: "POST",
+			url: '/act/h5/deep/doDeepScore.ashx',
+			data: {
+				"act_id":act_id,
+				"init": "1",
+				"user": eat.user
+			},
+			success: function (response) {
+				console.info(response);
+				var result = JSON.parse(response);
+				eat.score = result.score;
+				eat.scoreList = result.scoreList;
+				eat.addScoreList();		
+			}
+		});
+	},
+	rank:{
+		open:function(){
+			$("#paihanPanel").show();
+		},
+		close:function(){
+			$("#paihanPanel").hide();	
+		}		
+	},
+	share:{
+		open:function(){
+			$("#share").show();
+		},
+		close:function(){
+			$("#share").show();
+		}
+	},
+	addScoreList:function(){
+		var html = '';
+		var list = eat.scoreList;
+		for(var i=0;i<list.length;i++){//增加记录
+		    html += '<li><img class="p_image" src="' + list[i].json.img + '" width="60" height="60" /><a class="p_name">' + list[i].json.name + '</a><a class="p_time">' + list[i].json.addtime + '</a><a class="p_score">厉害了小伙，你一口气吃胖了' + list[i].json.score + '斤！！！！</a><a class="p_index">' + (i + 1) * 1 + '</a></li>';
+		}
+		$("#paihan_main").empty().append(html);
+	},
+	addScore:function(score){
+		var json = '{"addtime":"str_addtime","score":"'+score+'","name":"'+nickname+'","img":"'+headimgurl+'","sex":"'+sex+'","country":"'+country+'","province":"'+province+'"}';
+		$.ajax({
+			cache: false,
+			async: false,
+			type: "POST",
+			url: '/act/h5/deep/doDeepScore.ashx',
+			data: {
+				"act_id":act_id,
+				"init": "0",
+				"type": "add",
+				"user": eat.user,
+				"score":score,
+				"json":json
+			},
+			success: function (response) {
+				console.info('更新记录成功');
+				eat.init();
+			}
+		});	
+	},
+	getPrize: function () {
+	    var time = new Date();
+	    var now = time.getTime();
+	    if (now > Date.parse("2017/06/20 00:00:00")){
+	        var hasPrize = debug;
+	        for (var i = 0; i < eat.scoreList.length; i++) {
+	            if (eat.scoreList[i].user == openid) {
+	                hasPrize = true;
+	            }
+	        }
+	        if (hasPrize) {
+	            award.open();
+	        }
+	        else {
+	            $(".paihan_tips").empty().html('您本次没有上榜哦!');
+	            return false;
+	        }
+	    }
+	    else {
+	        $(".paihan_tips").empty().html('排行榜截止于2017-06-20,请于结束后再来领取奖品!');
+	        return false;
+	    }
+	}
+}
+var award = {
+    check: function (user) {
+        $("#award_tips").empty();
+        var name = $("#award_name").val();
+        var tel = $("#award_tel").val();
+        var address = $("#award_address").val();
+        var result = "";
+        if (name == "") {
+            result = "请输入收件人姓名!";
+        }
+        else if (tel.length != 11) {
+            result = "请输入11位收件人手机号码!";
+        }
+        else if (address == "" || address.length < 8) {
+            result = "请输入详细的收件人地址!";
+        }
+        if (result == "") { //都正确
+            var info = '{"name":"' + name + '","tel":"' + tel + '","address":"' + address + '"}';
+            award.post(info);
+        }
+        else {
+            $("#award_tips").text(result);
+            return false;
+        }
+    },
+    post: function (info) {
+        $.ajax({
+            cache: false,
+            async: false,
+            type: "POST",
+            url: '/act/h5/deep/doDeepScore.ashx',
+            data: {
+                "act_id": act_id,
+                "init": "0",
+                "type": "award",
+                "user": eat.user,
+                "info": info
+            },
+            success: function (response) {
+                var result = JSON.parse(response);
+                if (result.success) {
+                    alert(result.returnStr);
+                }
+                else {
+                    alert(result.returnStr);
+                }
+            }
+        });
+    },
+    open: function () {
+        $("#award").show();
+    },
+    close: function () {
+        $("#award").hide();
+    }
+}
+function dp_submitScore(score){
+	if(score>eat.score){
+		eat.score = score;
+		eat.addScore(score);
+	}
+}
+function getQueryString(name)
+{
+	var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+	var r = window.location.search.substr(1).match(reg);
+	if(r!=null)return  unescape(r[2]); return null;
+}
+</script>
+
+</body>
+</html>

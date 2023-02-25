@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8">
+    <meta name="description" content="震惊！《嫁人就嫁灰太狼》男主角竟然在这样的地方上班......" />
+	<meta name="apple-touch-fullscreen" content="YES">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="viewport" content="width=640,user-scalable=no">
+    <title>狼朗公司办公室开放日</title>
+	<link type="text/css" href="css/index.css" rel="stylesheet" />
+    <link rel="icon" href="images/share.jpg"> 
+    <script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="/js/lufylegend-1.10.1.min.js"></script>
+    <script type="text/javascript" src="/js/InteractivePNG-0.1.0.min.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>  
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+</head>
+<body>
+<div style='display:none;'>
+    <img src="http://www.22dm.com/act/h5/scene/images/share.jpg" width="300" height="300"/>
+</div>
+<div id="all">
+    <div style='display:none;'>
+        <img src="http://www.22dm.com/act/h5/scene/images/share.jpg" width="300" height="300" />
+    </div>
+	<section id="index">
+		<img class="b_img" src="images/b_1.jpg" width="640" height="1008" />
+		<a id="begin_road"></a>
+	</section>
+	<section id="road">
+		<img class="b_img" src="images/b_2.jpg" width="640" height="1008" />
+		<a id="road_1" onclick="monitor.start.road(1)"></a>
+		<a id="road_2" onclick="monitor.start.road(2)"></a>
+		<a id="road_back"></a>
+	</section>
+	<section id="map">
+		<div id="canvas-wrap">
+				loading...
+		</div>
+		<img id="btn_tips" src="images/btn/zy_ti.png" width="222" height="189"/>
+		<a id="btn_music" class=""></a>
+		<a id="btn_gyro" onclick="monitor.openGyro()"></a>
+		<a id="btn_select"><img src="images/btn/btn_select.png" width="172" height="72"/></a>
+	</section>
+	<section id="el_list">
+		<div id="el_main">
+			<div id="el_p_1">
+				<div class="el_dialogs">
+				</div>			
+			</div>
+			<div id="el_p_2">
+				<div class="el_dialogs">
+				</div>
+			</div>
+			<div id="el_p_3">
+				<div class="el_dialogs">
+				</div>
+			</div>
+		</div>
+		<a id="el_close" onclick="list.close(1)"></a>	
+		<a id="el_p_next" onclick="list.part(1)"></a>	
+		<a id="el_p_prv" onclick="list.part(2)"></a>	
+	</section>
+	<section id="game_list">
+		<div class="el_dialogs">
+			<img src="images/yx_1.png" width="600" height="842" />
+			<a class="game_link" href="http://www.22dm.com/tv/jyfy/" target="_blank"></a>
+		</div>		
+		<a id="game_close" onclick="list.close(2)"></a>
+	</section>
+</div>
+
+</body>
+</html>

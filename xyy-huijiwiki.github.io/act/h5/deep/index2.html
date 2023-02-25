@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="description" content="帮助喜羊羊冲出海底世界，重回青青草原吧！但要小心黑溜溜的袭击哦" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="user-scalable=no, width=640">
+  <meta name="format-detection" content="telephone=no">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+    <title>《深海历险记》之冲出海洋</title>
+    <link rel="stylesheet" type="text/css" href="static/css/index.css">
+    <!-- <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script> -->
+    <script src="static/js/zepto.min.js"></script>
+</head>
+<body>
+<div id='wx_fx' style='display:none;'>
+	<img src="static/img/icon.jpg" width="300" height="300" >
+</div>
+<div id="container">
+	<div id="guidePanel">
+		<a id="guide_paihan" class="paihan"></a>
+	</div>
+	<div id="gamepanel">
+		<div class="score-wrap">
+            <div class="heart"></div>
+            <span id="score">0</span>
+        </div>
+		<canvas id="stage" width="640" height="1008"></canvas>
+	</div>
+	<div id="gameoverPanel"></div>
+	<div id="resultPanel">
+        <div class="weixin-share"></div>
+        <a href="javascript:void(0)" class="replay"></a>
+        <div id="fenghao"></div>
+        <div id="scorecontent">
+        	您在<span id="stime" class="lighttext">2378</span>秒内捕获<span id="sscore" class="lighttext">21341</span>个海洋之星<br>超过了<span id="suser" class="lighttext">31%</span>的用户！
+        </div>
+        <div class="textc">
+        	<span class="btn1 share"></span>
+			<span class="btn2 paihan"></span>
+        </div>
+	</div>
+	<div id="paihanPanel">
+		<div id="paihan_top">
+			<a class="paihan_close" onclick="deep.closeP()"></a>
+		</div>
+		<ul id="paihan_main">
+			
+		</ul>
+		<div id="paihan_bottom">
+			<a class="paihan_prize" onclick="deep.getPrize()"></a>
+			<span class="paihan_tips"></span>
+		</div>
+		<div id="award">
+			<img src="../../../act/images/tx_bj.jpg" width="640" height="1008"/>
+			<input id="award_name" type="text" placeholder="姓名"/>
+			<input id="award_tel" type="text" placeholder="手机号码"/>
+			<input id="award_address" type="text" placeholder="地址"/>
+			<span id="award_tips"></span>
+			<a id="award_post" onclick="award.check()"></a>
+			<a id="award_close" onclick="award.close()"><img src="../../../act/h5/bus/images/nav_1.png" width="123" height="79"/></a>
+		</div>
+	</div>
+</div>
+<!-- <script>
+	var _hmt = _hmt || [];
+	(function () {
+		var hm = document.createElement("script");
+		hm.src = "//hm.baidu.com/hm.js?b5f74d00a4e9152b939aae19dc2f3c0f";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hm, s);
+	})();
+</script> -->
+<script src="static/js/index2.js"></script>
+</body>
+</html>

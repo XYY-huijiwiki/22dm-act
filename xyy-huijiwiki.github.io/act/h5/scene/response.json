@@ -1,0 +1,1662 @@
+{
+    "el_1": {
+        "good": "329",
+        "look": "2768",
+        "say": [
+            {
+                "cnt": "%u53C8%u9E1F%u53E3%u5C3C",
+                "time": "4-3"
+            },
+            {
+                "cnt": "wo%uFF01",
+                "time": "4-5"
+            },
+            {
+                "cnt": "%u53EF%u6015%uFF0C%u771F%u5FC3%u53EF%u6015",
+                "time": "4-17"
+            },
+            {
+                "cnt": "%u7EA2%u8389%u7F8E",
+                "time": "4-22"
+            },
+            {
+                "cnt": "...",
+                "time": "5-6"
+            },
+            {
+                "cnt": "%u3002%u3002%u3002%u3002%u3002%u3002",
+                "time": "6-17"
+            },
+            {
+                "cnt": "%u54C8%u54C8%u54C8%u54C8",
+                "time": "7-2"
+            },
+            {
+                "cnt": "%u7231%u4E11%u7F8E%uFF01",
+                "time": "7-15"
+            },
+            {
+                "cnt": "%u7EA2%u82B1%u5427",
+                "time": "7-25"
+            },
+            {
+                "cnt": "%u7231%u4E11%u7F8E",
+                "time": "8-24"
+            },
+            {
+                "cnt": "%u53EF%u6015%uFF01",
+                "time": "8-29"
+            },
+            {
+                "cnt": "%u6B23%u8D4F%u5FC3%u60A6%u76EE",
+                "time": "9-1"
+            },
+            {
+                "cnt": "666",
+                "time": "10-7"
+            },
+            {
+                "cnt": "%u6709%u5C0F%u5F3A%u554A",
+                "time": "10-8"
+            },
+            {
+                "cnt": "omgd",
+                "time": "10-25"
+            },
+            {
+                "cnt": "%u662F%u56E0%u4E3A%u4E00",
+                "time": "11-7"
+            },
+            {
+                "cnt": "%u4F60%u53C8%u7F8E",
+                "time": "12-23"
+            },
+            {
+                "cnt": "%u7231%u81ED%u7F8E%u5440%21%21%21",
+                "time": "2-13"
+            },
+            {
+                "cnt": "%u7D05%u8389%u7F8E",
+                "time": "3-11"
+            },
+            {
+                "cnt": "%u52A0%u6CB9%u52A0%u6CB9%uFF01",
+                "time": "4-5"
+            },
+            {
+                "cnt": "%u7EA2%u8389%u66F4%u7F8E",
+                "time": "4-21"
+            },
+            {
+                "cnt": "%u7EA2%u8389%u66F4%u7F8E",
+                "time": "5-18"
+            },
+            {
+                "cnt": "%u597D%u4E11%u554A",
+                "time": "5-26"
+            },
+            {
+                "cnt": "%u7EA2%u8389%u7F8E",
+                "time": "5-29"
+            },
+            {
+                "cnt": "%u54FC%u54FC%u54FC%uFF01",
+                "time": "7-5"
+            },
+            {
+                "cnt": "%u7EA2%u8389%u4E11%u516B%u602A",
+                "time": "7-8"
+            },
+            {
+                "cnt": "%u7EA2%u8389%u6700%u7F8E%uFF0C",
+                "time": "7-17"
+            },
+            {
+                "cnt": "hhhuuu",
+                "time": "10-6"
+            },
+            {
+                "cnt": "%uE33D%uE33D%uE33D%uE33D%uE33D",
+                "time": "12-7"
+            },
+            {
+                "cnt": "%u7EA2%u4E3D%u597D%u7F8E",
+                "time": "1-17"
+            },
+            {
+                "cnt": "%u64E6%u4F60%u7239",
+                "time": "1-25"
+            },
+            {
+                "cnt": "%u7EA2%u8389%u662F%u6700%u7F8E%u7684%uFF01%uFF01",
+                "time": "1-28"
+            },
+            {
+                "cnt": "%u5988%u8036%uFF01",
+                "time": "2-1"
+            },
+            {
+                "cnt": "%u51B7%u9759%u70B9%u8FD9%u4E2A%u662F%u9999%u9999%u554A",
+                "time": "3-6"
+            },
+            {
+                "cnt": "%u7231%u4E3D%u4E1D",
+                "time": "3-29"
+            },
+            {
+                "cnt": "%u4F60%u6CA1%u6709%u7EA2%u8389%u7F8E",
+                "time": "4-25"
+            },
+            {
+                "cnt": "%u516C%u544A%u623F%u95F4%u53F7GV%u53D1",
+                "time": "6-21"
+            },
+            {
+                "cnt": "%u91C7%u8D2D%u6B3E%u4E0D%u591F%u5927%u6DA6%u53D1%u5927%u6DA6%u53D1%u53C2%u4E0E%u8FC7%u4ED6%u7684",
+                "time": "6-21"
+            },
+            {
+                "cnt": "%u7EA2%u7EA2%u6700%u7F8E",
+                "time": "7-14"
+            },
+            {
+                "cnt": "%uD83D%uDC4E%uD83D%uDC4E%uD83D%uDC4E%uD83D%uDC4E",
+                "time": "8-20"
+            },
+            {
+                "cnt": "%u7EA2%u8389%u6700%u7F8E",
+                "time": "9-22"
+            },
+            {
+                "cnt": "%u4F60%u6CA1%u6709%u7EA2%u8389%u7F8E",
+                "time": "3-23"
+            },
+            {
+                "cnt": "%u8FD9%u4EBA%u4E0D%u884C%u5440",
+                "time": "3-24"
+            },
+            {
+                "cnt": "%u7EA2%u5229%u662F%u6700%u7F8E%u7684%u3002",
+                "time": "3-25"
+            },
+            {
+                "cnt": "%u5FC3%u673A%u5973%u5B69%u5C31%u662F%u53EF%u6015",
+                "time": "3-30"
+            },
+            {
+                "cnt": "%u7EA2%u4E3D%u7EDD%u5BF9%u662F%u6700%u7F8E%u7684%uFF0C%u5979%u957F%u7684%u592A%u4E00%u822C%u4E86",
+                "time": "4-7"
+            },
+            {
+                "cnt": "%u4F60%u4E5F%u5F88%u7F8E%uFF01%uD83D%uDE0D%uD83D%uDE0D",
+                "time": "4-23"
+            },
+            {
+                "cnt": "%u7EA2%u8389%u597D",
+                "time": "4-28"
+            },
+            {
+                "cnt": "%u5C31%u7B97%u6CA1%u6709%u7EA2%u8389%u597D%uFF0C%u4E5F%u6CA1%u6709%u5FC5%u8981%u8FD9%u4E48%u55B7%u5979%u5427",
+                "time": "6-27"
+            },
+            {
+                "cnt": "%u8FD9%u91CC%u7EA2%u8389%u7B2C%u4E00%u7F8E%u4F60%u7B2C%u4E8C",
+                "time": "7-28"
+            },
+            {
+                "cnt": "%u81EA%u5FF5%u597D%u4E11",
+                "time": "7-28"
+            },
+            {
+                "cnt": "%u4E0D%u53EB%u7EA2%u8389%uFF0C%u53EB%u7EA2%u592A%u72FC%uFF01",
+                "time": "7-29"
+            },
+            {
+                "cnt": "%u4F60%u4EEC%u4E3A%u4EC0%u4E48%u8981%u55B7",
+                "time": "9-24"
+            },
+            {
+                "cnt": "%u4F60%u597D%u3002",
+                "time": "10-2"
+            },
+            {
+                "cnt": "%u4F60%u597D%uFF0C%u5C0F%u5B9D%u8D1D%uFF01",
+                "time": "10-24"
+            },
+            {
+                "cnt": "%u4F60%u771F%u7F8E",
+                "time": "1-25"
+            },
+            {
+                "cnt": "%u6C34%u679C%u69A8%u6C41%u6211%u7231%u559D%u6C34%u679C%u69A8%u6C41",
+                "time": "1-31"
+            },
+            {
+                "cnt": "%u54C7%uFF0C%u8336%u827A%u5927%u5E08%u554A%uFF01",
+                "time": "2-6"
+            },
+            {
+                "cnt": "%u4F60%u597D%uFF0C%u5B9D%u8D1D",
+                "time": "3-12"
+            },
+            {
+                "cnt": "%u5475%u5475%u5475%u5475",
+                "time": "3-14"
+            },
+            {
+                "cnt": "666",
+                "time": "4-2"
+            },
+            {
+                "cnt": "%u4E0D%u662F%u4F1A%u53D1%u5149%u7684%u4F60%u89C9%u5F97%u90FD%u662F%u661F%u661F%uFF0C%u4E5F%u6709%u53EF%u80FD%u662F%u7535%u706F%u6CE1",
+                "time": "6-12"
+            },
+            {
+                "cnt": "5201314",
+                "time": "7-2"
+            },
+            {
+                "cnt": "%u5176%u5B9E%u4F60%u771F%u7684%u5F88%u98CE%u9A9A",
+                "time": "7-17"
+            },
+            {
+                "cnt": "%u4F60%u522B%u8FD9%u4E48%u81EA%u604B%u4E86%uFF01",
+                "time": "7-20"
+            },
+            {
+                "cnt": "%u597D%u597D%u597D",
+                "time": "7-29"
+            }
+        ]
+    },
+    "el_2": {
+        "good": "128",
+        "look": "2017",
+        "say": [
+            {
+                "cnt": "%u767D%u5927%u5927%u4F60%u5389%u5BB3%u4E86",
+                "time": "4-5"
+            },
+            {
+                "cnt": "%u5389%u5BB3%u4E86%u6211%u7684%u767D%u5927",
+                "time": "4-5"
+            },
+            {
+                "cnt": "%u5929%u5929%u90FD%u4E3A%u81EA%u5DF1%u4EE3%u8A00%3F%u5389%u5BB3%u4E86%u6211%u7684%u767D%u5927%u5927",
+                "time": "4-6"
+            },
+            {
+                "cnt": "%u5389%u5BB3%u4E86%u767D%u5927%u5927%28%u0E51%u2022%u0300%u3142%u2022%u0301%29%u0648%u2727",
+                "time": "4-18"
+            },
+            {
+                "cnt": "%u5389%u5BB3%u4E86%u767D%u5927%u5927",
+                "time": "5-3"
+            },
+            {
+                "cnt": "%u554A%u554A%u554A%u767D%u5927%u5927prprprprpr",
+                "time": "5-13"
+            },
+            {
+                "cnt": "%u5411%u5927%u4F6C%u4F4E%u5934",
+                "time": "5-29"
+            },
+            {
+                "cnt": "%u5389%u5BB3%u4E86",
+                "time": "7-22"
+            },
+            {
+                "cnt": "%u591A%u6C0F%u53EA%u662F%uD83D%uDE0A",
+                "time": "8-30"
+            },
+            {
+                "cnt": "%u767D%u767D%u767D%u73ED%u554A%uFF1F",
+                "time": "9-1"
+            },
+            {
+                "cnt": "%u6709%u4EBA%u554A%u767D%u5927%u5927",
+                "time": "10-8"
+            },
+            {
+                "cnt": "%u96BE%u770B%uFF0C%u96BE%u770B%uFF0C%u96BE%u770B%u3002",
+                "time": "10-20"
+            },
+            {
+                "cnt": "%u611B%u81ED%u7F8E",
+                "time": "10-25"
+            },
+            {
+                "cnt": "%u9738%u9053%u4E11",
+                "time": "12-31"
+            },
+            {
+                "cnt": "%u9B41%u529B%u4E8C%u767E%u4E94%u2026%u2026",
+                "time": "2-19"
+            },
+            {
+                "cnt": "I%u670D%u4E86you",
+                "time": "6-1"
+            },
+            {
+                "cnt": "%uD83D%uDC4E%uD83D%uDC4E%uD83D%uDC4E",
+                "time": "8-8"
+            },
+            {
+                "cnt": "%u767D%u5927%u5927%u5389%u5BB3%u4E86",
+                "time": "8-9"
+            },
+            {
+                "cnt": "%u80E1%u98DE%u7684%u8001%u653B%uFF08%u516C%uFF09",
+                "time": "1-1"
+            },
+            {
+                "cnt": "%u54C8%u54C8%u54C8%u54C8%u54C8",
+                "time": "1-12"
+            },
+            {
+                "cnt": "%u4E5F%u592A%u81ED%u7F8E%u4E86",
+                "time": "2-1"
+            },
+            {
+                "cnt": "%u81ED%u7F8E%u5927%u795E",
+                "time": "8-17"
+            },
+            {
+                "cnt": "%u771F%u81ED%u7F8E",
+                "time": "1-28"
+            },
+            {
+                "cnt": "%u771F%u81ED%u7F8E",
+                "time": "2-25"
+            },
+            {
+                "cnt": "%u5B9E%u5728%u7684%u96BE%u770B%u96BE%u770B%u96BE%u770B%uFF01%u4E11%uFF0C%u4E11%uFF0C%u4E11%uFF01",
+                "time": "3-22"
+            },
+            {
+                "cnt": "%u81EA%u604B%u72C2%uFF0C%u5475%u5475",
+                "time": "3-30"
+            },
+            {
+                "cnt": "%u54C8%u54C8%u54C8%u5389%u5BB3",
+                "time": "4-3"
+            },
+            {
+                "cnt": "%u6BD4%u82B1%u5FC3%u8D85%u4EBA%u8FD8%u81EA%u604B%u5462",
+                "time": "4-7"
+            },
+            {
+                "cnt": "%u4E11%u4E11%u4E11%u4E11%u4E11%u4E11%u4E11%u4E11%u4E11%u4E11%u4E11%u4E11",
+                "time": "4-28"
+            },
+            {
+                "cnt": "%u54A6%u54A6%u54A6%7E",
+                "time": "6-18"
+            },
+            {
+                "cnt": "%u771F%u81ED%u7F8E",
+                "time": "6-26"
+            },
+            {
+                "cnt": "%u54C8%u54C8%u54C8",
+                "time": "8-22"
+            },
+            {
+                "cnt": "%u6BD4%u82B1%u5FC3%u8D85%u4EBA%u8FD8%u81ED%u7F8E",
+                "time": "8-31"
+            },
+            {
+                "cnt": "%u4ED6%u8BA9%u6211%u60F3%u8D77%u4E86%u4E00%u53E5%u8BDD%uFF1A%u88C5%u903C%u88AB%u96F7%u5288",
+                "time": "1-18"
+            },
+            {
+                "cnt": "%u8FD9%u4E48%u4E11%u7684%uFF0C%u8FD8%u6562%u70AB%u8000",
+                "time": "2-6"
+            },
+            {
+                "cnt": "%u5176%u5B9E%u767D%u5927%u5927%u4E5F%u5F88%u5E05%uFF0C%u5E05%u7684%u50CF%u72D7%u4E00%u6837",
+                "time": "7-17"
+            },
+            {
+                "cnt": "%u4F60%u4E5F%u4E0D%u770B%u770B%u81EA%u5DF1%u957F%u5565%u6837%uFF0C%u548C%u72D7%u6BD4%uFF0C%u4F60%u8FDE%u5C41%u90FD%u4E0D%u662F",
+                "time": "7-17"
+            },
+            {
+                "cnt": "%u6211%u770B%u4F60%u6BD4%u732A%u8FD8%u4E11",
+                "time": "7-17"
+            },
+            {
+                "cnt": "%u4E11%u516B%u602A%u54C8%u54C8%u54C8%u54C8%u54C8",
+                "time": "7-26"
+            }
+        ]
+    },
+    "el_3": {
+        "good": "270",
+        "look": "2378",
+        "say": [
+            {
+                "cnt": "%u8981%u8FDF%u5230%u4E86%u54E6%21",
+                "time": "4-1"
+            },
+            {
+                "cnt": "%u80E1%u98DE%uFF0C%u4F60%u5FEB%u548C%u7EA2%u8389%u7ED3%u5A5A%u5427",
+                "time": "4-4"
+            },
+            {
+                "cnt": "%u77ED%u8DEF%u4E86%u4E0D%u4F1A%u6F0F%u7535%u5417%21",
+                "time": "4-6"
+            },
+            {
+                "cnt": "%u7B49%u7740%u88AB%u6263%u5DE5%u8D44%u5427%u54C8%u54C8%u54C8%u54C8",
+                "time": "4-6"
+            },
+            {
+                "cnt": "%u600E%u4E48%u90A3%u4E48%u6162",
+                "time": "4-13"
+            },
+            {
+                "cnt": "2333%u8981%u8FDF%u5230%u4E86%u54E6",
+                "time": "4-23"
+            },
+            {
+                "cnt": "233",
+                "time": "5-3"
+            },
+            {
+                "cnt": "%u54C8%u54C8%u54C8%u80E1%u98DE%u6211%u7684%uFF01%uFF01",
+                "time": "5-13"
+            },
+            {
+                "cnt": "%u554A%u554A%u7537%u53CB%u529B%u7206%u8868%uFF01%uFF01%uFF01%uFF08%u6BD4%u5FC3%uFF09",
+                "time": "5-13"
+            },
+            {
+                "cnt": "%u597D%u5E05%7E%7E",
+                "time": "5-13"
+            },
+            {
+                "cnt": "2333",
+                "time": "7-20"
+            },
+            {
+                "cnt": "%u6700%u8FD1%u73A9%u6CA1%u73A9%u6E38%u620F",
+                "time": "7-22"
+            },
+            {
+                "cnt": "%u597D%u5E05%7E%7E",
+                "time": "7-22"
+            },
+            {
+                "cnt": "%u82EF%u82EF%u82EF",
+                "time": "8-27"
+            },
+            {
+                "cnt": "%u3002%u5F88%u5E05",
+                "time": "10-1"
+            },
+            {
+                "cnt": "666",
+                "time": "11-20"
+            },
+            {
+                "cnt": "%u8981%u8FDF%u5230%u4E86%uFF01",
+                "time": "12-27"
+            },
+            {
+                "cnt": "%u8FDF%u5230%u4E86",
+                "time": "12-31"
+            },
+            {
+                "cnt": "%u8FDF%u5230%u4E86",
+                "time": "3-2"
+            },
+            {
+                "cnt": "%u8981%u8FDF%u5230%u4E86",
+                "time": "3-31"
+            },
+            {
+                "cnt": "%u7EA2%u8389%u559C%u6B22%u4F60",
+                "time": "4-5"
+            },
+            {
+                "cnt": "%u65B9%u4FBFv",
+                "time": "5-13"
+            },
+            {
+                "cnt": "2333%u8981%u9072%u5230%u4E86%u54E6",
+                "time": "5-15"
+            },
+            {
+                "cnt": "%u554A%u554A%u554A",
+                "time": "6-17"
+            },
+            {
+                "cnt": "%u80E1%u98DE%u538B%u529B%u597D%u5927",
+                "time": "6-17"
+            },
+            {
+                "cnt": "%u554A%u554A%u554A%u554A",
+                "time": "6-24"
+            },
+            {
+                "cnt": "%u554A%u554A%u554A%u554A%u554A",
+                "time": "7-6"
+            },
+            {
+                "cnt": "%28*%uFFE33%uFFE3%29%u256D%u2661",
+                "time": "7-17"
+            },
+            {
+                "cnt": "666",
+                "time": "8-8"
+            },
+            {
+                "cnt": "%28%u25CF%u309C%u2174%u309C%29%u30CE%u68D2%u68D2%u54D2%28%uA20D%u0417%uA20D%29%u256D%u2764%u7ED9%u4F60%u5C0F%u5FC3%u5FC3",
+                "time": "8-11"
+            },
+            {
+                "cnt": "%uFF1F%uFF1F%uFF1F",
+                "time": "1-6"
+            },
+            {
+                "cnt": "%u840C%u840C%u54D2",
+                "time": "1-25"
+            },
+            {
+                "cnt": "%u80E1%u98DE%u8D85%u53EF%u7231%uFF01%uFF01%uFF01%uFF01",
+                "time": "2-8"
+            },
+            {
+                "cnt": "%u52AA%u529B%u5DE5%u4F5C%u54DF%uFF01%uFF01",
+                "time": "2-8"
+            },
+            {
+                "cnt": "%u80E1%u98DE%u6700%u53EF%u7231%u4E86",
+                "time": "3-10"
+            },
+            {
+                "cnt": "%u8981%u8FDF%u5230%u4E86",
+                "time": "3-17"
+            },
+            {
+                "cnt": "%u7535%u68AF%u574F%u4E86",
+                "time": "4-12"
+            },
+            {
+                "cnt": "%u54C8%u54C8%u54C8",
+                "time": "7-20"
+            },
+            {
+                "cnt": "%u5475%u5475%u5475",
+                "time": "8-17"
+            },
+            {
+                "cnt": "%u597D%u559C%u6B22%u80E1%u98DE",
+                "time": "1-28"
+            },
+            {
+                "cnt": "%u597D%u53EF%u7231%28/%u03C9%uFF3C%29",
+                "time": "2-21"
+            },
+            {
+                "cnt": "%u30FE%28%u2740%u2579%u25E1%u2579%29%uFF89%7E",
+                "time": "2-22"
+            },
+            {
+                "cnt": "%u3002%u3002%u3002%u3002%u3002%u3002%u3002",
+                "time": "2-27"
+            },
+            {
+                "cnt": "%u8BB0%u5F97%u548C%u7EA2%u8389%u7EA6%u4F1A%u54E6%uD83D%uDC4D",
+                "time": "3-22"
+            },
+            {
+                "cnt": "%u8BB0%u5F97%u5B8F%u529B%u597D%u3002",
+                "time": "3-25"
+            },
+            {
+                "cnt": "Hyggv",
+                "time": "3-25"
+            },
+            {
+                "cnt": "%u80E1%u98DE%u5343%u4E07%u4E0D%u8981%u5FD8%u8BB0%u8DDF%u7EA2%u4E3D%u7EA6%u4F1A%u54DF%uFF01",
+                "time": "4-7"
+            },
+            {
+                "cnt": "%u7EA2%u8389%u9047%u5230%u5371%u9669%u65F6%u62FF%u51FA%u8D1D%u5854%u9B54%u68D2%u53D8%u8EABUltraman",
+                "time": "4-18"
+            },
+            {
+                "cnt": "%u8D1D%u5854%u9B54%u68D2%uFF0C%u8D1D%u5854%u9B54%u68D2%uFF0C%u53D1%u51FA%u5149%u8292",
+                "time": "4-20"
+            },
+            {
+                "cnt": "%u4E0D%u662F%u8FD9%u4E2A%u7EA2%u4E3D%uFF0C%u662F%u8FD9%u4E2A%u8389",
+                "time": "4-20"
+            },
+            {
+                "cnt": "%u5149%u4E4B%u56FD%u7684%u4F7F%u8005%u4E3A%u5730%u7403%u800C%u6765%uFF0C%u4ED6%u6765%u4E86woffy",
+                "time": "4-22"
+            },
+            {
+                "cnt": "%u80E1%u98DE%u7EA2%u8389%u6765%u76F8%u914D%u8FD8%u662F%u5934%u4E00%u56DE%uFF0C%uD83D%uDE2E%uD83D%uDE2E%uD83D%uDE2E%uD83D%uDE2E",
+                "time": "4-28"
+            },
+            {
+                "cnt": "%u80E1%u98DE%u7EA2%u8389%u6765%u76F8%u914D%u5929%u751F%u662F%u4E00%u5BF9%uD83D%uDE0D%uD83D%uDE0D%uD83D%uDE0D%uD83D%uDE0D",
+                "time": "4-28"
+            },
+            {
+                "cnt": "%u6709%u4E9B%u4EBA%u559C%u6B22%u5E72%u5E05%u54E5%uFF0C%u8FD9%u4E2A%u5E05%u54E5%u5C31%u5F88%u5E72%uD83E%uDD17%uD83E%uDD17",
+                "time": "5-3"
+            },
+            {
+                "cnt": "%u5386%u5BB3%uFF01",
+                "time": "5-3"
+            },
+            {
+                "cnt": "%u300A%u5AC1%u7070%u300B%u5171%u670926%u96C6%uFF0C%u4E3A%u4EC0%u4E48%u5404%u5927%u7F51%u7AD9%u53EA%u670924%u96C6",
+                "time": "5-5"
+            },
+            {
+                "cnt": "%u53EA%u6709%u534E%u6570TV%u4E0A%u670925%u548C26%u96C6",
+                "time": "5-5"
+            },
+            {
+                "cnt": "%u6211%u751F%u6C14",
+                "time": "5-24"
+            },
+            {
+                "cnt": "%u5728%u4E00%u8D77",
+                "time": "5-26"
+            },
+            {
+                "cnt": "%u7B2C%u4E8C%u5B63",
+                "time": "5-26"
+            },
+            {
+                "cnt": "%u6CA1%u7B2C%u4E8C%u5B63%u4E86%uFF0C%u545C%u545C%u545C",
+                "time": "6-14"
+            },
+            {
+                "cnt": "%u80E1%u98DE%u7CBE%u795E%uFF0C%u795D%u6211%u4E2D%u8003%u987A%u5229",
+                "time": "6-26"
+            },
+            {
+                "cnt": "%u80E1%u98DE%u662F%u4E2A%u597D%u7537%u4EBA",
+                "time": "7-17"
+            },
+            {
+                "cnt": "%u600E%u4E48%u90A3%u4E48%u60E8%u5462%uFF1F%u6BCF%u6B21%u4E0A%u73ED%u90FD%u662F9%3A01%u8FDF%u5230%uFF01",
+                "time": "7-29"
+            },
+            {
+                "cnt": "%u7231%u4E86%28%u2449%B0%u0437%B0%29-%u2661",
+                "time": "8-5"
+            },
+            {
+                "cnt": "886%uFF01",
+                "time": "8-17"
+            },
+            {
+                "cnt": "%u867D%u7136%u4ECA%u5E74%u624D%u770B%uFF0C%u4F463%u5E74%u540E%u5C45%u7136%u8FD8%u6709%u4EBA",
+                "time": "8-19"
+            },
+            {
+                "cnt": "%u597D%u60E8%u554A",
+                "time": "10-31"
+            },
+            {
+                "cnt": "%u54C8%u54C8%u3002",
+                "time": "12-20"
+            },
+            {
+                "cnt": "%u559C%u7F8A%u7F8A%u4E0E%u7070%u592A%u72FC",
+                "time": "1-10"
+            },
+            {
+                "cnt": "%u989D%u989D%u989D",
+                "time": "3-14"
+            },
+            {
+                "cnt": "%u6B22%u547C%uFF01%u80E1%u98DE%uFF01",
+                "time": "7-27"
+            }
+        ]
+    },
+    "el_4": {
+        "good": "131",
+        "look": "2050",
+        "say": [
+            {
+                "cnt": "%u4F60%u8FD8%u771F%u5FD9%u554A%u548B%u4E0D%u627E%u4E2A%u7537%u4EBA%u5AC1%u4E86",
+                "time": "4-4"
+            },
+            {
+                "cnt": "%u534E%u59D0%u534E%u59D0%u6700%u7F8E%u4E3D%uFF01MUA",
+                "time": "4-5"
+            },
+            {
+                "cnt": "%u52E4%u52B3%u662F%u6700%u7F8E%u7684%uFF01",
+                "time": "5-14"
+            },
+            {
+                "cnt": "%u4F60%u597D%u7F8E",
+                "time": "7-22"
+            },
+            {
+                "cnt": "%u4E11%u516B%u602A",
+                "time": "8-30"
+            },
+            {
+                "cnt": "%u4F60%u626B%u5730%u4E0D%u7528%u6234%u53E3%u7F69%u7684%u5417",
+                "time": "11-20"
+            },
+            {
+                "cnt": "%u534E%u59D0%uFF0C%u4E11%uFF01",
+                "time": "3-1"
+            },
+            {
+                "cnt": "%u7EA2%u8389%u6BD4%u4F60%u6F02%u4EAE%u591A%u5566",
+                "time": "5-3"
+            },
+            {
+                "cnt": "%u4E11%u516B%u602A",
+                "time": "5-15"
+            },
+            {
+                "cnt": "%u4E11%u516B%u602A%uFF01",
+                "time": "5-15"
+            },
+            {
+                "cnt": "%u4E11%u516B%u602A",
+                "time": "7-17"
+            },
+            {
+                "cnt": "%u4F60%u4EEC%u522B%u8FD9%u6837%u8BF4%uFF0C%u3002%u534E%u59D0%u53EF%u4EE5%u548C%u7EA2%u8389%u6BD4%uFF01%uFF01",
+                "time": "8-11"
+            },
+            {
+                "cnt": "%u7EB3%u5C3C%uFF1F%u4E11%u516B%u602A%u5440",
+                "time": "1-25"
+            },
+            {
+                "cnt": "%u534E%u59D0%u53EF%u68D2%u5566%uFF01%uFF01",
+                "time": "2-8"
+            },
+            {
+                "cnt": "%u626B%u5730%u4E0D%u7528%u6234%u53E3%u7F69%u4E0D%u4F1A%u545B%u7740%u5417%uFF1F",
+                "time": "2-12"
+            },
+            {
+                "cnt": "%u52B3%u52A8%u6700%u7F8E%u4E3D%u3002",
+                "time": "3-28"
+            },
+            {
+                "cnt": "%u4E11%u516B%u602A",
+                "time": "4-12"
+            },
+            {
+                "cnt": "%u4F60%u7D2F%u5417",
+                "time": "4-12"
+            },
+            {
+                "cnt": "%u4E11%u516B%u602A",
+                "time": "8-9"
+            },
+            {
+                "cnt": "%u4E11%u516B%u602A%u3002",
+                "time": "8-9"
+            },
+            {
+                "cnt": "%u4E11%u516B%u602A%uFF01",
+                "time": "9-22"
+            },
+            {
+                "cnt": "%u4E11%u516B%u602A",
+                "time": "9-22"
+            },
+            {
+                "cnt": "%u55EF%u55EF%u597D",
+                "time": "2-15"
+            },
+            {
+                "cnt": "%u4E11%u516B%u602A",
+                "time": "2-25"
+            },
+            {
+                "cnt": "%u522B%u81EA%u604B%u4E86%uFF0C%u52AA%u529B%u5DE5%u4F5C%u5427%uFF01",
+                "time": "3-22"
+            },
+            {
+                "cnt": "%u603B%u6709%u4E00%u4E2A%u4EBA%u4F1A%u559C%u6B22%u4F60%u52A0%u6CB9%u54E6%uFF0C%u4F60%u7ED9%u3002",
+                "time": "3-25"
+            },
+            {
+                "cnt": "%u5443%uFF0C%u6211%u4E5F%u4E0D%u77E5%u9053%u8BE5%u8BF4%u5979%u5565%u3002",
+                "time": "3-30"
+            },
+            {
+                "cnt": "%u534E%u59D0%u771F%u7684%u597D%u4E11",
+                "time": "4-20"
+            },
+            {
+                "cnt": "%u4F60%u4F1A%u53D1%u73B0",
+                "time": "5-4"
+            },
+            {
+                "cnt": "%u6211ggjjgjgjgjga",
+                "time": "5-4"
+            },
+            {
+                "cnt": "%u4E11%u516B%u602A",
+                "time": "6-26"
+            },
+            {
+                "cnt": "%u534E%u59D0%u6700%u68D2",
+                "time": "7-16"
+            },
+            {
+                "cnt": "%u52E4%u52B3%u3002",
+                "time": "7-17"
+            },
+            {
+                "cnt": "%u534E%u4E2A%u5C41%uFF01%uFF0C%u5E94%u8BE5%u53EB%u8001%u963F%u59E8%uFF01",
+                "time": "7-29"
+            },
+            {
+                "cnt": "%u5509%uD83D%uDE14",
+                "time": "8-20"
+            },
+            {
+                "cnt": "%u534E%u4E2A%u5C41%uFF01%uFF0C%u5E94%u8BE5%u53EB%u8001%u963F%u59E8%uFF01",
+                "time": "8-31"
+            },
+            {
+                "cnt": "%u4F60%u771F%u7F8E",
+                "time": "10-31"
+            },
+            {
+                "cnt": "%uD83D%uDE1D%uD83D%uDE1D%uD83D%uDE1D",
+                "time": "2-6"
+            },
+            {
+                "cnt": "%u4E11%u516B%u602A",
+                "time": "3-14"
+            },
+            {
+                "cnt": "%u597D%u52E4%u52B3",
+                "time": "6-12"
+            },
+            {
+                "cnt": "%u4EBA%u5BB6%u53EF%u52E4%u52B3%uFF0C%u90A3%u4F60%u8FD9%u4E2A%u4E11%u516B%u602A%u8FD8%u8BF4%u4EBA%u5BB6",
+                "time": "6-14"
+            },
+            {
+                "cnt": "%u6211%u611F%u89C9%u5728%u8FD9%u91CC%u91CC%u9762%u7684%u90FD%u4F1A%u81EA%u604B%u8FD8%u6709%u8FD9%u4E9B%u53EB%u534E%u59D0%u4E11%u516B%u602A",
+                "time": "6-14"
+            },
+            {
+                "cnt": "%u8FD8%u6709%u53EB%u8001%u963F%u59E8%u7684%u4EBA%u90FD%u4F1A%u81EA%u604B",
+                "time": "6-14"
+            }
+        ]
+    },
+    "el_5": {
+        "good": "413",
+        "look": "2758",
+        "say": [
+            {
+                "cnt": "%u5FEB%u70B9%u548C%u80E1%u98DE%u7ED3%u5A5A",
+                "time": "4-3"
+            },
+            {
+                "cnt": "%u7EA2%u8389%uFF0C%u771F%u7FA1%u6155%u4F60%u6211%u4E5F%u60F3%u8981%u80E1%u98DE%u8FD9%u6837%u7684%u7537%u4EBA",
+                "time": "4-4"
+            },
+            {
+                "cnt": "%u7EA2%u8389%u5973%u795Eqqqqq%uFF01",
+                "time": "4-5"
+            },
+            {
+                "cnt": "%u80E1%u98DE%u80E1%u98DE%u6211%u7231%u4F60",
+                "time": "4-13"
+            },
+            {
+                "cnt": "6666",
+                "time": "4-25"
+            },
+            {
+                "cnt": "%u554A%u554A%u554A%u554A%u7EA2%u8389%u7684%u5C0F%u5446%u6BDB%7E%7E",
+                "time": "5-13"
+            },
+            {
+                "cnt": "%uFF01%uFF01%uFF01",
+                "time": "5-14"
+            },
+            {
+                "cnt": "%u7EA2%u8389%u6211%u7231%u4F60%uFF01",
+                "time": "5-21"
+            },
+            {
+                "cnt": "%u4E00%u3002%u3002%u3002%u3002",
+                "time": "6-19"
+            },
+            {
+                "cnt": "%u5566%u5566%u5566%u5566%u565C%uFF0C%u7EA2%u8389%u5973%u795E%uFF01%u2764%uFE0F%u2764%uFE0F%u2764%uFE0F",
+                "time": "6-26"
+            },
+            {
+                "cnt": "2333333",
+                "time": "7-2"
+            },
+            {
+                "cnt": "%u5FEB%u70B9%u548C%u80E1%u98DE%u7ED3%u5A5A%u5427%u5566%u5566%u5566",
+                "time": "7-5"
+            },
+            {
+                "cnt": "%u7ED3%u5A5A%u50BB",
+                "time": "7-13"
+            },
+            {
+                "cnt": "%u548C%u80E1%u98DE%u7ED3%u5A5A%u5427%uFF0C%u5728%u4E00%u8D77%uFF0C%u5728%u4E00%u8D77",
+                "time": "8-22"
+            },
+            {
+                "cnt": "%u7EA2%u8389%u6211%u7231%u4F60",
+                "time": "8-24"
+            },
+            {
+                "cnt": "%u7EA2%u8389%u5973%u795E%uFF0C%u6211%u7231%u4F60",
+                "time": "8-24"
+            },
+            {
+                "cnt": "%u6211%u7231%u4F60",
+                "time": "8-25"
+            },
+            {
+                "cnt": "L0%7E",
+                "time": "8-29"
+            },
+            {
+                "cnt": "666",
+                "time": "10-7"
+            },
+            {
+                "cnt": "666",
+                "time": "10-7"
+            },
+            {
+                "cnt": "%u7EA2%u8389%uFF0C%u7EA2%u8389",
+                "time": "10-19"
+            },
+            {
+                "cnt": "%u5566%u4E00%u5B9A%u8981",
+                "time": "11-19"
+            },
+            {
+                "cnt": "%u8D85%u6F02%u4EAE%u7684%u7EA2%u5229",
+                "time": "11-20"
+            },
+            {
+                "cnt": "%u6709%u7EED%u96C6%u5417%uFF1F%u597D%u671F%u5F85%u6709%u7EED%u96C6",
+                "time": "2-1"
+            },
+            {
+                "cnt": "%u597D%u7F8E%u5440",
+                "time": "2-5"
+            },
+            {
+                "cnt": "%u7EA2%u8389%u6211%u60F3%u4F60%u7A7F%u6CF3%u88C5",
+                "time": "3-17"
+            },
+            {
+                "cnt": "%u5E72%u561B%u5462",
+                "time": "4-19"
+            },
+            {
+                "cnt": "%u5973%u795E%u5973%u795E",
+                "time": "6-18"
+            },
+            {
+                "cnt": "%u7EA2%u8389%uFF0C%u6211%u5E2E%u4F60%u5E72",
+                "time": "6-18"
+            },
+            {
+                "cnt": "%u5E0D%u4F60%u8001%u9648",
+                "time": "6-24"
+            },
+            {
+                "cnt": "%u7ED3%u4E2App%uFF01%uFF01%uFF01",
+                "time": "6-24"
+            },
+            {
+                "cnt": "%u53EF%u7231%u7684%u5973%u4EBA",
+                "time": "6-24"
+            },
+            {
+                "cnt": "%u4F60%u597D%u5417",
+                "time": "6-24"
+            },
+            {
+                "cnt": "%u8D5E%u8D5E%u8D5E%u8D5E%u8D5E",
+                "time": "7-18"
+            },
+            {
+                "cnt": "%u7EA2%u9152%u3002",
+                "time": "11-19"
+            },
+            {
+                "cnt": "%u4F60%u597D%u6211%u4EEC%u80FD%u4E0D%u80FD%u4EA4%u670B%u53CB",
+                "time": "12-7"
+            },
+            {
+                "cnt": "%u6211%u7231%u4F60",
+                "time": "1-24"
+            },
+            {
+                "cnt": "%u8001%u5A46%u8001%u5A46%u6211%u7231%u4F60%u4E00%u5929%u4E0D%u8DEA%u5BF9%u4E0D%u8D77%u4F60",
+                "time": "1-25"
+            },
+            {
+                "cnt": "%uE40B%uE40B%uE40B%uE40B",
+                "time": "1-28"
+            },
+            {
+                "cnt": "%u6211%u4E0D%u7231%u4F60%u4E86%u3002",
+                "time": "1-28"
+            },
+            {
+                "cnt": "%u4E0D%u7231%u4F60",
+                "time": "1-28"
+            },
+            {
+                "cnt": "%u559C%u6B22%u4F60",
+                "time": "2-2"
+            },
+            {
+                "cnt": "%u559C%u6B22%u4F60",
+                "time": "2-19"
+            },
+            {
+                "cnt": "%u4F60%u597D%u5417",
+                "time": "2-19"
+            },
+            {
+                "cnt": "%u7B2C%u4E8C%u5B63",
+                "time": "3-2"
+            },
+            {
+                "cnt": "%u89E3%u653E%u7891%u522B%u53D1%u5475%u5475",
+                "time": "3-26"
+            },
+            {
+                "cnt": "%u590F%u5B89%u5B89",
+                "time": "3-29"
+            },
+            {
+                "cnt": "%u4E2A%u4E2A%u90FD%u5E72%u54C8%u5462%u513F%u7AE5%u63D0%u4F9B",
+                "time": "6-21"
+            },
+            {
+                "cnt": "%u7EA2%u8389%u633A%u597D",
+                "time": "7-24"
+            },
+            {
+                "cnt": "%u7EA2%u8389%u5973%u795E%u8981%u548C%u80E1%u98DE%u597D%u597D%u7684",
+                "time": "8-7"
+            },
+            {
+                "cnt": "%u4F60%u597D%u7F8E",
+                "time": "9-1"
+            },
+            {
+                "cnt": "%u4F60%u597D%u5440",
+                "time": "9-20"
+            },
+            {
+                "cnt": "%u7B2C%u4E8C%u5B63",
+                "time": "1-2"
+            },
+            {
+                "cnt": "%u597D%u7F8E%u554A",
+                "time": "2-4"
+            },
+            {
+                "cnt": "%u4F60%u597D%uFF01",
+                "time": "2-17"
+            },
+            {
+                "cnt": "%u4F60%u592A%u7F8E%u4E86%uFF0C%u5FEB%u548C%u80E1%u98DE%u7ED3%u5A5A%u5427",
+                "time": "3-23"
+            },
+            {
+                "cnt": "%u7EA2%u592A%u72FC%u7684%u4EBA%u95F4%u4F53%u4E00%u5B9A%u662FUltraman",
+                "time": "4-18"
+            },
+            {
+                "cnt": "%u4F60%u4ECA%u5929%u771F%u7F8E%uFF01%uD83D%uDE0D%uD83D%uDE0D",
+                "time": "4-23"
+            },
+            {
+                "cnt": "%u697C%u4E0B%u4F60%u5728%u8BF4%u4E00%u904D%u6211%u5C31%u53D8%u6210Ultraman%u5F04si%u4F60",
+                "time": "4-24"
+            },
+            {
+                "cnt": "%u80E1%u98DE%u7EA2%u8389%u5929%u751F%u662F%u4E00%u5BF9%uD83D%uDE0D%uD83D%uDE0D%uD83D%uDE18%uD83D%uDE18%uD83D%uDC8F",
+                "time": "4-28"
+            },
+            {
+                "cnt": "%uFF08%uFF61%F2%u2200%F3%uFF61%uFF09",
+                "time": "5-2"
+            },
+            {
+                "cnt": "%28%u0E51%3E%u0602%3C%u0E51%uFF09",
+                "time": "5-2"
+            },
+            {
+                "cnt": "%u6211%u8981%u628A%u4F60%u5F04%u5F97%u7CBE%u5C3D%u4EBA%u4EA1",
+                "time": "5-3"
+            },
+            {
+                "cnt": "%u300A%u5AC1%u7070%u300B%u5171%u670926%u96C6%uFF0C%u4E3A%u4EC0%u4E48%u5728%u5404%u5927%u7F51%u7AD9%u53EA%u670924%u96C6",
+                "time": "5-5"
+            },
+            {
+                "cnt": "%u51FA%u7B2C%u4E8C%u5B63%u7684%u6982%u7387%u5F88%u5927",
+                "time": "5-5"
+            },
+            {
+                "cnt": "%u7B2C%u4E8C%u5B63%uFF0C%u554A%u554A%u554A%u554A%u554A%u554A",
+                "time": "5-24"
+            },
+            {
+                "cnt": "%u4ECA%u5929%u4E0D%u662F20%u5E745%u670824%u53F7%u5417%uFF1F",
+                "time": "5-24"
+            },
+            {
+                "cnt": "%u54CE%uFF0C%u7B2C%u4E8C%u5B63",
+                "time": "5-31"
+            },
+            {
+                "cnt": "%u592A%u7F8E%u4E86",
+                "time": "6-1"
+            },
+            {
+                "cnt": "sorry%u8BF4%u9519%u4E86%u53EF%u80FD%u4E0D%u4F1A%u518D%u6709%u7B2C%u4E8C%u5B63%u4E86%u6211%u9053%u6B49",
+                "time": "6-8"
+            },
+            {
+                "cnt": "%u662F%u6CA1%u6709%u4E86",
+                "time": "6-11"
+            },
+            {
+                "cnt": "%u5AC1%u7070%u4E8F%u4E86",
+                "time": "6-11"
+            },
+            {
+                "cnt": "%u6CA1%u7B2C%u4E8C%u5B63%u4E86%uFF0C%u545C%u545C%u545C",
+                "time": "6-14"
+            },
+            {
+                "cnt": "%u7EA2%u8389%uFF0C%u80E1%u98DE%u6C38%u8FDC%u662F%u4F60%u6700%u575A%u5B9E%u7684%u76FE%u724C%uFF01",
+                "time": "6-15"
+            },
+            {
+                "cnt": "%u53EF%u662F%u6CA1%u7B2C%u4E8C%u5B63%u4E86",
+                "time": "6-17"
+            },
+            {
+                "cnt": "%u7EA2%u8389%u597D%u7403",
+                "time": "6-22"
+            },
+            {
+                "cnt": "%u597D%u4E11%u3002",
+                "time": "6-27"
+            },
+            {
+                "cnt": "%u4E0D%uFF0C%u7EA2%u8389%u6700%u6F02%u4EAE",
+                "time": "6-27"
+            },
+            {
+                "cnt": "%u6F02%u4EAE%uFF5E",
+                "time": "6-29"
+            },
+            {
+                "cnt": "%u8001%u5A18%u7684%u5973%u795E",
+                "time": "7-14"
+            },
+            {
+                "cnt": "%u5C45%u7136%u8FD8%u6709%u4EBA%uFF01%u597D%u611F%u52A8%uD83D%uDE39",
+                "time": "7-24"
+            },
+            {
+                "cnt": "%u7231%u4F60%u54DF%uFF01",
+                "time": "7-27"
+            },
+            {
+                "cnt": "%u6211%u5E2E%u4F60%u5427",
+                "time": "7-28"
+            },
+            {
+                "cnt": "%u6F02%u4EAE%u7684%u5973%u4EBA",
+                "time": "7-28"
+            },
+            {
+                "cnt": "%u7EA2%u592A%u72FC%uFF1F",
+                "time": "7-28"
+            },
+            {
+                "cnt": "%u4F60%u4EEC%u8FD9%u662F%u5728%u5938%u5979%uFF0C%u4E0D%u662F%u5728%u5410%u69FD%u5979%uFF01",
+                "time": "7-29"
+            },
+            {
+                "cnt": "%u597D%u6F02%u4EAE",
+                "time": "7-29"
+            },
+            {
+                "cnt": "%u6211%u5E2E%u4F60",
+                "time": "8-5"
+            },
+            {
+                "cnt": "%u8D70%u4EBA%u5427%u4F60%u8FD9%u72FC%u7CBE",
+                "time": "8-13"
+            },
+            {
+                "cnt": "%u5BF9%u4E0D%u8D77%u8BF4%u9519%u4E86%u521A%u624D%u6709%u70B9%u53D1%u706B%u8DDF%u522B%u4EBA",
+                "time": "8-13"
+            },
+            {
+                "cnt": "%u7EA2%u592A%u72FC",
+                "time": "8-17"
+            },
+            {
+                "cnt": "%u5C45%u7136%u73B0%u5728%u8FD8%u6709%u4EBA%u53D1%u8BDD",
+                "time": "8-19"
+            },
+            {
+                "cnt": "%u771F%u6F02%u4EAE",
+                "time": "8-28"
+            },
+            {
+                "cnt": "%u4F60%u597D%u554A",
+                "time": "9-19"
+            },
+            {
+                "cnt": "%u6211%u548C%u4F60%u7ED3%u5A5A%u5427",
+                "time": "10-23"
+            },
+            {
+                "cnt": "%u6211%u60F3%u548C%u4F60%u7ED3%u5A5A%uFF0C%u53EF%u4EE5%u5417%uFF1F%u5C0F%u516C%u4E3B%u3002",
+                "time": "10-24"
+            },
+            {
+                "cnt": "%u5A36%u4F60%u5427",
+                "time": "10-25"
+            },
+            {
+                "cnt": "%u989C%u503C%u597D%u9AD8",
+                "time": "11-1"
+            },
+            {
+                "cnt": "%uD83D%uDC4D%uD83D%uDC4D%uD83D%uDC4D",
+                "time": "1-14"
+            },
+            {
+                "cnt": "%u6211%u559C%u6B22%u4F60%u3002",
+                "time": "3-7"
+            },
+            {
+                "cnt": "%u55E8%uFF0C%u4F60%u597D%u5440",
+                "time": "3-14"
+            },
+            {
+                "cnt": "%u55E8%u8D77%u6765%u5427",
+                "time": "3-14"
+            },
+            {
+                "cnt": "%u8D85%u7F8E%u7EA2%u7EA2%u53CC%u9505%u5408%u74A7%u5929%u4E0B%u65E0%u654C%21",
+                "time": "7-17"
+            },
+            {
+                "cnt": "%u5927%u5BB6%u90FD%u662F%u8FD9%u6837%u7684",
+                "time": "7-26"
+            },
+            {
+                "cnt": "%u7070%u592A%u72FC%3A%u6211%u7231%u5E73%u5E95%u9505",
+                "time": "7-26"
+            },
+            {
+                "cnt": "%u679C%u7136%u8981%u5AC1%u5C31%u5AC1%u7070%u592A%u72FC%uE00E%uE00E",
+                "time": "8-8"
+            },
+            {
+                "cnt": "%u7EA2%u8389%u597D%u7F8E",
+                "time": "8-9"
+            }
+        ]
+    },
+    "el_6": {
+        "good": "113",
+        "look": "1940",
+        "say": [
+            {
+                "cnt": "%u5475%u5475%u5475%u4E0D%u4F1A%u5427%u8FD9%u4E48%u7C97%u9C81%u554A",
+                "time": "6-13"
+            },
+            {
+                "cnt": "%u80F8%u808C%u80FD%u5DE6%u53F3%u79FB%u52A8%uFF1F",
+                "time": "8-26"
+            },
+            {
+                "cnt": "......",
+                "time": "10-1"
+            },
+            {
+                "cnt": "%28%u0E51%u2022.%u2022%u0E51%29",
+                "time": "1-25"
+            },
+            {
+                "cnt": "%u60F3%u77F3%u5934",
+                "time": "2-5"
+            },
+            {
+                "cnt": "%u5475%u5475%u5475",
+                "time": "3-4"
+            },
+            {
+                "cnt": "%u50CF%u6253%u52AB%uFF01",
+                "time": "3-18"
+            },
+            {
+                "cnt": "%u7C97%u9C81%uFF0C%u7C97%u66B4",
+                "time": "5-3"
+            },
+            {
+                "cnt": "%u5475%u5475%u5475",
+                "time": "5-6"
+            },
+            {
+                "cnt": "%u6211%u4E00%u6839%u6307%u5934%u5C31%u6273%u5012%u4F60",
+                "time": "6-18"
+            },
+            {
+                "cnt": "%u5475%u5475%u5475%u5475%u5475%u5475%u5475%u5475%u5475%u5475%u5475%u5475",
+                "time": "6-27"
+            },
+            {
+                "cnt": "%u5475%u5475%u5475%u5475",
+                "time": "6-27"
+            },
+            {
+                "cnt": "%u808C%u8089%u80FD%u79FB%u52A8",
+                "time": "11-3"
+            },
+            {
+                "cnt": "%u6211%u597D%u4F69%u670D",
+                "time": "12-7"
+            },
+            {
+                "cnt": "%u65E5%u4F60%u5988%u903C",
+                "time": "1-25"
+            },
+            {
+                "cnt": "%u4F60%u7684%u4EBA%u751F",
+                "time": "3-1"
+            },
+            {
+                "cnt": "%u6211%u7231%u4F60",
+                "time": "5-18"
+            },
+            {
+                "cnt": "%u60F3%u6253%u4F60",
+                "time": "9-1"
+            },
+            {
+                "cnt": "%u8FD9%u4E9B%uFF0C",
+                "time": "10-6"
+            },
+            {
+                "cnt": "%u4E0D%u4F1A%u8BF4%u8BF4%uFF0C",
+                "time": "10-6"
+            },
+            {
+                "cnt": "%u5475%u5475%u50CF%u4E2A%u5356%u732A%u8089%u7684",
+                "time": "1-28"
+            },
+            {
+                "cnt": "%u6211%u4E3A%u4F60%u7684%u667A%u5546%u582A%u5FE7",
+                "time": "3-23"
+            },
+            {
+                "cnt": "%u4F30%u8BA1%u8FDE%u5965%u7279%u66FC%u90FD%u6253%u4E0D%u8FC7%uD83D%uDE1C%uD83D%uDE1C%uD83D%uDE1C",
+                "time": "4-25"
+            },
+            {
+                "cnt": "%u56DB%u80A2%u53D1%u8FBE%u5934%u8111%u7B80%u5355%uD83D%uDC4E%uD83D%uDC4E%uD83D%uDC4E%uD83D%uDC4E%uD83D%uDC4E%uD83D%uDC4E%uD83D%uDC4E",
+                "time": "4-29"
+            },
+            {
+                "cnt": "%u8DDF%u6CB8%u7F8A%u7F8A%u4E00%u6837%2C%u5934%u8111%u7B80%u5355%uFF0C%u56DB%u80A2%u53D1%u8FBE",
+                "time": "5-12"
+            },
+            {
+                "cnt": "%u662F%u4E0D%u662F%u8FDE%u8F66%u90FD%u80FD%u805A%u8D77%u6765",
+                "time": "5-20"
+            },
+            {
+                "cnt": "%u597D%u597D%u597D",
+                "time": "5-20"
+            },
+            {
+                "cnt": "%u6562%u6253%u4F60",
+                "time": "7-21"
+            },
+            {
+                "cnt": "%u6562%u6253%u4F60%u3002",
+                "time": "7-21"
+            },
+            {
+                "cnt": "%u54C8%u54C8%uFF0C%u4F30%u8BA1%u8FDE%u6211%u7238%u90FD%u6253%u4E0D%u8FC7%uFF0C%u6211%u5988%u4E5F%u662F%uFF0C%u54C8%u54C8%uD83D%uDE04",
+                "time": "7-28"
+            },
+            {
+                "cnt": "%u597D%u96BE%u770B%uFF0C%u5410%u69FD%uFF01",
+                "time": "7-29"
+            },
+            {
+                "cnt": "%u4E11%u516B%u602A",
+                "time": "8-6"
+            },
+            {
+                "cnt": "%u771F%u4E11%uFF01%uFF01%uFF01%uFF01%uFF01%uFF01%uFF01%uFF01%uFF01%uFF01%uFF01%uFF01%uFF01%uFF01%uFF01%uFF01%uFF01",
+                "time": "8-28"
+            },
+            {
+                "cnt": "%u6211%u7684%u5988%uFF01%u808C%u8089%u7537%uFF01%u7206%u70B8%u808C%uFF01",
+                "time": "1-18"
+            },
+            {
+                "cnt": "%u4E11%u516B%u602A%u8BF7%u4F60%u522B%u628A%u95E8%u6253%u5F00",
+                "time": "4-10"
+            },
+            {
+                "cnt": "%u4F60%u7684%u8EAB%u4EF7%u96F6%u5143",
+                "time": "7-17"
+            },
+            {
+                "cnt": "%u4F60%u957F%u7684%u771F%u50CF%u574F%u4EBA",
+                "time": "7-17"
+            },
+            {
+                "cnt": "%u4E1C%u839E%u53D1%u53D1%u6C57%u597D%u7684",
+                "time": "7-26"
+            },
+            {
+                "cnt": "123%u540E%u5C31%u884C%u4E86%u5427",
+                "time": "7-29"
+            }
+        ]
+    },
+    "el_7": {
+        "good": "80",
+        "look": "1778",
+        "say": [
+            {
+                "cnt": "%u554A%uE415%u5662%u5443",
+                "time": "4-3"
+            },
+            {
+                "cnt": "%u5BFC%u6F14%u8BF7%u5403ji",
+                "time": "4-3"
+            },
+            {
+                "cnt": "%u54C8%u54C8%u54C8%u54C8%u54C8",
+                "time": "6-30"
+            },
+            {
+                "cnt": "%u53CB%u8C0A%u6DF1%u539A",
+                "time": "3-18"
+            },
+            {
+                "cnt": "cgdfgf",
+                "time": "4-15"
+            },
+            {
+                "cnt": "%u6363%u4E71%u4E09%u5144%u5F1F",
+                "time": "5-3"
+            },
+            {
+                "cnt": "%u3002%u3002%u3002",
+                "time": "5-6"
+            },
+            {
+                "cnt": "%u3002%u3002%u3002",
+                "time": "5-6"
+            },
+            {
+                "cnt": "%u4EE8%u50BB%u9497",
+                "time": "6-18"
+            },
+            {
+                "cnt": "%u8001%u677F%u5728%u4F60%u540E%u9762",
+                "time": "6-18"
+            },
+            {
+                "cnt": "%28%uA3FF%u1DC4%u0C6A%uA3FF%u1DC4%u0328%29%u035E%u5988%u4E86%u4E2A%u9E21",
+                "time": "6-27"
+            },
+            {
+                "cnt": "%uD83C%uDF50%uD83C%uDF50%uD83C%uDF50%uD83C%uDF50%uD83C%uDF50%uD83C%uDF50%uD83C%uDF50%uD83C%uDF50%uD83C%uDF50%uD83C%uDF50",
+                "time": "7-6"
+            },
+            {
+                "cnt": "%u5566%u54AF%u5566%u54AF%u5566%u54AF%u5566%u54AF%u5566%u54AF%u5566%u54AF%u54AF%u5566%u54AF%u5566%u54AF%u5566%u54AF%u5566",
+                "time": "7-19"
+            },
+            {
+                "cnt": "%u54C8%u54C8%uFF01",
+                "time": "8-11"
+            },
+            {
+                "cnt": "%u4F60%u4EEC%u597D",
+                "time": "12-7"
+            },
+            {
+                "cnt": "6666",
+                "time": "2-2"
+            },
+            {
+                "cnt": "6666666",
+                "time": "8-17"
+            },
+            {
+                "cnt": "%uD83C%uDF50%uD83C%uDF50%uD83C%uDF50%uD83C%uDF50%uD83C%uDF50%uD83C%uDF50%uD83C%uDF50%uD83C%uDF50%uD83C%uDF50%uD83C%uDF50%uD83C%uDF50",
+                "time": "9-25"
+            },
+            {
+                "cnt": "%u54C8%u54C8%u54C8",
+                "time": "9-25"
+            },
+            {
+                "cnt": "66666666",
+                "time": "2-4"
+            },
+            {
+                "cnt": "%u4EE8%u4EBA66",
+                "time": "3-24"
+            },
+            {
+                "cnt": "%u54C8%u54C8%uD83D%uDE03",
+                "time": "4-26"
+            },
+            {
+                "cnt": "%u6B64%u5904%u65E0%u6CD5%u663E%u793A",
+                "time": "6-15"
+            },
+            {
+                "cnt": "%u6211%u65E0%u8BED%u4E86%uFF0C%uFF0C%uFF0C%uFF0C%uFF0C%uFF0C%uFF0C%uFF0C",
+                "time": "7-28"
+            },
+            {
+                "cnt": "%u4E09%u4EBA666",
+                "time": "7-29"
+            },
+            {
+                "cnt": "%u4F60%u4EEC%u597D",
+                "time": "8-3"
+            },
+            {
+                "cnt": "%u4ED6%u4EEC%u662F%u4E11%u516B%u602A%uFF0C%u7EA2%u6885%u662F%u7F8E%u4EBA",
+                "time": "8-6"
+            },
+            {
+                "cnt": "%u7EA2%u7EA2%u706B%u706B%u604D%u604D%u60DA%u60DA%u54C8%u54C8%u54C8",
+                "time": "8-17"
+            },
+            {
+                "cnt": "%u4E11%u516B%u602A",
+                "time": "8-19"
+            },
+            {
+                "cnt": "%u8FD8%u662F%u4E09%u4E2A%u4E11%u516B%u602A",
+                "time": "8-19"
+            },
+            {
+                "cnt": "250%u7B28%u86CB",
+                "time": "8-19"
+            },
+            {
+                "cnt": "%u4E11%u516B%u602A%uFF01%u5509%u5509%u5509%u5509%uFF01%uFF01%uFF01%uFF01%uFF01%uFF01%uFF01%uFF01%uFF1F",
+                "time": "8-28"
+            },
+            {
+                "cnt": "%u8001%u677F%u6765%u5566",
+                "time": "6-20"
+            },
+            {
+                "cnt": "l%u8001%u677F%u6765%u4E86",
+                "time": "6-20"
+            },
+            {
+                "cnt": "%u4ED6%u4EEC%u54EA%u6765%u7684%u72D9%u51FB%u67AA%u5440",
+                "time": "6-20"
+            },
+            {
+                "cnt": "%u5927%u64A4%u9000%u4FE1%u53F7%uD83D%uDCF6",
+                "time": "7-26"
+            }
+        ]
+    },
+    "el_8": {
+        "good": "0",
+        "look": "0",
+        "say": []
+    },
+    "el_9": {
+        "good": "0",
+        "look": "0",
+        "say": []
+    }
+}

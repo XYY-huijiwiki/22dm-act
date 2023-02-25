@@ -1,0 +1,355 @@
+body{
+	margin:0;
+	padding:0;
+	width:100%;
+	height:100%;
+	background:rgb(0,0,0);
+}
+#all{
+	width:640px;
+	height:1008px;
+	position:relative;
+}
+#all section{
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	display:none;
+}
+.b_img{
+	position:absolute;
+	top:0;
+	left:0;
+}
+#begin_road{
+	height:85px;
+	width:185px;
+	cursor:pointer;
+	position:absolute;
+	top:675px;
+	right:0;
+}
+#road a{
+	cursor:pointer;
+	position:absolute;
+	display:block;
+}
+#road_1{
+	width:610px;
+	height:305px;
+	top:205px;
+	right:0;
+}
+#road_2{
+	width:610px;
+	height:305px;
+	left:0;
+	top:545px;
+}
+#road_back{
+	width:180px;
+	height:110px;
+	top:880px;
+	right:0;
+}
+#game_list{
+	z-index:999;
+	background:rgba(0,0,0,0.7);
+	display:none;
+}
+#game_list img{
+	margin-top:-421px;
+	margin-left:-300px;
+	width:600px;
+	height:842px;
+	position:absolute;
+	top:50%;
+	left:50%;
+}
+.game_link{
+	width:210px;
+	height:85px;
+	position:absolute;
+	top:460px;
+	left:70px;
+	display:block;
+}
+/*人物介绍*/
+#el_list{
+	z-index:999;
+	background:rgba(0,0,0,0.7);
+	display:none;
+}
+#el_main{
+	width:100%;
+	height:100%;
+	position:relative;
+}
+#el_p_1,#el_p_2,#el_p_3{
+	width:100%;
+	height:100%;
+	position:absolute;
+	display:none;
+}
+#el_p_1{
+	z-index:100;
+}
+#el_p_2{
+	z-index:90;
+}
+#el_p_3{
+	z-index:80;
+}
+#el_main .el_dialogs{
+	margin-top:-422px;
+	margin-left:-300px;
+	width:600px;
+	height:844px;
+	display:block;
+	position:absolute;
+	top:50%;
+	left:50%;
+	overflow:hidden;
+}
+#el_main .el_dialogs img{
+	position:absolute;
+}
+.el_g_1{
+	top:357px;
+	left:13px;
+}
+.el_g_2{
+	top:320px;
+	left:170px;
+}
+.el_g_3{
+	top:267px;
+	left:13px;
+}
+.el_g_4{
+	width:520px;
+	top:470px;
+	left:70px;
+}
+.el_g_5{
+	top:280px;
+	left:13px;
+}
+.el_g_6{
+	top:326px;
+	left:13px;
+}
+.el_g_7{
+	top:374px;
+	left:23px;
+}
+#el_introduce{
+	width:515px;
+	height:135px;
+	border:0px solid red;
+	position:absolute;
+	top:655px;
+	left:40px;
+	font-size:22px;
+	line-height:32px;
+	color:#fff;
+	font-weight:bold;
+}
+#el_introduce_main.el_introduce_1:before {
+	content:"特点:";
+	color:yellow;
+}
+#el_introduce_main yellow{
+	display:inline-block;
+	color:yellow;
+}
+#el_info{
+	width:525px;
+	height:40px;
+	position:absolute;
+	top:790px;
+	left:70px;
+}
+#el_info a{
+	width:80px;
+	height:40px;
+	display:inline-block;
+	color:#fff;
+	font-size:24px;
+}
+#btn_good{
+	padding-left:35px;
+	background:url(../images/btn/btn_good.png) no-repeat no-repeat;
+	cursor:pointer;
+}
+#btn_look{
+	padding-left:45px;
+	background:url(../images/btn/btn_look.png) no-repeat no-repeat;
+}
+#btn_good.btn_gooded{
+	background:url(../images/btn/btn_gooded.png) no-repeat no-repeat;
+	cursor:default;
+}
+#el_barrage{
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	width:500px;
+	height:475px;
+	overflow-y:auto;
+	position:absolute;
+	top:155px;
+	left:45px;
+}
+#el_barrage li{
+	margin-bottom:5px;
+	width:100%;
+	height:auto;
+	font-size:20px;
+	line-height:30px;
+	color:#fff;
+}
+#el_barrage .barrage_cnt{
+	width:70%;
+	float:left;
+}
+#el_barrage .barrage_time{
+	width:20%;
+	float:right;
+}
+
+#el_speech{
+	width:500px;
+	height:40px;
+	background:none;
+	border:0px solid red;
+	font-size:24px;
+	line-height:40px;
+	color:#fff;
+	font-weight:bold;
+	text-align:center;
+	position:absolute;
+	top:705px;
+	left:45px;
+}
+#el_speech_tips{
+	width:525px;
+	height:40px;
+	font-size:22px;
+	color:rgb(208,199,96);
+	text-align:right;
+	line-height:40px;
+	position:absolute;
+	top:630px;
+	left:50px;
+	display:none;
+}
+#el_speech_btn{
+	margin-left:-87px;
+	width:174px;
+	height:50px;
+	cursor:pointer;
+	display:block;
+	position:absolute;
+	top:777px;
+	left:50%;
+}
+#el_close,#game_close{
+	width:85px;
+	height:85px;
+	cursor:pointer;
+	position:absolute;
+	top:145px;
+	left:530px;
+	z-index:200;
+	display:block;
+}
+#el_p_next,#el_p_prv{
+	width:67px;
+	height:67px;
+	cursor:pointer;
+	position:absolute;
+	z-index:200;
+	display:block;
+	top:95px;
+}
+#el_p_next{
+	left:380px;
+}
+#el_p_prv{
+	left:36px;
+}
+
+/*选择按钮*/
+#map a{
+	position:absolute;
+	display:none;
+	cursor:pointer;
+	z-index:99;
+}
+#btn_tips{
+	margin-left:-111px;
+	position:absolute;
+	cursor:pointer;
+	z-index:99;
+	left:50%;
+	top:50%;
+	display:none;
+}
+#btn_select{
+	margin-left:-86px;
+	bottom:10px;
+	left:50%;
+}
+#btn_music{
+	width:60px;
+    height:60px;
+	background-image:url("../images/btn/btn_music_2.png");
+	top:25px;
+	right:25px;
+}
+#btn_music.play{
+	background-image:url("../images/btn/btn_music.png");
+}
+#btn_gyro{
+	width:60px;
+    height:60px;
+	top:110px;
+	right:25px;
+	background-image:url("../images/btn/btn_gyro.png");
+}
+#btn_gyro.gyro{
+	background-image:url("../images/btn/btn_gyro_2.png");
+}
+#loading{
+    background:#ecf4d4;
+}
+#loading_img{
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    top: 40%;
+    left: 160px;
+    margin-top: -160px;
+}
+
+#loading_percent{
+    position: absolute;
+    width: 100px;
+    left: 260px;
+    top: 40%;
+    margin-top: 160px;
+    font-size: 20px;
+    color: #45344d;
+    font-family: "STHeitiSC-Medium", "Heiti";
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+}
+.clear{
+	width:0;
+	height:0;
+	clear:both;
+}

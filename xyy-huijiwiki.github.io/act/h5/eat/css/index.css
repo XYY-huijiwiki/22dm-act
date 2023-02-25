@@ -1,0 +1,224 @@
+html {
+	background: #fff;
+}
+
+body,
+canvas,
+div {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	-khtml-user-select: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+#all {
+	width: 640px;
+	height: 960px;
+	position: relative;
+}
+
+#main {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#gameCanvas {
+	position: absolute;
+}
+
+#share,
+#paihanPanel {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+}
+
+#share {
+	background: rgba(0, 0, 0, 0.7) url(/act/images/share.png) no-repeat top right;
+	z-index: 100;
+}
+
+/*排行榜*/
+#paihanPanel {
+	background: rgb(172, 149, 217);
+	z-index: 200;
+	overflow-y: auto;
+}
+
+#paihan_top,
+#paihan_main,
+#paihan_bottom {
+	padding: 0;
+	position: relative;
+}
+
+#paihan_top {
+	height: 389px;
+	background: url(../images/phb_1.jpg) no-repeat no-repeat;
+}
+
+.paihan_close {
+	width: 210px;
+	height: 90px;
+	display: block;
+	position: absolute;
+	top: 245px;
+	left: 220px;
+	cursor: pointer;
+}
+
+#paihan_main {
+	margin: 0 auto;
+	width: 600px;
+}
+
+#paihan_main li {
+	padding: 10px 0;
+	width: 98%;
+	height: 60px;
+	border-bottom: 1px dashed #ccc;
+	position: relative;
+}
+
+#paihan_bottom {
+	height: 372px;
+	background: url(../images/phb_2.jpg) no-repeat no-repeat;
+	text-align: center;
+}
+
+.p_image,
+.p_name,
+.p_time {
+	float: left;
+	display: inline-block;
+}
+
+.p_image {
+	border: 1px solid #fff;
+	border-radius: 5px;
+}
+
+.p_name {
+	margin: 0 8px;
+	height: 24px;
+	line-height: 24px;
+	color: rgb(251, 248, 1);
+	font-size: 20px;
+}
+
+.p_time {
+	height: 24px;
+	line-height: 28px;
+	color: rgb(5, 84, 113);
+	font-size: 16px;
+}
+
+.p_score {
+	position: absolute;
+	bottom: 10px;
+	left: 60px;
+	padding: 0 8px;
+	color: #fff;
+}
+
+.p_index {
+	width: 1.2em;
+	height: 60px;
+	line-height: 60px;
+	font-size: 40px;
+	color: rgb(253, 233, 0);
+	text-align: center;
+	float: right;
+}
+
+.paihan_prize {
+	width: 220px;
+	height: 90px;
+	display: block;
+	position: absolute;
+	top: 20px;
+	left: 210px;
+	cursor: pointer;
+}
+
+.paihan_tips {
+	position: relative;
+	top: 110px;
+	height: 30px;
+	display: inline-block;
+	font-size: 24px;
+	color: red;
+}
+
+/*领奖页面(共用)*/
+#award {
+	width: 640px;
+	height: 960px;
+	position: fixed;
+	z-index: 1002;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	display: none;
+}
+
+#award input {
+	width: 500px;
+	height: 55px;
+	padding: 5px;
+	border: 3px solid #000;
+	position: absolute;
+	left: 66px;
+	font-size: 24px;
+}
+
+#award #award_name {
+	top: 390px;
+}
+
+#award #award_tel {
+	top: 490px;
+}
+
+#award #award_address {
+	top: 590px;
+}
+
+#award #award_post {
+	width: 520px;
+	height: 65px;
+	position: absolute;
+	display: block;
+	cursor: pointer;
+	top: 723px;
+	left: 63px;
+}
+
+#award #award_tips {
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	color: red;
+	font-size: 30px;
+	position: absolute;
+	top: 670px;
+	left: 0;
+	text-align: center;
+}
+
+#award_close {
+	position: absolute;
+	top: 0;
+	left: 0;
+}

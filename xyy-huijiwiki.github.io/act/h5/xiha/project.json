@@ -1,0 +1,35 @@
+{
+    "project_type": "javascript",
+    "debugMode" : 1,
+    "showFPS" : false,
+    "frameRate" : 60,
+    "noCache" : false,
+    "id" : "gameCanvas",
+    "renderMode" : 0,
+    "modules" : ["cocos2d", "ccui"],
+    "jsList" : [
+        "src/resource.js",   
+        "src/define.js",
+        
+        "src/Data/LevelData.js",
+        "src/Manager/GameManager.js",
+        "src/Manager/AnctionManager.js",
+
+        "src/Scene/MainMenu/Layer/Rule.js",
+        "src/Scene/MainMenu/Layer/Background.js",
+        "src/Scene/MainMenu/Layer/Main.js",
+        "src/Scene/MainMenu/MainMenu.js",
+
+        "src/Scene/GamePlay/Node/Monster/Monster.js",
+        "src/Scene/GamePlay/Layer/Dialogs.js",
+        "src/Scene/GamePlay/Layer/Background.js",
+        "src/Scene/GamePlay/Layer/Main.js",
+        "src/Scene/GamePlay/Layer/UI.js",
+        "src/Scene/GamePlay/Layer/Menu.js",
+        "src/Scene/GamePlay/GamePlay.js",
+
+        "src/Scene/GameResult/Layer/Background.js",
+        "src/Scene/GameResult/Layer/Main.js",
+        "src/Scene/GameResult/GameResult.js"
+    ]
+}

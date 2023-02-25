@@ -1,0 +1,550 @@
+html{
+	background: #000;
+}
+body,div,ul{
+	padding: 0;
+	margin: 0;
+	font-family:"Microsoft YaHei";
+}
+ul{
+	list-style-type: none;
+}
+#all{
+	width: 640px;
+	height: 1008px;
+	position: relative;
+	background: url(../images/bg_index.jpg) no-repeat no-repeat;
+}
+#all section{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+}
+#main_top{
+	width: 100%;
+	height: 230px;
+	color: #fff;
+	font-size: 48px;
+	font-weight: bold;
+	text-align: center;
+}
+#main_earth{
+	width: 100%;
+	height: 734px;
+	position: relative;
+	transform:scale(0.9,0.9);
+	animation: earth_rotate 200s linear infinite;
+	-moz-animation: earth_rotate 200s linear infinite;	/* Firefox */
+	-webkit-animation: earth_rotate 200s linear infinite;	/* Safari 和 Chrome */
+	-o-animation: earth_rotate 200s linear infinite;	/* Opera */
+}
+@-webkit-keyframes earth_rotate
+{
+	from {
+		transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+		-o-transform: rotate(0deg);		
+		-moz-transform: rotate(0deg);	
+	}
+	to {
+		transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		-o-transform: rotate(360deg);		
+		-moz-transform: rotate(360deg);	
+	}
+}
+#earth_bg{
+	margin-left: -212.5px;
+	width: 425px;
+	height: 434px;
+	display: block;
+	position: absolute;
+	top:150px;
+	left: 50%
+}
+#earth_list{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#earth_list a{
+	display: block;
+	position: absolute;
+	cursor: pointer;
+}
+#earth_1{
+	width: 205px;
+	height: 197px;
+	background: url(../images/tb_1_1.png);
+	top:0px;
+	left: 220px;
+}
+#earth_2{
+	width: 196px;
+	height: 188px;
+	background: url(../images/tb_2_1.png);
+	top:145px;
+	left: 456px;
+}
+#earth_3{
+	width: 190px;
+	height: 192px;
+	background: url(../images/tb_3_1.png);
+	top:408px;
+	left: 458px;
+}
+#earth_4{
+	width: 196px;
+	height: 176px;
+	background: url(../images/tb_4_1.png);
+	top:540px;
+	left: 220px;
+}
+#earth_5{
+	width: 191px;
+	height: 184px;
+	background: url(../images/tb_5_1.png);
+	top:394px;
+	left: -4px;
+}
+#earth_6{
+	width: 191px;
+	height: 202px;
+	background: url(../images/tb_6_1.png);
+	top:129px;
+	left: -3px;
+}
+#earth_1.sign{background: url(../images/tb_1_2.png);}
+#earth_2.sign{background: url(../images/tb_2_2.png);}
+#earth_3.sign{background: url(../images/tb_3_2.png);}
+#earth_4.sign{background: url(../images/tb_4_2.png);}
+#earth_5.sign{background: url(../images/tb_5_2.png);}
+#earth_6.sign{background: url(../images/tb_6_2.png);}
+#btn_sign{
+	width: 182px;
+	height: 77px;
+	display: block;
+	position: absolute;
+	background: url(../images/b/1_1.png);
+	bottom:40px;
+	left: 25px;
+}
+#btn_record{
+	width: 181px;
+	height: 77px;
+	display: block;
+	position: absolute;
+	background: url(../images/b/2_1.png);
+	bottom:40px;
+	right: 25px;
+}
+#btn_rule{
+	width: 57px;
+	height: 56px;
+	display: block;
+	position: absolute;
+	background: url(../images/b/3.png);
+	top:20px;
+	right: 25px;
+}
+#btn_sign.sign{background: url(../images/b/1_2.png);}
+#btn_sign.finish{background: url(../images/b/1_3.png);}
+#btn_sign.help{background: url(../images/b/1_4.png);}
+#btn_sign.record{background: url(../images/b/1_5.png);}
+#btn_record.help{background: url(../images/b/2_2.png);}
+/*层*/
+#dialogs{
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+#dialogs .dialogs_layer{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top:0;
+	left: 0;
+	display: none;
+	overflow-x:hidden;
+}
+/*剧集介绍*/
+#dialogs_introduce{
+	width: 100%;
+	height: 100%;
+	overflow-y: auto;
+}
+#dialogs_introduce .dialogs_close{
+	z-index: 1000;
+}
+#introduce_wrap{
+	width: 640px;
+	height: 2016px;
+	background: url(../images/bt_introduce.jpg);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#introduce_img{
+	position: absolute;
+	top:578px;
+}
+#introduce_wall_wrap{
+	width: 100%;
+	height: 400px;
+	position: absolute;
+	bottom: 140px;
+}
+#introduce_top{
+	position: absolute;
+	top:10px;
+	left: 38.5px;
+}
+#introduce_video{
+	width: 470px;
+	height: 260px;
+	position: absolute;
+	top:274px;
+	left: 80px;
+	overflow: hidden;
+}
+#introduce_wall_wrap li{
+	margin-left:15px; 
+	margin-bottom:10px; 
+	width: 296px;
+	height: 191px;
+	display: block;
+	position: relative;
+	float: left;
+	cursor: pointer;
+}
+#introduce_wall_wrap .introduce_wall_png{
+	width: 100%;
+	height:100%;
+	background: url(../images/ka.png);
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#introduce_wall_wrap .introduce_wall_small{
+	position: absolute;
+	top:24px;
+	left: 24px;
+}
+#introduce_close{
+	width: 75px;
+	height: 75px;
+	top: 0;
+	left: 0;
+	z-index: 20;
+}
+/*完成进度*/
+#dialogs_record{
+	background: url(../images/bg_record.jpg);
+}
+#dialogs_record .dialogs_close{
+	top:0;
+	left: 57px;
+}
+#record_list{
+	width: 544px;
+	position: absolute;
+	top:330px;
+	left: 57px;
+}
+#record_list li{
+	margin-top: -23px;
+	width: 100%;
+	height: 125px;
+	border: 0px solid red;
+	position: relative;
+}
+.record_face{
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	position: absolute;
+	top:9.5px;
+	left:17px;
+}
+.record_time{
+	width: 300px;
+	height: 30px;
+	font-size: 20px;
+	color: #fff;
+	display: block;
+	position: absolute;
+	top:40px;
+	left:110px;
+}
+.record_title{
+	width: 350px;
+	height: 30px;
+	font-size: 20px;
+	color: #fff;
+	display: block;
+	position: absolute;
+	top:70px;
+	left:110px;
+	overflow: hidden;
+}
+#record_progress{
+	width: 300px;
+	height: 36px;
+	position: absolute;
+	top: 253px;
+	left: 167px;
+}
+#record_progress a{
+	height: 100%;
+	position: absolute;
+	top: 0;
+}
+.record_progress_1{
+	width: 17px;
+	left: 0;
+	background: url(../images/b/record_progress_1.png) no-repeat no-repeat;
+	display: none;
+}
+.record_progress_2{
+	max-width: 263px;
+	left: 17px;
+	background: url(../images/b/record_progress_2.png) repeat-x;
+	display: none;
+}
+
+.record_progress_3{
+	width: 20px;
+	right: 0;
+	background: url(../images/b/record_progress_3.png) no-repeat no-repeat;
+	display: none;
+}
+.record_progress_4{
+	width: 100%;
+	text-align: center;
+	color: #fff;
+	font-size: 20px;
+	line-height: 36px;
+}
+.record_list_1{background: url(../images/b/x_1.png)}
+.record_list_2{background: url(../images/b/x_2.png)}
+.record_list_3{background: url(../images/b/x_3.png)}
+.record_list_4{background: url(../images/b/x_4.png)}
+.record_list_5{background: url(../images/b/x_5.png)}
+.record_list_6{background: url(../images/b/x_6.png)}
+/*抽奖*/
+#dialogs_prize{
+	background: url(../images/bg_prize.jpg);
+}
+#dialogs_prize .dialogs_close{
+	top:20px;
+	left: 22px;
+}
+#prize_tips{
+	width: 500px;
+	height: 40px;
+	line-height: 40px;
+	color: red;
+	font-size: 30px;
+	font-weight: bold;
+	display: block;
+	text-align: center;
+	position: absolute;
+	top:200px;
+	left: 80px;
+}
+#prize_begin{
+	width: 160px;
+	height: 170px;
+	position: absolute;
+	top:422px;
+	left: 240px;
+	cursor: pointer;
+}
+#prize_wrap{
+	width: 535px;
+	height: 549px;
+	position: absolute;
+	top:240px;
+	left: 57.5px;
+	background: url(../images/p/10.png);
+}
+#prize_list{
+	width: 525px;
+	height: 525px;
+	position: absolute;
+	top:240px;
+	left: 57.5px;
+	display: none;
+}
+#prize_list li{
+	width: 175px;
+	height: 175px;
+	float: left;
+	position: relative;
+}
+#prize_list li img{
+	width: 100%;
+	height: 100%;
+}
+/*中奖提示*/
+#dialogs_tip{
+	background:rgba(0,0,0,0.6);
+}
+#tip_wrap{
+	width: 530px;
+	height: 785px;
+	position: absolute;
+	top: 111.5px;
+	left: 55px;
+	background: url(../images/bg_tip.png);
+	text-align: center;
+}
+#tip_image{
+	position: absolute;
+	top:318px;
+	left: 140px;
+}
+/*中奖信息填写*/
+#dialogs_award{
+	background: url(../images/bg_award.jpg);
+}
+#dialogs_award .dialogs_close{
+	top: 20px;
+	left:50px;
+}
+#award_name{
+	width: 260px;
+	height: 40px;
+	top:230px;
+	left: 245px;
+	text-align: center;
+	color: rgb(231,225,235);
+	font-size: 30px;
+	font-weight: bold;
+	background: none;
+	position: absolute;
+	border: none;
+}
+#award_tel{
+	width: 260px;
+	height: 40px;
+	top:330px;
+	left: 245px;
+	text-align: center;
+	color: rgb(231,225,235);
+	font-size: 30px;
+	font-weight: bold;
+	background: none;
+	position: absolute;
+	border: none;
+}
+#award_address{
+	width: 400px;
+	height: 160px;
+	top:407px;
+	left: 120px;
+	color: rgb(231,225,235);
+	font-size: 24px;
+	font-weight: bold;
+	position: absolute;
+	background: none;
+	border: none;
+	line-height: 77px;
+	text-indent:6em;
+	resize:none;
+}
+#award_tips{
+	width: 400px;
+	height: 40px;
+	line-height: 40px;
+	color: red;
+	font-size: 24px;
+	display: block;
+	text-align: center;
+	position: absolute;
+	top:555px;
+	left: 120px;
+}
+#award_post{
+	width: 185px;
+	height: 80px;
+	position: absolute;
+	top:595px;
+	left: 225px;
+}
+/*壁纸下载*/
+#dialogs_download{
+	background:rgba(0,0,0,0.6);
+}
+#download_wrap{
+	padding: 5px;
+	width: 550px;
+	height: 310px;
+	background: rgb(255,245,218);
+	position: absolute;
+	top:345px;
+	left: 40px;
+}
+#download_src{
+	width: 550px;
+	height: 310px;
+}
+#download_close{
+	width: 78px;
+	height: 66px;
+	background: url(../images/b/close.png);
+	position: absolute;
+	display: block;
+	top:-66px;
+	right: 0;
+	cursor: pointer;
+}
+/*游戏规则*/
+#dialogs_rule{
+	background: url(../images/bg_rule.jpg);
+}
+#dialogs_rule .dialogs_close{
+	left:30px;
+}
+/*分享*/
+#dialogs_share{
+	background: rgba(0,0,0,0.8) url(../images/share.png) top right no-repeat no-repeat;
+}
+#dialogs_rule .dialogs_close{
+	left:30px;
+}
+/*二维码*/
+#dialogs_ercode{
+	background: rgba(0,0,0,0.8);
+}
+.ercode_image{
+	margin-top: 133.5px;
+	margin-left: 91px;
+	width: 458px;
+	height: 534px;
+}
+.dialogs_close{
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	display: block;
+	cursor: pointer;
+}
+.border_red{
+	border: 1px solid red;
+}
+.border_blue{
+	border: 1px solid blue;
+}
+.btn{
+	display: block;
+	cursor: pointer;
+}
