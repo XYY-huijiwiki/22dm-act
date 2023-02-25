@@ -12,7 +12,7 @@
 9.  [智趣抢零食](docs/eat.md)
 10. [发明大作战](docs/plane.md)
 11. [地球嘉年华](docs/gift.md)
-12. 嫁人就嫁灰太狼
+12. [嫁人就嫁灰太狼](docs/love.md)
 13. [“募”名而来](docs/collect.md)
 14. 羊羊游世界
 15. [嘻哈闯世界3](docs/xiha.md)
