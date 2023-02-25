@@ -1,0 +1,182 @@
+html{
+	background: #000;
+	font-family:"Microsoft YaHei" ! important;
+}
+body,div,ul{
+	padding: 0;
+	margin: 0;
+	font-family:"Microsoft YaHei";
+}
+ul{
+	list-style-type: none;
+}
+#all{
+	margin:0;
+	width: 640px;
+	height: 1008px;
+	position: relative;
+	display: none;
+	overflow: hidden;
+}
+#all section{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+}
+#Cocos2dGameContainer{
+	margin: 0 ! important;
+	padding: 0 ! important;
+}
+#main{
+	z-index: 100;
+}
+#ercode{
+	margin-left: -117.5px;
+	width: 235px;
+	height: 235px;
+	background: #fff;
+	position: absolute;
+	top:100px;
+	left: 50%;
+	display: none;
+	z-index: 200;
+}
+#dialogs{
+	z-index: 500;
+	display: none;
+}
+.dialogs_layer{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+}
+#dialogs .dialogs_btn{
+	margin-left: -106px;
+	width: 212px;
+	height: 90px;
+	position: absolute;
+	cursor: pointer; 
+	display: none;
+	left: 50%;
+	bottom: 30px;
+}
+.dialogs_precent{
+	margin-left: -118px;
+	width: 300px;
+	height: 37px;
+	background: url(../res/jd_1.png) no-repeat no-repeat;
+	position: absolute;
+	bottom: 100px;
+	left: 50%;
+}
+.dialogs_precent a{
+	float: left;
+	display: block;
+}
+.precent_left{
+	width: 18px;
+	height: 37px;
+	background: url(../res/jd_3.png);
+}
+.precent_main{
+	width: 2px;
+	height: 37px;
+	background: url(../res/jd_4.png) repeat-x;
+}
+.precent_love{
+	margin-top:-2px;
+	margin-left:-30px;
+	width: 48px;
+	height: 41px;
+	background: url(../res/jd_2.png);
+}
+.precent_word{
+	width: 240px;
+	height: 37px;
+	line-height: 37px;
+	font-size: 24px;
+	color: #fff;
+	text-align: center;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#btn_ok{background: url(../res/btn_ok.png);}
+#btn_begin{background: url(../res/btn_begin.png);}
+#btn_share{background: url(../res/btn_share.png);}
+#btn_play{background: url(../res/btn_play.png);}
+#dialogs_guide_1,#dialogs_guide_2,#dialogs_guide_3,#dialogs_share,#share_bg_png,#share_bg{display: none;}
+#dialogs_share,#share_bg_png{
+	background: rgba(0,0,0,0.7);
+}
+#share_bg_png{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left:0;
+}
+#share_love{
+	display: block;
+	position: absolute;
+	top:0;
+	left:0;
+	display: none;
+}
+#share_btn{
+	width: 213px;
+	height: 89px;
+	background: url(../res/share_btn.png);
+	position: absolute;
+	left: 213.5px;
+	cursor: pointer;
+	bottom: 142px;
+	display: none;
+}
+#share_tip{
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: none;
+}
+#share_to,#share_from{
+	padding: 0;
+	color: #fff;
+	font-size: 38px;
+	font-weight: bold;
+	line-height: 42px;
+	display: block;
+	position: absolute;
+	background: none;
+	border:none; 
+	display: none;
+	font-family:"Microsoft YaHei" ! important;
+}
+#share_to{width: 400px;}
+#share_from{height: 100px;resize: none;}
+.share_scene_1 #share_to{
+	top:33px;
+	left: 167px;
+}
+.share_scene_1  #share_from{
+	width: 160px;
+	top:505px;
+	left: 460px;
+}
+.share_scene_2 #share_to{
+	width: 300px;
+	top:207px;
+	left: 115px;
+}
+.share_scene_2  #share_from{
+	width: 145px;
+	bottom:265px;
+	right: 20px;
+}

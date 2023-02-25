@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, width=640">
+	<title>嫁人就嫁灰太狼</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="/painting/js/jquery.qrcode.min.js"></script>
+	<script type="text/javascript" src="connect.js"></script>
+
+</head>
+<body>
+<div id="all">
+	<section id="main">
+		<canvas id="gameCanvas" width="640" height="1008"></canvas>
+		<div id="ercode"></div>
+	</section>
+	<section id="dialogs">
+		<div id="dialogs_guide_1" class="dialogs_layer loading">
+			<img src="res/tip_1.jpg" width="640" height="1008"/>
+			<div class="dialogs_precent" >
+				<a class="precent_left" ></a>
+				<a class="precent_main" ></a>
+				<a class="precent_love" ></a>
+				<span class="precent_word">0%</span>
+			</div>
+			<a id="btn_ok" class="dialogs_btn" ></a>
+		</div>
+		<div id="dialogs_guide_2" class="dialogs_layer loading">
+			<img src="res/tip_2.jpg" width="640" height="1008"/>
+			<div class="dialogs_precent" >
+				<a class="precent_left" ></a>
+				<a class="precent_main" ></a>
+				<a class="precent_love" ></a>
+				<span class="precent_word">0%</span>
+			</div>
+			<a id="btn_begin" class="dialogs_btn" ></a>
+		</div>
+		<div id="dialogs_guide_3" class="dialogs_layer loading">
+			<img src="res/tip_3.jpg" width="640" height="1008"/>
+			<div class="dialogs_precent" >
+				<a class="precent_left" ></a>
+				<a class="precent_main" ></a>
+				<a class="precent_love" ></a>
+				<span class="precent_word">0%</span>
+			</div>
+		</div>
+		<div id="dialogs_share" class="dialogs_layer">
+			<img id="share_bg" src="" width="640" height="1008" />
+			<div id="share_bg_png"></div>>
+			<img id="share_love" src=""  />
+			<img id="share_tip" src=""  />
+			<a id="btn_share" class="dialogs_btn"></a>
+			<a id="btn_play" class="dialogs_btn" href="/act/h5/love/index.html"></a>
+			<input id="share_to" type="text" name="share_to" maxlength="10"/>
+			<textarea id="share_from" type="text" name="share_to" maxlength="10" rows="2"></textarea>
+			<div id="dialogs_share_alpha"></div>
+		</div>
+	</section>
+</div>
+<script type="text/javascript" src="/js/cocos2d-js-v3.9.js"></script>
+<script type="text/javascript" src="main.js"></script>
+<script src="/js/jweixin-1.0.0.js"></script>
+</body>
+</html>
