@@ -473,7 +473,7 @@ ul {
 .solo_face_mask {
 	width: 171px;
 	height: 164px;
-	background: url(../res/public/solo_face.png);
+	background: url(../res/Public/solo_face.png);
 	position: absolute;
 	top: 0px;
 	left: 0px;
@@ -625,7 +625,7 @@ ul {
 	margin-left: 30px;
 	width: 160px;
 	height: 417px;
-	background: url(../res/public/select/poster_bg.png);
+	background: url(../res/Public/select/poster_bg.png);
 	position: relative;
 	float: left;
 }
@@ -649,13 +649,13 @@ ul {
 }
 
 #select_poster .select_true {
-	background: url(../res/public/select/select_true.png);
+	background: url(../res/Public/select/select_true.png);
 }
 
 #select_all {
 	width: 337px;
 	height: 57px;
-	background: url(../res/public/select/select_all_1.png);
+	background: url(../res/Public/select/select_all_1.png);
 	position: absolute;
 	bottom: 55px;
 	left: 140px;
@@ -664,20 +664,20 @@ ul {
 #select_go {
 	width: 80px;
 	height: 79px;
-	background: url(../res/public/select/go.png);
+	background: url(../res/Public/select/go.png);
 	position: absolute;
 	bottom: 42px;
 	left: 500px;
 }
 
 #select_all.active {
-	background: url(../res/public/select/select_all_2.png);
+	background: url(../res/Public/select/select_all_2.png);
 }
 
 .tip_close {
 	width: 93px;
 	height: 89px;
-	background: url(../res/public/close.png);
+	background: url(../res/Public/close.png);
 	position: absolute;
 	top: 31px;
 	right: 30px;
@@ -701,7 +701,7 @@ ul {
 .waiting_face_mask {
 	width: 468px;
 	height: 462px;
-	background: url(../res/public/waiting/face.png);
+	background: url(../res/Public/waiting/face.png);
 	position: absolute;
 	top: 0px;
 	left: 0px;
@@ -768,23 +768,23 @@ ul {
 
 /*dialogs*/
 #dialogs_select {
-	background: url(../res/public/select/bg.jpg) no-repeat no-repeat;
+	background: url(../res/Public/select/bg.jpg) no-repeat no-repeat;
 }
 
 #dialogs_waiting {
-	background: url(../res/public/waiting/bg.jpg) no-repeat no-repeat;
+	background: url(../res/Public/waiting/bg.jpg) no-repeat no-repeat;
 }
 
 #dialogs_rule {
-	background: url(../res/public/rule_bg.jpg) no-repeat no-repeat;
+	background: url(../res/Public/rule_bg.jpg) no-repeat no-repeat;
 }
 
 #dialogs_ranking {
-	background: url(../res/public/ranking/bg.jpg) no-repeat no-repeat;
+	background: url(../res/Public/ranking/bg.jpg) no-repeat no-repeat;
 }
 
 #dialogs_share {
-	background: rgba(0, 0, 0, 0.8) url(../res/public/share.png) no-repeat no-repeat top right;
+	background: rgba(0, 0, 0, 0.8) url(../res/Public/share.png) no-repeat no-repeat top right;
 }
 
 .dialogs_close,
@@ -792,7 +792,7 @@ ul {
 	width: 101px;
 	height: 101px;
 	position: absolute;
-	background: url(../res/public/btn_close_1.png) no-repeat no-repeat;
+	background: url(../res/Public/btn_close_1.png) no-repeat no-repeat;
 }
 
 #dialogs_rule .dialogs_close {
@@ -937,7 +937,7 @@ ul {
 	margin-left: -118px;
 	width: 300px;
 	height: 37px;
-	background: url(../res/public/perload/precent_bg.png) no-repeat no-repeat;
+	background: url(../res/Public/perload/precent_bg.png) no-repeat no-repeat;
 	position: absolute;
 	bottom: 410px;
 	left: 50%;
@@ -951,13 +951,13 @@ ul {
 .precent_left {
 	width: 18px;
 	height: 37px;
-	background: url(../res/public/perload/precent_left.png);
+	background: url(../res/Public/perload/precent_left.png);
 }
 
 .precent_main {
 	width: 2px;
 	height: 37px;
-	background: url(../res/public/perload/precent_main.png) repeat-x;
+	background: url(../res/Public/perload/precent_main.png) repeat-x;
 }
 
 .precent_right {
@@ -965,7 +965,7 @@ ul {
 	margin-left: -30px;
 	width: 48px;
 	height: 41px;
-	background: url(../res/public/perload/precent_right.png);
+	background: url(../res/Public/perload/precent_right.png);
 }
 
 .precent_word {
@@ -1087,7 +1087,7 @@ ul {
 	cursor: pointer;
 }
 
-/*public*/
+/*Public*/
 .btn {
 	display: block;
 	cursor: pointer;

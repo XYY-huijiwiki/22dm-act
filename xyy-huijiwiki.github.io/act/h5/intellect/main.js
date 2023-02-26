@@ -7,7 +7,7 @@ var weixinData = {
 	shareTitle: '智趣大冲关',
 	shareDesc: '上知天文，下知地理？那么运动知识熟悉吗？各国风土了解吗？秀出你的知识储备吧！',
 	shareLink: 'http://www.22dm.com/act/h5/intellect/index.html',
-	shareImg: 'http://www.22dm.com/act/h5/intellect/res/public/icon.jpg'
+	shareImg: 'http://www.22dm.com/act/h5/intellect/res/Public/icon.jpg'
 };
 
 var winSize = {
@@ -27,7 +27,7 @@ var userInfo = {
 	openid: "oTaiPuEUqBR9FQRGw5hvR0oyOAWo",
 	balllterid: null,
 	name: "玩家1",
-	face: "res/public/icon.jpg",
+	face: "res/Public/icon.jpg",
 	sex: "1",
 	country: "GuangZhou",
 	province: "GuangDong",
@@ -62,7 +62,7 @@ function VueInit() {
 			tips: '',
 			socket: '',
 			user: {
-				face: 'res/public/icon.jpg',
+				face: 'res/Public/icon.jpg',
 				name: '玩家1',
 				solo: 500,
 				battle: 1500
@@ -173,7 +173,7 @@ function VueInit() {
 			user_two: {
 				openid: '',
 				next: false,  //下一题
-				face: 'res/public/icon.jpg',
+				face: 'res/Public/icon.jpg',
 				name: '玩家2',
 				combo: [],
 				gold: 0   //当前获得的金币
