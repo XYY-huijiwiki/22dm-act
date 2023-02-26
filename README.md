@@ -19,7 +19,7 @@
 16. [疯狂嘻哈夜](docs/halloween.md)
 17. [谁动了我的红莉](docs/single.md)
 18. 遗失的铃铛
-19. 奇趣大冲关
+19. [智趣大冲关](docs/intellect.md)
 20. [2018新片巡礼](docs/trailer.md)
 21. 欢乐打地鼠
 22. 和我约会吧

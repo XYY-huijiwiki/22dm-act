@@ -1,0 +1,257 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, width=750">
+	<title>智趣大冲关</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<script src="../../../js/vue.min.js"></script>
+	<script type="text/javascript" src="../../../js/jquery-2.1.1.min.js"></script>
+	<script src="src/qs.js"></script>
+	<script src="../../../tv/school/js/tv.js"></script>
+	<script src="../../../painting/js/jquery.qrcode.min.js"></script>
+</head>
+
+<body>
+	<div id="all">
+		<section id="main">
+			<transition name="fade">
+				<canvas id="gameCanvas" width="750" height="1182"></canvas>
+			</transition>
+			<transition name="fade">
+				<div id="main_schedule" v-show="active=='playing'">
+					<div class="schedule_layer" v-show="active=='playing'">
+						<div :class="{'solo_user_box':!isbattle}" v-show="!isbattle&&!isGameOver">
+							<div class="solo_user_face_box">
+								<img class="player_face" :src="user_one.face" width="150" height="150" />
+								<a class="solo_face_mask btn"></a>
+							</div>
+							<a class="solo_user_name btn">{{user_one.name}}</a>
+						</div>
+						<div id="player_one_box" v-show="isbattle">
+							<img class="player_face" :src="user_one.face" width="150" height="150" />
+							<img class="battle_face_mask btn" src="res/GamePlay/mask_face_one.png" />
+							<span class="player_name">{{user_one.name}}</span>
+						</div>
+						<div id="player_two_box" v-show="isbattle">
+							<img class="player_face" :src="user_two.face" width="150" height="150" />
+							<img class="battle_face_mask btn" src="res/GamePlay/mask_face_two.png" />
+							<span class="player_name">{{user_two.name}}</span>
+						</div>
+						<div id="score_solo_box" :class="{'battle':isbattle}" v-show="!isGameOver">
+							<a class="score_text">{{user_one.gold}}</a>
+							<div class="score_move_box">
+								<a class="score_inner btn"></a>
+								<a class="score_mask btn"></a>
+							</div>
+						</div>
+						<div id="score_battle_box" v-show="isbattle&&!isGameOver">
+							<a class="score_text">{{user_two.gold}}</a>
+							<div class="score_move_box">
+								<a class="score_inner btn"></a>
+								<a class="score_mask btn"></a>
+							</div>
+						</div>
+						<div id="combo_solo_box" v-show="isbattle&&isGameOver&&combomax_one>2">
+							<a class="combo_text">{{combomax_one}}</a>
+						</div>
+						<div id="combo_battle_box" v-show="isbattle&&isGameOver&&combomax_two>2">
+							<a class="combo_text">{{combomax_two}}</a>
+						</div>
+						<div id="qs_box" v-if="subject.length!=0&&!isGameOver" v-bind:item_r="subject[0].r">
+							<span id="qs_title"
+								:class="titleclass(subject[0].q.length)">{{10-subject.length+1}}.{{subject[0].q}}
+							</span>
+							<ul id="qs_list" item_r="">
+								<li v-on:click="intellect.select(1)"><a :class="lineclass(subject[0].a.length)"
+										class="btn">{{subject[0].a}}</a></li>
+								<li v-on:click="intellect.select(2)"><a :class="lineclass(subject[0].b.length)"
+										class="btn">{{subject[0].b}}</a></li>
+								<li v-on:click="intellect.select(3)"><a :class="lineclass(subject[0].c.length)"
+										class="btn">{{subject[0].c}}</a></li>
+								<li v-on:click="intellect.select(4)"><a :class="lineclass(subject[0].d.length)"
+										class="btn">{{subject[0].d}}</a></li>
+							</ul>
+						</div>
+						<div id="result_box" v-show="isGameOver" class="border_blue">
+							<img id="result_img" :src="isWinner?'res/Public/win.png':'res/Public/lose.png'" width="542"
+								height="472" />
+							<div class="result_user_gold btn">
+								<img class="user_gold" src="res/public/gold.png" width="80" height="80" />
+								<span> +{{user_one.gold}}</span>
+							</div>
+							<span id="btn_index_box" class="btn">
+								<a id="btn_index" class="btn"></a>
+							</span>
+							<a id="btn_share" class="btn"></a>
+							<div class="video_box">
+								<a class="btn_video btn" onclick="playVideo(0)"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</transition>
+		</section>
+		<section id="dialogs" v-bind:class="{'active':active!=''||tips!=''}">
+			<transition name="fade">
+				<div id="dialogs_select" class="dialogs_layer" v-show="active=='select'">
+					<div class="solo_user_box">
+						<div class="solo_user_face_box">
+							<img class="player_face" v-bind:src="user.face" width="150" height="150" />
+							<a class="solo_face_mask btn"></a>
+						</div>
+						<a class="solo_user_name btn">{{user.name}}</a>
+						<div class="waiting_user_gold btn">
+							<img class="user_gold" src="res/public/gold.png" width="45" height="45" />
+							<span>{{user.solo}}</span>
+						</div>
+					</div>
+					<a class="dialogs_close btn"></a>
+					<a id="select_open" class="btn" @click="posterActive=true"></a>
+					<a id="solo_start" class="btn" onclick="intellect.start(false)"></a>
+					<div class="video_box">
+						<a class="btn_video btn" onclick="playVideo(0)"></a>
+					</div>
+					<div id="select_box" v-show="posterActive">
+						<div id="select_poster_box">
+							<ul id="select_title">
+								<li>动植物</li>
+								<li>运动</li>
+								<li>地理</li>
+								<li>国家</li>
+								<li>成语</li>
+								<li>中国文化</li>
+							</ul>
+							<ul id="select_poster">
+								<li v-for="n in 6">
+									<a class="btn">123</a>
+									<img :src="'res/Public/select/poster_'+n+'.png'" width="152" height="409"
+										@click="posterSelect(n)" />
+									<a class="btn select_true" v-if="posterIsSelected.indexOf(n)>-1"></a>
+								</li>
+							</ul>
+						</div>
+						<a id="select_all" :class="{'active':posterIsSelected.length==6}" @click="posterSelect('all')"
+							class="btn"></a>
+						<a id="select_close" class="tip_close btn" @click="posterActive=false"></a>
+						<a id="select_go" class="btn" onclick="intellect.start(false)"></a>
+					</div>
+				</div>
+			</transition>
+			<transition name="fade">
+				<div id="dialogs_waiting" class="dialogs_layer" v-show="active=='waiting'">
+					<div class="waiting_user_face_box">
+						<img class="waiting_face" v-bind:src="user.face" width="200" height="200" />
+						<a class="waiting_face_mask btn"></a>
+					</div>
+					<a class="waiting_user_name btn">{{user.name}}</a>
+					<div class="waiting_user_gold btn">
+						<img class="user_gold" src="res/public/gold.png" width="50" height="50" />
+						<span>{{user.battle}}</span>
+					</div>
+					<div id="ercode_open" class="btn" @click="ercode=!ercode"></div>
+					<div id="ercode_box" v-show="ercode" @click="ercode=!ercode">
+						<div id="ercode"></div>
+						邀请友扫一扫开始对战~
+					</div>
+					<a class="dialogs_close btn" tips="alert"></a>
+				</div>
+			</transition>
+			<transition name="fade">
+				<div id="dialogs_ranking" class="dialogs_layer" v-show="active=='ranking'">
+					<a class="dialogs_close btn"></a>
+					<div id="ranking_box">
+						<div id="ranking_selector">
+							<a id="ranking_selector_solo" class="ranking_selector_item btn" @click="rankingSelect(0)"
+								v-bind:class="{'active':rankingIsSelected.indexOf(0)>-1}"></a>
+							<a id="ranking_selector_battle" class="ranking_selector_item btn" @click="rankingSelect(1)"
+								v-bind:class="{'active':rankingIsSelected.indexOf(1)>-1}"></a>
+						</div>
+						<ul id="ranking">
+							<li v-for="(item,index) in ranking">
+								<img class="p_image" :src="item.json.img" width="100" height="100">
+								<a class="p_mask"></a>
+								<a class="p_name">{{item.json.name}}</a>
+								<a class="p_title p_title_0" v-bind:class="'p_title_'+getRankingTitle(item.score)"></a>
+								<a class="p_score">{{item.score}}</a>
+								<img class="p_above" :src="'res/Public/ranking/p_'+(index+1)+'.png'">
+							</li>
+						</ul>
+					</div>
+				</div>
+			</transition>
+			<transition name="fade">
+				<div id="dialogs_rule" class="dialogs_layer" v-show="active=='rule'">
+					<a class="dialogs_close btn"></a>
+				</div>
+			</transition>
+			<transition name="fade">
+				<div id="dialogs_share" class="dialogs_layer" v-show="active=='share'">
+				</div>
+			</transition>
+			<transition name="fade">
+				<div id="dialogs_preload" class="dialogs_layer" v-show="active=='preload'">
+					<img src="res/Public/perload/preload_bg.jpg" width="750" height="1182" />
+					<div class="preload_precent">
+						<a class="precent_left"></a>
+						<a class="precent_main"></a>
+						<a class="precent_right"></a>
+						<span class="precent_word">0%</span>
+					</div>
+				</div>
+			</transition>
+			<transition name="fade">
+				<div id="dialogs_tips" class="dialogs_layer" v-show="tips!=''">
+					<div id="tips_box">
+						<div id="tips_content" :class="{'line_2':tips.length>10}">
+							{{tips}}
+						</div>
+						<div id="tips_btn">
+							<a id="tips_sure" @click="sure()" v-if="tipsBtn.indexOf('sure')>-1"></a>
+							<a id="tips_cancel" @click="cancel()" v-if="tipsBtn.indexOf('cancel')>-1"></a>
+							<a id="tips_back" @click="back()" v-if="tipsBtn.indexOf('back')>-1"></a>
+						</div>
+					</div>
+				</div>
+			</transition>
+		</section>
+		<section id="video_box">
+			<div id="tv_play_wrap" class="dialogs_layer">
+				<span id="tv_play_title_wrap">
+					<a id="tv_play_title">智趣羊学堂</a>
+					<a id="tv_play_out_btn"></a>
+				</span>
+				<div id="tv_ifram">
+				</div>
+				<div id="tv_catalog">
+					<span class="tv_catalog_title actived">羊羊来寻宝</span>
+					<span class="tv_catalog_title">奇幻成语书</span>
+					<span class="tv_catalog_title">羊羊游世界</span>
+					<span class="tv_catalog_title">地球嘉年华</span>
+					<span class="tv_catalog_title">运动篇</span>
+					<span class="tv_catalog_title">动植物篇</span>
+					<ul id="tv_catalog_btn">
+
+					</ul>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<script type="text/javascript" src="../../../js/cocos2d-js-v3.9.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+	<script src="../../../js/jweixin-1.0.0.js"></script>
+	<!-- <script>
+		var _hmt = _hmt || [];
+		(function () {
+			var hm = document.createElement("script");
+			hm.src = "//hm.baidu.com/hm.js?b5f74d00a4e9152b939aae19dc2f3c0f";
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(hm, s);
+		})();
+	</script> -->
+</body>
+
+</html>
