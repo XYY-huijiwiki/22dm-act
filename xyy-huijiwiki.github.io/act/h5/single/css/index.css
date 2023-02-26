@@ -1,0 +1,196 @@
+html{
+	background: #000;
+	font-family:"Microsoft YaHei" ! important;
+}
+body,div,ul{
+	padding: 0;
+	margin: 0;
+	font-family:"Microsoft YaHei";
+}
+ul{
+	list-style-type: none;
+}
+#all{
+	margin:0;
+	width: 640px;
+	height: 1008px;
+	position: relative;
+	display: none;
+	overflow: hidden;
+}
+#all section{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+}
+#Cocos2dGameContainer{
+	margin: 0 ! important;
+	padding: 0 ! important;
+}
+#main{
+	z-index: 100;
+}
+#dialogs{
+	z-index: 500;
+	display: none;
+}
+.dialogs_layer{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	display: none;
+}
+/*preload*/
+.preload_precent{
+	margin-left: -118px;
+	width: 300px;
+	height: 37px;
+	background: url(../res/images/precent_bg.png) no-repeat no-repeat;
+	position: absolute;
+	bottom: 410px;
+	left: 50%;
+}
+.preload_precent a{
+	float: left;
+	display: block;
+}
+.precent_left{
+	width: 18px;
+	height: 37px;
+	background: url(../res/images/precent_left.png);
+}
+.precent_main{
+	width: 2px;
+	height: 37px;
+	background: url(../res/images/precent_main.png) repeat-x;
+}
+.precent_right{
+	margin-top:-2px;
+	margin-left:-30px;
+	width: 48px;
+	height: 41px;
+	background: url(../res/images/precent_right.png);
+}
+.precent_word{
+	width: 240px;
+	height: 37px;
+	line-height: 37px;
+	font-size: 24px;
+	color: #fff;
+	text-align: center;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/*rule*/
+#dialogs_rule{
+	background: url(../res/images/rule_bg.jpg) no-repeat no-repeat;
+}
+#dialogs_rule .dialogs_close{
+	top: 30px;
+	right: 50px;
+}
+
+/*ranking*/
+#dialogs_ranking{
+	background: url(../res/images/ranking_bg.jpg) no-repeat no-repeat;
+}
+#dialogs_ranking .dialogs_close{
+	top: 30px;
+	right: 50px;
+}
+
+/*share*/
+#dialogs_share{
+	background:rgba(0,0,0,0.8) url(../res/images/share.png) no-repeat no-repeat top right;
+}
+
+.dialogs_close{
+	width: 94px;
+	height: 91px;
+	position: absolute;
+	background: url(../res/images/btn_close.png) no-repeat no-repeat;
+}
+.btn{
+	display: block;
+	cursor: pointer;
+}
+
+/**/
+#ranking{
+	width:550px;
+	height:800px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: absolute;
+    top:200px;
+    left: 48px;
+}
+#ranking li{
+    margin-bottom: 15px;
+    width:536px;
+    height: 145px;
+    background: url(../res/images/phk.png) no-repeat no-repeat;
+    position: relative;
+}
+.p_image,.p_name,.p_time{
+    float:left;
+    display:inline-block;
+}
+.p_image{
+	position: absolute;
+	top:7.5px;
+	left:7.5px;
+    border-radius:50%;
+}
+.p_name{
+	margin-top:30px;
+    margin-left:155px;
+    height:24px;
+    line-height:24px;
+    color:rgb(146,88,41);
+    font-size:32px; 
+    font-weight: bold;
+}
+.p_time{
+	margin-top:33px;
+	margin-left:15px;
+    height:24px;
+    line-height:28px;
+    color:rgb(154,136,99);
+    font-size:20px; 
+}
+.p_score{
+    padding:0 8px;
+    width: 380px;
+    position:absolute;
+    bottom:28px;
+    left:152px;
+    color:rgb(254,31,68);
+    font-size: 40px;
+    font-weight: bold;
+}
+.p_above{
+	width: 79px;
+	height: 96px;
+	display: block;
+    position: absolute;
+    top:25px;
+	right:20px;
+}
+.p_behind{
+	width: 60px;
+	height: 49px;
+	display: block;
+    position: absolute;
+    top:50px;
+	right:30px;
+}

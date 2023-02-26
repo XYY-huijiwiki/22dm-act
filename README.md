@@ -17,7 +17,7 @@
 14. [羊羊游世界](docs/world.md)
 15. [嘻哈闯世界3](docs/xiha.md)
 16. [疯狂嘻哈夜](docs/halloween.md)
-17. 谁动了我的红莉
+17. [谁动了我的红莉](docs/single.md)
 18. 遗失的铃铛
 19. 奇趣大冲关
 20. [2018新片巡礼](docs/trailer.md)
