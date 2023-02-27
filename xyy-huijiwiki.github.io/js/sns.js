@@ -30,80 +30,65 @@ function onInitPage(userInfo, callback) {
   }
 }
 function doUserLogin(userInfo, callback) {
-  // $.ajax({
-  //   cache: false,
-  //   async: false,
-  //   type: "POST",
-  //   url: '/act/getWxSns.ashx',
-  //   data: {
-  //     "type": "oauth2",
-  //     "url": 'https://api.weixin.qq.com/sns/oauth2/access_token?code=' + getQueryString("code") + '&grant_type=authorization_code'
-  //   },
-  //   success: function (response) {
-  //     var result = JSON.parse(response);
-  //     var token = result.access_token;
-  //     var openid = result.openid;
-  //     if (typeof (openid) == "undefined") {
-  //       location.href = weixinData.loginUrl;
-  //     }
-  //     else {
-  //       $.ajax({
-  //         cache: false,
-  //         async: false,
-  //         type: "POST",
-  //         url: '/act/getWxSns.ashx',
-  //         data: {
-  //           "type": "userinfo",
-  //           "url": 'https://api.weixin.qq.com/sns/userinfo?access_token=' + token + '&openid=' + openid + '&lang=zh_CN',
-  //         },
-  //         success: function (res) {
-  //           var r = JSON.parse(res);
-  //           userInfo.unionid = r.unionid;
-  //           userInfo.name = r.nickname;
-  //           userInfo.face = r.headimgurl != "" ? r.headimgurl : weixinData.shareImg;
-  //           userInfo.from = "wx";
-  //           callback() || null;
-  //         }
-  //       });
-  //     }
-  //   }
-  // });
-
-  userInfo.unionid = 'userInfo.unionid';
-  userInfo.name = 'userInfo.name';
-  userInfo.face = './user/Karsten.jpg';
-  userInfo.from = "wx";
-  callback();
-
+  $.ajax({
+    cache: false,
+    async: false,
+    type: "POST",
+    url: '/act/getWxSns.ashx',
+    data: {
+      "type": "oauth2",
+      "url": 'https://api.weixin.qq.com/sns/oauth2/access_token?code=' + getQueryString("code") + '&grant_type=authorization_code'
+    },
+    success: function (response) {
+      var result = JSON.parse(response);
+      var token = result.access_token;
+      var openid = result.openid;
+      if (typeof (openid) == "undefined") {
+        location.href = weixinData.loginUrl;
+      }
+      else {
+        $.ajax({
+          cache: false,
+          async: false,
+          type: "POST",
+          url: '/act/getWxSns.ashx',
+          data: {
+            "type": "userinfo",
+            "url": 'https://api.weixin.qq.com/sns/userinfo?access_token=' + token + '&openid=' + openid + '&lang=zh_CN',
+          },
+          success: function (res) {
+            var r = JSON.parse(res);
+            userInfo.unionid = r.unionid;
+            userInfo.name = r.nickname;
+            userInfo.face = r.headimgurl != "" ? r.headimgurl : weixinData.shareImg;
+            userInfo.from = "wx";
+            callback() || null;
+          }
+        });
+      }
+    }
+  });
 }
 function initWxJsSdk(jsApiList, callback) {
-  // $.ajax({
-  //   cache: false,
-  //   async: false,
-  //   type: "POST",
-  //   url: '/act/getWeiXinToken.ashx',
-  //   data: {
-  //     thisUrl: location.href.split('#')[0]
-  //   },
-  //   success: function success(res) {
-  //     let wxData = JSON.parse(res);
-  //     wx.config({
-  //       debug: false,
-  //       appId: wxData.appId,
-  //       timestamp: wxData.timestamp,
-  //       nonceStr: wxData.nonceStr,
-  //       signature: wxData.signature,
-  //       jsApiList: jsApiList
-  //     });
-  //   }
-  // });
-  wx.config({
-    debug: true,
-    appId: 'wxData.appId',
-    timestamp: 'wxData.timestamp',
-    nonceStr: 'wxData.nonceStr',
-    signature: 'wxData.signature',
-    jsApiList: []
+  $.ajax({
+    cache: false,
+    async: false,
+    type: "POST",
+    url: '/act/getWeiXinToken.ashx',
+    data: {
+      thisUrl: location.href.split('#')[0]
+    },
+    success: function success(res) {
+      let wxData = JSON.parse(res);
+      wx.config({
+        debug: false,
+        appId: wxData.appId,
+        timestamp: wxData.timestamp,
+        nonceStr: wxData.nonceStr,
+        signature: wxData.signature,
+        jsApiList: jsApiList
+      });
+    }
   });
   wx.ready(function () {
     callback() || null;

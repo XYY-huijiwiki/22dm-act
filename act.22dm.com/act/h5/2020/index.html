@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="国潮有喜，转“鼠”好运" />
+    <meta name="description" content="国潮有喜，转“鼠”好运" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="user-scalable=no, width=640">
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <title>国潮有喜，转“鼠”好运</title>
+    <link rel="stylesheet" type="text/css" href="css/index.min.css?v=3.2">
+    <script src="/js/jquery-2.1.1.min.js"></script>
+    <script src="/js/vue.min.js"></script>
+    <script src="/js/jweixin-1.4.0.js"></script>
+    <script src="/js/sns.js"></script>
+</head>
+
+<body>
+    <div id="all">
+        <section id="main" :class="active ? 'filter' : ''">
+            <div id="main_canvas"><canvas id="gameCanvas"></canvas></div>
+            <audio id="audio" loop="loop" src="res/Audio/game.mp3" style="display: none"></audio>
+        </section>
+        <section id="dialogs" v-show="active || record || award>=0 || wallpaper || scene=='MainMenuScene'">
+            <transition>
+                <div id="dialogs_mm" v-show="scene=='MainMenuScene'">
+                    <a id="mm_start" @click="Game_reset();winSize.playEffect('button')"></a>
+                    <a id="mm_rule" @click="button_public('rule')"></a>
+                    <a v-show="!active && !tt" id="mm_news" @click="button_public('shop')"></a>
+                    <a v-show="!active" class="music" :class="music?'active':'stop'" @click="onPlayMusic()"></a>
+                    <a class="reserved"></a>
+                </div>
+            </transition>
+            <transition name="fade">
+                <div id="dialogs_question" class="dialogs_layer" v-show="active=='question'">
+                    <div id="question_main">
+                        <div id="question_inner" v-if="qusetioned.length<question.item.length">
+                            <a class="question_item item_q">{{question.item[qusetioned.length].q}}</a>
+                            <a class="question_item item_a" v-for="(item,index) in question.item[qusetioned.length].a"
+                                @click="onSelectQuestion(index)">
+                                {{questionnum[index]}}{{item}}
+                            </a>
+                        </div>
+                        <span id="question_count">完成进度 : {{qusetioned.length}} / {{question.item.length}}</span>
+                    </div>
+                </div>
+            </transition>
+            <transition name="fade" @after-enter="onShowPrizeDialogs">
+                <div id="dialogs_gs" class="dialogs_layer" v-show="active=='gs'">
+                    <div id="gs_main">
+                        <div id="gs_inner">
+                            <img :src="`res/Public/gs/${theme1}_${theme2}.jpg`" width="640" />
+                            <a id="btn_home" @click="Game_home()"></a>
+                            <a id="btn_share" @click="share=true"></a>
+                            <a v-show="!prizetips" class="btn_prize" @click="prize=true"></a>
+                        </div>
+                    </div>
+                    <div id="dialogs_share" v-show="share" @click="share=false"></div>
+                    <div class="prize_dialogs" v-show="prizetips" @click.self="prize=true">
+                        <a class="dialogs_close" @click="prizetips=false"></a>
+                    </div>
+                </div>
+            </transition>
+            <transition name="fade">
+                <div id="dialogs_prize" class="dialogs_layer" v-show="prize">
+                    <div id="prize_main">
+                        <span class="map_top">
+                            <a class="map_top_title"></a>
+                        </span>
+                        <span class="map_bottom_role">
+                            <a class="map_fei"></a>
+                            <a class="map_mei"></a>
+                        </span>
+                        <span class="map_bottom"></span>
+                        <div id="prize_inner">
+                            <a id="prize_hp">剩余抽奖机会:{{hp}}次</a>
+                            <a id="prize_go" :class="lotterytimercount==0&&hp>0?'active':''"
+                                @click="onBeginLottery"></a>
+                            <a v-show="item==lottery_item" v-for="item in 8" class="prize_items"
+                                :class="`item_${item}`"></a>
+                        </div>
+                        <a class="dialogs_back" @click="prize=false"></a>
+                        <a class="btn_record" @click="record=true"></a>
+                    </div>
+                    <div v-if="prizeid>0" id="prize_tips" class="dialogs_layer">
+                        <div id="prizetips_main" @click.self="onOpenPrize(0)">
+                            <img class="prizetips_icon" :src="`res/Goods/${prizeid}.jpg`" width="120" height="120" />
+                            <a class="prizetips_icon" @click.self="onOpenPrize(0)"></a>
+                            <a class="prizetips_name">{{prizeid>100?'国潮新春头像':prizeid==53?'2020潮玩台历':'国潮有喜微信红包封面'}}</a>
+                            <a class="dialogs_close" @click="prizeid=0"></a>
+                        </div>
+                    </div>
+                </div>
+            </transition>
+            <transition name="fade">
+                <div id="dialogs_wish" class="dialogs_layer" v-show="active=='wish'">
+                    <div id="wish_main">
+                        <a id="word_1"></a>
+                        <a v-show="wish==-1" id="word_2"></a>
+                        <div id="wish_list">
+                            <a v-for="(item,index) in wishlist" :id="`wish_${item}`" :class="`location_${index+1}`"
+                                @click="Game_start(item)"></a>
+                        </div>
+                        <a id="wish_back" class="dialogs_back" @click='active=""'></a>
+                    </div>
+                </div>
+            </transition>
+            <transition name="fade">
+                <div id="dialogs_rule" class="dialogs_layer" v-show="active=='rule'">
+                    <div id="rule_main">
+                        <a id="rule_record" @click='record=true'></a>
+                        <a id="rule_ok" class="dialogs_ok" @click='active=""'></a>
+                    </div>
+                </div>
+            </transition>
+            <transition name="fade">
+                <div id="dialogs_record" class="dialogs_layer" v-show="record">
+                    <div id="record_main">
+                        <div id="record_used">
+                            <span class="used_items" v-for="(item,index) in card.used" @click="onOpenPrize(index)">
+                                <img class="item_img" :src="`res/Goods/${item.id}.jpg`" width="138" />
+                                <a class="item_name">{{item.id>100?'国潮新春头像':item.id==53?'2020潮玩台历':'国潮红包封面'}}</a>
+                                <a class="item_mask"></a>
+                            </span>
+                            <a class="clear"></a>
+                        </div>
+                        <a class="dialogs_close" @click="record=false"></a>
+                    </div>
+                </div>
+            </transition>
+            <transition name="fade">
+                <div id="dialogs_alert" class="dialogs_layer" v-show="alertContent">
+                    <div id="alert_main">
+                        <div id="alert_content">
+                            <span v-html="alertContent"></span>
+                        </div>
+                        <div id="alert_btn">
+                            <a id="alert_sure" @click="onAlertSure"></a>
+                            <a id="alert_cancel" v-show="typeof(alertCallBack) == 'function'"
+                                @click="alertContent=''"></a>
+                        </div>
+                    </div>
+                </div>
+            </transition>
+            <transition name="fade">
+                <div id="dialogs_wallpaper" class="dialogs_layer" v-if="wallpaper" @click.self="wallpaper=false">
+                    <div id="wallpaper_main">
+                        <img :src="`res/Goods/${wallpaper}_${facetoken[wallpaper-101]}.jpg`" width="640" />
+                        <span id="wallpaper_tips">tips: 长按图片保存到手机</span>
+                        <span id="wallpaper_pack">奖品可在<a @click="wallpaper=false;record=true">中奖记录</a>中查看</span>
+                    </div>
+                </div>
+            </transition>
+            <transition name="fade">
+                <div id="dialogs_shop" class="dialogs_layer" v-if="shop" v-show="active=='shop'">
+                    <div id="shop_main">
+                        <img :src="'https://wx.22dm.com'+shop.img" width="550" @click="onGoShop">
+                        <a id="shop_close" class="dialogs_close" @click="active=''"></a>
+                    </div>
+                </div>
+            </transition>
+            <transition name="fade">
+                <div id="dialogs_award" class="dialogs_layer" v-show="award>=0">
+                    <div id="award_main">
+                        <input id="award_name" type="text" placeholder="姓名" />
+                        <input id="award_tel" type="text" placeholder="手机号码" />
+                        <input id="award_address" type="text" placeholder="收货地址" />
+                        <span id="award_tips"></span>
+                        <a id="award_post" onclick="award.check()"></a>
+                        <a class="dialogs_close" @click='award=-1'></a>
+                    </div>
+                </div>
+            </transition>
+            <transition name="fade">
+                <div id="dialogs_cover" class="dialogs_layer" v-show="cover" @click.self="cover=false">
+                    <div id="cover_main">
+                        <div id="cover_ercode"></div>
+                        <span>第一步: 长按二维码保存到手机<br />第二步: 使用微信扫一扫领取红包封面~</span>
+                        <span>奖品可在<a @click="cover=false;record=true">中奖记录</a>中查看</span>
+                    </div>
+                </div>
+            </transition>
+            <transition name="fade">
+                <div id="dialogs_preload" class="dialogs_layer" v-show="active=='preload'">
+                    <div id="preload_main">
+                        <span class="precent_word">0%</span>
+                    </div>
+                    <a class="reserved"></a>
+                </div>
+            </transition>
+        </section>
+    </div>
+    <div id="ercode">
+        <div>
+            <img src="res/Public/ercode.png" width="250" />
+            <span>
+                为了更好的体验，请使用手机端扫码打开~
+            </span>
+        </div>
+    </div>
+    <script src="/js/cocos2d-js-v3.9.js"></script>
+    <script src="main.js?v=0302.1"></script>
+    <script src="/js/qrcode.min.js"></script>
+</body>
+
+</html>
