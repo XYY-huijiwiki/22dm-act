@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="《喜羊羊与灰太狼》十五周年" />
+    <meta name="description" content="创造回忆，收获成长的新惊喜" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="user-scalable=no, width=640">
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <title>《喜羊羊与灰太狼》十五周年</title>
+    <link rel="stylesheet" type="text/css" href="css/index.min.css?v=080301">
+    <script src="../../../js/jquery-2.1.1.min.js"></script>
+    <script src="../../../js/vue.min.js"></script>
+    <!-- <script src="/js/sns.js"></script> -->
+</head>
+
+<body>
+    <div id="all">
+        <section id="main" :class="isFilter.indexOf(active)!=-1 ? 'filter' : ''">
+            <div id="main_canvas"><canvas id="gameCanvas"></canvas></div>
+        </section>
+        <section id="dialogs" v-show="active || guide>0">
+            <transition name="fade">
+                <div id="friends" class="dialogs_layer" v-show="active=='friends'">
+                    <friends-wall :wall-bg="friends.wall.bg" :wall-face="friends.wall.face"
+                        :wall-name="friends.wall.name">
+                    </friends-wall>
+                    <friends-topic v-for="(item,index) in friends.topic" :u-id="friends.uid" :item="item"
+                        :t-index="index">
+                    </friends-topic>
+                </div>
+            </transition>
+            <transition name="fade" @before-enter="initChatBox()">
+                <div id="chatbox" class="dialogs_layer" v-show="active=='chatbox'">
+                    <div id="chatbox_top">
+                        <span id="chatbox_back" @click="active='friends'"></span>
+                        <span id="chatbox_name">{{chatbox.room}}</span>
+                        <span id="chatbox_more"></span>
+                    </div>
+                    <div id="chatbox_main">
+                        <div v-for="(msg,index) in chatbox.msg" class="chatbox_item"
+                            :class="[msg.uid==friends.uid?'right':'left',msg.img?'img':'txt']">
+                            <img v-if="msg.uid!=friends.uid" class="item_face"
+                                :src="'res/Public/face/like_'+msg.uid+'.png'" height="75" />
+                            <span v-if="!msg.img" v-html="msg.content"></span>
+                            <span v-else @click="active='douyin'">
+                                <img :src="msg.img" :width="msg.uid==friends.uid?400:200" />
+                                <a :class="msg.uid==friends.uid?'hand_map':'item_emoji'"></a>
+                            </span>
+                            <img v-if="msg.uid==friends.uid" class="item_face"
+                                :src="'res/Public/face/b_'+msg.uid+'.png'" height="75" />
+                        </div>
+                    </div>
+                    <div id="chatbox_input"></div>
+                </div>
+            </transition>
+            <transition name="fade" @after-enter="onLoadMsg()">
+                <div id="douyin" class="dialogs_layer" v-if="active=='douyin'">
+                    <div id="douyin_main">
+                        <video id="video_douyin" loop="true" width="600" controls="true"
+                            poster="res/Public/video/douyin.jpg" webkit-playsinline="true" playsinline="true"
+                            x5-video-player-type="h5" x-webkit-airplay="true" x5-video-player-fullscreen="true"
+                            x5-video-orientation="portraint" width="600">
+                            <source src="res/Public/video/douyin.mp4" type="video/mp4" />
+                        </video>
+                        <a id="douyin_back" @click="active='chatbox'"></a>
+                        <a id="douyin_look" @click="douyin.ercode=true"></a>
+                        <a id="douyin_music" @click="douyin.ercode=true"></a>
+                        <a id="douyin_title" @click="douyin.ercode=true"></a>
+                        <a class="video_play" @click="onPlayVideo('douyin')" v-show="!douyin.play"></a>
+                        <div id="douyin_ctor">
+                            <span id="douyin_user" @click="douyin.ercode=true"></span>
+                            <span id="douyin_like" @click="douyin.like=!douyin.like"
+                                :class="{'none' : !douyin.like}">{{douyin.like?'100w':'99.9w'}}</span>
+                            <span id="douyin_comm" @click="douyin.ercode=true">8030</span>
+                            <span id="douyin_share" @click="douyin.ercode=true">803</span>
+                        </div>
+                        <div id="douyin_ercode" class="dialogs_layer" v-if="douyin.ercode">
+                            <img src="res/Public/video/dy_ercode.jpg" width="500" />
+                            <a class="btn_close" @click="douyin.ercode=false"></a>
+                        </div>
+                    </div>
+                    <transition name="fade-slow">
+                        <div class="alert_msg" v-if="douyin.msg" @click="active='bilibili'">
+                            <img src="res/Public/video/alert.png" width="600" />
+                        </div>
+                    </transition>
+                </div>
+            </transition>
+            <transition name="fade" @after-enter="onLoadFire()">
+                <div id="bilibili" v-if="active=='bilibili'">
+                    <div id="bilibili_main">
+                        <video id="video_bilibili" loop="true" width="640" controls="true"
+                            poster="res/Public/video/bilibili.jpg" webkit-playsinline="true" playsinline="true"
+                            x5-video-player-type="h5" x-webkit-airplay="true" x5-video-player-fullscreen="true"
+                            x5-video-orientation="portraint" width="640">
+                            <source src="res/Public/video/bilibili.mp4" type="video/mp4" />
+                        </video>
+                        <div id="danmu" v-if="!bilibili.play && !bilibili.rocket">
+                            <div v-for="itemi in 3" :class="`row_${itemi}`">
+                                <span v-for="itemj in bilibili.danmu[itemi-1]"
+                                    :class="`danmu_${Math.floor(Math.random()*5+1)}`">{{itemj}}</span>
+                            </div>
+                        </div>
+                        <a class="video_play" @click="onPlayVideo('bilibili')" v-show="!bilibili.play"></a>
+                        <a id="bilibili_back" @click="active='douyin'"></a>
+                    </div>
+                    <div id="bilibili_comm">
+                        <a id="bilibili_comm_img" @click="bilibili.ercode=true"></a>
+                    </div>
+                    <div id="bilibili_ercode" class="dialogs_layer" v-if="bilibili.ercode">
+                        <img src="res/Public/video/bilibili_ercode.jpg" width="500" />
+                        <a class="btn_close" @click="bilibili.ercode=false"></a>
+                    </div>
+                    <transition name="fade-slow">
+                        <div id="bilibili_rocket" class="dialogs_layer" v-if="bilibili.rocket">
+                            <a id="rocket" @click="active='select';winSize.playMusic('xyy')"></a>
+                            <a v-show="bilibili.rocketend" class="btn_close" @click="bilibili.rocket=false"></a>
+                            <span v-show="bilibili.rocketend">你收到一份来自<br />
+                                《喜羊羊与灰太狼》十五周年的礼物
+                            </span>
+                        </div>
+                    </transition>
+                </div>
+            </transition>
+            <transition name="fade">
+                <div id="select" class="dialogs_layer" v-show="active=='select'">
+                    <div id="select_main">
+                        <a id="select_title"></a>
+                        <a id="select_content"></a>
+                        <a v-for="item in [1,2,3,4,5,6,7,8]"
+                            :class="['s_'+item,end.id==item?'active':end.id!=0?'none':'']" @click="end.id=item"></a>
+                        <a id="select_go" v-show="end.id!=0" @click="end.id!=0?active='select2' : ''"></a>
+                        <a class="btn_back" @click="active='bilibili'"></a>
+                    </div>
+                </div>
+            </transition>
+            <transition name="fade">
+                <div id="select_other" class="dialogs_layer" v-show="active=='select2'">
+                    <div id="select_other_main">
+                        <span id="select_sex">
+                            <span id="sex_1" :class="{'none':end.sex!=1}" @click="end.sex=1"></span>
+                            <span id="sex_2" :class="{'none':end.sex!=2}" @click="end.sex=2"></span>
+                        </span>
+                        <span id="select_foot">
+                            <span id="foot_1" :class="{'none':end.foot!=1}" @click="end.foot=1"></span>
+                            <span id="foot_2" :class="{'none':end.foot!=2}" @click="end.foot=2"></span>
+                        </span>
+                        <a id="select_other_go" v-show="end.sex!=0&&end.foot!=0" @click="toDataUrl()"></a>
+                        <a class="btn_back" @click="active='select'"></a>
+                    </div>
+                    <div id="dialogs_poster" class="dialogs_layer" v-show="end.poster">
+                        <div id="poster_main">
+                            <img id="poster" src="res/Public/select/bg.jpg" width="640" />
+                            <a class="btn_close" @click="end.poster=false"></a>
+                            <a class="btn_share" @click="end.share=true"></a>
+                        </div>
+                        <div id="dialogs_share" class="dialogs_layer" v-show="end.share" @click="end.share=false"></div>
+                    </div>
+                    <a class="btn_replay" @click="winSize.playMusic('default');Game_reset()"></a>
+                </div>
+            </transition>
+            <transition name="fade">
+                <div id="dialogs_shop" class="dialogs_layer" v-if="shop" v-show="active=='shop'">
+                    <div id="shop_main">
+                        <a id="shop_close" class="dialogs_close" @click="active=''"></a>
+                    </div>
+                </div>
+            </transition>
+            <transition name="fade">
+                <div id="dialogs_preload" class="dialogs_layer" v-show="active=='preload'">
+                    <div id="preload_main">
+                        <span class="precent_word">0%</span>
+                    </div>
+                    <a class="reserved"></a>
+                </div>
+            </transition>
+            <transition name="fade">
+                <div id="guide" class="dialogs_layer" v-show="guide>0">
+                    <span v-show="guide==1" class="guide_1" @click="onCCResume(1)">
+                        <img src="res/Public/icon/finger.png" width="150">
+                        指纹解锁<br />
+                        成长的新惊喜
+                    </span>
+                    <span v-show="guide==2" class="guide_2" @click="onCCResume(2)">
+                        <img src="res/Public/icon/hand.png" width="75">
+                        点击打开电视
+                    </span>
+                    <div v-show="guide==3" class="come_msg" @click="onCCLoad('GP_BUS_OUT')">
+                        <img src="res/Public/friends/msg.png" width="600" />
+                    </div>
+                </div>
+            </transition>
+        </section>
+        <a id="music" v-show="active==''" :class="music?'active':'stop'" @click="onPlayMusic()"></a>
+    </div>
+    <div id="ercode">
+        <div>
+            <img src="res/Public/ercode.png" width="400" />
+            <span>
+                为了更好的体验，请使用手机微信扫码打开~
+            </span>
+        </div>
+    </div>
+    <script src="../../../js/cocos2d-js-v3.9.js"></script>
+    <script src="../../../js/jweixin-1.4.0.js"></script>
+    <script src="component.js?v=080301"></script>
+    <script src="main.js?v=080301"></script>
+</body>
+
+</html>
