@@ -1,0 +1,584 @@
+html {
+  background: #000;
+}
+
+html body,
+html div,
+html ul {
+  padding: 0;
+  margin: 0;
+  font-family: "Microsoft YaHei";
+}
+
+html ul {
+  list-style-type: none;
+
+html a {
+  text-decoration: none;
+}
+
+#Cocos2dGameContainer {
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#all {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+}
+
+#all section {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#main #main_canvas {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#main #main_score {
+  width: 300px;
+  height: 45px;
+  position: absolute;
+  top: 25px;
+  left: 155px;
+}
+
+#main #main_score img {
+  margin-left: -7px;
+  padding: 0;
+  height: 45px;
+  float: left;
+}
+
+#main #main_pause {
+  width: 118px;
+  height: 44px;
+  background: url(../res/GamePlay/btn_pause.png) no-repeat no-repeat;
+  position: absolute;
+  top: 25px;
+  right: 0px;
+}
+
+#main #main_nextbubble {
+  width: 142px;
+  height: 142px;
+  position: absolute;
+  left: 45px;
+  bottom: 13px;
+  background: url(../res/GamePlay/nextbubble.png) no-repeat no-repeat;
+}
+
+#main #main_nextbubble img {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 21px;
+  left: 21px;
+}
+
+#main #game_music {
+  display: none !important;
+}
+
+#main #music {
+  width: 116px;
+  height: 51px;
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+#main #music.active {
+  background: url(../res/Public/music_1.png) no-repeat no-repeat;
+}
+
+#main #music.stop {
+  background: url(../res/Public/music_0.png) no-repeat no-repeat;
+}
+
+#dialogs {
+  z-index: 100;
+}
+
+#dialogs .dialogs_background {
+  margin-top: -700px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+}
+
+#dialogs .dialogs_layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#dialogs .dialogs_layer .dialogs_inner {
+  margin-top: -700px;
+  width: 640px;
+  height: 1400px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+}
+
+#dialogs .dialogs_close {
+  width: 113px;
+  height: 110px;
+  background: url(../res/Public/btn_close.png) no-repeat no-repeat;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+
+#dialogs .reserved {
+  width: 321px;
+  height: 27px;
+  position: absolute;
+  bottom: 30px;
+  left: 159.5px;
+}
+
+#dialogs #dialogs_pause {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+#dialogs #dialogs_pause #pause_main {
+  margin-top: -129px;
+  margin-left: -265px;
+  width: 530px;
+  height: 258px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  background: url(../res/Public/pause/btn_mask.png);
+}
+
+#dialogs #dialogs_pause #pause_main .pause_item {
+  margin-top: 96px;
+  margin-right: 25px;
+  width: 106px;
+  height: 106px;
+  display: inline-block;
+}
+
+#dialogs #dialogs_pause #pause_main #pause_home {
+  left: 50px;
+  background: url(../res/Public/pause/btn_home_1.png);
+}
+
+#dialogs #dialogs_pause #pause_main #pause_continue {
+  left: 250px;
+  background: url(../res/Public/pause/btn_continue_1.png);
+}
+
+#dialogs #dialogs_pause #pause_main #pause_replay {
+  left: 100px;
+  background: url(../res/Public/pause/btn_replay_1.png);
+}
+
+#dialogs #dialogs_pause #pause_main #pause_close {
+  width: 83px;
+  height: 83px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+}
+
+#dialogs #dialogs_record #record_inner {
+  width: 640px;
+  height: 600px;
+  position: absolute;
+  top: 100px;
+}
+
+#dialogs #dialogs_record #record_inner .record_top {
+  width: 640px;
+  height: 382px;
+  background: url(../res/Public/record/top.png) no-repeat no-repeat;
+  display: block;
+}
+
+#dialogs #dialogs_record #record_inner .record_bottom {
+  width: 640px;
+  height: 221px;
+  background: url(../res/Public/record/bottom.png) no-repeat no-repeat;
+  display: block;
+}
+
+#dialogs #dialogs_record #record_list {
+  padding: 25px 0;
+  width: 640px;
+  min-height: 300px;
+  max-height: 460px;
+  overflow-y: auto;
+  background: url(../res/Public/record/main.png) repeat-y;
+}
+
+@media screen and (max-height: 1000px) {
+  #dialogs #dialogs_record #record_list {
+    max-height: 300px;
+  }
+}
+
+@media screen and (max-height: 1100px) {
+  #dialogs #dialogs_record #record_list {
+    max-height: 350px;
+  }
+}
+
+@media screen and (max-height: 1200px) {
+  #dialogs #dialogs_record #record_list {
+    max-height: 400px;
+  }
+}
+
+#dialogs #dialogs_record #record_list li {
+  margin-bottom: 40px;
+  margin-left: 90px;
+  width: 460px;
+  height: 71px;
+  position: relative;
+  background: url(../res/Public/record/row.png) no-repeat no-repeat;
+}
+
+#dialogs #dialogs_record #record_list li:last-child {
+  margin-bottom: 0;
+}
+
+#dialogs #dialogs_record #record_list li .record_face {
+  width: 73px;
+  height: 65px;
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  top: 3px;
+  left: 60px;
+}
+
+#dialogs #dialogs_record #record_list li .record_face img {
+  width: 55px;
+  height: 55px;
+  position: absolute;
+  top: 5px;
+  left: 9px;
+  border-radius: 15px;
+}
+
+#dialogs #dialogs_record #record_list li .record_face .record_face_mask {
+  width: 73px;
+  height: 65px;
+  background: url(../res/Public/record/face.png) no-repeat no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#dialogs #dialogs_record #record_list li .record_name {
+  width: 120px;
+  height: 71px;
+  line-height: 71px;
+  font-size: 16px;
+  color: #36f6fd;
+  position: absolute;
+  top: 0;
+  left: 135px;
+  overflow: hidden;
+}
+
+#dialogs #dialogs_record #record_list li .record_num {
+  width: 87px;
+  height: 87px;
+  position: absolute;
+  top: -20px;
+  left: -10px;
+}
+
+#dialogs #dialogs_record #record_list li .record_num .record_num.num_9 {
+  width: 125px;
+  left: -38px;
+}
+
+#dialogs #dialogs_record #record_list li .record_num.num_0 {
+  background: url(../res//Public/record/n/1.png);
+}
+
+#dialogs #dialogs_record #record_list li .record_num.num_1 {
+  background: url(../res//Public/record/n/2.png);
+}
+
+#dialogs #dialogs_record #record_list li .record_num.num_2 {
+  background: url(../res//Public/record/n/3.png);
+}
+
+#dialogs #dialogs_record #record_list li .record_num.num_3 {
+  background: url(../res//Public/record/n/4.png);
+}
+
+#dialogs #dialogs_record #record_list li .record_num.num_4 {
+  background: url(../res//Public/record/n/5.png);
+}
+
+#dialogs #dialogs_record #record_list li .record_num.num_5 {
+  background: url(../res//Public/record/n/6.png);
+}
+
+#dialogs #dialogs_record #record_list li .record_num.num_6 {
+  background: url(../res//Public/record/n/7.png);
+}
+
+#dialogs #dialogs_record #record_list li .record_num.num_7 {
+  background: url(../res//Public/record/n/8.png);
+}
+
+#dialogs #dialogs_record #record_list li .record_num.num_8 {
+  background: url(../res//Public/record/n/9.png);
+}
+
+#dialogs #dialogs_record #record_list li .record_num.num_9 {
+  background: url(../res//Public/record/n/10.png);
+}
+
+#dialogs #dialogs_record #record_list li .record_score {
+  width: 200px;
+  height: 58px;
+  position: absolute;
+  top: 6.5px;
+  left: 240px;
+  display: flex;
+  justify-content: center;
+}
+
+#dialogs #dialogs_record #record_list li .record_score img {
+  margin-left: -25px;
+  padding: 0;
+  width: 57px;
+  height: 58px;
+}
+
+#dialogs #dialogs_record #record_list li .recoed_r {
+  width: 105px;
+  height: 105px;
+  position: absolute;
+  top: -30px;
+  left: 380px;
+}
+
+#dialogs #dialogs_record #record_list li .recoed_r.r_0 {
+  background: url(../res/Public/record/r1.png) no-repeat no-repeat;
+}
+
+#dialogs #dialogs_record #record_list li .recoed_r.r_1 {
+  background: url(../res/Public/record/r2.png) no-repeat no-repeat;
+}
+
+#dialogs #dialogs_record #record_list li .recoed_r.r_2 {
+  background: url(../res/Public/record/r3.png) no-repeat no-repeat;
+}
+
+#dialogs #dialogs_award {
+  background: url(../res/Public/award.jpg) no-repeat no-repeat center center;
+}
+
+#dialogs #dialogs_award #award_inner {
+  width: 640px;
+  height: 960px;
+  position: absolute;
+  left: 0;
+  top: 180px;
+}
+
+#dialogs #dialogs_award input {
+  width: 500px;
+  height: 70px;
+  left: 70px;
+  text-align: center;
+  color: #06f2f2;
+  font-size: 32px;
+  font-weight: bold;
+  background: none;
+  position: absolute;
+  border: none;
+  border: 5px solid #0a6bb3;
+}
+
+#dialogs #dialogs_award input#award_name {
+  top: 385px;
+}
+
+#dialogs #dialogs_award input#award_tel {
+  top: 500px;
+}
+
+#dialogs #dialogs_award input#award_address {
+  height: 120px;
+  top: 615px;
+}
+
+#dialogs #dialogs_award #award_tips {
+  width: 640px;
+  height: 40px;
+  line-height: 40px;
+  color: red;
+  font-size: 24px;
+  display: block;
+  text-align: center;
+  position: absolute;
+  top: 745px;
+  left: 0;
+}
+
+#dialogs #dialogs_award #award_post {
+  width: 134px;
+  height: 57px;
+  border: 5px solid #0a6bb3;
+  line-height: 57px;
+  color: #fff;
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  position: absolute;
+  top: 785px;
+  left: 253px;
+}
+
+#dialogs #dialogs_share {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+#dialogs #dialogs_share img {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#dialogs #dialogs_guide {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+#dialogs #dialogs_guide img {
+  position: absolute;
+}
+
+#dialogs #dialogs_guide .guide_1 {
+  bottom: 220px;
+  left: 160px;
+}
+
+#dialogs #dialogs_guide .guide_2 {
+  bottom: 120px;
+  left: 20px;
+}
+
+#dialogs #dialogs_guide .guide_3 {
+  top: 120px;
+  left: 180px;
+}
+
+#dialogs .preload_precent {
+  margin-top: -250px;
+  margin-left: -281px;
+  width: 562px;
+  height: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: url(../res/Public/preload/logo.png) no-repeat no-repeat top center;
+}
+
+#dialogs .preload_precent a {
+  height: 41px;
+  position: absolute;
+  top: 280px;
+  left: 107px;
+}
+
+#dialogs .preload_precent .precent_word {
+  height: 41px;
+  position: absolute;
+  top: 320px;
+  left: 107px;
+}
+
+#dialogs .preload_precent .precent_main {
+  width: 348px;
+  background: url(../res/Public/preload/main.png) no-repeat no-repeat;
+}
+
+#dialogs .preload_precent .precent_inner {
+  width: 0px;
+  background: url(../res/Public/preload/inner.png) no-repeat no-repeat;
+}
+
+#dialogs .preload_precent .precent_word {
+  width: 348px;
+  height: 41px;
+  line-height: 41px;
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  display: block;
+}
+
+#dialogs #dialogs_gameover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+#dialogs #dialogs_gameover img {
+  margin-left: -161.5px;
+  margin-top: -55px;
+  width: 323px;
+  height: 110px;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  opacity: 100;
+  animation: titleMoveIn 1.5s linear forwards;
+  -webkit-animation: titleMoveIn 1.5s linear forwards;
+}
+
+.btn {
+  display: block;
+  cursor: pointer;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+@keyframes titleMoveIn {
+  0% {
+    top: 0%;
+    opacity: 100;
+  }
+  100% {
+    top: 45%;
+    opacity: 255;
+  }
+}

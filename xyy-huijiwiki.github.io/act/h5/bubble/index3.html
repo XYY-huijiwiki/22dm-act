@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="“趣”玩跨时空救兵" />
+    <meta name="description" content="一起“趣”玩跨时空救兵，让我们一起帮助羊羊们解除危机~" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="user-scalable=no, width=640">
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <title>“趣”玩跨时空救兵</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script type="text/javascript" src="../../../js/jquery-2.1.1.min.js"></script>
+    <script src="../../../js/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="all">
+        <section id="main">
+            <div id="main_canvas">
+                <canvas id="gameCanvas"></canvas>
+            </div>
+            <block v-show="scene=='GamePlayScene'">
+                <div id="main_score">
+                    <img v-for="(item,index) in Game_score+''" :src="`res/GamePlay/score/${item}.png`" />
+                </div>
+                <a id="main_pause" @click="active='pause'"></a>
+                <div v-if="nextbubble>=1 && nextbubble<=6" id="main_nextbubble">
+                    <img :src="`res/GamePlay/plist/tile_${nextbubble}.png`" />
+                </div>
+            </block>
+            <audio id="game_music" src="res/Audio/game.mp3" loop="loop" autoplay="autoplay"></audio>
+            <a v-show="scene=='MainMenuScene'" id="music" :class="music?'active':'stop'" @click="onPlayMusic()"></a>
+        </section>
+        <section id="dialogs" v-show="active">
+            <transition name="fade" @before-enter="Game_pause">
+                <div id="dialogs_pause" class="dialogs_layer" v-show="active=='pause'">
+                    <div class="dialogs_inner">
+                        <div id="pause_main">
+                            <a id="pause_home" class="pause_item" @click="Game_home"></a>
+                            <a id="pause_continue" class="pause_item" @click="Game_continue"></a>
+                            <a id="pause_replay" class="pause_item" @click="Game_replay"></a>
+                            <a id="pause_close" @click="Game_continue"></a>
+                        </div>
+                    </div>
+                </div>
+            </transition>
+            <transition name="fade">
+                <div id="dialogs_preload" class="dialogs_layer" v-show="active=='preload'">
+                    <img class="dialogs_background" src="res/Public/preload/background.jpg" width="640" height="1400" />
+                    <div class="preload_precent">
+                        <a class="precent_main"></a>
+                        <a class="precent_inner"></a>
+                        <span class="precent_word">0%</span>
+                    </div>
+                    <img class="reserved" src="res/Public/reserved.png" />
+                </div>
+            </transition>
+            <transition name="fade">
+                <div id="dialogs_record" class="dialogs_layer" v-show="active=='record'">
+                    <img class="dialogs_background" src="res/Public/record/background.jpg" width="640" height="1400" />
+                    <a class="dialogs_close" @click='v_main.active=""'></a>
+                    <img class="reserved" src="res/Public/reserved.png" />
+                    <div id="record_inner">
+                        <a class="record_top"></a>
+                        <ul id="record_list">
+                            <li v-for="(item,index) in recordList">
+                                <a class="record_num" :class="'num_'+(index)"></a>
+                                <span class="record_face">
+                                    <img :src="item.json.img" width="55" height="55" />
+                                    <a class="record_face_mask"></a>
+                                </span>
+                                <a class="record_name">{{item.json.name}}</a>
+                                <span class="record_score">
+                                    <img v-for="itemj in item.json.score+''"
+                                        :src="`res/Public/record/s/${itemj}.png`" />
+                                </span>
+                                <a v-if="index<3" :class="`recoed_r r_${index}`"></a>
+                            </li>
+                        </ul>
+                        <a class="record_bottom" @click='winSize.ranking.getPrize()'></a>
+                    </div>
+                </div>
+            </transition>
+            <transition name="fade">
+                <div id="dialogs_award" class="dialogs_layer" v-show="active=='award'">
+                    <div id="award_inner">
+                        <input id="award_name" type="text" placeholder="姓名" />
+                        <input id="award_tel" type="text" placeholder="手机号码" />
+                        <input id="award_address" type="text" placeholder="地址" />
+                        <span id="award_tips"></span>
+                        <a id="award_post" onclick="award.check()">提交</a>
+                    </div>
+                    <a class="dialogs_close" @click='v_main.active="record"'></a>
+                </div>
+            </transition>
+            <transition name="fade">
+                <div id="dialogs_rule" class="dialogs_layer" v-show="active=='rule'">
+                    <img class="dialogs_inner" src="res/Public/bg_rule.jpg" />
+                    <a class="dialogs_close" @click='v_main.active=""'></a>
+                    <img class="reserved" src="res/Public/reserved.png" />
+                </div>
+            </transition>
+            <transition name="fade">
+                <div id="dialogs_share" class="dialogs_layer" v-show="active=='share'" @click='v_main.active=""'>
+                    <img src="res/Public/share.png" @click='v_main.active=""'></a>
+                </div>
+            </transition>
+            <transition name="fade">
+                <div id="dialogs_gameover" class="dialogs_layer" v-show="active=='gameover'">
+                    <img class="gameover" src="res/Public/gameover.png" />
+                </div>
+            </transition>
+            <transition name="fade">
+                <div id="dialogs_guide" class="dialogs_layer" v-show="active=='guide'" @click='v_main.active=""'>
+                    <img class="guide_1" src="res/Public/guide_1.png" />
+                    <img class="guide_2" src="res/Public/guide_2.png" />
+                    <img class="guide_3" src="res/Public/guide_3.png" />
+                </div>
+            </transition>
+        </section>
+    </div>
+    <script src="../../../js/cocos2d-js-v3.9.js"></script>
+    <script src="main3.js"></script>
+    <script src="../../../js/jweixin-1.3.2.js"></script>
+</body>
+
+</html>
