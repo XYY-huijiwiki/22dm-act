@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="keywords" content="礼物保卫战" />
+<meta name="description" content="这是一个不平凡的圣诞节，与羊羊一起保卫圣诞礼物吧！" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="user-scalable=no, width=640">
+<meta name="format-detection" content="telephone=no, email=no" />
+<title>礼物保卫战</title>
+<link rel="stylesheet" type="text/css" href="css/index.min.css">
+<script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
+<script src="/js/vue.min.js"></script>
+<script src="/js/jweixin-1.4.0.js"></script>
+<script src="/js/sns.js"></script>
+</head>
+<body>
+<div id="all">
+<section id="main" :class="isFilter.indexOf(active)!=-1 ? 'filter' : ''">
+<div id="main_canvas"><canvas id="gameCanvas"></canvas></div>
+<audio id="audio" loop="loop" src="res/Audio/game.mp3" style="display: none"></audio>
+</section>
+<section id="dialogs" v-show="active || scene=='MainMenuScene'|| scene=='GameResultScene' || scene=='GamePlayScene' || waiting">
+<transition>
+<div id="dialogs_mm" v-show="scene=='MainMenuScene'">
+<a id="mm_start" @click="Game_resert()"></a>
+<a id="mm_record" @click="button_public('record')"></a>
+<a id="mm_rule" @click="button_public('rule')"></a>
+<a v-show="!active && shop" id="mm_news" @click="button_public('shop')"></a>
+<a v-show="!active" class="music" :class="music?'active':'stop'" @click="onPlayMusic()"></a>
+<a v-show="!active" class="reserved"></a>
+</div>
+</transition>
+<transition>
+<div id="dialogs_topbar" class="dialogs_layer" v-show="scene=='GamePlayScene'">
+<div id="touch_area" class="dialogs_layer"></div>
+<div id="topbar_score">
+<img v-for="item_num in (Game_score+'')" :src="`res/Public/topbar/${item_num}.png`" height="50" />
+</div>
+<div id="topbar_hp">
+<a v-for="(item,index) in Game_HP" class="hp_main" :class="Game_HP==1 ? 'danger' : ''"></a>
+</div>
+<a v-show="active!='pause'" id="btn_pause" @click="active='pause'"></a>
+</div>
+</transition>
+<transition>
+<div id="dialogs_gs" v-show="scene=='GameResultScene'">
+<a id="gs_play" @click="Game_resert()"></a>
+<a id="gs_share" @click="active='share'"></a>
+</div>
+</transition>
+<transition name="fade">
+<div id="dialogs_guide" class="dialogs_layer" v-show="guide<2 && scene=='GamePlayScene'" @click="guide++">
+<a v-show="guide==0" class="guide_1"></a>
+<a v-show="guide==1" class="guide_2"></a>
+</div>
+</transition>
+<transition name="fade">
+<div id="dialogs_record" class="dialogs_layer" v-show="active=='record'">
+<div id="record_main">
+<a class="dialogs_close" @click='active=""'></a>
+<ul id="record_list">
+<li v-for="(item,index) in recordList">
+<img class="face" :src="`${item.json.img}`" width="70" height="70" />
+<span class="rank flex">
+<img v-for="item_rank in ((index+1)+'')" :src="`res/Public/rule/num/${item_rank}.png`" height="53" />
+</span>
+<span class="record_num flex">
+<img v-for="item_score in (item.json.score+'')" :src="`res/Public/rule/num/${item_score}.png`" height="53" />
+</span>
+</li>
+</ul>
+<a id="record_prize" @click='winSize.ranking.getPrize()'></a>
+</div>
+<a id="record_prize"></a>
+</div>
+</transition>
+<transition name="fade">
+<div id="dialogs_rule" class="dialogs_layer" v-show="active=='rule'">
+<div id="rule_main">
+<a id="rule_ok" class="dialogs_ok" @click='active=""'></a>
+<a id="rule_magic" @click="onGoMagic"></a>
+</div>
+</div>
+</transition>
+<transition name="fade">
+<div id="dialogs_award" class="dialogs_layer" v-show="active=='award'">
+<div id="award_main">
+<input id="award_name" type="text" placeholder="姓名" />
+<input id="award_tel" type="text" placeholder="手机号码" />
+<input id="award_address" type="text" placeholder="收货地址" />
+<span id="award_tips"></span>
+<a id="award_post" onclick="award.check()"></a>
+<a id="award_close" class="dialogs_close" @click='active="record"'></a>
+</div>
+</div>
+</transition>
+<transition name="fade" @before-enter="Game_pause">
+<div id="dialogs_pause" class="dialogs_layer" v-show="active=='pause'">
+<div id="pause_main">
+<a id="pause_home" class="pause_item" @click="Game_home"></a>
+<a id="pause_continue" class="pause_item" @click="Game_continue"></a>
+<a id="pause_replay" class="pause_item" @click="Game_replay"></a>
+<a id="pause_close" @click="Game_continue"></a>
+</div>
+<a class="music" :class="music?'active':'stop'" @click="onPlayMusic()"></a>
+</div>
+</transition>
+<transition name="fade">
+<div id="dialogs_gameover" class="dialogs_layer" v-show="active=='gameover'">
+<a id="gameover"></a>
+</div>
+</transition>
+<transition name="fade">
+<div id="dialogs_shop" class="dialogs_layer" v-if="shop" v-show="active=='shop'">
+<div id="shop_main">
+<img :src="'https://wx.22dm.com'+shop.img" width="550" @click="onGoShop">
+<a id="shop_close" class="dialogs_close" @click="active=''"></a>
+</div>
+</div>
+</transition>
+<transition name="fade">
+<div id="dialogs_preload" class="dialogs_layer" v-show="active=='preload'">
+<div id="preload_main">
+<span class="precent_word">0%</span>
+</div>
+<a class="reserved"></a>
+</div>
+</transition>
+<transition name="fade">
+<div id="dialogs_share" class="dialogs_layer" v-show="active=='share'" @click='active=""'>
+</div>
+</transition>
+</section>
+</div>
+<div id="ercode">
+<div>
+<img src="res/Public/ercode.png" width="250" />
+<span>
+为了更好的体验，请使用手机微信扫码打开~
+</span>
+</div>
+</div>
+<script src="/js/cocos2d-js-v3.9.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
