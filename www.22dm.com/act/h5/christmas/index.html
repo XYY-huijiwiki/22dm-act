@@ -1,0 +1,104 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, width=640">
+	<title>遗失的铃铛</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
+</head>
+<body>
+<div id="all">
+	<section id="main">
+		<canvas id="gameCanvas" width="640" height="1008"></canvas>
+	</section>
+	<section id="dialogs">
+		<div id="dialogs_preload" class="dialogs_layer loading">
+			<img src="res/public/preload_bg.jpg" width="640" height="1008"/>
+			<div class="preload_precent" >
+				<a class="precent_left" ></a>
+				<a class="precent_main" ></a>
+				<a class="precent_right" ></a>
+				<span class="precent_word">0%</span>
+			</div>
+		</div>
+		<div id="dialogs_rule" class="dialogs_layer">
+			<a class="dialogs_close btn" ></a>
+		</div>
+		<div id="dialogs_juji" class="dialogs_layer">
+			<a class="dialogs_close btn" ></a>
+			<a id="wallpaper_open" class="btn" onclick="dialogs.open('dialogs_wallpaper',false)"></a>
+		</div>
+		<div id="dialogs_wallpaper" class="dialogs_layer">
+			<a class="dialogs_close_self btn"></a>
+			<ul id="wallpaper_list">
+				<li class="wallpaper_items">
+					<a number="1"><img src="res/public/wallpaper/1_1.jpg" width="200" height="112.5"/></a>
+				</li>
+				<li class="wallpaper_items">
+					<a number="2"><img src="res/public/wallpaper/2_1.jpg" width="200" height="112.5"/></a>
+				</li>
+				<li class="wallpaper_items">
+					<a number="3"><img src="res/public/wallpaper/3_1.jpg" width="200" height="112.5"/></a>
+				</li>
+				<li class="wallpaper_items">
+					<a number="4"><img src="res/public/wallpaper/4_1.jpg" width="200" height="112.5"/></a>
+				</li>
+				<li class="wallpaper_items">
+					<a number="5"><img src="res/public/wallpaper/5_1.jpg" width="200" height="112.5"/></a>
+				</li>
+				<li class="wallpaper_items">
+					<a number="6"><img src="res/public/wallpaper/6_1.jpg" width="200" height="112.5"/></a>
+				</li>
+				<li class="wallpaper_items">
+					<a number="7"><img src="res/public/wallpaper/7_1.jpg" width="200" height="112.5"/></a>
+				</li>
+				<li class="wallpaper_items">
+					<a number="8"><img src="res/public/wallpaper/8_1.jpg" width="200" height="112.5"/></a>
+				</li>
+			</ul>
+			<a id="wallpaper_btn_start" class="btn" onclick="dialogs.startGame()"></a>
+		</div>
+		<div id="dialogs_download" class="dialogs_layer">
+			<div id="download_wrap">
+				<img id="download_img" src="" width="600" height="337.5" />
+				<span>提示：长按图片保存到本地</span>
+				<a id="download_close"></a>
+			</div>
+		</div>
+		<div id="dialogs_ranking" class="dialogs_layer">
+			<a class="dialogs_close btn" ></a>
+			<a id="ranking_award" class="btn" onclick="dialogs.ranking.getPrize()"></a>
+			<ul id="ranking">
+		     
+	    	</ul>
+	    	<div id="award">
+                <img src="res/public/award.jpg" width="640" height="1008"/>
+                <input id="award_name" type="text" placeholder="姓名"/>
+                <input id="award_tel" type="text" placeholder="手机号码"/>
+                <input id="award_address" type="text" placeholder="地址"/>
+                <span id="award_tips"></span>
+                <a id="award_post" onclick="award.check()"></a>
+                <a id="award_close" onclick="award.close()"><img src="res/public/btn_close_1.png" width="104" height="103"/></a>
+            </div>
+		</div>
+		<div id="dialogs_share" class="dialogs_layer">
+			
+		</div>
+	</section>
+</div>
+<script type="text/javascript" src="/js/cocos2d-js-v3.9.js"></script>
+<script type="text/javascript" src="main.js"></script>
+<script src="/js/jweixin-1.0.0.js"></script>
+<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?b5f74d00a4e9152b939aae19dc2f3c0f";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+</script>
+</body>
+</html>
