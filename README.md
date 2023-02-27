@@ -28,7 +28,7 @@
 23. [狼族训练营](docs/jump.md)
 23. [狼族训练营-万圣节版](docs/jump_2.md)
 24. [羊村守护者](docs/guard.md)
-25. 羊村守护者-贺岁版
+25. [羊村守护者-贺岁版](docs/guard_2.md)
 26. 爸爸教会我的那些事
 27. [“趣”玩跨时空救兵](docs/bubble.md)
 28. [保持初心，一路前进](docs/space_2.md)

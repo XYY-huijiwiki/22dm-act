@@ -1,0 +1,1130 @@
+html {
+  background: #000;
+}
+
+html body, html div, html ul {
+  padding: 0;
+  margin: 0;
+  font-family: "Microsoft YaHei";
+}
+
+html ul {
+  list-style-type: none;
+}
+
+html a {
+  text-decoration: none;
+}
+
+#Cocos2dGameContainer {
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#all {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+}
+
+#all section {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+#main a {
+  display: block;
+  position: absolute;
+  border: 0px solid red;
+}
+
+#main #GamePlayLevel {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+#main #GamePlayLevel a {
+  display: block;
+  position: relative;
+}
+
+#main #GamePlayLevel #level_main {
+  margin-left: -450px;
+  width: 900px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+}
+
+#main #GamePlayLevel #level_main #level_text {
+  width: 100%;
+  text-align: center;
+  height: 150px;
+  line-height: 150px;
+  font-size: 48px;
+  color: #ffef00;
+}
+
+#main #GamePlayLevel #level_main #level_title {
+  width: 100%;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  font-size: 28px;
+  color: #ffef00;
+}
+
+#main #GamePlayLevel #level_main #level_title a {
+  width: 50%;
+  float: left;
+}
+
+#main #GamePlayLevel #level_main #level_title_img {
+  width: 100%;
+  height: 200px;
+  position: relative;
+}
+
+#main #GamePlayLevel #level_main #level_title_img .level_title_img_item {
+  width: 50%;
+  height: 100%;
+  float: left;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#main #GamePlayLevel #level_main #level_title_img #level_title_img_skill {
+  margin-left: 100px;
+  width: 400px;
+  height: 128px;
+}
+
+#main #GamePlayLevel #level_main #level_title_img #level_title_img_wolf div {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+#main #GamePlayLevel #level_main #level_describe {
+  width: 100%;
+  height: 203px;
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+}
+
+#main #GamePlayLevel #level_main #level_describe #level_describe_img {
+  height: 203px;
+  position: absolute;
+  top: 0;
+  left: 240px;
+}
+
+#dialogs {
+  z-index: 100;
+}
+
+#dialogs .dialogs_background {
+  margin-top: -320px;
+  margin-left: -700px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+#dialogs .dialogs_layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#dialogs .dialogs_layer .dialogs_inner {
+  margin-left: -568px;
+  width: 1136px;
+  height: 640px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+}
+
+#dialogs .dialogs_close {
+  width: 234px;
+  height: 111px;
+  background: url(../res/Public/btn_close.png) no-repeat no-repeat;
+  position: absolute;
+  left: 40px;
+  top: 40px;
+}
+
+#dialogs #dialogs_book {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+#dialogs #dialogs_book a {
+  display: block;
+}
+
+#dialogs #dialogs_book #book_jump {
+  width: 115px;
+  height: 48px;
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  background: url(../res/Public/book/jump.png) no-repeat no-repeat;
+}
+
+#dialogs #dialogs_book #book_close {
+  width: 67px;
+  height: 62px;
+  position: absolute;
+  top: -30px;
+  left: -95px;
+  background: url(../res/Public/book/close.png) no-repeat no-repeat;
+}
+
+#dialogs #dialogs_book #book_next {
+  width: 62px;
+  height: 83px;
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  background: url(../res/Public/book/next.png) no-repeat no-repeat;
+}
+
+#dialogs #dialogs_book #book_prv {
+  width: 62px;
+  height: 83px;
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  background: url(../res/Public/book/prv.png) no-repeat no-repeat;
+}
+
+#dialogs #dialogs_book #book_container {
+  margin-top: -292.5px;
+  margin-left: -554.5px;
+  border: 25px solid #fff;
+  background: #fff;
+  width: 1059px;
+  height: 535px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+#dialogs #dialogs_book #book_container .book_page {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+#dialogs #dialogs_book #book_container .book_page a {
+  position: absolute;
+  display: block;
+}
+
+#dialogs #dialogs_book #book_container .book_page.book_page_1 {
+  background: #000;
+}
+
+#dialogs #dialogs_book #book_container .book_page.book_page_1 .p_1_1 {
+  height: 70px;
+  top: 58px;
+  left: 100px;
+  animation: page_1_1 .2s ease .2s 1 forwards;
+  -webkit-animation: page_1_1 .2s ease .2s 1 forwards;
+  background: url(../res/Public/book/1/1_1.png) no-repeat no-repeat;
+}
+
+#dialogs #dialogs_book #book_container .book_page.book_page_1 .p_1_2 {
+  height: 69px;
+  top: 192px;
+  left: 100px;
+  animation: page_1_2 1s ease 1.3s 1 forwards;
+  -webkit-animation: page_1_2 1s ease 1.3s 1forwards;
+  background: url(../res/Public/book/1/1_2.png) no-repeat no-repeat;
+}
+
+#dialogs #dialogs_book #book_container .book_page.book_page_1 .p_1_3 {
+  height: 65px;
+  top: 338px;
+  left: 300px;
+  animation: page_1_3 .5s ease 2.5s 1 forwards;
+  -webkit-animation: page_1_3 .5s ease 2.5s 1 forwards;
+  background: url(../res/Public/book/1/1_3.png) no-repeat no-repeat;
+}
+
+#dialogs #dialogs_book #book_container .book_page.book_page_2 .p_2_1 {
+  height: 35px;
+  left: 730px;
+  bottom: 40px;
+  animation: page_2_1 .5s ease 1s 1 forwards;
+  -webkit-animation: page_2_1 .5s ease 1s 1 forwards;
+  background: url(../res/Public/book/2/2_2.png) no-repeat no-repeat;
+}
+
+#dialogs #dialogs_book #book_container .book_page.book_page_2 .p_2_2 {
+  width: 190px;
+  height: 158px;
+  top: 359px;
+  left: 419px;
+  animation: page_2_2 1.5s ease 0.5s infinite;
+  -webkit-animation: page_2_2 1.5s ease 0.5s infinite;
+  background: url(../res/Public/book/2/2_3.png) no-repeat no-repeat;
+}
+
+#dialogs #dialogs_book #book_container .book_page.book_page_3 .p_3_1 {
+  width: 450px;
+  height: 267px;
+  position: absolute;
+  top: -267px;
+  left: -450px;
+  animation: page_3_1 .8s ease .2s 1 forwards;
+  -webkit-animation: page_3_1 .8s ease .2s 1 forwards;
+  background: url(../res/Public/book/3/3_1.jpg) no-repeat no-repeat;
+  overflow: hidden;
+}
+
+#dialogs #dialogs_book #book_container .book_page.book_page_3 .p_3_1 .p_3_2 {
+  width: 225px;
+  height: 218px;
+  top: 35px;
+  left: 135px;
+  animation: page_3_2 .2s ease 1.4s infinite;
+  -webkit-animation: page_3_2 .2s ease 1.4s infinite;
+  background: url(../res/Public/book/3/3_2.png) no-repeat no-repeat;
+}
+
+#dialogs #dialogs_book #book_container .book_page.book_page_3 .p_3_1 .p_3_3 {
+  width: 163px;
+  height: 250px;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  animation: page_3_3 .5s ease 1.1s 1 forwards;
+  -webkit-animation: page_3_3 .5s ease 1s 1 forwards;
+  background: url(../res/Public/book/3/3_3.png) no-repeat no-repeat;
+}
+
+#dialogs #dialogs_book #book_container .book_page.book_page_3 .p_3_1 .p_3_1_mask {
+  width: 450px;
+  height: 10px;
+  background: #000;
+  top: 249px;
+  left: 0;
+}
+
+#dialogs #dialogs_book #book_container .book_page.book_page_3 .p_3_4 {
+  width: 450px;
+  height: 256px;
+  position: absolute;
+  bottom: -256px;
+  left: -450px;
+  animation: page_3_4 .3s ease 1.8s 1 forwards;
+  -webkit-animation: page_3_4 .3s ease 1.8s 1 forwards;
+  background: url(../res/Public/book/3/3_4.jpg) no-repeat no-repeat;
+}
+
+#dialogs #dialogs_book #book_container .book_page.book_page_3 .p_3_4 .p_3_5 {
+  width: 267px;
+  height: 48px;
+  top: 20px;
+  left: 20px;
+  opacity: 0;
+  animation: page_3_3 .3s ease 2.1s 1 forwards;
+  -webkit-animation: page_3_3 .3s ease 2.1s 1 forwards;
+  background: url(../res/Public/book/3/3_5.png) no-repeat no-repeat;
+}
+
+#dialogs #dialogs_book #book_container .book_page.book_page_3 .p_3_6 {
+  width: 575px;
+  height: 528px;
+  position: absolute;
+  top: 0;
+  right: -575px;
+  animation: page_3_6 .3s ease 2.5s 1 forwards;
+  -webkit-animation: page_3_6 .3s ease 2.5s 1 forwards;
+  background: url(../res/Public/book/3/3_6.jpg) no-repeat no-repeat;
+}
+
+#dialogs #dialogs_book #book_container .book_page.book_page_3 .p_3_6 .p_3_7 {
+  width: 75px;
+  top: 20px;
+  left: 20px;
+  animation: page_3_7 3s ease 2.6s 1 forwards;
+  -webkit-animation: page_3_7 3s ease 2.6s 1 forwards;
+  background: url(../res/Public/book/3/3_7.png) no-repeat no-repeat;
+}
+
+#dialogs #dialogs_book #book_container .book_page.book_page_4 .p_4_2 {
+  width: 399px;
+  height: 68px;
+  top: 10px;
+  left: 10px;
+  opacity: 0;
+  animation: page_4_2 .4s ease infinite;
+  -webkit-animation: page_4_2 .4s ease infinite;
+  background: url(../res/Public/book/4/4_2.png) no-repeat no-repeat;
+}
+
+#dialogs #dialogs_book #book_container .book_page.book_page_4 .p_4_3 {
+  width: 297px;
+  height: 106px;
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+  background: url(../res/Public/book/4/4_3.png) no-repeat no-repeat;
+}
+
+#dialogs #dialogs_book #book_container .book_page.book_page_4 .p_4_3 .p_4_4 {
+  width: 18px;
+  height: 36px;
+  top: 48px;
+  left: 48px;
+  background: url(../res/Public/book/4/4_4.png) no-repeat no-repeat;
+  animation: page_4_4 .5s ease infinite backwards;
+  -webkit-animation: page_4_4 .5s ease infinite backwards;
+}
+
+#dialogs #dialogs_book #book_container .book_page.book_page_6 .p_6_2 {
+  width: 539px;
+  height: 568px;
+  position: absolute;
+  transform: scale(1.5);
+  top: -17px;
+  left: 300px;
+  background: url(../res/Public/book/6/6_2.png) no-repeat no-repeat;
+  animation: page_6_2 .8s ease .3s 1 forwards;
+  -webkit-animation: page_6_2 .8s ease .3s 1 forwards;
+}
+
+#dialogs #dialogs_book #book_container .book_page.book_page_7 .p_7_2 {
+  width: 273px;
+  height: 116px;
+  top: 10px;
+  left: 10px;
+  background: url(../res/Public/book/7/7_2.png) no-repeat no-repeat;
+  animation: page_7_2 1.5s ease .3s 1 forwards;
+  -webkit-animation: page_7_2 1.5s ease .3s 1 forwards;
+}
+
+#dialogs #dialogs_book #book_container .book_page.book_page_7 .p_7_3 {
+  width: 0;
+  height: 142px;
+  bottom: 54px;
+  left: 220px;
+  background: url(../res/Public/book/7/7_3.png) no-repeat no-repeat;
+  animation: page_7_3 1.5s ease 1s 1 forwards;
+  -webkit-animation: page_7_3 1.5s ease 1s 1 forwards;
+}
+
+#dialogs #dialogs_book #book_container .book_page.book_page_9 #book_role_select {
+  margin-left: -69px;
+  width: 138px;
+  height: 82px;
+  bottom: 5px;
+  left: 50%;
+  background: url(../res//Public/book/9/9_2.png) no-repeat no-repeat;
+}
+
+#dialogs #dialogs_book #book_container .book_page #book_role {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#dialogs #dialogs_book #book_container .book_page #book_role .tips_role {
+  margin: 120px auto 0;
+}
+
+#dialogs #dialogs_tips {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+#dialogs #dialogs_tips #tips_main {
+  margin-top: -180.5px;
+  margin-left: -401.5px;
+  width: 809px;
+  height: 415px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: url(../res/Public/tips/background.png);
+}
+
+#dialogs #dialogs_tips #tips_main a {
+  display: block;
+}
+
+#dialogs #dialogs_tips #tips_main .tips_close {
+  width: 85px;
+  height: 85px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#dialogs #dialogs_tips #tips_main #tips_select {
+  width: 100%;
+  height: 85px;
+  position: absolute;
+  top: -85px;
+}
+
+#dialogs #dialogs_tips #tips_main #tips_select img {
+  display: block;
+  position: absolute;
+}
+
+#dialogs #dialogs_tips #tips_main #tips_select .tips_select_1 {
+  top: 13px;
+  left: 0;
+}
+
+#dialogs #dialogs_tips #tips_main #tips_select .tips_select_2 {
+  top: 4px;
+  left: 174px;
+}
+
+#dialogs #dialogs_tips #tips_main #tips_select .tips_select_3 {
+  top: 5px;
+  left: 334px;
+}
+
+#dialogs #dialogs_tips #tips_main .tips_role {
+  margin-top: 40px;
+  margin-left: 75px;
+}
+
+#dialogs #dialogs_pause {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+#dialogs #dialogs_pause #pause_main {
+  margin-top: -285px;
+  margin-left: -163.5px;
+  width: 327px;
+  height: 570px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+#dialogs #dialogs_pause #pause_main a {
+  width: 327px;
+  height: 190px;
+  display: block;
+  background: url(../res/Public/pause/btn_background.png) no-repeat no-repeat;
+  position: relative;
+}
+
+#dialogs #dialogs_pause #pause_main a img {
+  margin-top: -37px;
+  margin-left: -111px;
+  width: 222px;
+  height: 74px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+#dialogs #dialogs_record #record_main {
+  width: 1137px;
+  height: 616px;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+}
+
+#dialogs #dialogs_record .btn_prize {
+  width: 147px;
+  height: 136px;
+  position: absolute;
+  right: 60px;
+  bottom: 20px;
+  background: url(../res/Public/record/record_award.png);
+}
+
+#dialogs #dialogs_record .btn_tips {
+  width: 228px;
+  height: 125px;
+  position: absolute;
+  right: 160px;
+  top: 30px;
+  background: url(../res/Public/record/record_tips.png);
+}
+
+#dialogs #dialogs_record .mask_left {
+  width: 368px;
+  height: 605px;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: -67px;
+  background: url(../res/Public/record/left.png);
+}
+
+#dialogs #dialogs_record .mask_right {
+  width: 368px;
+  height: 615px;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 824px;
+  background: url(../res/Public/record/right.png);
+}
+
+#dialogs #dialogs_record #record_list_main {
+  width: 600px;
+  height: 471px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: absolute;
+  top: 133px;
+  left: 250px;
+}
+
+#dialogs #dialogs_record #record_list_main #record_list {
+  width: 100%;
+  height: auto;
+  border: 0px solid red;
+}
+
+#dialogs #dialogs_record #record_list_main #record_list li {
+  width: 100%;
+  height: 85px;
+  position: relative;
+  border-bottom: 5px solid #4d2120;
+}
+
+#dialogs #dialogs_record #record_list_main #record_list li:first-child {
+  border-top: 5px solid #4d2120;
+}
+
+#dialogs #dialogs_record #record_list_main #record_list li .record_info {
+  margin: 0 auto;
+  width: 600px;
+  height: 100%;
+}
+
+#dialogs #dialogs_record #record_list_main #record_list li .record_info .record_num {
+  width: 50px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50px;
+}
+
+#dialogs #dialogs_record #record_list_main #record_list li .record_info .record_num.num_1 {
+  background: url(../res//Public/record/1.png) 50% 50% no-repeat no-repeat;
+}
+
+#dialogs #dialogs_record #record_list_main #record_list li .record_info .record_num.num_2 {
+  background: url(../res//Public/record/2.png) 50% 50% no-repeat no-repeat;
+}
+
+#dialogs #dialogs_record #record_list_main #record_list li .record_info .record_num.num_3 {
+  background: url(../res//Public/record/3.png) 50% 50% no-repeat no-repeat;
+}
+
+#dialogs #dialogs_record #record_list_main #record_list li .record_info .record_num.num_4 {
+  background: url(../res//Public/record/4.png) 50% 50% no-repeat no-repeat;
+}
+
+#dialogs #dialogs_record #record_list_main #record_list li .record_info .record_num.num_5 {
+  background: url(../res//Public/record/5.png) 50% 50% no-repeat no-repeat;
+}
+
+#dialogs #dialogs_record #record_list_main #record_list li .record_info .record_num.num_6 {
+  background: url(../res//Public/record/6.png) 50% 50% no-repeat no-repeat;
+}
+
+#dialogs #dialogs_record #record_list_main #record_list li .record_info .record_num.num_7 {
+  background: url(../res//Public/record/7.png) 50% 50% no-repeat no-repeat;
+}
+
+#dialogs #dialogs_record #record_list_main #record_list li .record_info .record_num.num_8 {
+  background: url(../res//Public/record/8.png) 50% 50% no-repeat no-repeat;
+}
+
+#dialogs #dialogs_record #record_list_main #record_list li .record_info .record_num.num_9 {
+  background: url(../res//Public/record/9.png) 50% 50% no-repeat no-repeat;
+}
+
+#dialogs #dialogs_record #record_list_main #record_list li .record_info .record_num.num_10 {
+  background: url(../res//Public/record/10.png) 50% 50% no-repeat no-repeat;
+}
+
+#dialogs #dialogs_record #record_list_main #record_list li .record_info .record_face {
+  width: 120px;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 130px;
+  border-left: 5px solid #4d2120;
+  border-right: 5px solid #4d2120;
+}
+
+#dialogs #dialogs_record #record_list_main #record_list li .record_info .record_face .record_face_img {
+  margin-top: -35.5px;
+  margin-left: -35.5px;
+  width: 65px;
+  height: 65px;
+  border: 3px solid #fff;
+  border-radius: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+#dialogs #dialogs_record #record_list_main #record_list li .record_info .record_score {
+  width: 200px;
+  height: 85px;
+  line-height: 85px;
+  font-size: 50px;
+  text-align: center;
+  overflow: hidden;
+  color: #4d2120;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 120px;
+  font-weight: bold;
+}
+
+#dialogs #dialogs_record #record_list_main #record_list li .record_info .record_star {
+  width: 108px;
+  height: 74px;
+  position: absolute;
+  top: 6px;
+  right: 15px;
+}
+
+#dialogs #dialogs_record #record_list_main #record_list li .record_info .record_star.star_0 {
+  background: url(../res/Public/record/star_0.png);
+}
+
+#dialogs #dialogs_record #record_list_main #record_list li .record_info .record_star.star_1 {
+  background: url(../res/Public/record/star_1.png);
+}
+
+#dialogs #dialogs_record #record_list_main #record_list li .record_info .record_star.star_2 {
+  background: url(../res/Public/record/star_2.png);
+}
+
+#dialogs #dialogs_share {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+#dialogs #dialogs_share .dialogs_inner {
+  background: url(../res/Public/share.png) no-repeat no-repeat 80px 70px;
+}
+
+#dialogs #dialogs_guide {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+#dialogs #dialogs_guide img {
+  display: block;
+  position: absolute;
+}
+
+#dialogs #dialogs_guide .guide_page_1 {
+  bottom: 50px;
+  right: 5%;
+}
+
+#dialogs #dialogs_guide .guide_page_2 {
+  margin-left: -150px;
+  top: 187px;
+  left: 50%;
+}
+
+#dialogs #dialogs_guide .guide_page_3 {
+  bottom: 50px;
+  left: 50%;
+}
+
+#dialogs #dialogs_guide .guide_page_4 {
+  bottom: 50px;
+  left: 300px;
+}
+
+#dialogs #dialogs_guide .guide_page_5 {
+  margin-left: -420px;
+  top: 90px;
+  left: 50%;
+}
+
+#dialogs #dialogs_alert {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+#dialogs #dialogs_alert #alert_main {
+  margin-top: -180.5px;
+  margin-left: -303.5px;
+  width: 607px;
+  height: 415px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: url(../res/Public/tips/alert.png);
+}
+
+#dialogs #dialogs_alert #alert_main #alert_text {
+  width: 480px;
+  height: 250px;
+  line-height: 50px;
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  top: 140px;
+  left: 63.5px;
+  text-align: center;
+}
+
+#dialogs #dialogs_alert #alert_main img {
+  position: absolute;
+  display: block;
+}
+
+#dialogs #dialogs_alert #alert_main #alert_close {
+  top: -4px;
+  right: -4px;
+}
+
+#dialogs #dialogs_alert #alert_main #alert_sure {
+  bottom: 60px;
+  right: 100px;
+}
+
+#dialogs #dialogs_alert #alert_main #alert_cancel {
+  bottom: 60px;
+  left: 100px;
+}
+
+#dialogs #dialogs_award img, #dialogs #dialogs_award input {
+  display: block;
+  position: absolute;
+}
+
+#dialogs #dialogs_award input {
+  padding: 5px;
+  width: 330px;
+  left: 404px;
+  text-align: left;
+  color: #949494;
+  font-size: 28px;
+  background: #fff;
+  position: absolute;
+  border: 3px solid #937030;
+  border-radius: 15px;
+  line-height: 40px;
+}
+
+#dialogs #dialogs_award #award_name {
+  height: 44px;
+  top: 185px;
+}
+
+#dialogs #dialogs_award #award_tel {
+  height: 44px;
+  top: 255px;
+}
+
+#dialogs #dialogs_award #award_address {
+  height: 91px;
+  top: 330px;
+}
+
+#dialogs #dialogs_award #award_tips {
+  width: 520px;
+  height: 40px;
+  line-height: 40px;
+  color: #f44168;
+  font-size: 18px;
+  display: block;
+  text-align: center;
+  position: absolute;
+  top: 427px;
+  left: 300px;
+}
+
+#dialogs #dialogs_award #award_post {
+  width: 222px;
+  height: 64px;
+  position: absolute;
+  top: 467px;
+  left: 450px;
+}
+
+#dialogs .preload_precent {
+  width: 450px;
+  height: 335px;
+  border: 1px solid red;
+  position: absolute;
+  top: 140px;
+  left: 330px;
+  background: #6975d7;
+}
+
+#dialogs .preload_precent .precent_word {
+  width: 100%;
+  height: 100px;
+  line-height: 100px;
+  font-size: 60px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  display: block;
+  position: absolute;
+  top: 110px;
+  left: 0;
+}
+
+#dialogs .preload_precent .precent_progress {
+  width: 100%;
+  height: 0;
+  background: #b1f488;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#dialogs .tips_role {
+  width: 580px;
+  height: 117px;
+  display: flex;
+  justify-content: space-around;
+}
+
+#dialogs .tips_role .role_icon {
+  width: 116px;
+  height: 100%;
+  position: relative;
+}
+
+#dialogs .tips_role .role_icon img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#dialogs .tips_wolf {
+  margin-top: 45px;
+  margin-left: 35px;
+  width: 665px;
+  height: 75px;
+  display: flex;
+  justify-content: space-around;
+}
+
+#dialogs .tips_wolf .role_icon {
+  width: 75px;
+  height: 100%;
+  position: relative;
+}
+
+#dialogs .tips_wolf .role_icon img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#dialogs .role_describe {
+  margin: 10px auto 0;
+  width: 574px;
+  height: 202px;
+  display: block;
+}
+
+#dialogs .wolf_describe {
+  margin-top: 20px;
+  margin-left: 130px;
+  width: 475px;
+  height: 203px;
+  display: block;
+}
+
+#dialogs .skill_describe {
+  margin-top: 20px;
+  margin-left: 130px;
+  width: 455px;
+  height: 148px;
+  display: block;
+}
+
+.btn {
+  display: block;
+  cursor: pointer;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+.fadelong-enter-active, .fadelong-leave-active {
+  transition: all 0.8s ease-in-out 0s;
+}
+
+.fadelong-enter, .fadelong-leave-to {
+  opacity: 0;
+}
+
+@keyframes page_1_1 {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 187px;
+  }
+}
+
+@keyframes page_1_2 {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 819px;
+  }
+}
+
+@keyframes page_1_3 {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 612px;
+  }
+}
+
+@keyframes page_2_1 {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 167px;
+  }
+}
+
+@keyframes page_2_2 {
+  0% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes page_3_1 {
+  100% {
+    top: 0;
+    left: 0;
+  }
+}
+
+@keyframes page_3_2 {
+  25% {
+    transform: rotate(-3deg);
+  }
+  100% {
+    transform: rotate(3deg);
+  }
+}
+
+@keyframes page_3_3 {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes page_3_4 {
+  100% {
+    bottom: 0;
+    left: 0;
+  }
+}
+
+@keyframes page_3_5 {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes page_3_6 {
+  100% {
+    right: 0;
+  }
+}
+
+@keyframes page_3_7 {
+  100% {
+    height: 396px;
+  }
+}
+
+@keyframes page_4_2 {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes page_4_4 {
+  100% {
+    left: 53px;
+  }
+}
+
+@keyframes page_6_2 {
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes page_7_2 {
+  50% {
+    left: 50px;
+  }
+  100% {
+    left: 10px;
+  }
+}
+
+@keyframes page_7_3 {
+  100% {
+    width: 612px;
+  }
+}

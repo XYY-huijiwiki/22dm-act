@@ -1,0 +1,300 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, width=640">
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <title>《羊村守护者》贺岁版</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script type="text/javascript" src="../../../js/jquery-2.1.1.min.js"></script>
+    <script src="../../../js/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="all">
+        <section id="main">
+            <div id="main_canvas"><canvas id="gameCanvas"></canvas></div>
+            <block v-show="scene=='MainMenuScene'">
+                <a id="mm_music" @click="mm_music"></a>
+                <a id="mm_start" @click="button_public('book')"></a>
+                <a id="mm_record" @click="button_public('record')"></a>
+                <a id="mm_rule" @click="button_public('rule')"></a>
+            </block>
+            <block v-show="scene=='GamePlayScene'">
+                <a id="gp_music" @click="gp_music"></a>
+                <a id="gp_pause" @click="button_public('pause')"></a>
+                <a id="gp_tips" @click="button_public('tips')"></a>
+                <a id="gp_ice" @click="button_skill('ice')"></a>
+                <a id="gp_bomb" @click="button_skill('bomb')"></a>
+            </block>
+            <block v-show="scene=='GameResultScene'">
+                <a id="gs_home" @click="Game_home"></a>
+                <a id="gs_share" @click="button_public('share')"></a>
+                <a id="gs_record" @click="button_public('record')"></a>
+            </block>
+            <transition name="fade" v-if="scene=='GameLevelScene'">
+                <div id="GamePlayLevel">
+                    <div id="level_main">
+                        <div id="level_text">关卡: {{leveltext.level}}</div>
+                        <div id="level_title">
+                            <a>获得技能*1</a>
+                            <a>进攻者*{{leveltext.count}}</a>
+                        </div>
+                        <div id="level_title_img">
+                            <div class="level_title_img_item">
+                                <img id="level_title_img_skill"
+                                    :src="`res/Public/tips/describe/skill_${leveltext.new_skill}.png`" />
+                            </div>
+                            <div class="level_title_img_item" id="level_title_img_wolf" @click="button_levelwolf()">
+                                <div>
+                                    <img v-if="index<5" v-for="(i,index) in leveltext.max_wid"
+                                        :src="`res/Public/tips/icon/wolf_${index+1}.png`" />
+                                </div>
+                                <div v-if="leveltext.max_wid>5">
+                                    <img v-if="index>4" v-for="(i,index) in leveltext.max_wid"
+                                        :src="`res/Public/tips/icon/wolf_${index+1}.png`" />
+                                </div>
+                            </div>
+                        </div>
+                        <div id="level_describe">
+                            <img id="level_describe_img"
+                                :src="`res/Public/tips/describe/wolf_${leveltext.max_wid}.png`" />
+                        </div>
+                    </div>
+                </div>
+            </transition>
+        </section>
+        <section id="dialogs" v-show="active">
+            <transition name="fade">
+                <div id="dialogs_book" class="dialogs_layer" v-show="active=='book'">
+                    <div id="book_container">
+                        <transition name="fadelong">
+                            <div class="book_page book_page_1" @click="v_main.book=2" v-if="book==1">
+                                <a class="p_1_1"></a>
+                                <a class="p_1_2"></a>
+                                <a class="p_1_3"></a>
+                            </div>
+                        </transition>
+                        <transition name="fadelong">
+                            <div class="book_page book_page_2" v-if="book==2">
+                                <img src="res/Public/book/2/2_1.png" />
+                                <a class="p_2_1"></a>
+                                <a class="p_2_2"></a>
+                            </div>
+                        </transition>
+                        <transition name="fadelong">
+                            <div class="book_page book_page_3" v-if="book==3">
+                                <div class="p_3_1">
+                                    <a class="p_3_2"></a>
+                                    <a class="p_3_3"></a>
+                                    <a class="p_3_1_mask"></a>
+                                </div>
+                                <div class="p_3_4">
+                                    <a class="p_3_5"></a>
+                                </div>
+                                <div class="p_3_6">
+                                    <a class="p_3_7"></a>
+                                </div>
+                            </div>
+                        </transition>
+                        <transition name="fadelong">
+                            <div class="book_page book_page_4" v-if="book==4">
+                                <img src="res/Public/book/4/4_1.png" />
+                                <a class="p_4_2"></a>
+                                <div class="p_4_3">
+                                    <a class="p_4_4"></a>
+                                </div>
+                            </div>
+                        </transition>
+                        <transition name="fadelong">
+                            <div class="book_page book_page_5" v-if="book==5">
+                                <img src="res/Public/book/5/5_1.png" />
+                            </div>
+                        </transition>
+                        <transition name="fadelong">
+                            <div class="book_page book_page_6" v-if="book==6">
+                                <img src="res/Public/book/6/6_1.png" />
+                                <a class="p_6_2"></a>
+                            </div>
+                        </transition>
+                        <transition name="fadelong">
+                            <div class="book_page book_page_7" v-if="book==7">
+                                <img src="res/Public/book/7/7_1.png" />
+                                <a class="p_7_2"></a>
+                                <a class="p_7_3"></a>
+                            </div>
+                        </transition>
+                        <transition name="fadelong">
+                            <div @click="v_main.book=9" v-if="book==8">
+                                <div class="book_page">
+                                    <img src="res/Public/book/8/8_1.png" />
+                                </div>
+                            </div>
+                        </transition>
+                        <transition name="fadelong">
+                            <div class="book_page book_page_9" v-if="book==9">
+                                <img src="res/Public/book/9/9_1.png" />
+                                <div id="book_role">
+                                    <div class="tips_role">
+                                        <div v-for="n in 5" class="role_icon" @click="v_main.role=n;v_main.tips_2=n">
+                                            <img :src="`res/Public/tips/icon/role_${n}.png`" />
+                                            <img v-show="role!=n" src="res/Public/tips/icon/normal_not.png" />
+                                            <img v-show="role==n" src="res/Public/tips/icon/normal_active.png" />
+                                        </div>
+                                    </div>
+                                    <img class="role_describe" v-if="role"
+                                        :src="`res/Public/tips/describe/role_${role}.png`" />
+                                    <a id="book_role_select" @click="Book_role()"></a>
+                                </div>
+                            </div>
+                        </transition>
+                        <a id="book_close" @click="v_main.active=''"></a>
+                        <a id="book_jump" v-show="book!=9" @click="v_main.book=9"></a>
+                        <a id="book_next" v-show="book!=9" @click="v_main.book++"></a>
+                        <a id="book_prv" v-show="book!=1" @click="v_main.book--"></a>
+                    </div>
+                </div>
+            </transition>
+            <transition name="fade" @before-enter="Game_pause">
+                <div id="dialogs_pause" class="dialogs_layer" v-show="active=='pause'">
+                    <div class="dialogs_inner">
+                        <div id="pause_main">
+                            <a id="pause_continue" class="pause_item" @click="Game_continue">
+                                <img src="res/Public/pause/btn_continue.png" />
+                            </a>
+                            <a id="pause_replay" class="pause_item" @click="Game_replay">
+                                <img src="res/Public/pause/btn_replay.png" />
+                            </a>
+                            <a id="pause_home" class="pause_item" @click="Game_home">
+                                <img src="res/Public/pause/btn_home.png" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </transition>
+            <transition name="fade">
+                <div id="dialogs_preload" class="dialogs_layer" v-show="active=='preload'">
+                    <div class="dialogs_inner">
+                        <div class="preload_precent">
+                            <span class="precent_progress"></span>
+                            <span class="precent_word">0%</span>
+                        </div>
+                    </div>
+                    <img class="dialogs_background" src="res/Public/preload/background.png" width="1400" height="640" />
+                </div>
+            </transition>
+            <transition name="fade" @before-enter="Game_pause" @before-leave="Game_continue">
+                <div id="dialogs_tips" class="dialogs_layer" v-show="active=='tips'">
+                    <div id="tips_main">
+                        <div id="tips_select">
+                            <img class="tips_select_1" v-show="tips_1!=1" src="res/Public/tips/select/role_0.png"
+                                @click="v_main.tips_1=1;v_main.tips_2=1" />
+                            <img class="tips_select_1" v-show="tips_1==1" src="res/Public/tips/select/role_1.png" />
+                            <img class="tips_select_2" v-show="tips_1!=2" src="res/Public/tips/select/wolf_0.png"
+                                @click="v_main.tips_1=2;v_main.tips_2=9" />
+                            <img class="tips_select_2" v-show="tips_1==2" src="res/Public/tips/select/wolf_1.png" />
+                            <img class="tips_select_3" v-show="tips_1!=3" src="res/Public/tips/select/skill_0.png"
+                                @click="v_main.tips_1=3;v_main.tips_2=1" />
+                            <img class="tips_select_3" v-show="tips_1==3" src="res/Public/tips/select/skill_1.png" />
+                        </div>
+                        <div v-if="tips_1==1" class="tips_role">
+                            <div v-for="n in 5" class="role_icon" @click="v_main.tips_2=n">
+                                <img :src="`res/Public/tips/icon/role_${n}.png`" />
+                                <img v-show="tips_2!=n" src="res/Public/tips/icon/normal_not.png" />
+                                <img v-show="tips_2==n" src="res/Public/tips/icon/normal_active.png" />
+                            </div>
+                        </div>
+                        <div v-if="tips_1==2" class="tips_wolf">
+                            <div v-for="n in 9" class="role_icon" @click="v_main.tips_2=n">
+                                <img :src="`res/Public/tips/icon/wolf_${n}.png`" />
+                                <img v-show="tips_2!=n" src="res/Public/tips/icon/wolf_not.png" />
+                                <img v-show="tips_2==n" src="res/Public/tips/icon/wolf_active.png" />
+                            </div>
+                        </div>
+                        <div v-if="tips_1==3" class="tips_role">
+                            <div v-for="n in 2" class="role_icon" @click="v_main.tips_2=n">
+                                <img :src="`res/Public/tips/icon/skill_${n}.png`" />
+                                <img v-show="tips_2!=n" src="res/Public/tips/icon/normal_not.png" />
+                                <img v-show="tips_2==n" src="res/Public/tips/icon/normal_active.png" />
+                            </div>
+                        </div>
+                        <img v-if="tips_1==1" class="role_describe"
+                            :src="`res/Public/tips/describe/role_${tips_2}.png`" />
+                        <img v-if="tips_1==2" class="wolf_describe"
+                            :src="`res/Public/tips/describe/wolf_${tips_2}.png`" />
+                        <img v-if="tips_1==3" class="skill_describe"
+                            :src="`res/Public/tips/describe/skill_${tips_2}.png`" />
+                        <a class="tips_close" @click='v_main.active=""'></a>
+                    </div>
+                </div>
+            </transition>
+            <transition name="fade">
+                <div id="dialogs_record" class="dialogs_layer" v-show="active=='record'">
+                    <img class="dialogs_background" src="res/Public/record/background.jpg" width="1400" height="640" />
+                    <div class="dialogs_inner">
+                        <div id="record_main">
+                            <div id="record_list_main">
+                                <ul id="record_list">
+                                    <li v-for="(item,index) in recordList">
+                                        <div class="record_info">
+                                            <a class="record_num" :class="'num_'+(index+1)"></a>
+                                            <span class="record_face">
+                                                <img class="record_face_img" :src="item.json.img" />
+                                            </span>
+                                            <a class="record_score">{{item.json.score}}</a>
+                                            <a v-if="index<3" class="record_star" :class="'star_'+(index)"></a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a class="mask_left"></a>
+                        <a class="mask_right"></a>
+                        <a class="btn_prize" @click='winSize.ranking.getPrize()'></a>
+                        <a class="btn_tips" @click='winSize.ranking.getPrize()'></a>
+                    </div>
+                    <a class="dialogs_close" @click='v_main.active=""'></a>
+                </div>
+            </transition>
+            <transition name="fade">
+                <div id="dialogs_rule" class="dialogs_layer" v-show="active=='rule'">
+                    <img class="dialogs_background" src="res/Public/rule/background.jpg" width="1400" height="640" />
+                    <a class="dialogs_close" @click='v_main.active=""'></a>
+                </div>
+            </transition>
+            <transition name="fade">
+                <div id="dialogs_share" class="dialogs_layer" v-show="active=='share'" @click='v_main.active=""'>
+                    <div class="dialogs_inner"></div>
+                </div>
+            </transition>
+            <transition name="fade">
+                <div id="dialogs_guide" class="dialogs_layer" v-show="active=='guide'" @click="guideLeave">
+                    <img v-show="guide==1" class="guide_page_1" src="res/Public/guide/1.png" width="270" height="270" />
+                    <img v-show="guide==1" class="guide_page_2" src="res/Public/guide/2.png" width="356" height="192" />
+                    <img v-show="guide==2" class="guide_page_3" src="res/Public/guide/3.png" width="377" height="231" />
+                    <img v-show="guide==3" class="guide_page_4" src="res/Public/guide/4.png" width="405" height="197" />
+                    <img v-show="guide==3" class="guide_page_5" src="res/Public/guide/5.png" width="314" height="93" />
+                </div>
+            </transition>
+            <transition name="fade">
+                <div id="dialogs_award" class="dialogs_layer" v-show="active=='award'">
+                    <img class="dialogs_background" src="res/Public/background_award.jpg" width="1400" height="640" />
+                    <div class="dialogs_inner">
+                        <input id="award_name" type="text" placeholder="姓名" />
+                        <input id="award_tel" type="text" placeholder="手机号码" />
+                        <input id="award_address" type="text" placeholder="地址" />
+                        <span id="award_tips"></span>
+                        <a id="award_post" onclick="award.check()"></a>
+                    </div>
+                    <a class="dialogs_close" @click="v_main.active='record'"></a>
+                </div>
+            </transition>
+        </section>
+    </div>
+    <script src="../../../js/cocos2d-js-v3.9.js"></script>
+    <script src="main.js"></script>
+    <script src="../../../js/jweixin-1.3.2.js"></script>
+</body>
+
+</html>

@@ -17,4 +17,4 @@
 ## 链接
 - [官方游戏链接](http://www.22dm.com/act/h5/guard)
 - [修改版游戏链接](https://xyy-huijiwiki.github.io/22dm-act/xyy-huijiwiki.github.io/act/h5/guard/index.html)
-- [羊羊百科](https://xyy.huijiwiki.com/wiki/羊村守护者) -->
+- [羊羊百科](https://xyy.huijiwiki.com/wiki/羊村守护者（游戏）) -->
