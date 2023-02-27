@@ -1,0 +1,223 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="羊村守护者" />
+	<meta name="description" content="羊村守护者" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, width=640">
+	<meta name="format-detection" content="telephone=no, email=no"/>  
+	<title>羊村守护者</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
+	<script src="/js/vue.min.js"></script>
+	<script type="text/javascript" src="js/gamepad.js"></script>
+</head>
+<body>
+<div id="all">
+	<section id="main" >
+		<div id="main_canvas"><canvas id="gameCanvas"></canvas></div>
+		<block v-show="scene=='MainMenuScene'">
+			<a id="mm_music" @click="mm_music"></a>
+			<a id="mm_start" @click="button_public('book')"></a>
+			<a id="mm_record" @click="button_public('record')"></a>
+			<a id="mm_rule" @click="button_public('rule')"></a>
+		</block>
+		<block v-show="scene=='GamePlayScene'">
+			<a id="gp_music" @click="gp_music"></a>
+			<a id="gp_pause" @click="button_public('pause')"></a>
+		</block>
+		<block v-show="scene=='GameResultScene'">
+			<a id="gs_home" @click="Game_home"></a>
+			<a id="gs_share" @click="button_public('share')"></a>
+			<a id="gs_record" @click="button_public('record')"></a>
+		</block>
+	</section>
+	<section id="dialogs" v-show="active">
+	<!--book-->
+	<transition name="fade">
+	<div id="dialogs_book" class="dialogs_layer" v-show="active=='book'">	
+		<div id="book_container">
+			<transition name="fadelong">
+			<div class="book_page book_page_1" @click="v_main.book=2" v-if="book==1">
+				<img src="res/Public/book/1.png"/>
+				<a class="p_1_1"></a>
+				<a class="p_1_2"></a>
+				<a class="p_1_3"></a>
+			</div>
+			</transition>
+			<transition name="fadelong">
+			<div class="book_page" v-if="book==2">
+				<img src="res/Public/book/2.png"/>
+			</div>
+			</transition>
+			<transition name="fadelong">
+			<div class="book_page" v-if="book==3">
+				<img src="res/Public/book/3.png"/>
+			</div>
+			</transition>
+			<transition name="fadelong">
+			<div class="book_page" v-if="book==4">
+				<img src="res/Public/book/4.png"/>
+			</div>
+			</transition>
+			<transition name="fadelong">
+			<div class="book_page" v-if="book==5">
+				<img src="res/Public/book/5.png"/>
+			</div>
+			</transition>
+			<transition name="fadelong">
+			<div class="book_page"v-if="book==6">
+				<img src="res/Public/book/6.png"/>
+			</div>
+			</transition>
+			<transition name="fadelong">
+			<div class="book_page" v-if="book==7">
+				<img src="res/Public/book/7.png"/>
+			</div>
+			</transition>
+			<transition name="fadelong">
+			<div @click="v_main.book=9" v-if="book==8">
+				<div class="book_page">
+					<img src="res/Public/book/8.png"/>
+				</div>
+			</div>
+			</transition>
+			<transition name="fadelong">
+			<div class="book_page" v-if="book==9">
+				<img src="res/Public/book/9.png"/>
+				<div id="book_role">
+					<a id="book_role_1" :class="role==1?'active':''" @click="v_main.role=1"></a>
+					<a id="book_role_2" :class="role==2?'active':''"  @click="v_main.role=2"></a>
+					<a id="book_role_select" :class="role?'active':''"  @click="Book_role()">确定</a>
+				</div>
+			</div>
+			</transition>
+			<a id="book_close" @click="v_main.active=''">X</a>
+			<a id="book_jump" v-show="book!=9" @click="v_main.book=9">跳过动画</a>
+			<a id="book_next" v-show="book!=9" @click="v_main.book++">下一页</a>
+			<a id="book_prv" v-show="book!=1" @click="v_main.book--">上一页</a>
+		</div>
+	</div>
+	</transition>
+	<!--pause-->
+	<transition name="fade" @before-enter="Game_pause">
+	<div id="dialogs_pause" class="dialogs_layer" v-show="active=='pause'">
+		<div class="dialogs_inner">
+			<div id="pause_main">
+				<a id="pause_continue" class="pause_item" @click="Game_continue"></a>
+				<a id="pause_replay" class="pause_item" @click="Game_replay"></a>
+				<a id="pause_home" class="pause_item" @click="Game_home"></a>
+			</div>
+		</div>
+	</div>
+	</transition>	
+	<!--preload-->
+	<transition name="fade">
+	<div id="dialogs_preload" class="dialogs_layer" v-show="active=='preload'">
+		<div class="dialogs_inner">
+			<div class="preload_precent">
+				<span class="precent_progress"></span>
+				<span class="precent_word">0%</span>
+			</div>
+		</div>
+		<img class="dialogs_background" src="res/Public/preload/background.png" width="1400" height="640"/>
+	</div>
+	</transition>	
+	<!--tips-->
+	<transition name="fade" @after-leave="tipsLeave">
+		<div id="dialogs_tips" class="dialogs_layer" v-show="active=='tips'">
+			<div id="tips_main">
+				<a class="tips_new"></a>
+				<a class="tips_title"><img :src="'res/Public/tips/title_'+tips.tid+'.png'"/></a>
+				<a class="tips_describe"><img :src="'res/Public/tips/describe_'+tips.did+'.png'"/></a>
+				<a class="tips_role"><img :src="'res/Public/tips/role_'+tips.rid+'.png'"/></a>
+				<a class="tips_close" @click='v_main.active=""'></a>
+			</div>	
+		</div>
+	</transition>
+	<!--select-->
+	<transition name="fade">
+		<div id="dialogs_select" class="dialogs_layer" v-show="active=='select'">
+			<img class="dialogs_background" src="res/Public/select/background.jpg" width="1400" height="640"/>
+			<img id="select_title" src="res/Public/select/title.png" width="574" height="156"/>
+			<div id="select_main">
+				<div class="select_mask">
+					<a class="role_titel"><img src="res/Public/select/title_1.png"/></a>
+					<a class="role_main"><img src="res/Public/select/role_1.png" width="362" height="250"/></a>
+					<block>
+						<a class="mask_active active_1"></a>
+						<a class="mask_active active_2"></a>
+						<a class="mask_active active_3"></a>
+					</block>
+				</div>
+				<div class="select_mask">
+					<a class="role_titel"><img id="role_titel" src="res/Public/select/title_2.png"/></a>
+					<a class="role_main"><img src="res/Public/select/role_2.png" width="371" height="255"/></a>
+				</div>
+			</div>
+			<a class="dialogs_close" @click='v_main.active=""'></a>
+		</div>
+	</transition>
+	<!--record-->
+	<transition name="fade">
+	<div id="dialogs_record" class="dialogs_layer" v-show="active=='record'">
+		<img class="dialogs_background" src="res/Public/record/background.jpg" width="1400" height="640"/>
+		<div class="dialogs_inner">
+			<div id="record_main">
+				<ul id="record_list">
+					<li v-for="(item,index) in recordList">
+						<a class="record_num" :class="'num_'+(index)"></a>
+						<span class="record_info">
+							<img class="record_face" :src="item.json.img" />
+							<a class="record_score">{{item.json.score}}</a>				
+							<!-- <a class="record_name">{{item.json.name}}</a> -->
+						</span>
+					</li>
+					<li v-for="(item,index) in [0,1,2,3,4,5,6,7,8]">
+						<div class="record_info">
+							<a class="record_num" :class="'num_'+(index+1)"></a>
+							<span class="record_face">
+								<img class="record_face_img" src="res/Public/icon.jpg"/>
+							</span>
+							<a class="record_score">800</a>				
+							<a v-if="index<3" class="record_star" :class="'star_'+(index)"></a>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<a class="btn_prize" @click='winSize.ranking.getPrize()'></a>
+			<a class="btn_tips" @click='winSize.ranking.getPrize()'></a>
+		</div>
+		<a class="dialogs_close" @click='v_main.active=""'></a>
+	</div>
+	</transition>
+	<!--rule-->
+	<transition name="fade">
+	<div id="dialogs_rule" class="dialogs_layer" v-show="active=='rule'">
+		<img class="dialogs_background" src="res/Public/rule/background.jpg" width="1400" height="640"/>
+		<a class="dialogs_close" @click='v_main.active=""'></a>
+	</div>
+	</transition>
+	<!--share-->
+	<transition name="fade">
+	<div id="dialogs_share" class="dialogs_layer" v-show="active=='share'" @click='v_main.active=""'>	
+		<div class="dialogs_inner"></div>
+	</div>
+	</transition>
+	<!--guide-->
+	<transition name="fade">
+	<div id="dialogs_guide" class="dialogs_layer" v-show="active=='guide'" @click="guideLeave">	
+		<a v-show="guide==1" class="guide_page_1"></a>
+		<a v-show="guide==2" class="guide_page_2"></a>
+		<a v-show="guide==3" class="guide_page_3"></a>
+		<a v-show="guide==4" class="guide_page_4"></a>
+	</div>
+	</transition>
+	</section>
+</div>
+<script src="/js/cocos2d-js-v3.9.js"></script>
+<script src="main.js"></script>
+<script src="/js/jweixin-1.0.0.js"></script>
+</body>
+</html>

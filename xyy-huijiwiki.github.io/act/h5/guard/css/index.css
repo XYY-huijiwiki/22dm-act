@@ -1,0 +1,702 @@
+html {
+  background: #000;
+}
+
+html body, html div, html ul {
+  padding: 0;
+  margin: 0;
+  font-family: "Microsoft YaHei";
+}
+
+html ul {
+  list-style-type: none;
+}
+
+html a {
+  text-decoration: none;
+}
+
+#Cocos2dGameContainer {
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#all {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+}
+
+#all section {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+#dialogs {
+  z-index: 100;
+}
+
+#dialogs .dialogs_background {
+  margin-top: -320px;
+  margin-left: -700px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+#dialogs .dialogs_layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#dialogs .dialogs_layer .dialogs_inner {
+  margin-left: -568px;
+  width: 1136px;
+  height: 640px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+}
+
+#dialogs .dialogs_close {
+  width: 143px;
+  height: 85px;
+  background: url(../res/Public/btn_close.png) no-repeat no-repeat;
+  position: absolute;
+  left: 40px;
+  top: 40px;
+}
+
+#dialogs #dialogs_book {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+#dialogs #dialogs_book a {
+  display: block;
+}
+
+#dialogs #dialogs_book #book_jump {
+  font-size: 20px;
+  color: #000;
+  position: absolute;
+  bottom: -25px;
+  right: -25px;
+}
+
+#dialogs #dialogs_book #book_close {
+  font-size: 20px;
+  color: #000;
+  position: absolute;
+  top: -25px;
+  left: -20px;
+}
+
+#dialogs #dialogs_book #book_next {
+  font-size: 20px;
+  color: red;
+  position: absolute;
+  top: 50%;
+  right: -20px;
+}
+
+#dialogs #dialogs_book #book_prv {
+  font-size: 20px;
+  color: red;
+  position: absolute;
+  top: 50%;
+  left: -20px;
+}
+
+#dialogs #dialogs_book #book_container {
+  margin-top: -292.5px;
+  margin-left: -554.5px;
+  border: 25px solid #fff;
+  background: #fff;
+  width: 1059px;
+  height: 535px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+#dialogs #dialogs_book #book_container .book_page {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+#dialogs #dialogs_book #book_container .book_page img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#dialogs #dialogs_book #book_container .book_page a {
+  position: absolute;
+  display: block;
+}
+
+#dialogs #dialogs_book #book_container .book_page a.p_1_1 {
+  height: 80px;
+  top: 58px;
+  left: 100px;
+  animation: page_1_1 .3s ease .3s 1 forwards;
+  -webkit-animation: page_1_1 .3s ease .3s 1 forwards;
+}
+
+#dialogs #dialogs_book #book_container .book_page a.p_1_2 {
+  height: 80px;
+  top: 192px;
+  left: 100px;
+  animation: page_1_2 1s ease 1.4s 1 forwards;
+  -webkit-animation: page_1_2 1s ease 1.4s 1 forwards;
+}
+
+#dialogs #dialogs_book #book_container .book_page a.p_1_3 {
+  height: 80px;
+  top: 338px;
+  left: 300px;
+  animation: page_1_3 .5s ease 2.5s 1 forwards;
+  -webkit-animation: page_1_3 .5s ease 2.5s 1 forwards;
+}
+
+#dialogs #dialogs_book #book_container .book_page #book_role {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#dialogs #dialogs_book #book_container .book_page #book_role #book_role_1, #dialogs #dialogs_book #book_container .book_page #book_role #book_role_2 {
+  width: 399px;
+  height: 224px;
+  position: absolute;
+  top: 270px;
+}
+
+#dialogs #dialogs_book #book_container .book_page #book_role #book_role_1.active, #dialogs #dialogs_book #book_container .book_page #book_role #book_role_2.active {
+  background: url(../res/Public/book/10.png) no-repeat no-repeat;
+}
+
+#dialogs #dialogs_book #book_container .book_page #book_role #book_role_1 {
+  left: 108px;
+}
+
+#dialogs #dialogs_book #book_container .book_page #book_role #book_role_2 {
+  right: 66px;
+}
+
+#dialogs #dialogs_book #book_container .book_page #book_role #book_role_select {
+  width: 100px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 24px;
+  text-align: center;
+  position: absolute;
+  bottom: 10px;
+  left: calc(50% - 50px);
+  display: none;
+}
+
+#dialogs #dialogs_book #book_container .book_page #book_role #book_role_select.active {
+  display: block;
+}
+
+#dialogs #dialogs_select {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+#dialogs #dialogs_select #select_title {
+  margin-left: -287px;
+  width: 574px;
+  height: 156px;
+  position: absolute;
+  left: 50%;
+  top: 10px;
+}
+
+#dialogs #dialogs_select #select_main {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+}
+
+#dialogs #dialogs_select #select_main a {
+  display: block;
+}
+
+#dialogs #dialogs_select #select_main .select_mask {
+  width: 543px;
+  height: 446px;
+  background: url(../res/Public/select/mask.png);
+  position: relative;
+}
+
+#dialogs #dialogs_select #select_main .mask_active {
+  width: 95px;
+  height: 46px;
+  background: url(../res/Public/select/active.png);
+  position: absolute;
+}
+
+#dialogs #dialogs_select #select_main .mask_active.active_1 {
+  margin-left: -47.5px;
+  bottom: -5px;
+  left: 50%;
+}
+
+#dialogs #dialogs_select #select_main .mask_active.active_2 {
+  margin-top: -23px;
+  transform: rotate(90deg);
+  top: 50%;
+  left: -10px;
+}
+
+#dialogs #dialogs_select #select_main .mask_active.active_3 {
+  margin-top: -23px;
+  transform: rotate(270deg);
+  top: 50%;
+  right: -10px;
+}
+
+#dialogs #dialogs_select #select_main .role_titel {
+  margin-left: -88px;
+  width: 176px;
+  height: 73px;
+  position: absolute;
+  left: 50%;
+  top: 6px;
+}
+
+#dialogs #dialogs_select #select_main .role_titel img {
+  width: 100%;
+  height: 100%;
+}
+
+#dialogs #dialogs_select #select_main .role_main {
+  margin-left: -185px;
+  width: 371px;
+  height: 255px;
+  position: absolute;
+  left: 50%;
+  top: 105px;
+}
+
+#dialogs #dialogs_tips {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+#dialogs #dialogs_tips #tips_main {
+  margin-top: -180.5px;
+  margin-left: -401.5px;
+  width: 803px;
+  height: 361px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: url(../res/Public/tips/background.png);
+}
+
+#dialogs #dialogs_tips #tips_main a {
+  display: block;
+}
+
+#dialogs #dialogs_tips #tips_main .tips_describe, #dialogs #dialogs_tips #tips_main .tips_title, #dialogs #dialogs_tips #tips_main .tips_role {
+  position: absolute;
+}
+
+#dialogs #dialogs_tips #tips_main .tips_describe img, #dialogs #dialogs_tips #tips_main .tips_title img, #dialogs #dialogs_tips #tips_main .tips_role img {
+  width: 100%;
+  height: 100%;
+}
+
+#dialogs #dialogs_tips #tips_main .tips_new {
+  width: 190px;
+  height: 159px;
+  position: absolute;
+  top: -3px;
+  left: -25px;
+  background: url(../res/Public/tips/new.png);
+}
+
+#dialogs #dialogs_tips #tips_main .tips_title {
+  width: 253px;
+  height: 57px;
+  top: 29px;
+  left: 235px;
+}
+
+#dialogs #dialogs_tips #tips_main .tips_describe {
+  width: 545px;
+  height: 75px;
+  top: 90px;
+  left: 90px;
+}
+
+#dialogs #dialogs_tips #tips_main .tips_role {
+  width: 469px;
+  height: 144px;
+  top: 168px;
+  left: 55px;
+}
+
+#dialogs #dialogs_tips #tips_main .tips_close {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+#dialogs #dialogs_pause {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+#dialogs #dialogs_pause #pause_main {
+  margin-left: -254px;
+  width: 508px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+}
+
+#dialogs #dialogs_pause #pause_main a {
+  margin-top: 65px;
+  width: 508px;
+  height: 125px;
+  display: block;
+}
+
+#dialogs #dialogs_pause #pause_main a#pause_home {
+  background: url(../res/Public/pause/btn_home_1.png);
+}
+
+#dialogs #dialogs_pause #pause_main a#pause_home:active {
+  background: url(../res/Public/pause/btn_home_2.png);
+}
+
+#dialogs #dialogs_pause #pause_main a#pause_continue {
+  background: url(../res/Public/pause/btn_continue_1.png);
+}
+
+#dialogs #dialogs_pause #pause_main a#pause_continue:active {
+  background: url(../res/Public/pause/btn_continue_2.png);
+}
+
+#dialogs #dialogs_pause #pause_main a#pause_replay {
+  background: url(../res/Public/pause/btn_replay_1.png);
+}
+
+#dialogs #dialogs_pause #pause_main a#pause_replay:active {
+  background: url(../res/Public/pause/btn_replay_2.png);
+}
+
+#dialogs #dialogs_record #record_main {
+  width: 1137px;
+  height: 616px;
+  overflow: hidden;
+  background: url(../res/Public/record/record_main.png) 50% 50% no-repeat no-repeat;
+  position: absolute;
+  bottom: 0;
+}
+
+#dialogs #dialogs_record .btn_prize {
+  width: 147px;
+  height: 136px;
+  position: absolute;
+  right: 60px;
+  bottom: 20px;
+  background: url(../res/Public/record/record_award.png);
+}
+
+#dialogs #dialogs_record .btn_tips {
+  width: 228px;
+  height: 125px;
+  position: absolute;
+  right: 90px;
+  top: 30px;
+  background: url(../res/Public/record/record_tips.png);
+}
+
+#dialogs #dialogs_record #record_list {
+  width: 620px;
+  height: 485px;
+  position: absolute;
+  top: 130px;
+  left: 240px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border: 0px solid red;
+}
+
+#dialogs #dialogs_record #record_list li {
+  width: 100%;
+  height: 85px;
+  position: relative;
+  border-bottom: 5px solid #4d2120;
+}
+
+#dialogs #dialogs_record #record_list li:first-child {
+  border-top: 5px solid #4d2120;
+}
+
+#dialogs #dialogs_record #record_list li .record_info {
+  margin: 0 auto;
+  width: 600px;
+  height: 100%;
+}
+
+#dialogs #dialogs_record #record_list li .record_info .record_num {
+  width: 50px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50px;
+}
+
+#dialogs #dialogs_record #record_list li .record_info .record_num.num_0 {
+  background: url(../res//Public/record/0.png) 50% 50% no-repeat no-repeat;
+}
+
+#dialogs #dialogs_record #record_list li .record_info .record_num.num_1 {
+  background: url(../res//Public/record/1.png) 50% 50% no-repeat no-repeat;
+}
+
+#dialogs #dialogs_record #record_list li .record_info .record_num.num_2 {
+  background: url(../res//Public/record/2.png) 50% 50% no-repeat no-repeat;
+}
+
+#dialogs #dialogs_record #record_list li .record_info .record_num.num_3 {
+  background: url(../res//Public/record/3.png) 50% 50% no-repeat no-repeat;
+}
+
+#dialogs #dialogs_record #record_list li .record_info .record_num.num_4 {
+  background: url(../res//Public/record/4.png) 50% 50% no-repeat no-repeat;
+}
+
+#dialogs #dialogs_record #record_list li .record_info .record_num.num_5 {
+  background: url(../res//Public/record/5.png) 50% 50% no-repeat no-repeat;
+}
+
+#dialogs #dialogs_record #record_list li .record_info .record_num.num_6 {
+  background: url(../res//Public/record/6.png) 50% 50% no-repeat no-repeat;
+}
+
+#dialogs #dialogs_record #record_list li .record_info .record_num.num_7 {
+  background: url(../res//Public/record/7.png) 50% 50% no-repeat no-repeat;
+}
+
+#dialogs #dialogs_record #record_list li .record_info .record_num.num_8 {
+  background: url(../res//Public/record/8.png) 50% 50% no-repeat no-repeat;
+}
+
+#dialogs #dialogs_record #record_list li .record_info .record_num.num_9 {
+  background: url(../res//Public/record/9.png) 50% 50% no-repeat no-repeat;
+}
+
+#dialogs #dialogs_record #record_list li .record_info .record_face {
+  width: 120px;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 130px;
+  border-left: 5px solid #4d2120;
+  border-right: 5px solid #4d2120;
+}
+
+#dialogs #dialogs_record #record_list li .record_info .record_face .record_face_img {
+  margin-top: -35.5px;
+  margin-left: -35.5px;
+  width: 65px;
+  height: 65px;
+  border: 3px solid #fff;
+  border-radius: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+#dialogs #dialogs_record #record_list li .record_info .record_score {
+  width: 200px;
+  height: 85px;
+  line-height: 85px;
+  font-size: 50px;
+  text-align: center;
+  overflow: hidden;
+  color: #4d2120;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 160px;
+  font-weight: bold;
+}
+
+#dialogs #dialogs_record #record_list li .record_info .record_star {
+  width: 108px;
+  height: 74px;
+  position: absolute;
+  top: 6px;
+  right: 45px;
+}
+
+#dialogs #dialogs_record #record_list li .record_info .record_star.star_0 {
+  background: url(../res/Public/record/star_0.png);
+}
+
+#dialogs #dialogs_record #record_list li .record_info .record_star.star_1 {
+  background: url(../res/Public/record/star_1.png);
+}
+
+#dialogs #dialogs_record #record_list li .record_info .record_star.star_2 {
+  background: url(../res/Public/record/star_2.png);
+}
+
+#dialogs #dialogs_share {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+#dialogs #dialogs_share .dialogs_inner {
+  background: url(../res/Public/share.png) no-repeat no-repeat 80px 70px;
+}
+
+#dialogs #dialogs_guide {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+#dialogs #dialogs_guide a {
+  display: block;
+  position: absolute;
+}
+
+#dialogs #dialogs_guide .guide_page_1 {
+  width: 100px;
+  height: 100px;
+  background: red;
+  top: 50px;
+  left: 200px;
+}
+
+#dialogs #dialogs_guide .guide_page_2 {
+  width: 100px;
+  height: 100px;
+  background: green;
+  top: 50px;
+  left: 300px;
+}
+
+#dialogs #dialogs_guide .guide_page_3 {
+  width: 100px;
+  height: 100px;
+  background: blue;
+  top: 50px;
+  left: 400px;
+}
+
+#dialogs #dialogs_guide .guide_page_4 {
+  width: 100px;
+  height: 100px;
+  background: yellow;
+  top: 50px;
+  left: 500px;
+}
+
+#dialogs .preload_precent {
+  width: 450px;
+  height: 335px;
+  border: 1px solid red;
+  position: absolute;
+  top: 140px;
+  left: 330px;
+  background: #6975d7;
+}
+
+#dialogs .preload_precent .precent_word {
+  width: 100%;
+  height: 100px;
+  line-height: 100px;
+  font-size: 60px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  display: block;
+  position: absolute;
+  top: 110px;
+  left: 0;
+}
+
+#dialogs .preload_precent .precent_progress {
+  width: 100%;
+  height: 0;
+  background: #b1f488;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.btn {
+  display: block;
+  cursor: pointer;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+.fadelong-enter-active, .fadelong-leave-active {
+  transition: all 0.8s ease-in-out 0s;
+}
+
+.fadelong-enter, .fadelong-leave-to {
+  opacity: 0;
+}
+
+@keyframes page_1_1 {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 200px;
+  }
+}
+
+@keyframes page_1_2 {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 850px;
+  }
+}
+
+@keyframes page_1_3 {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 650px;
+  }
+}
