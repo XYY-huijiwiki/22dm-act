@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="keywords" content="任由时光倒流，依然选择与你相遇" />
+  <meta name="description" content="任由时光倒流，依然选择与你相遇" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="user-scalable=no, width=640">
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <title>保持初心，一路前进</title>
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
+  <script src="/js/vue.min.js"></script>
+</head>
+
+<body οnunlοad="onLeave()">
+<div id="all">
+  <section id="main">
+    <div id="main_canvas">
+      <canvas id="gameCanvas"></canvas>
+    </div>
+    <img id="guide_img" src="res/Public/up.png" width="100" v-show="guide"/>
+    <a id="guide_word" width="100" v-show="guide"></a>
+    <audio id="music_normal" src="res/Audio/normal.mp3" preload="load" loop="loop"></audio>
+    <a id="music" v-show="active==''" :class="music?'active':'stop'" @click="onPlayMusic()"></a>
+  </section>
+  <section id="dialogs" v-show="active">
+    <!--preload-->
+    <transition name="fade">
+    <div id="dialogs_preload" class="dialogs_layer" v-show="active=='preload'">
+      <div class="preload_precent">
+        <a class="precent_title"></a>
+        <span class="precent_word">
+          0%
+        </span>
+      </div>
+    </div>
+    </transition>
+    <!--video-->
+    <transition name="fade">
+    <div id="dialogs_video" class="dialogs_layer" :class="hasended?'normal' : 'ice'" v-show="active=='video'">
+      <a id="replay" @click="reset()"></a>
+      <div id="video_layer">
+        <div id="video_main" @click="onPlayVideo">
+          <video id="video" src="res/Public/video.mp4" poster="res/Public/video_poster.jpg" controls="controls" width="600" height="337.5">
+            您的浏览器不支持 video 标签。
+          </video>
+          <a v-show="!video_playing" id="video_play"></a>
+        </div>
+        <div class="video_title">
+          <a class="video_title_1"></a>
+          <a class="video_title_2"></a>
+        </div>
+      </div>
+    </div>
+    </transition>
+  </section>
+</div>
+<div id="ercode">
+  <div>
+    <img src="res/Public/ercode.png" width="250"/>
+  </div>
+  <div>
+    为了更好的体验，请使用微信扫码观看~
+  </div>
+</div>
+ <script src="/js/cocos2d-js-v3.9.js"></script>
+<script src="main.js"></script>
+<script src="/js/jweixin-1.4.0.js"></script>
+</body>
+</html>

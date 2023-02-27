@@ -1,0 +1,333 @@
+html {
+  background: #000;
+}
+
+html body,
+html div,
+html ul {
+  padding: 0;
+  margin: 0;
+  font-family: "Microsoft YaHei";
+}
+
+html ul {
+  list-style-type: none;
+}
+
+html a {
+  text-decoration: none;
+}
+
+#Cocos2dGameContainer {
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#all {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+}
+
+#all section {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#all #main audio {
+  display: none;
+}
+
+#all #main #music {
+  width: 64px;
+  height: 64px;
+  display: block;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+#all #main #music.active {
+  background: url(../res/Public/play_1.png) no-repeat no-repeat;
+  animation: music_play 10s linear infinite;
+  -moz-animation: music_play 10s linear infinite;
+  -webkit-animation: music_play 10s linear infinite;
+  -o-animation: music_play 10s linear infinite;
+}
+
+#all #main #music.stop {
+  background: url(../res/Public/play_2.png) no-repeat no-repeat;
+}
+
+#all #main #guide_img {
+  margin-left: -69px;
+  width: 130px;
+  height: 138px;
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: 80px;
+  animation: guide 1s infinite linear;
+  -moz-animation: guide 1s infinite linear;
+  -webkit-animation: guide 1s infinite linear;
+  -o-animation: guide 1s infinite linear;
+}
+
+#all #main #guide_word {
+  width: 0;
+  height: 74px;
+  background: url(../res/Public/guide_word.png) no-repeat no-repeat;
+  animation: precent_title_4 3s ease .5s  forwards 2;
+  -webkit-animation: precent_title_4 3s ease .5s forwards 2;
+  position: absolute;
+  top: 265px;
+  left: 0;
+}
+
+#ercode {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  position: fixed;
+  display: none;
+}
+
+#ercode div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  line-height: 100px;
+}
+
+#dialogs {
+  z-index: 100;
+}
+
+#dialogs .dialogs_layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#dialogs .dialogs_close {
+  width: 137px;
+  height: 119px;
+  position: absolute;
+  top: 20px;
+  left: 50px;
+}
+
+#dialogs #dialogs_video.normal {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+#dialogs #dialogs_video.normal #video_layer {
+  bottom: 420px;
+}
+
+#dialogs #dialogs_video.ice {
+  background: url(../res/Public/video_background.jpg) center center no-repeat no-repeat;
+}
+
+#dialogs #dialogs_video.ice #video_layer {
+  margin-top: -250px;
+  top: 50%;
+}
+
+#dialogs #dialogs_video #replay {
+  display: block;
+  width: 87px;
+  height: 79px;
+  background: url(../res/Public/replay.png) no-repeat no-repeat;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+#dialogs #dialogs_video #video_layer {
+  width: 640px;
+  height: 500px;
+  position: absolute;
+  left: 0;
+}
+
+#dialogs #dialogs_video #video_layer #video_main {
+  width: 600px;
+  height: 337.5px;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  overflow: hidden;
+  background: #000;
+}
+
+#dialogs #dialogs_video #video_layer #video_main #video {
+  width: 600px;
+  height: 337.5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+#dialogs #dialogs_video #video_layer #video_main #video_play {
+  margin-top: -34px;
+  margin-left: -34px;
+  width: 68px;
+  height: 68px;
+  background: url(../res/Public/video_play.png) no-repeat no-repeat;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  animation: scaleDrawLow 3s linear infinite;
+  -webkit-animation: scaleDrawLow 3s linear infinite;
+}
+
+#dialogs #dialogs_video #video_layer .video_title {
+  height: 84px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+#dialogs #dialogs_video #video_layer .video_title a {
+  display: block;
+  width: 0;
+  position: absolute;
+}
+
+#dialogs #dialogs_video #video_layer .video_title .video_title_1 {
+  width: 0;
+  height: 40px;
+  background: url(../res/Public/video_word_1.png) no-repeat no-repeat;
+  animation: precent_title_1 2.3s ease 0s 1 forwards;
+  -webkit-animation: precent_title_1 2.3s ease 0s 1 forwards;
+  top: 0;
+  left: 196.5px;
+}
+
+#dialogs #dialogs_video #video_layer .video_title .video_title_2 {
+  width: 0;
+  height: 44px;
+  background: url(../res/Public/video_word_2.png) no-repeat no-repeat;
+  animation: precent_title_2 1.2s ease 2.5s 1 forwards;
+  -webkit-animation: precent_title_2 1.2s ease 2.5s 1 forwards;
+  top: 40px;
+  left: 112.5px;
+}
+
+#dialogs #dialogs_preload {
+  background: black;
+}
+
+#dialogs #dialogs_preload .preload_precent {
+  margin-top: -250px;
+  width: 100%;
+  height: 500px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+}
+
+#dialogs #dialogs_preload .preload_precent .precent_title {
+  width: 0;
+  height: 41px;
+  background: url(../res/Public/proload_title.png) no-repeat no-repeat;
+  animation: precent_title_0 2s ease .5s 1 forwards;
+  -webkit-animation: precent_title_0 2s ease .5s 1 forwards;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 156.5px;
+}
+
+#dialogs #dialogs_preload .preload_precent .precent_word {
+  margin-top: 25px;
+  width: 100%;
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+  font-size: 26px;
+  color: white;
+  display: block;
+  position: absolute;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+@keyframes guide {
+  from {
+    bottom: 80px;
+  }
+  to {
+    bottom: 120px;
+  }
+}
+
+@keyframes precent_title_0 {
+  100% {
+    width: 327px;
+  }
+}
+
+@keyframes precent_title_1 {
+  100% {
+    width: 247px;
+  }
+}
+
+@keyframes precent_title_2 {
+  100% {
+    width: 415px;
+  }
+}
+
+@keyframes precent_title_4 {
+  100% {
+    width: 640px;
+  }
+}
+
+@keyframes music_play {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes scaleDrawLow {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.2);
+  }
+}
