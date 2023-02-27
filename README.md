@@ -18,12 +18,12 @@
 15. [嘻哈闯世界3](docs/xiha.md)
 16. [疯狂嘻哈夜](docs/halloween.md)
 17. [谁动了我的红莉](docs/single.md)
-18. 遗失的铃铛
+18. [遗失的铃铛](docs/christmas.md)
 19. [智趣大冲关](docs/intellect.md)
 20. [2018新片巡礼](docs/trailer.md)
-21. 欢乐打地鼠
+21. [欢乐打地鼠](docs/children.md)
 22. 和我约会吧
-23. 狼族训练营
+23. [狼族训练营](docs/jump.md)
 24. 羊村守护者
 27. 爸爸教会我的那些事
 25. “趣”玩跨时空救兵

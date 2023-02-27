@@ -1,0 +1,128 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="狼族训练营" />
+	<meta name="description" content="什么都别想了，好好做一条狗吧，摸摸" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, width=640">
+	<meta name="format-detection" content="telephone=no, email=no"/>  
+	<title>狼族训练营</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<script type="text/javascript" src="../../../js/jquery-2.1.1.min.js"></script>
+	<script src="../../../js/vue.min.js"></script>
+</head>
+<body>
+<div id="all">
+	<section id="main" >
+		<div id="main_canvas"><canvas id="gameCanvas"></canvas></div>
+		<audio id="indexMusic" loop="loop" autoplay="true" src="res/Audio/index.mp3" style="display: none"></audio>
+		<audio id="gameMusic" loop="loop" src="res/Audio/game.mp3" style="display: none"></audio>
+	</section>
+	<section id="dialogs" v-show="active">
+	<!--pause-->
+	<transition name="fade" @before-enter="Game_pause">
+	<div id="dialogs_pause" class="dialogs_layer" v-show="active=='pause'">
+		<div class="dialogs_inner">
+			<!-- <div id="pause_music">
+				<a class="open" :class="volume==0?'active':''" @click="winSize.setEffectsVolume(1)"></a>
+				<a class="close" :class="volume==1?'active':''" @click="winSize.setEffectsVolume(0)"></a>
+			</div> -->
+			<div id="pause_main">
+				<a id="pause_home" class="pause_item" @click="Game_home"></a>
+				<a id="pause_continue" class="pause_item" @click="Game_continue"></a>
+				<a id="pause_replay" class="pause_item" @click="Game_replay"></a>
+				<a id="pause_close" @click="Game_continue"></a>
+			</div>
+		</div>
+	</div>
+	</transition>	
+	<!--preload-->
+	<transition name="fade">
+	<div id="dialogs_preload" class="dialogs_layer" v-show="active=='preload'">
+		<div class="dialogs_inner">
+			<div class="preload_precent">
+				<span class="precent_progress"></span>
+				<span class="precent_word">0%</span>
+			</div>
+		</div>
+		<img class="dialogs_background" src="res/Public/preload_bg.png" width="640" height="1280"/>
+	</div>
+	</transition>	
+	<!--record-->
+	<transition name="fade">
+	<div id="dialogs_record" class="dialogs_layer" v-show="active=='record'">
+		<img class="dialogs_background" src="res/Public/bg_record.jpg" width="640" height="1280"/>
+		<div class="dialogs_inner">
+			<ul id="record_list">
+				<li v-for="(item,index) in recordList">
+					<a class="record_num" :class="'num_'+(index)"></a>
+					<span class="record_info">
+						<span class="record_star" v-if="index<3">
+							<a class="record_star_inner"></a>
+							<a v-if="index<=1" class="record_star_inner"></a>
+							<a v-if="index==0" class="record_star_inner"></a>
+						</span>
+						<img class="record_face" :src="item.json.img" />
+						<a class="record_score">{{item.json.score}}</a>				
+						<!-- <a class="record_name">{{item.json.name}}</a>				 -->
+						<img class="record_mask" src="res/Public/record/ph.png"/>
+					</span>
+				</li>
+			</ul>
+			<a class="dialogs_close" @click='v_main.active=""'></a>
+			<a class="btn_prize" @click='winSize.ranking.getPrize()'></a>
+		</div>
+	</div>
+	</transition>
+	<!--award-->
+	<transition name="fade">
+	<div id="dialogs_award" class="dialogs_layer" v-show="active=='award'">
+		<img class="dialogs_background" src="res/Public/bg_award.jpg" width="640" height="1280"/>
+		<div class="dialogs_inner">
+			<input id="award_name" type="text" placeholder="姓名"/>
+			<input id="award_tel" type="text" placeholder="手机号码"/>
+			<input id="award_address" type="text" placeholder="地址"/>
+			<span id="award_tips"></span>
+			<a id="award_post" onclick="award.check()">提交</a>
+			<a class="dialogs_close" @click='v_main.active="record"'></a>
+		</div>
+	</div>
+	</transition>
+	<!--rule-->
+	<transition name="fade">
+	<div id="dialogs_rule" class="dialogs_layer" v-show="active=='rule'">
+		<img class="dialogs_background" src="res/Public/bg_rule.jpg" width="640" height="1280"/>
+		<div class="dialogs_inner">
+			<a class="dialogs_close" @click='v_main.active=""'></a>
+		</div>
+	</div>
+	</transition>
+	<!--share-->
+	<transition name="fade">
+	<div id="dialogs_share" class="dialogs_layer" v-show="active=='share'" @click='v_main.active=""'>	
+		<div class="dialogs_inner"></div>
+	</div>
+	</transition>
+	<!--guide-->
+	<transition name="fade" @after-leave="guideLeave">
+	<div id="dialogs_guide" class="dialogs_layer" v-show="active=='guide'" @click='v_main.active=""'>
+		<img class="dialogs_background" src="res/Public/guide.png" width="640" height="1280"/>
+	</div>
+	</transition>
+	</section>
+</div>
+<script src="../../../js/cocos2d-js-v3.9.js"></script>
+<script src="main.js"></script>
+<script src="../../../js/jweixin-1.0.0.js"></script>
+<!-- <script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?b5f74d00a4e9152b939aae19dc2f3c0f";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+</script> -->
+</body>
+</html>

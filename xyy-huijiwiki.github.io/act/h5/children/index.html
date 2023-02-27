@@ -1,0 +1,109 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="喜羊羊之欢乐打地鼠" />
+	<meta name="description" content="要奖品就来一起玩吧！" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, width=640">
+	<meta name="format-detection" content="telephone=no, email=no"/>  
+	<title>喜羊羊之欢乐打地鼠</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<script type="text/javascript" src="../../../js/jquery-2.1.1.min.js"></script>
+	<script src="../../../js/vue.min.js"></script>
+</head>
+<body>
+<div id="all">
+	<section id="main">
+		<div id="main_canvas">
+			<canvas id="gameCanvas" width="640" height="1136"></canvas>
+		</div>
+		<audio id="gameMusic" loop="loop" src="res/Audio/main_bgm.mp3" style="display: none"></audio>
+		<audio id="rankingMusic" loop="loop" src="res/Audio/ranking_bgm.mp3" style="display: none"></audio>
+	</section>
+	<section id="dialogs" v-show="active||tips">
+		<!--record-->
+		<transition name="fade" @before-enter="recordEntry" @after-leave="recordLeave">
+			<div id="dialogs_record" class="dialogs_layer" v-show="active=='record'">
+				<ul id="record_list">
+					<li v-for="(item,index) in recordList" :class="'list_'+(index)">
+						<img class="record_face" :src="item.json.img" width="93" height="93" />
+						<a class="record_name">{{item.json.name}}</a>
+						<a class="record_score">{{item.json.score}}</a>
+						<a class="record_num" :class="'num_'+index"></a>
+					</li>
+				</ul>
+				<a class="dialogs_close" @click='v_main.active=""'></a>
+				<a class="btn_prize" @click='winSize.ranking.getPrize()'></a>
+			</div>
+		</transition>
+	    <!--award-->
+		<transition name="fade">
+			<div id="dialogs_award" class="dialogs_layer" v-show="active=='award'">
+				<input id="award_name" type="text" />
+				<input id="award_tel" type="text" />
+				<textarea id="award_address"></textarea>
+				<span id="award_tips"></span>
+				<a id="award_post" onclick="award.check()"></a>
+				<a class="dialogs_close" @click='v_main.active="record"'></a>
+			</div>
+		</transition>
+		<!--preload-->
+		<transition name="fade">
+			<div id="dialogs_preload" class="dialogs_layer" v-show="active=='preload'">
+				<img src="res/Public/preload/preload_bg.jpg" width="640" height="1136"/>
+				<div class="preload_precent">
+					<a class="precent_left"></a>
+					<a class="precent_main"></a>
+					<a class="precent_right"></a>
+					<span class="precent_word">0%</span>
+				</div>
+			</div>
+		</transition>	
+		<!--rule-->
+	    <transition name="fade">
+			<div id="dialogs_rule" class="dialogs_layer" v-show="active=='rule'">
+				<a class="dialogs_close" @click='v_main.active=""'></a>
+			</div>
+		</transition>
+		<!--share-->
+		<transition name="fade">
+			<div id="dialogs_share" class="dialogs_layer" v-show="active=='share'" @click='v_main.active=""'>	
+			</div>
+		</transition>
+		<!--tips-->
+	    <!-- <transition name="fade"  @after-leave="share=true">
+			<div id="dialogs_tips" class="dialogs_layer" v-show="tips!=''">
+				<div id="tips_box">
+					<div id="tips_title">提示</div>
+					<a id="tips_close" @click="cancelShare"></a>
+					<div id="tips_content">
+						{{tips}}
+					</div>
+					<div id="tips_btn">
+						<a id="tips_cancel" @click="cancelShare"></a>
+					</div>
+				</div>
+			</div>
+		</transition
+		> -->
+		<!--guide-->
+		<transition name="fade" @after-leave="guideLeave">
+			<div id="dialogs_guide" class="dialogs_layer" v-show="active=='guide'" @click='v_main.active=""'></div>
+		</transition>
+	</section>
+</div>
+<script src="../../../js/cocos2d-js-v3.9.js"></script>
+<script src="main.js"></script>
+<script src="../../../js/jweixin-1.0.0.js"></script>
+<!-- <script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?b5f74d00a4e9152b939aae19dc2f3c0f";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+</script> -->
+</body>
+</html>

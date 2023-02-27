@@ -1,0 +1,421 @@
+html {
+  background: #000;
+}
+
+html body, html div, html ul {
+  padding: 0;
+  margin: 0;
+  font-family: "Microsoft YaHei";
+}
+
+html ul {
+  list-style-type: none;
+}
+
+html a {
+  text-decoration: none;
+}
+
+#all {
+  margin-top: -568px;
+  margin-left: -320px;
+  width: 640px;
+  height: 1136px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  overflow: hidden;
+  display: none;
+}
+
+#all section {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+#dialogs {
+  z-index: 100;
+}
+
+#dialogs .dialogs_close {
+  width: 79px;
+  height: 60px;
+  background: url(../res/Public/btn_close.png) no-repeat no-repeat;
+  position: absolute;
+  left: 20px;
+  top: 60px;
+}
+
+#dialogs .dialogs_layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+#dialogs #dialogs_record {
+  background: url(../res/Public/record/background.jpg);
+}
+
+#dialogs #dialogs_record .btn_prize {
+  width: 79px;
+  height: 60px;
+  background: url(../res/Public/record/prize.png) no-repeat no-repeat;
+  position: absolute;
+  right: 20px;
+  top: 60px;
+}
+
+#dialogs #dialogs_record #record_list {
+  padding: 8px;
+  width: 476px;
+  height: 615px;
+  position: absolute;
+  top: 340px;
+  left: 75px;
+  border: 0px solid red;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#dialogs #dialogs_record #record_list li {
+  margin-top: -8px;
+  width: 476px;
+  height: 174px;
+  position: relative;
+}
+
+#dialogs #dialogs_record #record_list li.list_0 {
+  background: url(../res//Public/record/ph_0.png);
+}
+
+#dialogs #dialogs_record #record_list li.list_1 {
+  background: url(../res//Public/record/ph_1.png);
+}
+
+#dialogs #dialogs_record #record_list li.list_2 {
+  background: url(../res//Public/record/ph_2.png);
+}
+
+#dialogs #dialogs_record #record_list li.list_3 {
+  background: url(../res//Public/record/ph_3.png);
+}
+
+#dialogs #dialogs_record #record_list li.list_4 {
+  background: url(../res//Public/record/ph_0.png);
+}
+
+#dialogs #dialogs_record #record_list li.list_5 {
+  background: url(../res//Public/record/ph_1.png);
+}
+
+#dialogs #dialogs_record #record_list li.list_6 {
+  background: url(../res//Public/record/ph_2.png);
+}
+
+#dialogs #dialogs_record #record_list li.list_7 {
+  background: url(../res//Public/record/ph_3.png);
+}
+
+#dialogs #dialogs_record #record_list li.list_8 {
+  background: url(../res//Public/record/ph_0.png);
+}
+
+#dialogs #dialogs_record #record_list li.list_9 {
+  background: url(../res//Public/record/ph_1.png);
+}
+
+#dialogs #dialogs_record #record_list li .record_face {
+  width: 93px;
+  height: 93px;
+  border-radius: 50%;
+  position: absolute;
+  top: 13px;
+  left: 17px;
+}
+
+#dialogs #dialogs_record #record_list li .record_name {
+  width: 130px;
+  height: 60px;
+  font-size: 24px;
+  text-align: center;
+  overflow: hidden;
+  color: #e27d75;
+  display: block;
+  position: absolute;
+  top: 45px;
+  left: 129px;
+}
+
+#dialogs #dialogs_record #record_list li .record_score {
+  width: 120px;
+  height: 40px;
+  font-size: 34px;
+  text-align: center;
+  overflow: hidden;
+  color: #e27d75;
+  display: block;
+  position: absolute;
+  top: 40px;
+  left: 260px;
+  font-weight: bold;
+}
+
+#dialogs #dialogs_record #record_list li .record_num {
+  width: 58px;
+  height: 70px;
+  position: absolute;
+  bottom: 77px;
+  right: 35px;
+}
+
+#dialogs #dialogs_record #record_list li .record_num.num_0 {
+  background: url(../res//Public/record/1.png);
+}
+
+#dialogs #dialogs_record #record_list li .record_num.num_1 {
+  background: url(../res//Public/record/2.png);
+}
+
+#dialogs #dialogs_record #record_list li .record_num.num_2 {
+  background: url(../res//Public/record/3.png);
+}
+
+#dialogs #dialogs_record #record_list li .record_num.num_3 {
+  background: url(../res//Public/record/4.png);
+}
+
+#dialogs #dialogs_record #record_list li .record_num.num_4 {
+  background: url(../res//Public/record/5.png);
+}
+
+#dialogs #dialogs_record #record_list li .record_num.num_5 {
+  background: url(../res//Public/record/6.png);
+}
+
+#dialogs #dialogs_record #record_list li .record_num.num_6 {
+  background: url(../res//Public/record/7.png);
+}
+
+#dialogs #dialogs_record #record_list li .record_num.num_7 {
+  background: url(../res//Public/record/8.png);
+}
+
+#dialogs #dialogs_record #record_list li .record_num.num_8 {
+  background: url(../res//Public/record/9.png);
+}
+
+#dialogs #dialogs_record #record_list li .record_num.num_9 {
+  background: url(../res//Public/record/10.png);
+}
+
+#dialogs #dialogs_award {
+  background: url(../res/Public/bg_award.jpg);
+}
+
+#dialogs #dialogs_award input {
+  width: 306px;
+  height: 40px;
+  left: 215px;
+  text-align: center;
+  color: #6a8af5;
+  font-size: 30px;
+  font-weight: bold;
+  background: none;
+  position: absolute;
+  border: none;
+}
+
+#dialogs #dialogs_award input#award_name {
+  top: 385px;
+}
+
+#dialogs #dialogs_award input#award_tel {
+  top: 478px;
+}
+
+#dialogs #dialogs_award #award_address {
+  width: 400px;
+  height: 196px;
+  top: 547px;
+  left: 130px;
+  color: #6a8af5;
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  background: none;
+  border: none;
+  line-height: 64px;
+  text-indent: 4em;
+  resize: none;
+}
+
+#dialogs #dialogs_award #award_tips {
+  width: 415px;
+  height: 40px;
+  line-height: 40px;
+  color: red;
+  font-size: 24px;
+  display: block;
+  text-align: center;
+  position: absolute;
+  top: 690px;
+  left: 120px;
+}
+
+#dialogs #dialogs_award #award_post {
+  width: 134px;
+  height: 57px;
+  position: absolute;
+  top: 758px;
+  left: 255px;
+}
+
+#dialogs #dialogs_rule {
+  background: url(../res/Public/bg_rule.jpg);
+}
+
+#dialogs #dialogs_share {
+  background: rgba(0, 0, 0, 0.8) url(../res/Public/share.png) no-repeat no-repeat 80px 70px;
+}
+
+#dialogs #dialogs_guide {
+  background: rgba(0, 0, 0, 0.8) url(../res/GamePlay/guide.png) no-repeat no-repeat 0 -5px;
+}
+
+#dialogs #dialogs_tips {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+#dialogs #dialogs_tips #tips_box {
+  margin-top: -148px;
+  margin-left: -240.5px;
+  width: 481px;
+  height: 296px;
+  background: url(../res/Public/tips/bg.png);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+#dialogs #dialogs_tips #tips_box #tips_close {
+  width: 54px;
+  height: 54px;
+  position: absolute;
+  top: 10px;
+  right: 18px;
+  background: url(../res/Public/tips/close.png);
+  display: block;
+}
+
+#dialogs #dialogs_tips #tips_box #tips_content {
+  width: 380px;
+  height: 120px;
+  color: #4a1909;
+  font-size: 28px;
+  line-height: 45px;
+  text-align: center;
+  position: absolute;
+  top: 100px;
+  left: 50px;
+}
+
+#dialogs #dialogs_tips #tips_box #tips_btn {
+  width: 100%;
+  height: 58px;
+  text-align: center;
+  overflow: hidden;
+  position: absolute;
+  bottom: 30px;
+  left: 0px;
+}
+
+#dialogs #dialogs_tips #tips_box #tips_btn a {
+  width: 124px;
+  height: 58px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+#dialogs #dialogs_tips #tips_box #tips_btn a#tips_sure {
+  background: url(../res/Public/tips/sure.png);
+}
+
+#dialogs #dialogs_tips #tips_box #tips_btn a#tips_cancel {
+  background: url(../res/Public/tips/cancel.png);
+}
+
+#dialogs .preload_precent {
+  margin-left: -212.5px;
+  width: 520px;
+  height: 49px;
+  background: url(../res/public/preload/precent_bg.png) no-repeat no-repeat;
+  position: absolute;
+  bottom: 610px;
+  left: 50%;
+}
+
+#dialogs .preload_precent a {
+  float: left;
+  display: block;
+}
+
+#dialogs .preload_precent a.precent_left {
+  width: 36px;
+  height: 49px;
+  background: url(../res/public/preload/precent_left.png);
+}
+
+#dialogs .preload_precent a.precent_main {
+  width: 3px;
+  height: 49px;
+  background: url(../res/public/preload/precent_main.png) repeat-x;
+}
+
+#dialogs .preload_precent a.precent_right {
+  margin-top: -10.5px;
+  margin-left: -36.5px;
+  width: 73px;
+  height: 70px;
+  background: url(../res/public/preload/precent_right.png);
+}
+
+#dialogs .preload_precent .precent_word {
+  width: 100%;
+  height: 49px;
+  line-height: 49px;
+  font-size: 24px;
+  color: #fff;
+  text-align: center;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.border_red {
+  border: 1px solid red;
+}
+
+.border_blue {
+  border: 1px solid blue;
+}
+
+.btn {
+  display: block;
+  cursor: pointer;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
