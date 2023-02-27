@@ -1,0 +1,815 @@
+html {
+    background: #000
+}
+
+html body,
+html div,
+html ul {
+    padding: 0;
+    margin: 0;
+    font-family: "Microsoft YaHei"
+}
+
+html ul {
+    list-style-type: none
+}
+
+html a {
+    text-decoration: none
+}
+
+#Cocos2dGameContainer {
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important
+}
+
+#all {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden
+}
+
+#all section {
+    width: 100%;
+    height: 100%;
+    position: absolute
+}
+
+#all audio {
+    display: none
+}
+
+#all .reserved {
+    margin-left: -150px;
+    width: 300px;
+    height: 17px;
+    background: url(../res/Public/reserved.png) no-repeat no-repeat;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    z-index: 100
+}
+
+#all .music {
+    width: 78px;
+    height: 78px;
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px
+}
+
+#all .music.active {
+    background: url(../res/Public/music_1.png) no-repeat no-repeat
+}
+
+#all .music.stop {
+    background: url(../res/Public/music_0.png) no-repeat no-repeat
+}
+
+#all .logo {
+    width: 200px;
+    height: 69px;
+    background: url(../res/Public/logo.png);
+    position: absolute;
+    top: 15px;
+    left: 15px
+}
+
+#main.filter {
+    filter: blur(11px)
+}
+
+#dialogs {
+    z-index: 100
+}
+
+#dialogs a {
+    display: block
+}
+
+#dialogs .dialogs_layer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+#dialogs .dialogs_layer#dialogs_record,
+#dialogs .dialogs_layer#dialogs_rule,
+#dialogs .dialogs_layer#dialogs_shop,
+#dialogs .dialogs_layer#dialogs_award {
+    background: rgba(0, 0, 0, 0.3)
+}
+
+#dialogs .dialogs_layer#dialogs_pause,
+#dialogs .dialogs_layer#dialogs_guide,
+#dialogs .dialogs_layer#dialogs_gameover {
+    background: rgba(0, 0, 0, 0.6)
+}
+
+#dialogs #dialogs_topbar #topbar_hp {
+    width: 200px;
+    height: 122px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    top: -5px;
+    left: 25px
+}
+
+#dialogs #dialogs_topbar #topbar_hp .hp_num {
+    margin-left: -10px
+}
+
+#dialogs #dialogs_topbar #topbar_score {
+    margin-left: -171.5px;
+    width: 343px;
+    height: 87px;
+    position: absolute;
+    left: 50%;
+    top: -5px;
+    background: url(../res/Public/topbar/topbar_score.png) no-repeat no-repeat
+}
+
+#dialogs #dialogs_topbar #topbar_score div {
+    width: 162px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 18px;
+    left: 130px
+}
+
+#dialogs #dialogs_topbar #topbar_score div img {
+    margin-left: -29px
+}
+
+#dialogs #dialogs_topbar #topbar_pause {
+    width: 78px;
+    height: 78px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: url(../res/Public/topbar/btn_pause.png)
+}
+
+#dialogs #dialogs_topbar #topbar_jump {
+    width: 131px;
+    height: 129px;
+    position: absolute;
+    bottom: 15px;
+    right: 150px;
+    background: url(../res/Public/topbar/btn_jump.png) no-repeat no-repeat
+}
+
+#dialogs #dialogs_topbar #topbar_jump.active {
+    animation: btnactive 0.4s linear;
+    -moz-animation: btnactive 0.4s linear;
+    -webkit-animation: btnactive 0.4s linear;
+    -o-animation: btnactive 0.4s linear
+}
+
+#dialogs #dialogs_topbar #topbar_jump_mask {
+    width: 600px;
+    height: 300px;
+    position: absolute;
+    bottom: 0;
+    right: 0
+}
+
+#dialogs #dialogs_topbar #topbar_skill {
+    width: 200px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 5px;
+    left: 120px
+}
+
+#dialogs #dialogs_topbar #topbar_skill a {
+    width: 117px;
+    height: 122px;
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+#dialogs #dialogs_topbar #topbar_skill a.none {
+    filter: grayscale(100%)
+}
+
+#dialogs #dialogs_topbar #topbar_skill #skill_ice {
+    background: url(../res/Public/topbar/skill_ice.png) center center no-repeat no-repeat
+}
+
+#dialogs #dialogs_topbar #topbar_skill #skill_strong {
+    background: url(../res/Public/topbar/skill_strong.png) center center no-repeat no-repeat
+}
+
+#dialogs #dialogs_mm #mm_btn {
+    margin-left: -450px;
+    width: 900px;
+    height: 129px;
+    position: absolute;
+    left: 50%;
+    bottom: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center
+}
+
+#dialogs #dialogs_mm #mm_btn #mm_start {
+    width: 358px;
+    height: 129px;
+    background: url(../res/Public/mm/mm_start.png) center center no-repeat no-repeat
+}
+
+#dialogs #dialogs_mm #mm_btn #mm_record {
+    width: 131px;
+    height: 129px;
+    background: url(../res/Public/mm/btn_record.png) center center no-repeat no-repeat
+}
+
+#dialogs #dialogs_mm #mm_btn #mm_rule {
+    width: 132px;
+    height: 129px;
+    background: url(../res/Public/mm/btn_rule.png) center center no-repeat no-repeat
+}
+
+#dialogs #dialogs_mm #mm_news {
+    width: 76px;
+    height: 72px;
+    position: absolute;
+    top: 100px;
+    right: 22px;
+    background: url(../res/Public/news.png);
+    transform-origin: center top;
+    -webkit-transform-origin: center top;
+    -moz-transform-origin: center top;
+    -o-transform-origin: center top;
+    animation: shopRotate 5s linear infinite;
+    -moz-animation: shopRotate 5s linear infinite;
+    -webkit-animation: shopRotate 5s linear infinite;
+    -o-animation: shopRotate 5s linear infinite
+}
+
+#dialogs #dialogs_gs .dialogs_back {
+    right: 25px;
+    bottom: 25px
+}
+
+#dialogs #dialogs_gs #gs_share {
+    width: 100px;
+    height: 100px;
+    background: url(../res/Public/btn_share.png) center center no-repeat no-repeat;
+    position: absolute;
+    right: 25px;
+    bottom: 125px
+}
+
+#dialogs #dialogs_select #select_main {
+    width: 100%;
+    height: 100%;
+    background: url(../res/Public/background.jpg) no-repeat no-repeat;
+    position: relative
+}
+
+#dialogs #dialogs_select #select_main a {
+    position: absolute
+}
+
+#dialogs #dialogs_select #select_main #select_menu {
+    width: 310px;
+    height: 182px;
+    top: 100px;
+    left: 0
+}
+
+#dialogs #dialogs_select #select_main #select_menu.role_1 {
+    background: url(../res/Public/select/menu_1.png) no-repeat no-repeat top left
+}
+
+#dialogs #dialogs_select #select_main #select_menu.role_2 {
+    background: url(../res/Public/select/menu_2.png) no-repeat no-repeat top left
+}
+
+#dialogs #dialogs_select #select_main #select_role {
+    margin-left: -420px;
+    width: 1040px;
+    height: 640px;
+    top: 0;
+    left: 50%
+}
+
+#dialogs #dialogs_select #select_main #select_role.role_1 {
+    background: url(../res/Public/select/role_1.png) no-repeat no-repeat center center
+}
+
+#dialogs #dialogs_select #select_main #select_role.role_2 {
+    background: url(../res/Public/select/role_2.png) no-repeat no-repeat center center
+}
+
+#dialogs #dialogs_select #select_main #select_start {
+    margin-left: -179px;
+    width: 358px;
+    height: 84px;
+    background: url(../res/Public/select/start.png);
+    left: 50%;
+    bottom: 5px
+}
+
+#dialogs #dialogs_select #select_main .dialogs_back {
+    bottom: 15px;
+    right: 15px
+}
+
+#dialogs #dialogs_guide .guide_1 {
+    width: 400px;
+    height: 199px;
+    position: absolute;
+    background: url(../res/Public/guide/guide_1.png) no-repeat no-repeat;
+    bottom: 150px;
+    right: 200px
+}
+
+#dialogs #dialogs_guide .guide_2 {
+    margin-left: -200px;
+    width: 500px;
+    height: 229px;
+    position: absolute;
+    background: url(../res/Public/guide/guide_2.png) no-repeat no-repeat;
+    bottom: 20px;
+    left: 50%
+}
+
+#dialogs #dialogs_guide .guide_3 {
+    width: 350px;
+    height: 115px;
+    position: absolute;
+    background: url(../res/Public/guide/guide_3.png) no-repeat no-repeat;
+    top: 95px;
+    left: 70px
+}
+
+#dialogs #dialogs_guide .guide_4 {
+    width: 550px;
+    height: 252px;
+    position: absolute;
+    background: url(../res/Public/guide/guide_4.png) no-repeat no-repeat;
+    bottom: 80px;
+    left: 100px
+}
+
+#dialogs #dialogs_guide .guide_item {
+    width: 600px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+#dialogs #dialogs_guide #guide_germ {
+    position: absolute;
+    margin-left: -300px;
+    bottom: 175px;
+    left: 50%
+}
+
+#dialogs #dialogs_guide #guide_germ img {
+    margin-left: 10px
+}
+
+#dialogs #dialogs_guide #guide_skill {
+    width: 550px;
+    height: 250px;
+    position: absolute;
+    margin-left: -300px;
+    top: 140px;
+    left: 60%
+}
+
+#dialogs #dialogs_guide #guide_skill a {
+    width: 100%;
+    height: 33%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: #fff;
+    font-size: 26px;
+    font-weight: bold
+}
+
+#dialogs #dialogs_guide #guide_skill img {
+    margin: 0 20px
+}
+
+#dialogs #dialogs_pause {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+#dialogs #dialogs_pause #pause_main {
+    width: 489px;
+    height: 242px;
+    background: url(../res/Public/pause.png);
+    position: relative
+}
+
+#dialogs #dialogs_pause #pause_main a {
+    position: absolute
+}
+
+#dialogs #dialogs_pause #pause_main .pause_item {
+    width: 140px;
+    height: 145px;
+    top: 50px
+}
+
+#dialogs #dialogs_pause #pause_main #pause_home {
+    left: 20px
+}
+
+#dialogs #dialogs_pause #pause_main #pause_continue {
+    left: 180px
+}
+
+#dialogs #dialogs_pause #pause_main #pause_replay {
+    left: 340px
+}
+
+#dialogs #dialogs_pause #pause_main #pause_close {
+    top: -18px;
+    right: -35px
+}
+
+#dialogs #dialogs_gameover #gameover {
+    margin-top: -100px;
+    margin-left: -272px;
+    width: 544px;
+    height: 147px;
+    background: url(../res/Public/gameover.png) no-repeat no-repeat;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    animation: titlefly 1s linear forwards;
+    -moz-animation: titlefly 1s linear forwards;
+    -webkit-animation: titlefly 1s linear forwards;
+    -o-animation: titlefly 1s linear forwards
+}
+
+#dialogs #dialogs_record {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+#dialogs #dialogs_record #record_main {
+    width: 880px;
+    height: 601px;
+    background: url(../res/Public/record/mask.png) no-repeat no-repeat;
+    position: relative
+}
+
+#dialogs #dialogs_record #record_title {
+    width: 359px;
+    height: 127px;
+    background: url(../res/Public/record/title_record.png) no-repeat no-repeat;
+    position: absolute;
+    top: 12px;
+    left: 20px
+}
+
+#dialogs #dialogs_record .record_title2 {
+    width: 74px;
+    height: 50px;
+    position: absolute;
+    top: 110px
+}
+
+#dialogs #dialogs_record .record_title2#record_name {
+    background: url(../res/Public/record/name.png) no-repeat no-repeat;
+    left: 390px
+}
+
+#dialogs #dialogs_record .record_title2#record_score {
+    background: url(../res/Public/record/score.png) no-repeat no-repeat;
+    left: 635px
+}
+
+#dialogs #dialogs_record #record_list {
+    width: 744px;
+    height: 368px;
+    position: absolute;
+    top: 156px;
+    left: 70px;
+    overflow-y: auto;
+    overflow-x: auto
+}
+
+#dialogs #dialogs_record #record_list li {
+    width: 744px;
+    height: 113px;
+    margin-bottom: -5px;
+    background: url(../res/Public/record/rows.png) no-repeat no-repeat;
+    position: relative;
+    display: block
+}
+
+#dialogs #dialogs_record #record_list li .face {
+    display: block;
+    position: absolute;
+    top: 30px;
+    left: 138px;
+    border-radius: 8px
+}
+
+#dialogs #dialogs_record #record_list li .flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute
+}
+
+#dialogs #dialogs_record #record_list li .flex img {
+    margin-left: -29px
+}
+
+#dialogs #dialogs_record #record_list li .name {
+    width: 300px;
+    height: 71px;
+    top: 27px;
+    left: 206px;
+    font-size: 25px;
+    color: #fede86
+}
+
+#dialogs #dialogs_record #record_list li .rank {
+    width: 120px;
+    height: 113px;
+    top: 8px;
+    left: 15px
+}
+
+#dialogs #dialogs_record #record_list li .record_num {
+    width: 220px;
+    height: 71px;
+    top: 27px;
+    right: 20px
+}
+
+#dialogs #dialogs_record #record_prize {
+    width: 738px;
+    height: 104px;
+    background: url(../res/Public/record/btn_award.png);
+    position: absolute;
+    bottom: -10px;
+    left: 71px
+}
+
+#dialogs #dialogs_record .dialogs_close {
+    top: 83px;
+    right: 5px
+}
+
+#dialogs #dialogs_rule {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+#dialogs #dialogs_rule #rule_main {
+    width: 880px;
+    height: 601px;
+    background: url(../res/Public/record/mask.png) no-repeat no-repeat;
+    position: relative
+}
+
+#dialogs #dialogs_rule #rule_title {
+    width: 359px;
+    height: 127px;
+    background: url(../res/Public/record/title_rule.png) no-repeat no-repeat;
+    position: absolute;
+    top: 12px;
+    left: 20px
+}
+
+#dialogs #dialogs_rule #rule_word {
+    width: 761px;
+    height: 395px;
+    background: url(../res/Public/record/rule.png) no-repeat no-repeat;
+    position: absolute;
+    top: 165px;
+    left: 65px
+}
+
+#dialogs #dialogs_rule .dialogs_close {
+    top: 100px;
+    right: 20px
+}
+
+#dialogs #dialogs_shop {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+#dialogs #dialogs_shop #shop_main {
+    height: 550px;
+    height: auto;
+    position: relative
+}
+
+#dialogs #dialogs_shop #shop_main #shop_close {
+    top: -40px;
+    right: -100px
+}
+
+#dialogs #dialogs_preload {
+    background: url(../res/Public/background.jpg) no-repeat no-repeat top left
+}
+
+#dialogs #dialogs_preload #preload_main {
+    margin-top: -125.5px;
+    margin-left: -229px;
+    width: 458px;
+    height: 251px;
+    background: url(../res/Public/preload/loading.png);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    animation: loading 2.5s linear infinite;
+    -moz-animation: loading 2.5s linear infinite;
+    -webkit-animation: loading 2.5s linear infinite;
+    -o-animation: loading 2.5s linear infinite
+}
+
+#dialogs #dialogs_preload #preload_main .precent_word {
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #ffe944;
+    display: block;
+    position: absolute;
+    bottom: 5px;
+    left: 255px
+}
+
+#dialogs #dialogs_share {
+    background: url(../res/Public/share.png) no-repeat no-repeat top left;
+    background-color: rgba(0, 0, 0, 0.65)
+}
+
+#dialogs #dialogs_ice a {
+    width: 50%;
+    height: 50%;
+    background: url(../res/Public/ice.png) no-repeat no-repeat top left;
+    position: absolute
+}
+
+#dialogs #dialogs_ice .icea {
+    top: 0;
+    left: 0
+}
+
+#dialogs #dialogs_ice .iceb {
+    top: 0;
+    right: 0;
+    transform: rotateY(180deg)
+}
+
+#dialogs #dialogs_ice .icec {
+    bottom: 0;
+    right: 0;
+    transform: rotate(180deg)
+}
+
+#dialogs #dialogs_ice .iced {
+    bottom: 0;
+    left: 0;
+    transform: rotateY(180deg) rotate(180deg)
+}
+
+#dialogs .dialogs_close {
+    width: 100px;
+    height: 100px;
+    background: url(../res/Public/close.png) center center no-repeat no-repeat;
+    position: absolute
+}
+
+#dialogs .dialogs_back {
+    width: 100px;
+    height: 100px;
+    background: url(../res/Public/back.png) center center no-repeat no-repeat;
+    position: absolute
+}
+
+#ercode {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    display: none
+}
+
+#ercode img,
+#ercode span {
+    margin: 10px auto;
+    display: block;
+    font-size: 22px;
+    text-align: center
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: all 0.3s ease-in-out 0s
+}
+
+.fade-enter,
+.fade-leave-to {
+    opacity: 0
+}
+
+@keyframes shopRotate {
+    0% {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg)
+    }
+
+    25% {
+        transform: rotate(10deg);
+        -webkit-transform: rotate(10deg)
+    }
+
+    50% {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg)
+    }
+
+    75% {
+        transform: rotate(-10deg);
+        -webkit-transform: rotate(-10deg)
+    }
+
+    100% {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg)
+    }
+}
+
+@keyframes loading {
+    0% {
+        top: 50%
+    }
+
+    50% {
+        top: 46%
+    }
+
+    100% {
+        top: 50%
+    }
+}
+
+@keyframes titlefly {
+    from {
+        top: 0%
+    }
+
+    to {
+        top: 50%
+    }
+}
+
+@keyframes btnactive {
+    0% {
+        transform: scale(1);
+        -webkit-transform: scale(1)
+    }
+
+    50% {
+        transform: scale(1.15);
+        -webkit-transform: scale(1.15)
+    }
+
+    100% {
+        transform: scale(1);
+        -webkit-transform: scale(1)
+    }
+}
