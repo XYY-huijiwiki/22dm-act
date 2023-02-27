@@ -5,12 +5,12 @@ var weixinData = {
 	shareTitle: '遗失的铃铛',
 	shareDesc: '遗失的 “铃铛”再升级，新春好礼送不停！',
 	shareLink: 'http://www.22dm.com/act/h5/christmas/index.html',
-	shareImg: 'http://www.22dm.com/act/h5/christmas/res/public/icon.jpg'
+	shareImg: 'http://www.22dm.com/act/h5/christmas/res/Public/icon.jpg'
 };
 var userInfo = {
 	openid: "oTaiPuEUqBR9FQRGw5hvR0oyOAWo",
 	name: "test",
-	face: "res/public/icon.jpg",
+	face: "res/Public/icon.jpg",
 	sex: "1",
 	country: "GuangZhou",
 	province: "GuangDong",
@@ -404,7 +404,7 @@ function registerEvent() {
 	});
 	$("#wallpaper_list li a").click(function () {
 		var number = $(this).attr("number");
-		$("#download_img").attr("src", "res/public/wallpaper/" + number + ".jpg");
+		$("#download_img").attr("src", "res/Public/wallpaper/" + number + ".jpg");
 		dialogs.open("dialogs_download", false);
 	});
 	$("#download_close").click(function () {

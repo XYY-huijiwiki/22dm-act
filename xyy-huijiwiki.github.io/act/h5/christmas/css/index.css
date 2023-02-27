@@ -51,7 +51,7 @@ ul{
 	margin-left: -118px;
 	width: 300px;
 	height: 37px;
-	background: url(../res/public/precent_bg.png) no-repeat no-repeat;
+	background: url(../res/Public/precent_bg.png) no-repeat no-repeat;
 	position: absolute;
 	bottom: 410px;
 	left: 50%;
@@ -63,19 +63,19 @@ ul{
 .precent_left{
 	width: 18px;
 	height: 37px;
-	background: url(../res/public/precent_left.png);
+	background: url(../res/Public/precent_left.png);
 }
 .precent_main{
 	width: 2px;
 	height: 37px;
-	background: url(../res/public/precent_main.png) repeat-x;
+	background: url(../res/Public/precent_main.png) repeat-x;
 }
 .precent_right{
 	margin-top:-2px;
 	margin-left:-30px;
 	width: 48px;
 	height: 41px;
-	background: url(../res/public/precent_right.png);
+	background: url(../res/Public/precent_right.png);
 }
 .precent_word{
 	width: 240px;
@@ -91,17 +91,17 @@ ul{
 }
 
 /*dialogs*/
-#dialogs_rule{background: url(../res/public/rule_bg_1.jpg) no-repeat no-repeat;}
-#dialogs_juji{background: url(../res/public/juji_bg_1.jpg) no-repeat no-repeat;}
-#dialogs_wallpaper{background: url(../res/public/wallpaper_bg_1.jpg) no-repeat no-repeat;}
+#dialogs_rule{background: url(../res/Public/rule_bg_1.jpg) no-repeat no-repeat;}
+#dialogs_juji{background: url(../res/Public/juji_bg_1.jpg) no-repeat no-repeat;}
+#dialogs_wallpaper{background: url(../res/Public/wallpaper_bg_1.jpg) no-repeat no-repeat;}
 #dialogs_download{background:rgba(0,0,0,0.7);}
-#dialogs_ranking{background: url(../res/public/ranking_bg_1.jpg) no-repeat no-repeat;}
-#dialogs_share{background:rgba(0,0,0,0.8) url(../res/public/share.png) no-repeat no-repeat top right;}
+#dialogs_ranking{background: url(../res/Public/ranking_bg_1.jpg) no-repeat no-repeat;}
+#dialogs_share{background:rgba(0,0,0,0.8) url(../res/Public/share.png) no-repeat no-repeat top right;}
 .dialogs_close,.dialogs_close_self{
 	width: 101px;
 	height: 101px;
 	position: absolute;
-	background: url(../res/public/btn_close_1.png) no-repeat no-repeat;
+	background: url(../res/Public/btn_close_1.png) no-repeat no-repeat;
 }
 #dialogs_rule .dialogs_close{
 	top: 10px;
@@ -141,7 +141,7 @@ ul{
 	width: 271px;
 	height: 201px;
 	position: relative;
-	background: url(../res/public/dl_item_bg.png);
+	background: url(../res/Public/dl_item_bg.png);
 	float: left;
 }
 .wallpaper_items a{
@@ -156,7 +156,7 @@ ul{
 #wallpaper_btn_start{
 	width: 202px;
 	height: 54px;
-	background: url(../res/public/wallpaper_btn_start.png);
+	background: url(../res/Public/wallpaper_btn_start.png);
 	position: absolute;
 	bottom:0;
 	right:0;
@@ -187,7 +187,7 @@ ul{
 #download_close{
 	width: 78px;
 	height: 66px;
-	background: url(/tv/school/images/public/download_close.png);
+	background: url(/tv/school/images/Public/download_close.png);
 	position: absolute;;
 	top:-75px;
 	right: 0;
@@ -231,7 +231,7 @@ ul{
 	position: absolute;
 	top:0px;
 	left:0px;
-    background: url(../res/public/phk.png) no-repeat no-repeat;
+    background: url(../res/Public/phk.png) no-repeat no-repeat;
     display: block;
 }
 .p_name{
@@ -325,7 +325,7 @@ ul{
     display: block;
     cursor: pointer;
 }
-/*public*/
+/*Public*/
 .btn{
 	display: block;
 	cursor: pointer;
