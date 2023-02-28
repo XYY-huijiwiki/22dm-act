@@ -9,9 +9,9 @@
 ## 修改版本
 文件夹`xyy-huijiwiki.github.io`内存储着游戏的修改版本。修改内容如下：
 - 去除了所有微信相关的代码，确保游戏能够独立运行。
-- 排行榜内嵌至游戏代码中——反正活动结束后排行榜就固定了，没必要总是向服务器发送请求。
+- 因为无法跨域访问官方服务器，所以把排行榜数据内嵌至代码中。数据抓取时间为2023年2月28日。
 
 ## 链接
 - [官方游戏链接](http://act.22dm.com/act/h5/moon)
 - [修改版游戏链接](https://xyy-huijiwiki.github.io/22dm-act/xyy-huijiwiki.github.io/act/h5/moon/index.html)
-- [羊羊百科](https://xyy.huijiwiki.com/wiki/探险父子兵)
+- [羊羊百科](https://xyy.huijiwiki.com/wiki/团圆盖盖乐)

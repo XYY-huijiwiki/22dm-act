@@ -1,0 +1,213 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="keywords" content="奇趣能量屋" />
+  <meta name="description" content="把你的好运气分享给TA沾沾吧！" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="user-scalable=no, width=640">
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <title>奇趣能量屋</title>
+  <link rel="stylesheet" type="text/css" href="css/index.min.css?v=011701">
+  <script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
+  <script src="/js/vue.min.js"></script>
+  <script src="/js/jweixin-1.4.0.js"></script>
+  <script src="/js/sns.js"></script>
+</head>
+
+<body>
+  <div id="all">
+    <section id="main" :class="(active || alertContent) && active!='guide'? 'filter' : ''">
+      <div id="main_canvas"><canvas id="gameCanvas"></canvas></div>
+      <audio id="audio" loop="loop" src="res/Audio/game.mp3" style="display: none"></audio>
+      <!--gp-->
+      <div id="gameplay">
+        <a id="music" @click="onPlayMusic()"></a>
+        <a id="music_icon" v-show="music"></a>
+        <a id="rule" v-show="!gamerun" @click="active='rule'"></a>
+        <a id="pack" v-show="!gamerun" @click="pack=1;pack_menu=1;active='pack'"></a>
+        <a id="rocker"></a>
+        <a id="hand" @click="onGameHand()"></a>
+        <a class="hp_mask hp_1" v-show="hp<=2"></a>
+        <a class="hp_mask hp_2" v-show="hp<=1"></a>
+        <a class="hp_mask hp_3" v-show="hp<=0"></a>
+        <a v-show="guide" id="guide_hand"></a>
+        <a v-show="guide" id="guide_rocker"></a>
+        <a v-show="guide" id="guide_music"></a>
+      </div>
+      <a id="shop" v-show="shop" @click="!gamerun?active='shop':''"></a>
+      <a id="pack2" v-show="!gamerun" :class="shop?'bottom':'normal'" @click="pack=2;pack_menu=1;active='pack'"></a>
+      <a class="reserved"></a>
+      <a v-show="guide" class="main_layer" @click="guide=''"></a>
+    </section>
+    <section id="dialogs" v-show="active || alertContent || award>=0 || wallpaper || waiting">
+      <!--pack-->
+      <transition name="fade">
+        <div id="dialogs_pack" class="dialogs_layer" v-show="active=='pack'">
+          <div id="pack_main">
+            <a id="pack_title" :class="`pack_${pack}`"></a>
+            <div class="pack_menu" v-show="pack==1">
+              <a id="menu_1_1" class="menu_1" :class="pack_menu==1? 'active' :''" @click="pack_menu=1"></a>
+              <a class="menu_solid"></a>
+              <a id="menu_1_2" class="menu_1" :class="pack_menu==2? 'active' :''" @click="pack_menu=2"></a>
+            </div>
+            <div class="pack_menu" v-show="pack==2">
+              <a id="menu_2_1" class="menu_2" :class="pack_menu==1? 'active' :''" @click="pack_menu=1"></a>
+              <a class="menu_solid"></a>
+              <a id="menu_2_2" class="menu_2" :class="pack_menu==3? 'active' :''" @click="pack_menu=3"></a>
+              <a class="menu_solid"></a>
+              <a id="menu_2_3" class="menu_2" :class="pack_menu==2? 'active' :''" @click="pack_menu=2"></a>
+            </div>
+            <div id="pack_inner">
+              <div id="pack_my" v-show="pack==1 && pack_menu==1">
+                <span class="pack_items" v-for="item in 'bgfrz'" @click="pack=2;pack_menu=1">
+                  <span class="item_img" :class="`card_${item}`">
+                    <span class="item_num">X{{card.collect[item]}}</span>
+                  </span>
+                  <a class="item_go"></a>
+                </span>
+                <a class="clear"></a>
+              </div>
+              <div id="pack_used" class="pack_exchange" v-show="pack==1 && pack_menu==2">
+                <span class="pack_items used" v-for="(item,index) in card.used" @click="onUseGoods(index)">
+                  <span class="item_img">
+                    <img v-if="item.id<100" class="normal" :src="`res/Goods/1/${item.id}.jpg`" width="120" />
+                    <img v-if="item.id>100 && item.id<200" class="normal" :src="`res/Goods/2/${item.id}.jpg`"
+                      width="120" />
+                    <img v-if="item.id>200" class="wallpapered" :src="`res/Goods/3/${item.id}.jpg`" width="130" />
+                  </span>
+                  <a class="item_mask"></a>
+                  <a class="item_name pack_used">{{getGoodsName(item.id)}}</a>
+                </span>
+                <a class="clear"></a>
+              </div>
+              <div id="pack_goods" class="pack_exchange" v-show="pack==2" :class="`exchange_${pack_menu}`">
+                <a v-if="pack_menu==3" class="pack_content">《奇趣外星客》精美壁纸<br/>绿色碎片X3随机抽一次~</a>
+                <span :id="`pack_item_${index}`" class="pack_items" :class="item.id<100 ? 'goods' : item.id>200 ? 'wallpaper':'face'"
+                  v-if="(pack_menu==1&&item.id<100) || (pack_menu==2&&item.id>100&&item.id<200)  || (pack_menu==3&&item.id>200)"
+                  v-for="(item,index) in card.goods" @click="onExchangeGoods(index,index)">
+                  <span class="item_img">
+                    <img v-if="item.id<100" class="normal" :src="`res/Goods/1/${item.id}.jpg`" width="120"/>
+                    <img v-if="item.id>100 && item.id<200" class="normal" :src="getBlinkFace(item)" width="120"/>
+                    <img v-if="item.id>200" class="wallpaper" src="res/Goods/3/0.png" width="136"/>
+                    <a v-if="item.title" class="item_title" :class="item.title"></a>
+                  </span>
+                  <a v-show="item.id<200" class="item_name pack_goods normal">{{getGoodsName(item.id)}}</a>
+                  <a v-show="item.id<200" class="item_use">{{getGoodsNeed(item.uset)}}X{{item.usec}}</a>
+                  <a v-show="item.id<100" class="item_exchange"></a>
+                  <a class="item_mask"></a>
+                </span>
+                <a class="clear"></a>
+              </div>
+            </div>
+            <a v-show="pack==2" id="menu_back" class="dialogs_back" @click="pack=1;pack_menu=1"></a>
+            <a id="pack_close" class="dialogs_close" @click="active=''"></a>
+          </div>
+          <a v-show="pack==1" class="shopcar car1"  @click="pack=2;pack_menu=1"></a>
+          <a v-show="pack==2" class="shopcar car2"  @click="pack=1;pack_menu=1"></a>
+        </div>
+      </transition>
+      <!--tips-->
+      <transition name="fade">
+        <div id="dialogs_tips" class="dialogs_layer" v-show="active=='tips' || active=='share'">
+          <div id="tips_main">
+            <a id="tips_word"></a>
+            <a id="tips_role" :class="`role_${roleId}`"></a>
+            <div id="tips_btn">
+              <a id="tips_accept" @click="onCollectCard"></a>
+              <a id="tips_share" @click="active='share'"></a>
+            </div>
+            <a id="tips_close" class="dialogs_close" @click="active=''"></a>
+          </div>
+        </div>
+      </transition>
+      <!--alert-->
+      <transition name="fade">
+        <div id="dialogs_alert" class="dialogs_layer" v-show="alertContent">
+          <div id="alert_main">
+            <div id="alert_content">
+              <span v-html="alertContent"></span>
+            </div>
+            <div id="alert_btn">
+              <a id="alert_sure" @click="onAlertSure"></a>
+              <a id="alert_cancel" v-show="typeof(alertCallBack) == 'function'" @click="alertContent=''"></a>
+            </div>
+          </div>
+        </div>
+      </transition>
+      <!--award-->
+      <transition name="fade">
+        <div id="dialogs_award" class="dialogs_layer" v-show="award>=0">
+          <div id="award_main">
+            <input id="award_name" type="text" placeholder="姓名" />
+            <input id="award_tel" type="text" placeholder="手机号码" />
+            <input id="award_address" type="text" placeholder="收货地址" />
+            <span id="award_tips"></span>
+            <a id="award_post" onclick="award.check()"></a>
+            <a id="award_close" class="dialogs_close" @click='award=-1'></a>
+          </div>
+        </div>
+      </transition>
+      <!--wallpaper-->
+      <transition name="fade">
+        <div id="dialogs_wallpaper" class="dialogs_layer" v-if="wallpaper" @click="onCloseWallpaper">
+          <div id="wallpaper_main">
+            <img :src="`res/Goods/${wallpaper}`" width="640" />
+            <span id="wallpaper_tips">tips: 长按图片保存到手机</span>
+            <span id="wallpaper_pack">兑换的头像/壁纸可在<a @click="wallpaper='',pack=1,pack_menu=2,active='pack'">我的碎片-物品</a>中查看</span>
+          </div>
+        </div>
+      </transition>
+      <!--rule-->
+      <transition name="fade">
+        <div id="dialogs_rule" class="dialogs_layer" v-show="active=='rule'">
+          <div id="rule_main">
+            <a id="rule_ok" class="dialogs_ok" @click='v_main.active=""'></a>
+            <a id="rule_close" class="dialogs_close" @click="active=''"></a>
+          </div>
+        </div>
+      </transition>
+      <!--shop-->
+      <transition name="fade">
+        <div id="dialogs_shop" class="dialogs_layer" v-if="shop" v-show="active=='shop'">
+          <div id="shop_main">
+            <img :src="'https://wx.22dm.com'+shop.img" width="550" @click="onGoShop">
+            <a id="shop_close" class="dialogs_close" @click="active=''"></a>
+          </div>
+        </div>
+      </transition>
+      <!--preload-->
+      <transition name="fade">
+        <div id="dialogs_preload" class="dialogs_layer" v-show="active=='preload'">
+          <div id="preload_main">
+            <span class="precent_word">0%</span>
+          </div>
+          <a class="reserved"></a>
+        </div>
+      </transition>
+      <!--share-->
+      <transition name="fade">
+        <div id="dialogs_share" class="dialogs_layer" v-show="active=='share'" @click='v_main.active="tips"'>
+        </div>
+      </transition>
+      <!--dialogs_waiting-->
+      <transition name="fade">
+        <div id="dialogs_waiting" class="dialogs_layer" v-show="waiting">
+        </div>
+      </transition>
+    </section>
+  </div>
+  <div id="ercode">
+    <div>
+      <img src="res/Public/ercode.png" width="250" />
+      <span>
+        为了更好的体验，请使用手机微信扫码打开~
+      </span>
+    </div>
+  </div>
+  <script src="/js/cocos2d-js-v3.9.js"></script>
+  <script src="main.js?v=0318"></script>
+</body>
+
+</html>
