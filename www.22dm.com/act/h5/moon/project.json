@@ -1,0 +1,28 @@
+{
+    "project_type": "javascript",
+    "debugMode" : 1,
+    "showFPS" : false,
+    "frameRate" : 60,
+    "noCache" : true,
+    "id" : "gameCanvas",
+    "renderMode" : 0,
+    "modules" : ["cocos2d"],
+    "jsList" : [
+        "src/resource.js",   
+        "src/define.js",
+        "src/Manager/ActionManager.js",
+        "src/Manager/GameManager.js",
+
+        "src/Scene/MainMenu/MainMenu.js",
+        "src/Scene/MainMenu/Layer/Background.js",
+        "src/Scene/MainMenu/Layer/UI.js",
+
+        "src/Scene/GamePlay/GamePlay.js",
+        "src/Scene/GamePlay/Layer/Background.js",
+        "src/Scene/GamePlay/Layer/Main.js",
+
+        "src/Scene/GameResult/GameResult.js",
+        "src/Scene/GameResult/Layer/Background.js",
+        "src/Scene/GameResult/Layer/Main.js"
+    ]
+}

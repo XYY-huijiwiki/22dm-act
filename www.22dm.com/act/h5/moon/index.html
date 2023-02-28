@@ -1,0 +1,225 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="user-scalable=no, width=640">
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <title>团圆盖盖乐</title>
+  <link rel="stylesheet" type="text/css" href="css/index.min.css">
+  <script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
+  <script src="/js/vue.min.js"></script>
+</head>
+
+<body>
+  <div id="all">
+    <section id="main">
+      <div id="main_canvas">
+        <canvas id="gameCanvas"></canvas>
+      </div>
+      <audio id="audio" src="res/Audio/music.mp3" loop="loop"></audio>
+    </section>
+    <section id="dialogs" v-show="active || scene=='MainMenuScene' || scene=='GamePlayScene' || debug">
+      <!--mm-->
+      <transition>
+        <div id="dialogs_mm" class="dialogs_layer" v-show="scene=='MainMenuScene'">
+          <a v-show="!active" class="music mm" :class="music?'active':'stop'" @click="onPlayMusic()"></a>
+          <a id="mm_start" class="public_btn" @click="Game_resert()"></a>
+          <a id="mm_record" class="public_btn" @click="button_public('record')"></a>
+          <a id="mm_rule" class="public_btn" @click="button_public('rule')"></a>
+        </div>
+      </transition>
+      <!--topbar-->
+      <transition>
+        <div id="dialogs_topbar" class="dialogs_layer" v-show="scene=='GamePlayScene'">
+          <div id="topbar">
+            <div id="topbar_main">
+              <div id="topbar_score">
+                <div id="score_text">
+                  <img v-for="item_num in (Game_score+'')" :src="`res/GamePlay/num/${item_num}.png`" width="40"
+                    height="40" />
+                </div>
+                <div id="topbar_hp">
+                  <span v-for="(item,index) in 5" class="hp_inner">
+                    <a class="hp_bg"></a>
+                    <a v-show="Game_HP>index" class="hp_main"></a>
+                  </span>
+                </div>
+              </div>
+              <div id="topbar_icon">
+                <span>
+                  <a class="icon_inner y"></a>
+                  <a class="icon_text">{{Game_y}}</a>
+                </span>
+                <span>
+                  <a class="icon_inner b"></a>
+                  <a class="icon_text">{{Game_b}}</a>
+                </span>
+                <span>
+                  <a class="icon_inner r"></a>
+                  <a class="icon_text">{{Game_r}}</a>
+                </span>
+                <span>
+                  <a class="icon_inner g"></a>
+                  <a class="icon_text">{{Game_g}}</a>
+                </span>
+              </div>
+              <div id="topbar_speed">
+                <span class="slow"></span>
+                <div class="main">
+                  <span class="bg"></span>
+                  <span class="inner">
+                    <a class="inner_bg"></a>
+                    <a class="footer"></a>
+                  </span>
+                </div>
+                <span class="fast"></span>
+              </div>
+            </div>
+          </div>
+          <a id="btn_pause" @click="v_main.active='pause'"></a>
+          <div id="Game_btn">
+            <a v-for="item in 'ybrg'" :id="`btn_${item}`"></a>
+          </div>
+        </div>
+      </transition>
+      <!--gameover-->
+      <transition name="fade">
+        <div id="dialogs_gameover" class="dialogs_layer" v-show="active=='gameover'">
+          <a id="gameover"></a>
+        </div>
+      </transition>
+      <!--wallpaper-->
+      <transition name="fade">
+        <div id="dialogs_wallpaper" class="dialogs_layer" v-show="active=='wallpaper'">
+          <img id="wallpaper" src="" height="640" />
+          <a id="share" v-show="share" @click="share=!share"></a>
+          <a id="gs_share" v-show="!share" @click="share=!share"></a>
+          <a id="gs_replay" v-show="!share" @click="Game_resert()"></a>
+        </div>
+      </transition>
+      <!--guide-->
+      <transition name="fade">
+        <div id="dialogs_guide" class="dialogs_layer" v-show="active=='guide'" @click="guideLeave(1)">
+          <a v-show="guide==0" class="guide_1"></a>
+          <a v-show="guide==1" class="guide_2"></a>
+          <a v-show="guide==2" class="guide_3"></a>
+          <a v-show="guide==2" class="guide_4"></a>
+          <a v-show="guide==3" class="guide_5"></a>
+          <a v-show="guide==1" class="guide_hand"></a>
+        </div>
+      </transition>
+      <!--pause-->
+      <transition name="fade" @before-enter="Game_pause">
+        <div id="dialogs_pause" class="dialogs_layer" v-show="active=='pause'">
+          <div id="pause_main">
+            <a id="pause_home" @click="Game_home"></a>
+            <a id="pause_continue" @click="Game_continue"></a>
+            <a id="pause_replay" @click="Game_replay"></a>
+            <a id="pause_close" @click="Game_continue"></a>
+          </div>
+          <a class="music" :class="music?'active':'stop'" @click="onPlayMusic()"></a>
+        </div>
+      </transition>
+      <!--preload-->
+      <transition name="fade">
+        <div id="dialogs_preload" class="dialogs_layer" v-show="active=='preload'">
+          <a id="preload_role"></a>
+          <a id="preload_title"></a>
+          <div class="preload_precent">
+            <span class="precent_bg"></span>
+            <span class="precent_progress">
+              <a class="progress_bg"></a>
+              <a class="precent_foot"></a>
+            </span>
+            <span class="precent_word">0%</span>
+          </div>
+          <a class="reserved"></a>
+        </div>
+      </transition>
+      <!--record-->
+      <transition name="fade">
+        <div id="dialogs_record" class="dialogs_layer" v-show="active=='record'">
+          <div class="dialogs_book">
+            <div class="book_left">
+              <a class="book_close" @click='v_main.active=""'></a>
+              <a class="book_angle"></a>
+            </div>
+            <div class="book_main">
+              <a class="book_main_margin left"></a>
+              <div id="record_main" class="book_main_inner">
+                <div class="record_item" v-for="(item,index) in recordList">
+                  <img class="item_face" :src="item.json.img" width="80" height="80" />
+                  <a class="item_mask"></a>
+                  <a class="item_star"></a>
+                  <span class="item_num">
+                    <img v-for="item_num in (index+1+'')" :src="`res/Public/record/w/${item_num}.png`" />
+                  </span>
+                  <span class="item_score">
+                    <img v-for="item_score in (item.json.score+'')" :src="`res/Public/record/r/${item_score}.png`" />
+                  </span>
+                </div>
+              </div>
+              <a class="book_main_margin right"></a>
+            </div>
+            <div class="book_right">
+              <a class="book_angle"></a>
+            </div>
+          </div>
+          <a id="record_title" class="book_title"></a>
+          <!-- <a id="record_tips"></a> -->
+          <a id="record_award" @click="winSize.ranking.getPrize()"></a>
+        </div>
+      </transition>
+      <!--rule-->
+      <transition name="fade">
+        <div id="dialogs_rule" class="dialogs_layer" v-show="active=='rule'">
+          <div class="dialogs_book">
+            <div class="book_left">
+              <a class="book_close" @click='v_main.active=""'></a>
+              <a class="book_angle"></a>
+            </div>
+            <div class="book_main">
+              <a class="book_main_margin left"></a>
+              <a class="book_main_inner" id="rule_main"></a>
+              <a class="book_main_margin right"></a>
+            </div>
+            <div class="book_right">
+              <a class="book_angle"></a>
+            </div>
+          </div>
+          <a id="rule_title" class="book_title"></a>
+        </div>
+      </transition>
+      <!--debug-->
+      <transition>
+        <div v-if="debug" id="debug">
+          <span>version: {{version}}</span>
+          <span>img: {{(imgtime/1000).toFixed(2)}}s</span>
+          <span>audio: {{(audiotime/1000).toFixed(2)}}s</span>
+          <span>promise: {{musicpromise}}</span>
+          <span>pagehash: {{visibilitychange}}</span>
+          <span>music: {{music}}</span>
+          <span>width: {{winSize.width}}</span>
+          <span>height: {{winSize.height}}</span>
+          <span>scale: {{winSize.scale}}</span>
+        </div>
+      </transition>
+    </section>
+  </div>
+  <div id="award" v-show="active=='award'">
+    <div id="award_main">
+      <input id="award_name" type="text" placeholder="姓名" />
+      <input id="award_tel" type="text" placeholder="手机号码" />
+      <input id="award_address" type="text" placeholder="收货地址" />
+      <span id="award_tips"></span>
+      <a id="award_post" onclick="award.check()"></a>
+    </div>
+    <a class="award_close" onclick="award.close()"></a>
+  </div>
+  <script src="/js/cocos2d-js-v3.9.js"></script>
+  <script src="main.js"></script>
+  <script src="/js/jweixin-1.4.0.js"></script>
+</body>
+
+</html>
