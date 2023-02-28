@@ -1,0 +1,263 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="user-scalable=no, width=640">
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <title>谁才是你的Mr.right?</title>
+  <link rel="stylesheet" type="text/css" href="css/index.min.css">
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/vue.min.js"></script>
+</head>
+
+<body>
+  <div id="all">
+    <section id="main">
+      <div id="canvas" v-show="active=='canvas'">
+        <canvas id="gameCanvas" width="640" height="1300"></canvas>
+      </div>
+      <transition name="fade">
+        <div id="friends" class="main_layer" v-show="active=='friends'">
+          <div id="friends_wall">
+            <img id="wall_background" :src="`res/Public/friends/wall_${gender}.jpg`" width="640" />
+            <img id="wall_face" :src="`res/Public/face/b_${gender}.png`" width="120" />
+            <span id="wall_name">{{gender==1?'红太狼' : '灰太狼'}}</span>
+          </div>
+          <!--topic_rows-->
+          <div v-show="topic_index==0 || topic_more" v-for="(topic_item,topic_index) in topic[gender-1]"
+            class="friends_topic">
+            <div class="topic_face topic_rows">
+              <img class="face_img" :src="`res/Public/face/${gender==1?'2':'1'}.png`" width="85" />
+              <a class="face_name">{{gender==1?'灰太狼' : '红太狼'}}</a>
+              <a class="face_title">{{topic_item.title}}</a>
+            </div>
+            <div class="topic_img topic_rows">
+              <img :src="`res/Public/friends/topic_${gender==1?'2':'1'}_${topic_index+1}.png`" height="294" />
+            </div>
+            <div class="topic_ctor topic_rows">
+              <a class="ctor_time">{{topic_item.addtime}}</a>
+              <div class="ctor_main">
+                <div class="ctor_column" @click="onCtorLike(topic_index+1)">
+                  <img src="res/Public/icon_1.png" width="30" />
+                  <a>{{getLikeState(topic_index+1)}}</a>
+                </div>
+                <div class="ctor_column" @click="onCtorComm(topic_index+1)">
+                  <img src="res/Public/icon_2.png" width="30" />
+                  <a>评论</a>
+                </div>
+              </div>
+            </div>
+            <div class="topic_like topic_rows">
+              <a class="like_icon"><img src="res/Public/icon_1.png" width="40" /></a>
+              <div class="like_face">
+                <img v-for="item in '12345'" :src="`res/Public/face/like_${item}.png`" width="52" />
+                <transition name="fade-fast">
+                  <img v-show="getLikeState(topic_index+1)=='取消'" :src="`res/Public/face/${gender==1?'2':'1'}.png`"
+                    width="52" />
+                </transition>
+              </div>
+            </div>
+            <transition name="fade-fast">
+              <div class="topic_comm topic_rows" v-show="getCommOpenState(topic_index+1)">
+                <a class="comm_icon"><img src="res/Public/icon_2.png" width="40" /></a>
+                <a class="comm_face"><img :src="`res/Public/face/${gender}.png`" width="70" /></a>
+                <ul class="comm_list">
+                  <li class="comm_name">{{gender==1?'红太狼' : '灰太狼'}}</li>
+                  <li v-for="(comm_item,comm_index) in topic_item.comm" @click="onComment(topic_index+1,comm_index+1)"
+                    :class="getCommState(topic_index+1,comm_index+1)">{{comm_item}}</li>
+                </ul>
+              </div>
+            </transition>
+          </div>
+          <div id="pulldown_area" v-show="!topic_more"></div>
+          <!--topic_refuse-->
+          <transition name="fade">
+            <div id="topic_refuse" v-show="topic_refuse" :class="`gender_${gender}`"></div>
+          </transition>
+          <!--topic_msg-->
+          <transition name="fade-slow">
+            <div id="topic_msg" v-show="topic_msg">
+              <img v-show="topic_msg" @click="onJump('message')" :src="`res/Public/friends/msg_${gender}.png`"
+                width="600" />
+            </div>
+          </transition>
+          <a class="btn_back" @click="dialogs='preload';active=''"></a>
+        </div>
+      </transition>
+      <transition name="fade">
+        <div id="message" class="main_layer" v-show="active=='message'">
+          <div id="message_main" :class="input_more?input_dialogs:''">
+            <!--msg_title-->
+            <transition-group name="fade-message" tag="div" @after-enter="onNextMessage('title')">
+              <div v-show="index<=msg_title" v-for="(item,index) in msgword[gender-1].title" class="message_item"
+                :class="item.indexOf('gif')==-1?'left':''" :key="`msg_title_${index}`">
+                <img class="item_face" :src="`res/Public/face/b_${gender==1?'2':'1'}.png`" height="75" />
+                <span v-if="item.indexOf('gif')==-1">{{item}}</span>
+                <span v-else>
+                  <img :src="`res/Public/emoji/${item}`" height="200" />
+                  <a class="item_emoji"></a>
+                </span>
+              </div>
+            </transition-group>
+            <!--msg_emoji-->
+            <transition-group name="fade-send" tag="div" @after-enter="checkMessageOffsetY()">
+              <div v-for="(item,index) in msg_sende" class="message_item emoji" :key="`msg_sende_${index}`">
+                <span>
+                  <img :src="`res/Public/emoji/${item}.gif`" height="200" />
+                  <a class="item_emoji"></a>
+                </span>
+                <img class="item_face" :src="`res/Public/face/b_${gender}.png`" height="75" />
+              </div>
+            </transition-group>
+            <!--msg_word-->
+            <transition-group name="fade-message" tag="div" @after-enter="onNextMessage('emoji')">
+              <div v-show="index<=msg_emoji" v-for="(item,index) in msgword[gender-1].emoji" class="message_item right"
+                :key="`msg_emoji_${index}`">
+                <span>{{item}}</span>
+                <img class="item_face" :src="`res/Public/face/b_${gender}.png`" height="75" />
+              </div>
+            </transition-group>
+            <!--msg_map-->
+            <transition name="fade-send" tag="div" @after-enter="checkMessageOffsetY()">
+              <div v-show="input_map>0" class="message_item emoji">
+                <span @click="onMap()">
+                  <img v-if="input_map>0" :src="`res/Public/message/map_${input_map}.png`" width="400" />
+                  <a v-show="input_map>0" class="map_stamp" :class="input_map==1?'stamp_1' : 'stamp_2'">
+                    <img calss="stamp_r" src="res/Public/message/stamp_r.png" width="80" />
+                    <img class="stamp_y" src="res/Public/message/stamp_y.png" width="80" />
+                  </a>
+                  <a v-show="msg_guide==3" class="hand_map"></a>
+                </span>
+                <img class="item_face" :src="`res/Public/face/b_${gender}.png`" height="75" />
+              </div>
+            </transition>
+            <div class="message_main_bottom_area"></div>
+          </div>
+          <div id="message_input">
+            <div id="input_top">
+              <a class="input_icon_1"></a>
+              <a class="input_icon_2"></a>
+              <a class="input_icon_3"></a>
+              <div id="input_main">
+                <transition name="fade-input" @after-enter="onNextInput()">
+                  <a v-show="input_word==0">{{msgword[gender-1].input[0]}}</a>
+                </transition>
+                <transition name="fade-input" @after-enter="onNextInput()">
+                  <a v-show="input_word==1">{{msgword[gender-1].input[1]}}</a>
+                </transition>
+                <transition name="fade-inputend" @after-enter="onNextInput()">
+                  <a v-show="input_word==2">{{msgword[gender-1].input[2]}}</a>
+                </transition>
+                <img v-show="msg_guide==2" class="guide_more" src="res/Public/message/guide_more.png" width="200" />
+              </div>
+            </div>
+            <block v-show="input_more">
+              <div id="input_emoji">
+                <transition name="fade" @after-enter="checkMessageOffsetY()" @after-leave="checkMessageOffsetY()">
+                  <div id="emoji_gif" class="emoji_layer" v-show="input_dialogs=='emoji'">
+                    <div v-for="(item_row,index) in '01'" class="gif_rows">
+                      <span v-for="item_emoji in emojilist[index]">
+                        <img :src="`res/Public/emoji/${item_emoji}.png`" width="120" height="120" />
+                        <a class="item_emoji" @click="onSendEmoji(item_emoji)"></a>
+                      </span>
+                    </div>
+                  </div>
+                </transition>
+                <transition name="fade" @after-enter="checkMessageOffsetY()" @after-leave="checkMessageOffsetY()">
+                  <div id="emoji_map" class="emoji_layer" v-show="input_dialogs=='map'">
+                    <div class="map_row_title">
+                      <img class="map_title" src="res/Public/message/map_title.png" width="415" />
+                      <img class="map_title_face" :src="`res/Public/face/b_${gender}.png`" width="70" />
+                    </div>
+                    <div v-for="item in '12'" class="map_row_map">
+                      <img :src="`res/Public/message/map_${item}_0.png`" width="400" v-show="input_map!=item"
+                        @click="input_map=item;msg_guide=3;winSize.playEffect('msgsend')" />
+                      <img :src="`res/Public/message/map_${item}_1.png`" width="400" v-show="input_map==item" />
+                    </div>
+                  </div>
+                </transition>
+                <a v-show="msg_guide==1" class="hand_emoji"></a>
+              </div>
+              <div id="input_bottom">
+                <a class="input_icon_4" href="https://w.url.cn/s/A2SMulZ#wechat_redirect" target="_blank"></a>
+              </div>
+            </block>
+          </div>
+          <div id="message_top">
+            <a id="message_name">{{gender==1?'灰太狼' : '红太狼'}}</a>
+            <a id="message_back" @click="active='friends';winSize.playEffect('msgalert')"></a>
+          </div>
+        </div>
+      </transition>
+      <audio id="audio" src="res/Audio/music.mp3" loop="loop"></audio>
+    </section>
+    <section id="dialogs" v-show="dialogs">
+      <!--preload-->
+      <transition name="fade">
+        <div id="dialogs_preload" class="dialogs_layer" v-show="dialogs=='preload'">
+          <a id="preload_role_1" class="preload_role_1" @click="onGender(1)"></a>
+          <a id="preload_role_1_btn" @click="onGender(1)"></a>
+          <a id="preload_role_2" class="preload_role_2" @click="onGender(2)"></a>
+          <a id="preload_role_2_btn" @click="onGender(2)"></a>
+          <a class="preload_title">
+            <img class="preload_title_1" src="res/Public/preload/title_2.png" width="446" />
+            <img class="preload_title_2" src="res/Public/preload/title_3.png" width="350" />
+          </a>
+        </div>
+      </transition>
+      <!--canvas_layer-->
+      <transition name="fade">
+        <div id="dialogs_canvas" class="dialogs_layer" v-show="dialogs=='canvasUrlData'">
+          <div id="canvas_layer">
+            <img id="canvasUrlData" src="" width="640" />
+            <div id="canvas_btn">
+              <a class="share" v-show="!fromShare" @click="share=true;initWeixinData(true)"></a>
+              <a class="share_play" v-show="fromShare" @click="dialogs='preload'"></a>
+              <a class="share_emoji" href="https://w.url.cn/s/A2SMulZ#wechat_redirect" target="_blank"></a>
+            </div>
+            <a class="btn_close" @click="dialogs=fromShare?'preload':''"></a>
+          </div>
+          <div id="dialogs_share" v-show="share" @click="share=false"></div>
+        </div>
+      </transition>
+      <!--guide-->
+      <transition name="fade">
+        <div id="dialogs_guide" class="dialogs_layer" v-show="dialogs=='guide'"
+          @click="topic_guide==1?topic_guide++ : dialogs=''">
+          <block v-show="active=='friends'">
+            <a v-show="topic_guide==1" class="guide_like"></a>
+            <a v-show="topic_guide==2" class="guide_comm"></a>
+          </block>
+        </div>
+      </transition>
+      <!--loading-->
+      <transition name="fade">
+        <div id="dialogs_loading" class="dialogs_layer" v-show="dialogs=='loading'">
+          <div class="preload_precent">
+            <a class="precent_title"></a>
+            <span class="precent_word">
+              0%
+            </span>
+          </div>
+        </div>
+      </transition>
+    </section>
+    <a id="music" :class="music?'active':'stop'" @click="onPlayMusic()"></a>
+  </div>
+  <div id="ercode">
+    <div>
+      <img src="res/Public/ercode.png" width="250" />
+      <span>
+        为了更好的体验，请使用手机微信扫码打开~
+      </span>
+    </div>
+  </div>
+  <div id="qrcode" style="display:none"></div>
+  <script src="../../../js/cocos2d-js-v3.9.js"></script>
+  <script src="../../../js/jweixin-1.4.0.js"></script>
+  <script src="main.js"></script>
+  <script src="../../../js/qrcode.min.js"></script>
+</body>
+
+</html>

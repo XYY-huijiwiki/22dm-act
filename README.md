@@ -32,10 +32,10 @@
 26. 爸爸教会我的那些事
 27. [“趣”玩跨时空救兵](docs/bubble.md)
 28. [保持初心，一路前进](docs/space_2.md)
-29. 甜蜜大考验
+29. [甜蜜大考验](docs/emoji.md)
 30. [团圆盖盖乐](docs/moon.md)
 31. [摩天狼堡大挑战](docs/build.md)
-32. 奇趣能量屋
+32. [奇趣能量屋](docs/magic.md)
 33. [礼物保卫战](docs/germ.md)
 34. [国潮有喜](docs/2020.md)
 35. [探险父子兵](docs/rush.md)
