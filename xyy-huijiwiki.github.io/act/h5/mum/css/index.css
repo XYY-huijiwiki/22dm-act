@@ -1,0 +1,528 @@
+html {
+  background: #fff;
+}
+
+html body, html div, html ul {
+  padding: 0;
+  margin: 0;
+  font-family: "Microsoft YaHei";
+}
+
+html ul {
+  list-style-type: none;
+}
+
+html a {
+  text-decoration: none;
+  display: block;
+}
+
+#all {
+  margin: 0 auto;
+  width: 640px;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  display: none;
+}
+
+#all section {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#gameCanvas, #Cocos2dGameContainer {
+  width: 640px;
+  height: 1300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+#main #photo_layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#main #photo_layer .photo_background {
+  width: 100%;
+  height: 100%;
+}
+
+#main #photo_layer .photo_background.theme_0, #main #photo_layer .photo_background.theme_1 {
+  background: url(../res/t/background_1.jpg) no-repeat no-repeat left top;
+}
+
+#main #photo_layer .photo_background.theme_2 {
+  background: url(../res/t/background_2.jpg) no-repeat no-repeat left top;
+}
+
+#main #photo_layer .photo_background.theme_3 {
+  background: url(../res/t/background_3.jpg) no-repeat no-repeat left top;
+}
+
+#main #photo_layer .photo_bottom {
+  width: 100%;
+  height: 300px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#main #photo_layer .photo_bottom.theme_0, #main #photo_layer .photo_bottom.theme_1 {
+  background: url(../res/t/bottom_1.png) no-repeat no-repeat left bottom;
+}
+
+#main #photo_layer .photo_bottom.theme_2 {
+  background: url(../res/t/bottom_2.png) no-repeat no-repeat left bottom;
+}
+
+#main #photo_layer .photo_bottom.theme_3 {
+  background: url(../res/t/bottom_3.png) no-repeat no-repeat left bottom;
+}
+
+#main #photo_layer #photo_main {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#main #photo_layer #photo_main .photo_mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#main #photo_layer #photo_main #photo_user {
+  width: 550px;
+  height: 570px;
+  position: absolute;
+  left: 44px;
+  overflow: hidden;
+  background: url(../res/b/tips.png) no-repeat no-repeat center center;
+}
+
+#main #photo_layer #photo_main #photo_user.theme_1 {
+  top: 170px;
+}
+
+#main #photo_layer #photo_main #photo_user.theme_2 {
+  top: 130px;
+}
+
+#main #photo_layer #photo_main #photo_user.theme_3 {
+  top: 128px;
+}
+
+#main #photo_layer #photo_main #photo_user img {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+#main #record_layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../res/t/record.jpg) top left no-repeat no-repeat;
+}
+
+#main #record_layer #record_flower {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#main #btn_layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#main #btn_layer .layer {
+  width: 100%;
+  position: absolute;
+}
+
+#main #btn_layer a {
+  display: block;
+}
+
+#main #btn_layer #btn_index {
+  height: 300px;
+  top: 790px;
+}
+
+#main #btn_layer #btn_index .look {
+  margin: 0 auto;
+  width: 287px;
+  height: 124px;
+  background: url(../res/b/look.png) no-repeat no-repeat;
+}
+
+#main #btn_layer #btn_index .start {
+  margin: 25px auto 0;
+  width: 512px;
+  height: 139px;
+  background: url(../res/b/start.png) no-repeat no-repeat;
+  animation: scaleDrawLow 3s linear infinite;
+  -moz-animation: scaleDrawLow 3s linear infinite;
+  -webkit-animation: scaleDrawLow 3s linear infinite;
+  -o-animation: scaleDrawLow 3s linear infinite;
+}
+
+#main #btn_layer #btn_chooseImage {
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+#main #btn_layer #btn_chooseImage #touch_area {
+  width: 640px;
+  height: 720px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#main #btn_layer #btn_chooseImage .prev, #main #btn_layer #btn_chooseImage .next {
+  width: 50px;
+  height: 72px;
+  position: absolute;
+  top: 360px;
+}
+
+#main #btn_layer #btn_chooseImage .prev {
+  left: -5px;
+  background: url(../res/b/prev.png) no-repeat no-repeat;
+}
+
+#main #btn_layer #btn_chooseImage .next {
+  right: -5px;
+  background: url(../res/b/next.png) no-repeat no-repeat;
+}
+
+#main #btn_layer #btn_chooseImage .chooseImage_progress {
+  width: 100%;
+  height: 116px;
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  top: 830px;
+  right: 0;
+}
+
+#main #btn_layer #btn_chooseImage .chooseImage_progress .progress_background {
+  width: 571px;
+  height: 116px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: url(../res/b/progress_background.png);
+}
+
+#main #btn_layer #btn_chooseImage .chooseImage_progress .progress_background .progress_main {
+  width: 550px;
+  height: 80px;
+  background: url(../res/b/progress_main.png);
+  position: absolute;
+  top: 18px;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#main #btn_layer #btn_chooseImage .chooseImage_progress .progress_background .progress_main #progress_p_4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: inline-block;
+}
+
+#main #btn_layer #btn_chooseImage .chooseImage_progress .progress_background .progress_main #progress_p_4 img {
+  margin-left: -15px;
+  width: 50px;
+  height: 50px;
+}
+
+#main #btn_layer #btn_chooseImage #chooseImage_layer {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  top: 975px;
+  left: 0;
+}
+
+#main #btn_layer #btn_chooseImage #chooseImage_layer .chooseImage {
+  width: 183px;
+  height: 90px;
+}
+
+#main #btn_layer #btn_chooseImage #chooseImage_layer .chooseImage.normal {
+  background: url(../res/b/chooseImage.png) no-repeat no-repeat;
+}
+
+#main #btn_layer #btn_chooseImage #chooseImage_layer .chooseImage.reset {
+  background: url(../res/b/reset.png) no-repeat no-repeat;
+}
+
+#main #btn_layer #btn_chooseImage #chooseImage_layer .uploadImage {
+  width: 182px;
+  height: 90px;
+  background: url(../res/b/uploadImage.png) no-repeat no-repeat;
+}
+
+#main #btn_layer #btn_startRecord {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 240px;
+}
+
+#main #btn_layer #btn_startRecord #playVoice {
+  width: 183px;
+  height: 90px;
+  background: url(../res/b/playVoice.png);
+}
+
+#main #btn_layer #btn_startRecord #startRecord {
+  width: 182px;
+  height: 90px;
+  background: url(../res/b/startRecord.png);
+}
+
+#main #btn_layer #btn_startRecord #uploadVoice {
+  width: 182px;
+  height: 90px;
+  background: url(../res/b/uploadVoice.png);
+}
+
+#main #btn_layer #record_tips {
+  width: 231px;
+  height: 85px;
+  background: url(../res/b/record_tips.png);
+  position: absolute;
+  bottom: 150px;
+  left: 212px;
+}
+
+#main .btn_back {
+  width: 183px;
+  height: 90px;
+  background: url(../res/b/back.png) no-repeat no-repeat;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+#dialogs {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#dialogs .dialogs_layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#dialogs .dialogs_close {
+  margin-left: -30.5px;
+  width: 61px;
+  height: 60px;
+  position: absolute;
+  bottom: -80px;
+  left: 50%;
+}
+
+#dialogs #dialogs_share {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../res/share.png) rgba(0, 0, 0, 0.65) no-repeat no-repeat top right;
+}
+
+#dialogs #canvas_layer {
+  margin-top: -680px;
+  margin-left: -320px;
+  width: 640px;
+  height: 1300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #fff;
+}
+
+#dialogs #canvas_layer #canvasUrlData {
+  width: 640px;
+  height: 1300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#dialogs #canvas_layer #imgId2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#dialogs #canvas_layer .share {
+  width: 182px;
+  height: 90px;
+  background: url(../res/b/share.png);
+  position: absolute;
+  bottom: 140px;
+  left: 229px;
+}
+
+#dialogs #canvas_layer .share_playing {
+  width: 183px;
+  height: 90px;
+  background: url(../res/b/playVoice.png);
+  position: absolute;
+  bottom: 130px;
+  left: 229px;
+}
+
+#dialogs #canvas_layer .share_playing.normal {
+  animation: scaleDraw 2s linear infinite;
+  -moz-animation: scaleDraw 2s linear infinite;
+  -webkit-animation: scaleDraw 2s linear infinite;
+  -o-animation: scaleDraw 2s linear infinite;
+}
+
+#dialogs #canvas_layer .playing_tips {
+  width: 231px;
+  height: 85px;
+  background: url(../res/b/play_tips.png);
+  position: absolute;
+}
+
+#dialogs #canvas_layer .share_come {
+  width: 250px;
+  height: 68px;
+  background: url(../res/b/come.png);
+  position: absolute;
+  bottom: 160px;
+  left: 195px;
+  animation: scaleDraw 2s linear infinite;
+  -moz-animation: scaleDraw 2s linear infinite;
+  -webkit-animation: scaleDraw 2s linear infinite;
+  -o-animation: scaleDraw 2s linear infinite;
+}
+
+#dialogs #canvas_layer .btn_close {
+  width: 61px;
+  height: 60px;
+  position: absolute;
+  bottom: -80px;
+  left: 289.5px;
+  background: url(../res/b/close.png);
+}
+
+#dialogs #dialogs_onLoadFaceModel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#dialogs #dialogs_onLoadFaceModel .loading {
+  animation: loadingDraw 2s linear infinite;
+  -moz-animation: loadingDraw 2s linear infinite;
+  -webkit-animation: loadingDraw 2s linear infinite;
+  -o-animation: loadingDraw 2s linear infinite;
+  opacity: 0;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+#ercode {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+#ercode img, #ercode span {
+  margin: 10px auto;
+  display: block;
+  font-size: 22px;
+  text-align: center;
+}
+
+@keyframes loadingDraw {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 255;
+  }
+}
+
+@keyframes scaleDraw {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes scaleDrawLow {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.02);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.02);
+  }
+}

@@ -1,0 +1,133 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="user-scalable=no, width=640">
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <title>英雄爸爸教我的二三事！</title>
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <script type="text/javascript" src="../../../js/jweixin-1.4.0.js"></script>
+  <script type="text/javascript" src="../../../js/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="../../../js/vue.min.js"></script>
+  <script type="text/javascript" src="../../../act/h5/mum/js/face-api.min.js"></script>
+</head>
+
+<body>
+  <div id="all">
+    <section id="main">
+      <div id="photo_layer" v-show="active=='chooseImage'">
+        <div class="photo_background theme_0" v-show="theme==0"></div>
+        <div class="photo_bottom theme_0" v-show="theme==0"></div>
+        <div class="photo_background theme_1" v-show="theme!=0"></div>
+        <div class="photo_bottom theme_1" v-show="theme!=0"></div>
+        <div id="photo_main">
+          <div id="photo_user" :class="`theme_${theme}`" v-show="theme!=0">
+            <div class="imgId_area imgId_area_1" :class="`theme_${theme}`">
+              <img id="imgId_1" :src="imgId_1" :class="hasFace_1?'':'none'" />
+            </div>
+            <div class="imgId_area imgId_area_2" :class="`theme_${theme}`">
+              <img id="imgId_2" class="imgId" :src="imgId_2" :class="hasFace_2?'':'none'" />
+            </div>
+            <img class="photo_mask" v-show="theme==1" src="res/t/main_1.png" width="552" height="537" />
+            <img class="photo_mask" v-show="theme==2" src="res/t/main_2.png" width="552" height="537" />
+            <img class="photo_mask" v-show="theme==3" src="res/t/main_3.png" width="552" height="537" />
+            <img class="photo_line" v-show="theme==1" src="res/t/line_1.png" width="552" height="537" />
+            <img class="photo_line" v-show="theme==2" src="res/t/line_2.png" width="552" height="537" />
+            <img class="photo_line" v-show="theme==3" src="res/t/line_3.png" width="552" height="537" />
+          </div>
+        </div>
+        <div class="photo_paper" v-show="theme!=0"></div>
+      </div>
+      <div id="record_layer" v-show="active=='startRecord'">
+
+      </div>
+      <div id="btn_layer" v-show="active!='' && active!='finish'">
+        <block v-show="active=='chooseImage'">
+          <div id="btn_index" class="layer" v-show="theme==0">
+            <img class="wolf" src="res/b/wolf.png" width="640">
+            <img class="title" src="res/b/title.png" width="546">
+            <a class="start" @click="onLoadFaceModel()"></a>
+          </div>
+          <div id="btn_chooseImage" class="layer" v-show="theme!=0">
+            <div id="touch_area">
+              <a id="touch_area_left" @click="chooseImage(1)"></a>
+              <a id="touch_area_right" @click="chooseImage(2)"></a>
+            </div>
+            <div class="distance_area" v-show="progress=='p_4'">
+              <span class="distance_word">
+                <img v-for="(item,index) in 10" :src="`res/word/${index}.png`" v-show="word_0==index && word_0" />
+                <img v-for="(item,index) in 10" :src="`res/word/${index}.png`" v-show="word_1==index && word_1" />
+                <img src="res/word/p.png" />
+              </span>
+            </div>
+            <div class="word_area">
+              <div class="word_main">
+                <img :src="`res/b/r_${word}.png`" />
+              </div>
+              <a v-show="word>1" class="word_prev" @click="word!=1?word--:word=1"></a>
+              <a v-show="word<3" class="word_next" @click="word<3?word++:word=3"></a>
+            </div>
+            <div class="theme_area">
+              <img src="res/t/icon_1.png" @click="theme=1" :class="theme==1?'active':''" />
+              <img src="res/t/icon_2.png" @click="theme=2" :class="theme==2?'active':''" />
+              <img src="res/t/icon_3.png" @click="theme=3" :class="theme==3?'active':''" />
+            </div>
+            <div id="chooseImage_layer">
+              <a class="uploadImage" v-show="caldistancefinish&&progress=='p_4'" @click="uploadImage()"></a>
+            </div>
+          </div>
+        </block>
+        <block v-show="active=='startRecord'">
+          <a id="record_tips"></a>
+          <img id="record_voice_1" class="record_voice" src="res/b/voice_1.png" width="220" height="100" />
+          <img id="record_voice_3" class="record_voice" src="res/b/voice_3.png" width="254" height="100" />
+          <img id="record_voice_2" class="record_voice" src="res/b/voice_2.png" width="363" height="109" />
+          <div id="btn_startRecord" class="layer">
+            <a id="playVoice" @touchStart="playVoice()" v-show="recordId"></a>
+            <a id="startRecord" @touchStart="startRecord()" @touchEnd="stopRecord()"></a>
+            <a id="uploadVoice" @click="uploadVoice()"></a>
+          </div>
+          <img class="btn_back" src="res/b/back.png" @click="active='chooseImage'" />
+        </block>
+      </div>
+    </section>
+    <section id="dialogs" v-show="dialogs">
+      <!--canvas_layer-->
+      <transition name="fade">
+        <div class="dialogs_layer">
+          <div id="canvas_layer" v-show="dialogs=='canvasUrlData'">
+            <img id="canvasUrlData" v-show="canvasUrlData" width="640" />
+            <a class="share" @click="share=true" v-show="!fromShare"></a>
+            <a class="share_playing" :class="playing?'playing':'normal'" v-show="fromShare&&hasVoice&&recordId"
+              @click="playVoice()"></a>
+            <a class="share_come" v-show="fromShare&&!hasVoice" @click="onLoadFaceModel()"></a>
+            <a class="btn_close" @click="dialogs='';fromShare=false"></a>
+          </div>
+          <div id="dialogs_share" v-show="share" @click="share=false"></div>
+        </div>
+      </transition>
+      <!--loading-->
+      <transition name="fade">
+        <div id="dialogs_onLoadFaceModel" class="dialogs_layer" v-show="dialogs=='onLoadFaceModel'">
+          <img class="loading" src="res/b/p_3.png" height="35" />
+        </div>
+      </transition>
+    </section>
+  </div>
+  <div id="ercode">
+    <div>
+      <img src="res/ercode.png" width="250" />
+      <span>
+        为了更好的体验，请使用手机微信扫码打开~
+      </span>
+    </div>
+  </div>
+  <canvas id="gameCanvas" width="640" height="1300"></canvas>
+  <div id="qrcode" style="display:none"></div>
+  <script src="../../../js/cocos2d-js-v3.13-clip.js"></script>
+  <script src="main.js"></script>
+  <script type="text/javascript" src="../../../js/qrcode.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,743 @@
+html {
+  background: #fff;
+}
+
+html body, html div, html ul {
+  padding: 0;
+  margin: 0;
+  font-family: "Microsoft YaHei";
+}
+
+html ul {
+  list-style-type: none;
+}
+
+html a {
+  text-decoration: none;
+  display: block;
+}
+
+#all {
+  margin: 0 auto;
+  width: 640px;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  display: none;
+}
+
+#all section {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#gameCanvas, #Cocos2dGameContainer {
+  width: 640px;
+  height: 1300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+#main #photo_layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#main #photo_layer .photo_background {
+  width: 100%;
+  height: 100%;
+}
+
+#main #photo_layer .photo_background.theme_0 {
+  background: url(../res/t/background_0.jpg) no-repeat no-repeat left top;
+}
+
+#main #photo_layer .photo_background.theme_1 {
+  background: url(../res/t/background_1.jpg) no-repeat no-repeat left top;
+}
+
+#main #photo_layer .photo_bottom {
+  width: 100%;
+  height: 493px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#main #photo_layer .photo_bottom.theme_0 {
+  background: url(../res/t/bottom_0.png) no-repeat no-repeat left bottom;
+}
+
+#main #photo_layer .photo_bottom.theme_1 {
+  background: url(../res/t/bottom_1.png) no-repeat no-repeat left bottom;
+}
+
+#main #photo_layer .photo_paper {
+  width: 640px;
+  height: 868px;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  background: url(../res/t/paper.png) no-repeat no-repeat;
+}
+
+#main #photo_layer #photo_main {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#main #photo_layer #photo_main .photo_mask, #main #photo_layer #photo_main .photo_line {
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+#main #photo_layer #photo_main #photo_user {
+  width: 552px;
+  height: 539px;
+  position: absolute;
+  top: 200px;
+  left: 44px;
+  overflow: hidden;
+}
+
+#main #photo_layer #photo_main #photo_user .imgId_area {
+  width: 200px;
+  height: 250px;
+  display: block;
+  position: absolute;
+  background: #fff url(../res/b/tips.png) center center no-repeat no-repeat;
+  overflow: hidden;
+  border-radius: 35%;
+}
+
+#main #photo_layer #photo_main #photo_user .imgId_area img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+#main #photo_layer #photo_main #photo_user .imgId_area img.none {
+  top: 100%;
+}
+
+#main #photo_layer #photo_main #photo_user .imgId_area_1.theme_1 {
+  top: 42px;
+  left: 64px;
+}
+
+#main #photo_layer #photo_main #photo_user .imgId_area_1.theme_2 {
+  top: 37px;
+  left: 83px;
+}
+
+#main #photo_layer #photo_main #photo_user .imgId_area_1.theme_3 {
+  top: 70px;
+  left: 66px;
+}
+
+#main #photo_layer #photo_main #photo_user .imgId_area_2.theme_1 {
+  top: 0px;
+  left: 265px;
+}
+
+#main #photo_layer #photo_main #photo_user .imgId_area_2.theme_2 {
+  top: 79px;
+  left: 283px;
+}
+
+#main #photo_layer #photo_main #photo_user .imgId_area_2.theme_3 {
+  top: 20px;
+  left: 267px;
+}
+
+#main #record_layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../res/t/record.jpg) top left no-repeat no-repeat;
+}
+
+#main #record_layer #record_flower {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#main #btn_layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#main #btn_layer .layer {
+  width: 100%;
+  position: absolute;
+}
+
+#main #btn_layer a {
+  display: block;
+}
+
+#main #btn_layer #btn_index {
+  height: 100%;
+}
+
+#main #btn_layer #btn_index .wolf {
+  width: 640px;
+  height: 634px;
+  position: absolute;
+  bottom: 270px;
+  left: -700px;
+  animation: wolfMoveIn 1s .2s linear forwards;
+  -moz-animation: wolfMoveIn 1s .2s linear forwards;
+  -webkit-animation: wolfMoveIn 1s .2s linear forwards;
+  -o-animation: wolfMoveIn 1s .2s linear forwards;
+}
+
+#main #btn_layer #btn_index .title {
+  width: 546px;
+  height: 230px;
+  position: absolute;
+  top: -500px;
+  opacity: 0;
+  animation: titleMoveIn 1s .5s linear forwards, wolfMoveFloat 3s 1.7s linear infinite;
+  -webkit-animation: titleMoveIn 1s .5s linear forwards, wolfMoveFloat 3s 1.7s linear infinite;
+}
+
+#main #btn_layer #btn_index .start {
+  width: 464px;
+  height: 127px;
+  position: absolute;
+  bottom: 80px;
+  left: 88px;
+  background: url(../res/b/start.png) no-repeat no-repeat;
+  animation: scaleDrawLow 3s linear infinite;
+  -webkit-animation: scaleDrawLow 3s linear infinite;
+}
+
+#main #btn_layer #btn_chooseImage {
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+#main #btn_layer #btn_chooseImage #touch_area {
+  width: 640px;
+  height: 600px;
+  position: absolute;
+  top: 100px;
+  left: 0;
+}
+
+#main #btn_layer #btn_chooseImage #touch_area a {
+  width: 50%;
+  height: 100%;
+  display: block;
+  float: left;
+}
+
+#main #btn_layer #btn_chooseImage .word_area {
+  width: 400px;
+  height: 100px;
+  position: absolute;
+  top: 755px;
+  left: 120px;
+}
+
+#main #btn_layer #btn_chooseImage .word_area .word_main {
+  width: 400px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#main #btn_layer #btn_chooseImage .word_area .word_prev, #main #btn_layer #btn_chooseImage .word_area .word_next {
+  width: 50px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+
+#main #btn_layer #btn_chooseImage .word_area .word_prev {
+  left: -70px;
+  background: url(../res/b/prev.png) center center no-repeat no-repeat;
+}
+
+#main #btn_layer #btn_chooseImage .word_area .word_next {
+  right: -70px;
+  background: url(../res/b/next.png) center center no-repeat no-repeat;
+}
+
+#main #btn_layer #btn_chooseImage .distance_area {
+  width: 183px;
+  height: 154px;
+  background: url(../res/b/foot.png) no-repeat no-repeat;
+  position: absolute;
+  top: 665px;
+  left: 440px;
+}
+
+#main #btn_layer #btn_chooseImage .distance_area .distance_word {
+  width: 100px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 91px;
+  left: 26px;
+  transform: rotate(15.3deg);
+}
+
+#main #btn_layer #btn_chooseImage .distance_area .distance_word img {
+  height: 25px;
+}
+
+#main #btn_layer #btn_chooseImage .theme_area {
+  width: 500px;
+  height: 150px;
+  position: absolute;
+  bottom: 200px;
+  left: 70px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#main #btn_layer #btn_chooseImage .theme_area img {
+  width: 120px;
+}
+
+#main #btn_layer #btn_chooseImage .theme_area img.active {
+  transform: scale(1.15);
+}
+
+@media screen and (max-height: 1200px) {
+  #main #btn_layer #btn_chooseImage .theme_area {
+    bottom: 100px;
+  }
+  #main #btn_layer #btn_chooseImage .theme_area img {
+    width: 110px;
+  }
+}
+
+@media screen and (max-height: 1100px) {
+  #main #btn_layer #btn_chooseImage .theme_area {
+    bottom: 40px;
+  }
+  #main #btn_layer #btn_chooseImage .theme_area img {
+    width: 80px;
+  }
+}
+
+@media screen and (max-height: 1000px) {
+  #main #btn_layer #btn_chooseImage .theme_area {
+    top: 600px;
+  }
+  #main #btn_layer #btn_chooseImage .theme_area img {
+    width: 80px;
+  }
+}
+
+#main #btn_layer #btn_chooseImage #chooseImage_layer {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 105px;
+  left: 0;
+}
+
+#main #btn_layer #btn_chooseImage #chooseImage_layer .chooseImage {
+  width: 183px;
+  height: 90px;
+}
+
+#main #btn_layer #btn_chooseImage #chooseImage_layer .chooseImage.normal {
+  background: url(../res/b/chooseImage.png) no-repeat no-repeat;
+}
+
+#main #btn_layer #btn_chooseImage #chooseImage_layer .chooseImage.reset {
+  background: url(../res/b/reset.png) no-repeat no-repeat;
+}
+
+#main #btn_layer #btn_chooseImage #chooseImage_layer .uploadImage {
+  width: 182px;
+  height: 90px;
+  background: url(../res/b/uploadImage.png) no-repeat no-repeat;
+}
+
+@media screen and (max-height: 1200px) {
+  #main #btn_layer #btn_chooseImage #chooseImage_layer {
+    bottom: 10px;
+  }
+}
+
+@media screen and (max-height: 1100px) {
+  #main #btn_layer #btn_chooseImage #chooseImage_layer {
+    bottom: 0px;
+  }
+}
+
+#main #btn_layer #btn_startRecord {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 200px;
+}
+
+#main #btn_layer #btn_startRecord #playVoice {
+  width: 183px;
+  height: 90px;
+  background: url(../res/b/playVoice.png);
+}
+
+#main #btn_layer #btn_startRecord #startRecord {
+  width: 182px;
+  height: 90px;
+  background: url(../res/b/startRecord.png);
+}
+
+#main #btn_layer #btn_startRecord #uploadVoice {
+  width: 182px;
+  height: 90px;
+  background: url(../res/b/uploadVoice.png);
+}
+
+#main #btn_layer #record_tips {
+  width: 231px;
+  height: 85px;
+  background: url(../res/b/record_tips.png);
+  position: absolute;
+  bottom: 80px;
+  left: 212px;
+}
+
+#main #btn_layer .record_voice {
+  position: absolute;
+  display: block;
+}
+
+#main #btn_layer .record_voice#record_voice_1 {
+  top: 200px;
+  left: -220px;
+  animation: voiceMove1 1s 1.5s linear forwards;
+  -webkit-animation: voiceMove1 1s 1.5s linear forwards;
+}
+
+#main #btn_layer .record_voice#record_voice_2 {
+  top: 85px;
+  left: -363px;
+  animation: voiceMove2 1.5s 2s linear forwards;
+  -webkit-animation: voiceMove2 1.5s 1.5s linear forwards;
+}
+
+#main #btn_layer .record_voice#record_voice_3 {
+  top: 200px;
+  left: -254px;
+  animation: voiceMove3 2s .2s linear forwards;
+  -webkit-animation: voiceMove3 2s .2s linear forwards;
+}
+
+#main .btn_back {
+  width: 146.4px;
+  height: 72px;
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+#dialogs {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#dialogs .dialogs_layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#dialogs .dialogs_close {
+  margin-left: -30.5px;
+  width: 61px;
+  height: 60px;
+  position: absolute;
+  bottom: -80px;
+  left: 50%;
+}
+
+#dialogs #dialogs_share {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../res/share.png) rgba(0, 0, 0, 0.65) no-repeat no-repeat top right;
+}
+
+#dialogs #canvas_layer {
+  margin-top: -680px;
+  margin-left: -320px;
+  width: 640px;
+  height: 1300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #fff;
+}
+
+#dialogs #canvas_layer #canvasUrlData {
+  width: 640px;
+  height: 1300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#dialogs #canvas_layer #imgId2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#dialogs #canvas_layer .share {
+  width: 182px;
+  height: 90px;
+  background: url(../res/b/share.png);
+  position: absolute;
+  bottom: 165px;
+  left: 229px;
+}
+
+#dialogs #canvas_layer .share_playing {
+  width: 183px;
+  height: 90px;
+  background: url(../res/b/playVoice.png);
+  position: absolute;
+  bottom: 165px;
+  left: 229px;
+}
+
+#dialogs #canvas_layer .share_playing.normal {
+  animation: scaleDraw 2s linear infinite;
+  -webkit-animation: scaleDraw 2s linear infinite;
+}
+
+#dialogs #canvas_layer .playing_tips {
+  width: 231px;
+  height: 85px;
+  background: url(../res/b/play_tips.png);
+  position: absolute;
+}
+
+#dialogs #canvas_layer .share_come {
+  width: 250px;
+  height: 68px;
+  background: url(../res/b/come.png);
+  position: absolute;
+  bottom: 160px;
+  left: 195px;
+  animation: scaleDraw 2s linear infinite;
+  -webkit-animation: scaleDraw 2s linear infinite;
+}
+
+#dialogs #canvas_layer .btn_close {
+  width: 61px;
+  height: 60px;
+  position: absolute;
+  bottom: -80px;
+  left: 289.5px;
+  background: url(../res/b/close.png);
+}
+
+#dialogs #dialogs_onLoadFaceModel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#dialogs #dialogs_onLoadFaceModel .loading {
+  animation: loadingDraw 1.5s linear infinite;
+  -moz-animation: loadingDraw 1.5s linear infinite;
+  -webkit-animation: loadingDraw 1.5s linear infinite;
+  -o-animation: loadingDraw 1.5s linear infinite;
+  opacity: 0;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+#ercode {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+#ercode img, #ercode span {
+  margin: 10px auto;
+  display: block;
+  font-size: 22px;
+  text-align: center;
+}
+
+@keyframes voiceMove1 {
+  0% {
+    left: -220px;
+  }
+  100% {
+    left: 50px;
+  }
+}
+
+@keyframes voiceMove2 {
+  0% {
+    left: -363px;
+  }
+  100% {
+    left: 155px;
+  }
+}
+
+@keyframes voiceMove3 {
+  0% {
+    left: -254px;
+  }
+  100% {
+    left: 330px;
+  }
+}
+
+@keyframes titleMoveIn {
+  0% {
+    top: -500px;
+    left: -640px;
+    opacity: 0;
+    transform: rotate(-360deg) scale(0);
+  }
+  100% {
+    top: 100px;
+    left: 15px;
+    opacity: 255;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+@keyframes wolfMoveIn {
+  0% {
+    left: -700px;
+  }
+  50% {
+    left: 0;
+  }
+  55% {
+    left: 30px;
+  }
+  60% {
+    left: 0px;
+  }
+  65% {
+    left: 30px;
+  }
+  70% {
+    left: 0px;
+  }
+  100% {
+    left: 0px;
+  }
+}
+
+@keyframes wolfMoveFloat {
+  0% {
+    margin-top: 0px;
+    opacity: 255;
+  }
+  50% {
+    margin-top: -30px;
+    opacity: 180;
+  }
+  100% {
+    margin-top: 0px;
+    opacity: 255;
+  }
+}
+
+@keyframes loadingDraw {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 255;
+  }
+}
+
+@keyframes scaleDraw {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes scaleDrawLow {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.02);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.02);
+  }
+}

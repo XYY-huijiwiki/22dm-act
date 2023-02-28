@@ -1,0 +1,205 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="嫁人就嫁灰太狼，和我约会吧！" />
+	<meta name="description" content="时间地点安排好了，就差一个对象。" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, width=640">
+	<meta name="format-detection" content="telephone=no, email=no"/>  
+	<title>嫁人就嫁灰太狼，和我约会吧！</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="/js/qrcode.min.js"></script>
+	<script src="/js/vue.min.js"></script>
+</head>
+<body>
+<div id="all">
+	<section id="main">
+		<div id="main_canvas">
+			<canvas id="gameCanvas" width="640" height="1138"></canvas>
+		</div>
+		<div id="choose">
+			<ul id="choose_left">
+				<li><a id="choose_0" class="active" @click="choose_open(0)"></a></li>
+				<li><a id="choose_1" @click="choose_open(1)"></a></li>
+				<li><a id="choose_2" @click="choose_open(2)"></a></li>
+				<li><a id="choose_3" @click="choose_open(3)"></a></li>
+			</ul>
+			<div id="choose_main">
+				<div id="img_0" class="active" >
+					<a class="icon_0" @click="updateGround(0)"></a>
+					<a class="icon_1" @click="updateGround(1)"></a>
+					<a class="icon_2" @click="updateSky(0)"></a>
+					<a class="icon_3" @click="updateSky(1)"></a>
+					<a class="icon_4" @click="updateSky(2)"></a>
+					<a class="icon_5" @click="updateSky(3)"></a>
+					<a class="icon_6" @click="updateSky(4)"></a>
+				</div>
+				<div id="img_1">
+					<a class="icon_0" @click="addCity(1)"></a>
+					<a class="icon_1" @click="addCity(4)"></a>
+					<a class="icon_2" @click="addCity(2)"></a>
+					<a class="icon_3" @click="addCity(5)"></a>
+					<a class="icon_4" @click="addCity(3)"></a>
+					<a class="icon_5" @click="addCity(7)"></a>
+					<a class="icon_6" @click="addCity(6)"></a>
+					<a class="icon_7" @click="addCity(8)"></a>
+					<a class="icon_8" @click="addCity(9)"></a>
+					<a class="icon_9" @click="addCity(10)"></a>
+					<a class="icon_10" @click="addCity(11)"></a>
+					<a class="icon_11" @click="addCity(12)"></a>
+					<a class="icon_12" @click="addCity(13)"></a>
+					<a class="icon_13" @click="addCity(14)"></a>
+					<a class="icon_14" @click="addCity(15)"></a>
+					<a class="icon_15" @click="addCity(16)"></a>
+					<a class="icon_16" @click="addCity(17)"></a>
+					<a class="icon_17" @click="addCity(18)"></a>
+					<a class="icon_18" @click="addCity(19)"></a>
+					<a class="icon_19" @click="addCity(20)"></a>
+					<a class="icon_20" @click="addCity(21)"></a>
+					<a class="icon_21" @click="addCity(22)"></a>
+					<a class="icon_22" @click="addCity(23)"></a>
+					<a class="icon_23" @click="addCity(24)"></a>
+					<a class="icon_24" @click="addCity(25)"></a>
+					<a class="icon_25" @click="addCity(26)"></a>
+					<a class="icon_26" @click="addCity(27)"></a>
+					<a class="icon_27" @click="addCity(28)"></a>
+					<a class="icon_28" @click="addCity(29)"></a>
+				</div>
+				<div id="img_2">
+					<a class="icon_0" @click="updateRole(2)"></a>
+					<a class="icon_1" @click="updateRole(9)"></a>
+					<a class="icon_2" @click="updateRole(3)"></a>
+					<a class="icon_3" @click="updateRole(1)"></a>
+					<a class="icon_4" @click="updateRole(6)"></a>
+					<a class="icon_5" @click="updateRole(7)"></a>
+					<a class="icon_6" @click="updateRole(4)"></a>
+					<a class="icon_7" @click="updateRole(10)"></a>
+					<a class="icon_8" @click="updateRole(5)"></a>
+					<a class="icon_9" @click="updateRole(8)"></a>
+				</div>
+				<div id="img_3">
+					<a class="icon_0" @click="addIcon(19)"></a>
+					<a class="icon_1" @click="addIcon(18)"></a>
+					<a class="icon_2" @click="addIcon(17)"></a>
+					<a class="icon_3" @click="addIcon(11)"></a>
+					<a class="icon_4" @click="addIcon(15)"></a>
+					<a class="icon_5" @click="addIcon(14)"></a>
+					<a class="icon_6" @click="addIcon(10)"></a>
+					<a class="icon_7" @click="addIcon(9)"></a>
+					<a class="icon_8" @click="addIcon(20)"></a>
+					<a class="icon_9" @click="addIcon(16)"></a>
+
+					<a class="icon_10" @click="addIcon(13)"></a>
+					<a class="icon_11" @click="addIcon(12)"></a>
+					<a class="icon_12" @click="addIcon(7)"></a>
+					<a class="icon_13" @click="addIcon(2)"></a>
+					<a class="icon_14" @click="addIcon(5)"></a>
+					<a class="icon_15" @click="addIcon(6)"></a>
+					<a class="icon_16" @click="addIcon(3)"></a>
+					<a class="icon_17" @click="addIcon(4)"></a>
+					<a class="icon_18" @click="addIcon(8)"></a>
+					<a class="icon_19" @click="addIcon(1)"></a>
+
+					<a class="icon_20" @click="addIcon(27)"></a>
+					<a class="icon_21" @click="addIcon(23)"></a>
+					<a class="icon_22" @click="addIcon(25)"></a>
+					<a class="icon_23" @click="addIcon(26)"></a>
+					<a class="icon_24" @click="addIcon(24)"></a>
+					<a class="icon_25" @click="addIcon(22)"></a>
+					<a class="icon_26" @click="addIcon(21)"></a>
+					<a class="icon_27" @click="addIcon(30)"></a>
+					<a class="icon_28" @click="addIcon(31)"></a>
+					<a class="icon_29" @click="addIcon(29)"></a>
+					<a class="icon_30" @click="addIcon(28)"></a>
+				</div>
+			</div>
+			<div id="choose_close" @click="choose_close()">
+				<img class="close-img reset" src="res/Public/main/choose/arrow.png" style="left:22px"/>
+				<img class="close-img delay-time reset" src="res/Public/main/choose/arrow.png" style="left:29px"/>
+			</div>
+		</div>
+		<a id="choose_save" @click="GameResultScene()"></a>
+		<a id="main_back" @click="MainMenuScene()"></a>
+		<a id="main_music" class="" @click="MainMenuScene()"></a>
+		<span class="limit_tips limit_city">最多可以添加{{limit.city}}个城市！</span>
+		<span class="limit_tips limit_icon">最多可以添加{{limit.icon}}个装饰！</span>
+		<audio id="audio" style="display:none" loop="true" src="res/Audio/music.mp3"></audio>
+	</section>
+	<section id="dialogs" v-show="active||guide">
+		<!--preload-->
+		<transition name="fade">
+			<div id="dialogs_preload" class="dialogs_layer" v-show="active=='preload'">
+				<img src="res/Public/preload/preload_bg.jpg" width="640" height="1008"/>
+				<div class="preload_precent">
+					<a class="precent_left"></a>
+					<a class="precent_main"></a>
+					<a class="precent_right"></a>
+					<span class="precent_word">0%</span>
+				</div>
+			</div>
+		</transition>	
+		<!--index-->
+	    <transition name="fade">
+			<div id="dialogs_index" class="dialogs_layer" v-show="active=='index'">
+				<div id="mask_left" class="mask" :class="{masking:role==1}"></div>
+				<div id="mask_right" class="mask" :class="{masking:role==0}"></div>
+				<a id="btn_boy" :class="{active:role==-1}" @click="index_select(0)"></a>
+				<a id="btn_girl" :class="{active:role==-1}" @click="index_select(1)"></a>
+			</div>
+		</transition>
+		<!--begin-->
+		<transition @before-enter="beginEntry" @after-leave="beginLeave">
+			<div id="dialogs_begin" class="dialogs_layer" :class="{role_0:role==0,role_1:role==1}" v-show="active=='begin'">	
+				<a id="begin_word" :class="{role_0:role==0,role_1:role==1}"></a>
+				<a id="begin_role" :class="{role_0:role==0,role_1:role==1}"></a>
+				<div id="begin_btn" :class="{role_0:role==0,role_1:role==1}" @click="GamePlayScene()">
+				<a id="begin_btn_blink"></a>
+				</div>
+				<a class="goback" @click="MainMenuScene()"></a>
+			</div>
+		</transition>
+		<!--finish-->
+		<transition>
+			<div id="dialogs_finish" class="dialogs_layer" v-show="active=='finish'">	
+				<img id="downloadImg" :src="canvasImg" class="hide" width="539" height="958"/>
+				<a id="btn_share" @click="share=true"></a>
+				<a id="btn_upload" :class="{wait:uploadState==1,finish:uploadState==2}" @click="uploadImg()"></a>
+				<a id="btn_down"></a>
+				<a id="btn_back" @click="finish_back()"></a>
+				<div id="ercode" style="display:none"></div>
+			</div>
+		</transition>
+		<!--show-->
+		<transition name="fade">
+			<div id="dialogs_show" class="dialogs_layer" v-show="active=='show'">	
+				<a id="btn_go" href="/act/h5/city/index.html"></a>
+			</div>
+		</transition>
+		<!--guide-->
+		<transition name="fade">
+			<div id="dialogs_guide" class="dialogs_layer" v-show="guide" @click='guide=false'></div>
+		</transition>
+		<!--share-->
+		<transition name="fade">
+			<div id="dialogs_share" class="dialogs_layer" v-show="share" @click="share=false">	
+			</div>
+		</transition>
+	</section>
+	<div id="btn_music" class="con-y"></div>
+</div>
+<script src="/js/cocos2d-js-v3.9.js"></script>
+<script src="main.js"></script>
+<script src="/js/jweixin-1.3.2.js"></script>
+<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?b5f74d00a4e9152b939aae19dc2f3c0f";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+</script>
+</body>
+</html>
