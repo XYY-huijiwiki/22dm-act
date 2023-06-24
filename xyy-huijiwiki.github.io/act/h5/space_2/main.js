@@ -138,12 +138,12 @@ function vueInit() {
   });
 }
 $(function () {
-  if (!IsPC()) {
+  // if (!IsPC()) {
     winSize.resize();
     vueInit();
-  } else {
-    $("#ercode").show();
-  }
+  // } else {
+  //   $("#ercode").show();
+  // }
 });
 cc.game.onStart = function () {
   dialogs.loadres = g_resources;
