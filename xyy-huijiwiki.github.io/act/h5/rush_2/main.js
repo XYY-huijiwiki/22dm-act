@@ -521,21 +521,22 @@ $(function () {
       }
     }
     else {
-      if (success == 1) {
-        winSize.resize();
-      }
-      else {
-        if (!success == 0) {
-          doUserLogin(userInfo, function () {
-            setTimeout(function () {
-              winSize.resize();
-            }, 50);
-          });
-        }
-        else {
-          $("#ercode").show();
-        }
-      }
+      winSize.resize();
+      // if (success == 1) {
+      //   winSize.resize();
+      // }
+      // else {
+      //   if (!success == 0) {
+      //     doUserLogin(userInfo, function () {
+      //       setTimeout(function () {
+      //         winSize.resize();
+      //       }, 50);
+      //     });
+      //   }
+      //   else {
+      //     $("#ercode").show();
+      //   }
+      // }
     }
   });
 });
