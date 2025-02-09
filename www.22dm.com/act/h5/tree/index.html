@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="喜羊羊邀你“种树”拿好礼" />
+	<meta name="description" content="我正在和喜羊羊共同为植树节助力，现在参与还有机会赢取羊村好礼，一起来吧！" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, width=640">
+	<meta name="format-detection" content="telephone=no, email=no"/>  
+	<title>喜羊羊邀你“种树”拿好礼</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
+	<script src="/js/vue.min.js"></script>
+	<script src="/tv/school/js/tv.js"></script>
+</head>
+<body>
+<div id="all">
+	<section id="main">
+		<div id="main_canvas">
+			<canvas id="gameCanvas" width="640" height="1008"></canvas>
+		</div>
+		<div id="main_btn">
+			<a id="btn_sign" class="btn" :class="btn_sign" @click="sign()"></a>
+			<a id="btn_record" class="btn" :class="btn_record" @click="record()"></a>
+			<a id="btn_rule" class="btn" @click='v_main.active="rule"'></a>
+			<a id="btn_video" class="btn" @click="palyTV()"></a>
+			<div id="main_progress">
+				<a id="main_progress_left"></a>
+				<a id="main_progress_center" :style="'width:'+shareList.length*(270/6)+'px'"></a>
+				<span id="main_progress_tips">{{shareList.length}}/6</span>
+			</div>
+			<div id="introduce_btn">
+				<a v-for="(item,index) in 6" :class="['introduce_btn_'+treeOrder[index],{'growed':treeGrowed[index]}]" @click="playIntroduce(index)"></a>
+			</div>
+		</div>
+	</section>
+	<section id="dialogs" :class="{'active':active!='' || tips!=''}">
+		<!--introduce-->
+		<transition name="fade">
+			<div id="dialogs_introduce" class="dialogs_layer" v-show="active=='introduce'">
+				<img id="introduce_img" :src="'res/Public/introduce/i_'+treeOrder[introduceId]+'.png'" width="640" height="510" />
+				<div id="video_bottom"></div>
+				<div id="video_main" v-if="active=='introduce'">
+					<iframe height=281 width=494 :src="'http://player.youku.com/embed/'+videoSrc[treeOrder[introduceId]]+'=='" frameborder=0 allowfullscreen></iframe>
+				</div>
+				<div id="video_top"></div>
+				<a class="dialogs_close" class="btn" @click='v_main.active=""'></a>
+			</div>
+		</transition>
+		<!--record-->
+		<transition name="fade">
+			<div id="dialogs_record" class="dialogs_layer" v-show="active=='record'">
+				<ul id="record_list">
+					<li v-for="(item,index) in shareList" :class="'record_list_'+(index)">
+						<img class="recode_mask" :src="'res/Public/record/r_'+index+'.png'" width="349" height="77" />
+						<img class="record_face" :src="item.face" width="66" height="66" />
+						<a class="record_time_month">{{item.addtime | getMonth}}</a>
+						<a class="record_time_day">{{item.addtime | getDay}}</a>
+						<a class="record_name" v-text="item.name"></a>
+						<a class="record_star"></a>
+					</li>
+				</ul>
+				<a class="dialogs_close" @click='v_main.active=""'></a>
+			</div>
+		</transition>
+		<!--prize-->
+		<transition name="fade">
+			<div id="dialogs_prize" class="dialogs_layer" v-show="active=='prize'">
+				<a id="prize_begin" onclick="prize.check()"></a>
+				<a class="dialogs_close" @click='v_main.active=""'></a>
+			</div>
+		</transition>
+		<!--tv-->
+		<transition name="fade">
+			<div id="tv_box" class="dialogs_layer" v-show="active=='video'">
+				<div id="tv_play_wrap">
+			        <span id="tv_play_title_wrap">
+			            <a id="tv_play_title">智趣羊学堂</a>
+			            <a id="tv_play_out_btn"></a>
+			        </span>
+			        <div id="tv_ifram">
+			        </div>
+			        <div id="tv_catalog">
+			            <span class="tv_catalog_title actived">羊羊来寻宝</span>
+			            <span class="tv_catalog_title">奇幻成语书</span>
+			            <span class="tv_catalog_title">羊羊游世界</span>
+			            <span class="tv_catalog_title">地球嘉年华</span>
+			            <span class="tv_catalog_title">运动篇</span>
+			            <span class="tv_catalog_title">动植物篇</span>
+			            <ul id="tv_catalog_btn">
+			                
+			            </ul>
+			            <div class="clear"></div>
+			        </div>
+			    </div>
+			</div>
+	    </transition>
+	    <!--award-->
+		<transition name="fade">
+			<div id="dialogs_award" class="dialogs_layer" v-show="active=='award'">
+				<input id="award_name" type="text" />
+				<input id="award_tel" type="text" />
+				<textarea id="award_address">
+				</textarea>
+				<span id="award_tips"></span>
+				<a id="award_post" onclick="award.check()"></a>
+				<a class="dialogs_close" @click='v_main.active=""'></a>
+			</div>
+		</transition>
+		<!--preload-->
+		<transition name="fade">
+			<div id="dialogs_preload" class="dialogs_layer" v-show="active=='preload'">
+				<img src="res/Public/preload/preload_bg.png" width="640" height="1008"/>
+				<div class="preload_precent">
+					<a class="precent_left"></a>
+					<a class="precent_main"></a>
+					<a class="precent_right"></a>
+					<span class="precent_word">0%</span>
+				</div>
+			</div>
+		</transition>	
+		<!--rule-->
+	    <transition name="fade">
+			<div id="dialogs_rule" class="dialogs_layer" v-show="active=='rule'">
+				<a class="dialogs_close" @click='v_main.active=""'></a>
+			</div>
+		</transition>
+		<!--share-->
+		<transition name="fade">
+			<div id="dialogs_share" class="dialogs_layer" v-show="active=='share'" @click='v_main.active=""'>	
+			</div>
+		</transition>
+		<!--ercode-->
+		<transition name="fade">
+			<div id="dialogs_ercode" class="dialogs_layer" v-show="active=='ercode'" @click.self='v_main.active=""'>
+				<img class="ercode_image" src="res/Public/ercode.png" width="591" height="644" />
+			</div>
+		</transition>
+		<!--tips-->
+	    <transition name="fade">
+			<div id="dialogs_tips" class="dialogs_layer" v-show="tips!=''">
+				<div id="tips_box">
+					<div id="tips_title">提示</div>
+					<div id="tips_content" :class="{'line_2':tips.length>16}">
+						{{tips}}
+					</div>
+					<div id="tips_btn">
+						<a id="tips_sure" @click="sure()" v-if="tipsBtn.indexOf('sure')>-1"></a>
+						<a id="tips_back" @click="back()" v-if="tipsBtn.indexOf('back')>-1"></a>
+						<a id="tips_prize" @click="v_main.active='award',v_main.tips=''" v-if="tipsBtn.indexOf('prize')>-1"></a>
+					</div>
+				</div>
+			</div>
+		</transition>
+	</section>
+</div>
+<script src="/js/cocos2d-js-v3.9.js"></script>
+<script src="main.js"></script>
+<script src="/js/jweixin-1.0.0.js"></script>
+<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?b5f74d00a4e9152b939aae19dc2f3c0f";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+</script>
+</body>
+</html>
