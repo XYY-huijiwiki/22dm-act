@@ -1,338 +1,356 @@
-html{
-	background: #000;
-	font-family:"Microsoft YaHei" ! important;
+html {
+  background: #000;
+  font-family: "Microsoft YaHei" !important;
 }
-body,div,ul{
-	padding: 0;
-	margin: 0;
-	font-family:"Microsoft YaHei";
+body,
+div,
+ul {
+  padding: 0;
+  margin: 0;
+  font-family: "Microsoft YaHei";
 }
-ul{
-	list-style-type: none;
+ul {
+  list-style-type: none;
 }
-#all{
-	margin:0;
-	width: 640px;
-	height: 1008px;
-	position: relative;
-	display: none;
-	overflow: hidden;
+#all {
+  margin: 0;
+  width: 640px;
+  height: 1008px;
+  position: relative;
+  display: none;
+  overflow: hidden;
 }
-#all section{
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	overflow: hidden;
+#all section {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
 }
-#Cocos2dGameContainer{
-	margin: 0 ! important;
-	padding: 0 ! important;
+#Cocos2dGameContainer {
+  margin: 0 !important;
+  padding: 0 !important;
 }
-#main{
-	z-index: 100;
+#main {
+  z-index: 100;
 }
-#dialogs{
-	z-index: 500;
-	display: none;
+#dialogs {
+  z-index: 500;
+  display: none;
 }
-.dialogs_layer{
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	overflow: hidden;
-	display: none;
+.dialogs_layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  display: none;
 }
 /*preload*/
-.preload_precent{
-	margin-left: -118px;
-	width: 300px;
-	height: 37px;
-	background: url(../res/Public/precent_bg.png) no-repeat no-repeat;
-	position: absolute;
-	bottom: 410px;
-	left: 50%;
+.preload_precent {
+  margin-left: -118px;
+  width: 300px;
+  height: 37px;
+  background: url(../res/Public/precent_bg.png) no-repeat no-repeat;
+  position: absolute;
+  bottom: 410px;
+  left: 50%;
 }
-.preload_precent a{
-	float: left;
-	display: block;
+.preload_precent a {
+  float: left;
+  display: block;
 }
-.precent_left{
-	width: 18px;
-	height: 37px;
-	background: url(../res/Public/precent_left.png);
+.precent_left {
+  width: 18px;
+  height: 37px;
+  background: url(../res/Public/precent_left.png);
 }
-.precent_main{
-	width: 2px;
-	height: 37px;
-	background: url(../res/Public/precent_main.png) repeat-x;
+.precent_main {
+  width: 2px;
+  height: 37px;
+  background: url(../res/Public/precent_main.png) repeat-x;
 }
-.precent_right{
-	margin-top:-2px;
-	margin-left:-30px;
-	width: 48px;
-	height: 41px;
-	background: url(../res/Public/precent_right.png);
+.precent_right {
+  margin-top: -2px;
+  margin-left: -30px;
+  width: 48px;
+  height: 41px;
+  background: url(../res/Public/precent_right.png);
 }
-.precent_word{
-	width: 240px;
-	height: 37px;
-	line-height: 37px;
-	font-size: 24px;
-	color: #fff;
-	text-align: center;
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 0;
+.precent_word {
+  width: 240px;
+  height: 37px;
+  line-height: 37px;
+  font-size: 24px;
+  color: #fff;
+  text-align: center;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 /*dialogs*/
-#dialogs_rule{background: url(../res/Public/rule_bg_1.jpg) no-repeat no-repeat;}
-#dialogs_juji{background: url(../res/Public/juji_bg_1.jpg) no-repeat no-repeat;}
-#dialogs_wallpaper{background: url(../res/Public/wallpaper_bg_1.jpg) no-repeat no-repeat;}
-#dialogs_download{background:rgba(0,0,0,0.7);}
-#dialogs_ranking{background: url(../res/Public/ranking_bg_1.jpg) no-repeat no-repeat;}
-#dialogs_share{background:rgba(0,0,0,0.8) url(../res/Public/share.png) no-repeat no-repeat top right;}
-.dialogs_close,.dialogs_close_self{
-	width: 101px;
-	height: 101px;
-	position: absolute;
-	background: url(../res/Public/btn_close_1.png) no-repeat no-repeat;
+#dialogs_rule {
+  background: url(../res/Public/rule_bg_1.jpg) no-repeat no-repeat;
 }
-#dialogs_rule .dialogs_close{
-	top: 10px;
-	left: 13px;
+#dialogs_juji {
+  background: url(../res/Public/juji_bg_1.jpg) no-repeat no-repeat;
 }
-#dialogs_juji .dialogs_close{
-	top: 5px;
-	left: 20px;
+#dialogs_wallpaper {
+  background: url(../res/Public/wallpaper_bg_1.jpg) no-repeat no-repeat;
 }
-#dialogs_ranking .dialogs_close{
-	top: 10px;
-	left: 20px;
+#dialogs_download {
+  background: rgba(0, 0, 0, 0.7);
 }
-#dialogs_wallpaper .dialogs_close_self{
-	top: 5px;
-	left: 20px;
+#dialogs_ranking {
+  background: url(../res/Public/ranking_bg_1.jpg) no-repeat no-repeat;
+}
+#dialogs_share {
+  background: rgba(0, 0, 0, 0.8) url(../res/Public/share.png) no-repeat
+    no-repeat top right;
+}
+.dialogs_close,
+.dialogs_close_self {
+  width: 101px;
+  height: 101px;
+  position: absolute;
+  background: url(../res/Public/btn_close_1.png) no-repeat no-repeat;
+}
+#dialogs_rule .dialogs_close {
+  top: 10px;
+  left: 13px;
+}
+#dialogs_juji .dialogs_close {
+  top: 5px;
+  left: 20px;
+}
+#dialogs_ranking .dialogs_close {
+  top: 10px;
+  left: 20px;
+}
+#dialogs_wallpaper .dialogs_close_self {
+  top: 5px;
+  left: 20px;
 }
 /*新剧介绍*/
-#wallpaper_open{
-	width: 147px;
-	height: 204px;
-	position: absolute;
-	left:438px;
-	top:733px;
+#wallpaper_open {
+  width: 147px;
+  height: 204px;
+  position: absolute;
+  left: 438px;
+  top: 733px;
 }
 /*冒险瞬间*/
-#wallpaper_list{
-	width: 580px;
-	height: 800px;
-	position: absolute;
-	top:160px;
-	left:45px;
-	display: block;
+#wallpaper_list {
+  width: 580px;
+  height: 800px;
+  position: absolute;
+  top: 160px;
+  left: 45px;
+  display: block;
 }
-.wallpaper_items{
-	margin:0 0 2px 4px;
-	width: 271px;
-	height: 201px;
-	position: relative;
-	background: url(../res/Public/dl_item_bg.png);
-	float: left;
+.wallpaper_items {
+  margin: 0 0 2px 4px;
+  width: 271px;
+  height: 201px;
+  position: relative;
+  background: url(../res/Public/dl_item_bg.png);
+  float: left;
 }
-.wallpaper_items a{
-	width: 200px;
-	height: 112.5px;
-	position: absolute;
-	top:47px;
-	left:42px;
-	display: block;
-	cursor: pointer;
+.wallpaper_items a {
+  width: 200px;
+  height: 112.5px;
+  position: absolute;
+  top: 47px;
+  left: 42px;
+  display: block;
+  cursor: pointer;
 }
-#wallpaper_btn_start{
-	width: 202px;
-	height: 54px;
-	background: url(../res/Public/wallpaper_btn_start.png);
-	position: absolute;
-	bottom:0;
-	right:0;
+#wallpaper_btn_start {
+  width: 202px;
+  height: 54px;
+  background: url(../res/Public/wallpaper_btn_start.png);
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 /*壁纸下载*/
-#download_wrap{
-	margin-top:-174px; 
-	margin-left:-305px;
-	width: 600px;
-	height: 367.5px;
-	border:8px solid rgb(244,100,91);
-	background: rgb(244,100,91);
-	position: absolute;
-	top:50%;
-	left:50%;
+#download_wrap {
+  margin-top: -174px;
+  margin-left: -305px;
+  width: 600px;
+  height: 367.5px;
+  border: 8px solid rgb(244, 100, 91);
+  background: rgb(244, 100, 91);
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }
-#download_wrap span{
-	width: 100%;
-	height: 24px;
-	text-align: center;
-	color: #fff;
-	font-size: 24px;
-	color: #fff;
-	line-height: 24px;
-	font-weight: bold;
-	display: block;
+#download_wrap span {
+  width: 100%;
+  height: 24px;
+  text-align: center;
+  color: #fff;
+  font-size: 24px;
+  color: #fff;
+  line-height: 24px;
+  font-weight: bold;
+  display: block;
 }
-#download_close{
-	width: 78px;
-	height: 66px;
-	background: url(/tv/school/images/Public/download_close.png);
-	position: absolute;;
-	top:-75px;
-	right: 0;
+#download_close {
+  width: 78px;
+  height: 66px;
+  background: url(../../../../tv/school/images/public/download_close.png);
+  position: absolute;
+  top: -75px;
+  right: 0;
 }
 /*排行榜*/
-#ranking{
-	width:570px;
-	height:670px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    position: absolute;
-    top:300px;
-    left: 48px;
+#ranking {
+  width: 570px;
+  height: 670px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: absolute;
+  top: 300px;
+  left: 48px;
 }
-#ranking_award{
-	width: 200px;
-	height: 60px;
-	position: absolute;
-	top:227px;
-	left: 224px;
+#ranking_award {
+  width: 200px;
+  height: 60px;
+  position: absolute;
+  top: 227px;
+  left: 224px;
 }
-#ranking li{
-    margin-bottom: 10px;
-    width:570px;
-    height: 105px;
-    position: relative;
+#ranking li {
+  margin-bottom: 10px;
+  width: 570px;
+  height: 105px;
+  position: relative;
 }
-.p_image,.p_name,.p_time{
-    float:left;
-    display:inline-block;
+.p_image,
+.p_name,
+.p_time {
+  float: left;
+  display: inline-block;
 }
-.p_image{
-	position: absolute;
-	top:5.5px;
-	left:9.5px;
-    border-radius:10px;
+.p_image {
+  position: absolute;
+  top: 5.5px;
+  left: 9.5px;
+  border-radius: 10px;
 }
-.p_mask{
-	width: 104px;
-	height: 96px;
-	position: absolute;
-	top:0px;
-	left:0px;
-    background: url(../res/Public/phk.png) no-repeat no-repeat;
-    display: block;
+.p_mask {
+  width: 104px;
+  height: 96px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: url(../res/Public/phk.png) no-repeat no-repeat;
+  display: block;
 }
-.p_name{
-	max-width:280px;
-	margin-top:13px;
-    margin-left:116px;
-    height:24px;
-    line-height:24px;
-    color:rgb(181,17,80);
-    font-size:28px; 
+.p_name {
+  max-width: 280px;
+  margin-top: 13px;
+  margin-left: 116px;
+  height: 24px;
+  line-height: 24px;
+  color: rgb(181, 17, 80);
+  font-size: 28px;
 }
-.p_time{
-	margin-top:13px;
-	margin-left:15px;
-    height:24px;
-    line-height:28px;
-    color:rgb(8,57,35);
-    font-size:18px; 
+.p_time {
+  margin-top: 13px;
+  margin-left: 15px;
+  height: 24px;
+  line-height: 28px;
+  color: rgb(8, 57, 35);
+  font-size: 18px;
 }
-.p_score{
-    padding:0 8px;
-    width: 380px;
-    position:absolute;
-    bottom:8px;
-    left:110px;
-    color:rgb(230,44,45);
-    font-size: 40px;
-    font-weight: bold;
+.p_score {
+  padding: 0 8px;
+  width: 380px;
+  position: absolute;
+  bottom: 8px;
+  left: 110px;
+  color: rgb(230, 44, 45);
+  font-size: 40px;
+  font-weight: bold;
 }
-.p_above{
-	width: 138px;
-	height: 57px;
-	display: block;
-    position: absolute;
-    top:25px;
-	right:0px;
+.p_above {
+  width: 138px;
+  height: 57px;
+  display: block;
+  position: absolute;
+  top: 25px;
+  right: 0px;
 }
 /*领奖页面(共用)*/
-#award{
-    width:640px;
-    height:1008px;
-    position:absolute;
-    top:0;
-    left:0;
-    display:none;
+#award {
+  width: 640px;
+  height: 1008px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
 }
 
-#award input{
-    width:510px;
-    height:55px;
-    padding:5px;
-    border:3px solid #000;
-    position:absolute;
-    left:59px;
-    font-size:24px;
+#award input {
+  width: 510px;
+  height: 55px;
+  padding: 5px;
+  border: 3px solid #000;
+  position: absolute;
+  left: 59px;
+  font-size: 24px;
 }
-#award #award_name{
-    top:405px;
+#award #award_name {
+  top: 405px;
 }
-#award #award_tel{
-    top:508px;
+#award #award_tel {
+  top: 508px;
 }
-#award #award_address{
-    top:613px;
+#award #award_address {
+  top: 613px;
 }
-#award #award_post{
-    width:520px;
-    height:65px;
-    position:absolute;
-    display:block;
-    cursor:pointer;
-    top:723px;
-    left:63px;
+#award #award_post {
+  width: 520px;
+  height: 65px;
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  top: 723px;
+  left: 63px;
 }
-#award #award_tips{
-    width:100%;
-    height:40px;
-    line-height:40px;
-    color:red;
-    font-size:30px;
-    position:absolute;
-    top:683px;
-    text-align:center;
+#award #award_tips {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  color: red;
+  font-size: 30px;
+  position: absolute;
+  top: 683px;
+  text-align: center;
 }
-#award_close{
-    position:absolute;
-    top:0;
-    left:0;
+#award_close {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
-.btn{
-    display: block;
-    cursor: pointer;
+.btn {
+  display: block;
+  cursor: pointer;
 }
 /*Public*/
-.btn{
-	display: block;
-	cursor: pointer;
+.btn {
+  display: block;
+  cursor: pointer;
 }
-.border_red{
-	border:1px solid red;
+.border_red {
+  border: 1px solid red;
 }
-.border_blue{
-	border:1px solid blue;
+.border_blue {
+  border: 1px solid blue;
 }
