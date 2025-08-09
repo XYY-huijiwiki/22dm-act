@@ -1,15 +1,31 @@
 # 嫁人就嫁灰太狼（love）
+
 原创动力的小游戏“嫁人就嫁灰太狼”的原版拷贝及修改版本。
-- 活动ID：无
+
+- 活动 ID：无
 - 项目名称：`love`
 
 ## 原始版本
+
 文件夹`www.22dm.com`内存储着游戏的原始版本。因为游戏需要获取玩家的微信昵称，所以必须在微信中打开才行。然后微信会报错`Scope 参数错误或没有 Scope 权限`，所以现在玩不了了。
 
 ## 修改版本
+
 文件夹`xyy-huijiwiki.github.io`内存储着游戏的修改版本。目前只还原了游戏的一小部分内容，核心玩法的复原超出我能力范围了。一来游戏采用`cocos2d js`作为游戏引擎，这我没用过，完全不了解；二来作为双人游戏，需要频繁地与服务器联系，虽然按照之前的经验，服务器应该还开着，但是我获取不到微信的`openid`，没法知道正常情况下服务器会发送什么内容回来。目前游戏基本上只能看个主菜单。
 
+2025 年 8 月 9 日更新：重新看了一下代码，有了更进一步的发现，但是被一个微信的 api 卡住了，我并不了解微信的 api。好在现在以及是 2025 年了，直接问一下 AI 即可。原来这是个微信登录+重定向的 api，实际上是回到游戏主页再附加一些额外参数。那问题就迎刃而解了，游戏的核心步骤是：
+
+1. 玩家 1 分享二维码。
+2. 玩家 2 扫描二维码，登录微信并进入游戏。
+3. 因为登录微信时会与官方的服务器通讯，这样服务器就知道有人扫码了，通知玩家 1 。
+4. 玩家 1 和玩家 2（几乎）同时进入动画，实现“跨屏”互动的效果。
+
+另外，我制作修改版的本意是可供离线游玩，但是没有服务器的情况下，玩家 1 不可能知道二维码有没有被扫描，也就无从实现理想状态下的跨屏互动的效果了。既然如此，二维码我就懒得修改了，扫描二维码依然会进入官方的链接，如上所述，以及用不了了。显示二维码后等待一秒钟，会自动进入动画。
+
 ## 链接
+
 - [官方游戏链接](http://www.22dm.com/act/h5/love)
-- [修改版游戏链接](https://xyy-huijiwiki.github.io/22dm-act/xyy-huijiwiki.github.io/act/h5/love/index.html)
+- [修改版游戏链接 1](https://xyy-huijiwiki.github.io/22dm-act/xyy-huijiwiki.github.io/act/h5/love/index.html)（作为玩家 1）
+- [修改版游戏链接 2](https://xyy-huijiwiki.github.io/22dm-act/xyy-huijiwiki.github.io/act/h5/love/index.html?state=scene%3D2)（作为玩家 2 且玩家 1 选择了胡飞）
+- [修改版游戏链接 3](https://xyy-huijiwiki.github.io/22dm-act/xyy-huijiwiki.github.io/act/h5/love/index.html?state=scene%3D1)（作为玩家 2 且玩家 1 选择了红莉）
 - [羊羊百科](https://xyy.huijiwiki.com/wiki/嫁人就嫁灰太狼（游戏）)

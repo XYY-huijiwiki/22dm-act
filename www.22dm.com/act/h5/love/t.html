@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>原创动力-“让我们的色彩为世间增添欢乐!”</title>
+<style type="text/css">
+</style>
+<script type="text/javascript">
+var loginUrl = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb61fdb0e387cbcc4&redirect_uri=http%3a%2f%2fwww.22dm.com%2fact%2fh5%2flove%2findex.html&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
+location.href = loginUrl.replace("STATE",getQueryString("t"));
+function getQueryString(name)
+{
+	var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+	var r = window.location.search.substr(1).match(reg);
+	if(r!=null)return (r[2]); return null;
+}
+</script>
+</head>
+<body>
+		
+</body>
+</html>
