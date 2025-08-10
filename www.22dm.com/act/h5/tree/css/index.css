@@ -287,7 +287,7 @@ ul{
 	position: absolute;
 	top: 111.5px;
 	left: 55px;
-	background: url(../images/bg_tip.png);
+	background: url(http://www.22dm.com/act/h5/tree/images/bg_tip.png);
 	text-align: center;
 }
 #tip_image{
@@ -295,7 +295,7 @@ ul{
 	top:318px;
 	left: 140px;
 }
-/*中奖信息填*/
+/*中奖信息填写*/
 #dialogs_award{
 	background: url(../res/Public/bg_award.png);
 }
@@ -359,15 +359,15 @@ ul{
     top: 558px;
     left: 255px;
 }
-/*æ¸¸æè§å*/
+/*游戏规则*/
 #dialogs_rule{
 	background: url(../res/Public/bg_rule.png);
 }
-/*åäº«*/
+/*分享*/
 #dialogs_share{
 	background: rgba(0,0,0,0.8) url(../res/Public/share.png) top right no-repeat no-repeat;
 }
-/*äºç»´ç */
+/*二维码*/
 #dialogs_ercode{
 	background: rgba(0,0,0,0.8);
 }
@@ -506,7 +506,7 @@ ul{
 	float:right;
 	cursor:pointer;
 	display:inline-block;
-	background:url(/tv/school/images/tv_close.png) no-repeat;
+	background:url(../../../../tv/school/images/tv_close.png) no-repeat;
 }
 #tv_ifram{
 	margin: 0 auto;
