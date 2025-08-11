@@ -1,0 +1,289 @@
+html {
+  background: #000;
+}
+
+html body,
+html div,
+html ul {
+  padding: 0;
+  margin: 0;
+  font-family: "Microsoft YaHei";
+}
+
+html ul {
+  list-style-type: none;
+}
+
+html a {
+  text-decoration: none;
+}
+
+#Cocos2dGameContainer {
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#all {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+}
+
+#all section {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#all #main #game_music {
+  display: none;
+}
+
+#all #main #music {
+  width: 64px;
+  height: 64px;
+  display: block;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+#all #main #music.active {
+  background: url(../res/Public/play_1.png) no-repeat no-repeat;
+  animation: music_play 10s linear infinite;
+  -moz-animation: music_play 10s linear infinite;
+  -webkit-animation: music_play 10s linear infinite;
+  -o-animation: music_play 10s linear infinite;
+}
+
+#all #main #music.stop {
+  background: url(../res/Public/play_2.png) no-repeat no-repeat;
+}
+
+#all #main #guide_img {
+  margin-left: -69px;
+  width: 130px;
+  height: 138px;
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: 80px;
+  animation: guide 1s infinite linear;
+  -moz-animation: guide 1s infinite linear;
+  -webkit-animation: guide 1s infinite linear;
+  -o-animation: guide 1s infinite linear;
+}
+
+#ercode {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  position: fixed;
+  display: none;
+}
+
+#ercode div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  line-height: 100px;
+}
+
+#dialogs {
+  z-index: 100;
+}
+
+#dialogs .dialogs_layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#dialogs .dialogs_close {
+  width: 137px;
+  height: 119px;
+  position: absolute;
+  top: 20px;
+  left: 50px;
+}
+
+#dialogs #dialogs_preload {
+  background: black;
+}
+
+#dialogs #dialogs_preload .preload_precent {
+  margin-top: -250px;
+  width: 100%;
+  height: 500px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+}
+
+#dialogs #dialogs_preload .preload_precent .precent_title {
+  height: 80px;
+  width: 100%;
+  position: relative;
+}
+
+#dialogs #dialogs_preload .preload_precent .precent_title a {
+  margin: 0 auto;
+  display: block;
+  width: 0;
+  position: absolute;
+}
+
+#dialogs #dialogs_preload .preload_precent .precent_title .precent_title_1 {
+  width: 0;
+  height: 41px;
+  background: url(../res/GamePlay/word/1/word_1_1.png) no-repeat no-repeat;
+  animation: precent_title_1 2.3s ease 0s 1 forwards;
+  -webkit-animation: precent_title_1 2.3s ease 0s 1 forwards;
+  top: 0;
+  left: 73px;
+}
+
+#dialogs #dialogs_preload .preload_precent .precent_title .precent_title_2 {
+  width: 0;
+  height: 40px;
+  background: url(../res/GamePlay/word/1/word_1_2.png) no-repeat no-repeat;
+  animation: precent_title_2 0.5s ease 2.5s 1 forwards;
+  -webkit-animation: precent_title_2 0.5s ease 2.5s 1 forwards;
+  top: 41px;
+  left: 262px;
+}
+
+#dialogs #dialogs_preload .preload_precent .precent_word {
+  margin-top: 25px;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  font-size: 26px;
+  color: white;
+  display: block;
+}
+
+#dialogs #dialogs_icon a {
+  display: block;
+  position: absolute;
+}
+
+#dialogs #dialogs_icon .icon_1 {
+  width: 232px;
+  height: 250px;
+  top: 53px;
+  left: 192px;
+}
+
+#dialogs #dialogs_icon .icon_2 {
+  width: 200px;
+  height: 200px;
+  top: 215px;
+  left: 50px;
+}
+
+#dialogs #dialogs_icon .icon_3 {
+  width: 219px;
+  height: 220px;
+  top: 323px;
+  left: 255px;
+}
+
+#dialogs #dialogs_icon .icon_4 {
+  width: 224px;
+  height: 200px;
+  top: 589px;
+  left: 365px;
+}
+
+#dialogs #dialogs_icon .icon_5 {
+  width: 232px;
+  height: 263px;
+  top: 700px;
+  left: 131px;
+}
+
+#dialogs #dialogs_icon .icon_6 {
+  width: 130px;
+  height: 130px;
+  top: 0;
+  right: 0;
+}
+
+#dialogs #dialogs_paint {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+#dialogs #dialogs_paint #paint_warp {
+  margin-left: -250px;
+  margin-top: -440px;
+  width: 500px;
+  height: 887.5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+#dialogs #dialogs_paint #paint_warp img {
+  display: block;
+}
+
+#dialogs #dialogs_paint #paint_close {
+  margin-left: -25px;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+@keyframes guide {
+  from {
+    bottom: 80px;
+  }
+  to {
+    bottom: 120px;
+  }
+}
+
+@keyframes precent_title_1 {
+  100% {
+    width: 494px;
+  }
+}
+
+@keyframes precent_title_2 {
+  100% {
+    width: 116px;
+  }
+}
+
+@keyframes music_play {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}

@@ -4,6 +4,8 @@
 
 **羊村守护者**及其之前的小游戏和活动页面的原始存档位于文件夹`www.22dm.com`内，**羊村守护者-贺岁版**及其之后的位于文件夹`act.22dm.com`内。**《喜羊羊与灰太狼》十五周年**是最后一个独立文件夹的活动页面，之后的游戏/活动页面的架构发生较大变化，归档于另一 repo 中：[act.22dm.com](http://github.com/XYY-huijiwiki/act.22dm.com)。
 
+## 文档目录
+
 1. [小透明减压室](docs/jyfy.md)
 2. [性格测试](docs/cs.md)
 3. [冲出海洋](docs/deep.md)
@@ -35,13 +37,22 @@
 29. [确认过眼神，是亲生的！](docs/mum.md)
 30. [爸爸教会我的那些事](docs/father.md)
 31. [“趣”玩跨时空救兵](docs/bubble.md)
-32. [保持初心，一路前进](docs/space_2.md)
-33. [甜蜜大考验](docs/emoji.md)
-34. [团圆盖盖乐](docs/moon.md)
-35. [摩天狼堡大挑战](docs/build.md)
-36. [奇趣能量屋](docs/magic.md)
-37. [礼物保卫战](docs/germ.md)
-38. [国潮有喜](docs/2020.md)
-39. [探险父子兵](docs/rush.md)
-40. [探险奇猫国](docs/rush_2.md)
-41. [《喜羊羊与灰太狼》十五周年](docs/15th.md)
+32. [你还记得那个时候吗](docs/space.md)
+33. [保持初心，一路前进](docs/space_2.md)
+34. [甜蜜大考验](docs/emoji.md)
+35. [团圆盖盖乐](docs/moon.md)
+36. [摩天狼堡大挑战](docs/build.md)
+37. [奇趣能量屋](docs/magic.md)
+38. [礼物保卫战](docs/germ.md)
+39. [国潮有喜](docs/2020.md)
+40. [探险父子兵](docs/rush.md)
+41. [探险奇猫国](docs/rush_2.md)
+42. [《喜羊羊与灰太狼》十五周年](docs/15th.md)
+
+## 资源历史
+
+已知的同路径同名文件变更记录于此。
+
+| 旧文件                                                               | 新文件                                                       | 备注                                  |
+| -------------------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------- |
+| [music.old.mp3](act.22dm.com/act/h5/space_2/res/Audio/music.old.mp3) | [music.mp3](act.22dm.com/act/h5/space_2/res/Audio/music.mp3) | 见[你还记得那个时候吗](docs/space.md) |
