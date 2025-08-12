@@ -475,50 +475,50 @@ $(function () {
   vueInit();
 });
 function initWxJsSdk() {
-  $.ajax({
-    cache: false,
-    async: false,
-    type: "POST",
-    url: "/act/getWeiXinToken.ashx",
-    data: {
-      thisUrl: location.href.split("#")[0],
-    },
-    success: function success(res) {
-      var wxData = JSON.parse(res);
-      wx.config({
-        debug: false,
-        appId: wxData.appId,
-        timestamp: wxData.timestamp,
-        nonceStr: wxData.nonceStr,
-        signature: wxData.signature,
-        jsApiList: [
-          "onMenuShareTimeline",
-          "onMenuShareAppMessage",
-          "chooseImage",
-          "previewImage",
-          "uploadImage",
-          "downloadImage",
-          "startRecord",
-          "stopRecord",
-          "onVoiceRecordEnd",
-          "playVoice",
-          "pauseVoice",
-          "stopVoice",
-          "onVoicePlayEnd",
-          "uploadVoice",
-          "downloadVoice",
-        ],
-      });
-    },
-  });
-  wx.ready(function () {
-    isWx = true;
-    initWeixinData(false);
-    if (getQueryString("c") != null && v_main.sharedata.serverId_record) {
-      //有录音
-      v_main.downloadVoice();
-    }
-  });
+  // $.ajax({
+  //   cache: false,
+  //   async: false,
+  //   type: "POST",
+  //   url: "/act/getWeiXinToken.ashx",
+  //   data: {
+  //     thisUrl: location.href.split("#")[0],
+  //   },
+  //   success: function success(res) {
+  //     var wxData = JSON.parse(res);
+  //     wx.config({
+  //       debug: false,
+  //       appId: wxData.appId,
+  //       timestamp: wxData.timestamp,
+  //       nonceStr: wxData.nonceStr,
+  //       signature: wxData.signature,
+  //       jsApiList: [
+  //         "onMenuShareTimeline",
+  //         "onMenuShareAppMessage",
+  //         "chooseImage",
+  //         "previewImage",
+  //         "uploadImage",
+  //         "downloadImage",
+  //         "startRecord",
+  //         "stopRecord",
+  //         "onVoiceRecordEnd",
+  //         "playVoice",
+  //         "pauseVoice",
+  //         "stopVoice",
+  //         "onVoicePlayEnd",
+  //         "uploadVoice",
+  //         "downloadVoice",
+  //       ],
+  //     });
+  //   },
+  // });
+  // wx.ready(function () {
+  //   isWx = true;
+  //   initWeixinData(false);
+  //   if (getQueryString("c") != null && v_main.sharedata.serverId_record) {
+  //     //有录音
+  //     v_main.downloadVoice();
+  //   }
+  // });
 }
 function initWeixinData(hasCode) {
   // if (!hasCode) {
